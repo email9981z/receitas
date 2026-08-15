@@ -3,8 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Descubra os segredos da Lotofácil | Jogue com mais clareza</title>
-  <meta name="description" content="Descubra os segredos por trás de uma rotina mais organizada na Lotofácil: guia, planilha, checklist, orçamento mensal e bônus para bolão. R$ 29,90, pagamento único.">
+  <title>Kit Lotofácil no Controle | Organização, limite e registro</title>
+  <meta name="description" content="Kit digital para organizar sua rotina na Lotofácil com limite, checklist, planilha e guia de bolão. Pagamento único de R$ 29,90, sem promessa de acerto.">
+  <meta name="theme-color" content="#a31515">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
@@ -27,6 +28,7 @@
     }
 
     *{box-sizing:border-box}
+    [hidden]{display:none!important}
     html{scroll-behavior:smooth}
     body{margin:0;color:var(--ink);background:#fff;font-family:Roboto,Arial,sans-serif}
     body,button,a{ -webkit-font-smoothing:antialiased }
@@ -37,10 +39,20 @@
     .wrap{width:min(1020px,calc(100% - 32px));margin:auto}
     .eyebrow{color:var(--red);font-size:.67rem;font-weight:900;letter-spacing:.14em;text-transform:uppercase}
 
-    /* Hierarquia enxuta: mantém a oferta e remove elementos que competem pela atenção. */
-    .topbar,.nav,.trust-strip,.hero-qualifier,.side-note,.intro-card,.mid-cta,.secondary,.caption{display:none}
+    /* Hierarquia enxuta: mantém uma única ação principal e reduz distrações. */
+    .topbar,.nav,.side-note,.intro-card,.mid-cta,.secondary,.caption{display:none}
     .content-grid{grid-template-columns:1fr}
     .content{padding-top:44px}
+    .skip-link{position:absolute;left:12px;top:-60px;z-index:100;padding:10px 14px;background:var(--ink);color:#fff;font-size:.72rem;font-weight:800;text-decoration:none;transition:top .18s}
+    .skip-link:focus{top:12px}
+    .hero-qualifier{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}
+    .hero-qualifier span{padding:8px 10px;border:1px solid var(--line);border-radius:999px;color:var(--muted);font-size:.65rem;font-weight:700;background:#fff}
+    .text-cta{display:inline-flex;margin-top:18px;color:var(--red);font-size:.75rem;font-weight:900;text-underline-offset:4px}
+    .value-note{display:flex;align-items:center;gap:12px;margin:26px 0 0;padding:14px 16px;border:1px solid #d6e4db;background:var(--green-soft);color:#47584e;font-size:.72rem;line-height:1.45}
+    .value-note b{color:var(--green)}
+    .checkout-help{display:none;margin:12px 0 0;padding:10px 12px;border:1px solid #f2c9c3;background:#fff4f2;color:#6b2b26;font-size:.68rem;line-height:1.45}
+    .checkout-help.is-visible{display:block}
+    .mobile-cta{padding-bottom:max(9px,env(safe-area-inset-bottom))}
 
     .topbar{background:var(--red);color:#fff}
     .topbar .wrap{min-height:44px;display:flex;align-items:center;justify-content:space-between;gap:20px}
@@ -71,7 +83,11 @@
     .dek{max-width:620px;margin:22px 0 0;color:#555b60;font-size:1.08rem;line-height:1.55}
     .hero-qualifier{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}
     .hero-qualifier span{padding:8px 10px;border:1px solid var(--line);border-radius:999px;color:var(--muted);font-size:.65rem;font-weight:700;background:#fff}
-    .hero-visual{width:100%;height:340px;object-fit:cover;border-radius:var(--radius);box-shadow:var(--shadow)}
+    .hero-visual{width:100%;height:340px;object-fit:cover;border-radius:var(--radius);box-shadow:var(--shadow);background:#f0f3f1}
+    .hero-visual-fallback{height:340px;display:flex;align-items:flex-end;padding:26px;border-radius:var(--radius);background:linear-gradient(145deg,#eaf5ee 0%,#cde3d4 48%,#07563a 48%,#043d2a 100%);box-shadow:var(--shadow);overflow:hidden}
+    .hero-visual-fallback div{max-width:250px;padding:15px;background:rgba(255,255,255,.92);color:var(--ink)}
+    .hero-visual-fallback strong{display:block;font-size:1.05rem;line-height:1.1}
+    .hero-visual-fallback span{display:block;margin-top:6px;color:var(--muted);font-size:.68rem;line-height:1.45}
     .caption{margin-top:8px;color:#8a8e91;font-size:.58rem;line-height:1.4}
 
     .offer-card{margin-top:24px;padding:22px;border:1px solid #b6c9bc;border-top:5px solid var(--green);border-radius:var(--radius);background:var(--green);color:#fff;box-shadow:0 14px 32px rgba(7,86,58,.14)}
@@ -191,7 +207,7 @@
 
     @media(max-width:820px){
       .hero-grid{grid-template-columns:1fr;gap:30px}
-      .hero-visual{height:260px}
+      .hero-visual,.hero-visual-fallback{height:260px}
       .content-grid{grid-template-columns:1fr;gap:0}
       .side-note{display:none}
     }
@@ -214,7 +230,7 @@
       .dek{font-size:.93rem}
       .hero-qualifier{gap:6px}
       .hero-qualifier span{padding:7px 8px;font-size:.59rem}
-      .hero-visual{height:225px;box-shadow:3px 3px 0 var(--ink)}
+      .hero-visual,.hero-visual-fallback{height:225px;box-shadow:3px 3px 0 var(--ink)}
       .offer-card{padding:18px;margin-top:18px}
       .offer-card h2{font-size:1.4rem}
       .offer-price strong{font-size:1.65rem}
@@ -254,7 +270,7 @@
     <div class="masthead">
       <div class="wrap">
         <a class="brand" href="#inicio" aria-label="Voltar ao início">
-          <img src="/manus-storage/lotofacil-mark_2577f9a1.png" alt="">
+          <img src="/manus-storage/lotofacil-mark_2577f9a1.png" alt="" aria-hidden="true" onerror="this.hidden=true">
           <span>Lotofácil<small>no controle</small></span>
         </a>
         <button class="header-cta" type="button" onclick="checkout()">Quero o Kit — R$ 29,90 →</button>
@@ -263,14 +279,15 @@
 
   </header>
 
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo principal</a>
   <main id="inicio">
     <section class="hero">
       <div class="wrap hero-grid">
         <div>
           <div class="crumb">Início &nbsp;›&nbsp; Lotofácil &nbsp;›&nbsp; <b>Organização</b></div>
-          <div class="eyebrow">PARA QUEM ESTÁ CANSADO DE APOSTAR NO IMPROVISO</div>
-          <h1 class="headline">Descubra os segredos da Lotofácil. <em>Antes que o improviso cobre a conta.</em></h1>
-          <p class="dek">Você aposta, esquece quanto já gastou, decide em cima da hora e depois tenta reconstruir tudo de cabeça. O Kit mostra como sair desse ciclo: limite antes do jogo, critério na decisão e registro depois da aposta — sem números mágicos ou promessa de acerto.</p>
+          <div class="eyebrow">ORGANIZAÇÃO PARA QUEM JÁ APOSTA</div>
+          <h1 class="headline">Organize sua rotina na Lotofácil — <em>antes que o improviso pese no orçamento.</em></h1>
+          <p class="dek">Um kit digital para transformar decisões soltas em uma rotina mais clara: defina um limite, revise sua escolha e registre o que aconteceu. Sem números mágicos, sem promessa de acerto e sem assinatura.</p>
           <div class="hero-qualifier" aria-label="Características do Kit">
             <span>Material digital</span>
             <span>Pagamento único</span>
@@ -279,42 +296,46 @@
         </div>
 
         <div>
-          <img class="hero-visual" src="/manus-storage/lotofacil-hero-editorial_6fba3385.png" alt="Caderno e materiais de organização para apostas">
+          <img class="hero-visual" src="/manus-storage/lotofacil-hero-editorial_6fba3385.png" alt="Caderno e materiais de organização para apostas" onerror="this.hidden=true;this.nextElementSibling.hidden=false">
+          <div class="hero-visual-fallback" hidden aria-label="Ilustração abstrata de organização de rotina"><div><strong>Limite. Critério. Registro.</strong><span>Uma rotina simples para decidir com mais clareza.</span></div></div>
           <section class="offer-card" aria-labelledby="offer-title">
             <div class="eyebrow">KIT COMPLETO · ACESSO DIGITAL</div>
-            <h2 id="offer-title">Pare de decidir no impulso.</h2>
-            <p>Descubra o que muda quando você para de confiar na memória e começa a seguir um processo antes, durante e depois de cada concurso.</p>
+            <h2 id="offer-title">Uma rotina mais clara começa antes do próximo concurso.</h2>
+            <p>Você recebe ferramentas prontas para organizar limite, escolha, registro e bolão em um só lugar.</p>
             <ul class="offer-list">
-              <li>Guia para sair do improviso e estruturar sua rotina</li>
-              <li>Planilha para parar de perder a conta dos gastos</li>
-              <li>Checklist para não decidir tudo na última hora</li>
-              <li>Orçamento mensal + bônus para evitar confusão no bolão</li>
+              <li>Guia direto para estruturar sua rotina</li>
+              <li>Planilha para visualizar gastos e limites</li>
+              <li>Checklist para revisar cada decisão</li>
+              <li>Orçamento mensal e bônus para organizar o bolão</li>
             </ul>
             <div class="offer-price">
               <small>Pagamento único<br>Sem recorrência</small>
               <strong>R$ 29,90</strong>
             </div>
-            <button class="cta" type="button" onclick="checkout()">Quero parar de apostar no escuro →</button>
-            <p class="microcopy">Acesso liberado após a confirmação do pagamento.</p>
+            <button class="cta" type="button" onclick="checkout()">Quero organizar minha rotina →</button>
+            <p class="microcopy">Pagamento único · acesso digital após a confirmação.</p>
+            <div class="checkout-help" role="status">O checkout ainda não foi conectado. Configure a constante <code>CHECKOUT_URL</code> antes de publicar.</div>
           </section>
         </div>
       </div>
     </section>
 
-    <section class="content">
+    <section class="content" id="conteudo">
       <div class="wrap content-grid">
         <article class="body">
-          <p class="lead">Você não precisa de mais uma promessa de “números quentes”. Precisa parar de chegar a cada concurso sem saber quanto pode gastar, por que está jogando e onde anotou a última aposta.</p>
-          <p>Quando cada jogo é uma decisão isolada, o mês vira uma sequência de pequenos gastos difíceis de enxergar. O Kit não controla o sorteio — controla o caos ao redor dele: orçamento, organização e acompanhamento.</p>
+          <p class="lead">O Kit não tenta prever o sorteio. Ele ajuda você a tomar decisões mais conscientes, enxergar seus gastos e manter uma rotina que caiba no orçamento definido por você.</p>
+          <p>Quando cada jogo é uma decisão isolada, o mês vira uma sequência de pequenos gastos difíceis de enxergar. Com limite, checklist e registro, fica mais fácil perceber quando você está seguindo o plano — e quando é melhor parar.</p>
+          <div class="value-note"><span aria-hidden="true">✓</span><span><b>O que muda na prática:</b> menos decisões de última hora, mais visibilidade sobre o orçamento e um lugar único para registrar sua rotina.</span></div>
 
           <h2 id="metodo">Os 3 pontos que tiram sua aposta <em>do improviso</em></h2>
-          <p class="section-intro">Se você sempre decide na última hora, não registra os gastos ou mistura dinheiro do mês com aposta, comece por uma sequência que torna esses problemas visíveis.</p>
+          <p class="section-intro">Uma sequência curta para tornar visíveis os três pontos que mais se perdem quando tudo fica na memória.</p>
           <div class="steps">
             <div class="steps-head">SAIA DO CICLO: DECIDIR · ESQUECER · REPETIR</div>
             <div class="step"><b>01</b><div><h3>Defina o limite antes da vontade</h3><p>Escolha o valor da sua rotina antes de pensar na combinação.</p></div></div>
             <div class="step"><b>02</b><div><h3>Escolha com critério, não no calor do momento</h3><p>Use o checklist para revisar sua decisão antes de fechar o volante.</p></div></div>
             <div class="step"><b>03</b><div><h3>Registre para não perder a conta</h3><p>Concentre jogos e custos em uma planilha e faça uma revisão mensal.</p></div></div>
           </div>
+          <a class="text-cta" href="#kit">Ver os recursos incluídos no Kit →</a>
 
           <h2>O detalhe que continua drenando seu orçamento: você não <em>registra</em></h2>
           <p>Sem registro, você não enxerga o padrão dos seus próprios gastos. Registrar não cria uma fórmula de acerto — cria o contexto necessário para perceber quando está seguindo um limite ou apenas repetindo o impulso.</p>
@@ -334,8 +355,9 @@
               <small>Material digital<br>Pagamento único · Sem assinatura</small>
               <strong>R$ 29,90</strong>
             </div>
-            <button class="cta" type="button" onclick="checkout()">Quero colocar minha rotina no controle →</button>
-            <div class="purchase-note">Acesso digital após a confirmação. Sem assinatura. As condições de eventual reembolso são apresentadas no checkout.</div>
+            <button class="cta" type="button" onclick="checkout()">Quero acessar o Kit por R$ 29,90 →</button>
+            <div class="checkout-help" role="status">O checkout ainda não foi conectado. Configure a constante <code>CHECKOUT_URL</code> antes de publicar.</div>
+            <div class="purchase-note">Acesso digital após a confirmação. Sem assinatura. Consulte as condições de eventual reembolso no checkout.</div>
           </section>
 
           <h2>Essa dor é familiar? Então veja se o Kit é <em>para você</em></h2>
@@ -362,7 +384,7 @@
     <section class="faq" id="duvidas">
       <div class="wrap">
         <div class="eyebrow">ANTES DE TOMAR A DECISÃO</div>
-        <h2>Antes de comprar,<br><em>leia isto.</em></h2>
+        <h2>Tire suas dúvidas<br><em>antes de decidir.</em></h2>
         <div class="faq-list">
           <details class="faq-item" open>
             <summary class="faq-q">O Kit promete aumentar as chances de ganhar? <span>⌄</span></summary>
@@ -396,8 +418,8 @@
       <div class="wrap">
         <div class="eyebrow" style="color:#ffd8d1">PRONTO PARA PARAR DE REPETIR O MESMO ERRO?</div>
         <h2>Você já sabe como termina quando aposta no improviso. <em>Agora faça diferente.</em></h2>
-        <p>Descubra os segredos de uma rotina mais organizada e pare de decidir, gastar e esquecer sem saber onde isso vai parar. R$ 29,90 em pagamento único.</p>
-        <button class="cta" type="button" onclick="checkout()">Quero mudar minha rotina agora →</button>
+        <p>Se você quer mais clareza para definir limites, revisar escolhas e registrar seus jogos, o Kit reúne tudo em um único material digital. R$ 29,90 em pagamento único.</p>
+        <button class="cta" type="button" onclick="checkout()">Quero conhecer o Kit →</button>
         <p class="microcopy">Sem promessa de acerto. Sem assinatura. Acesso digital após a confirmação do pagamento.</p>
       </div>
     </section>
@@ -406,14 +428,14 @@
   <footer class="footer">
     <div class="wrap">
       <p>Lotofácil no Controle · Conteúdo educacional independente sobre organização de rotina financeira para apostas. Sem vínculo com a Caixa Econômica Federal ou com a Lotofácil oficial.</p>
-      <p>© 2026</p>
+      <p>© 2026 · Material digital independente</p>
       <div class="safe-note">Loterias são jogos de azar. Jogue com responsabilidade. Se sentir que está perdendo o controle sobre o quanto aposta, ou apostando para recuperar perdas, pare e procure apoio especializado ou uma rede de confiança antes de continuar.</div>
     </div>
   </footer>
 
   <div class="mobile-cta" aria-label="Compra rápida no celular">
     <div><span>LIMITE + REGISTRO</span><strong>R$ 29,90</strong></div>
-    <button type="button" onclick="checkout()">Quero o Kit →</button>
+          <button type="button" onclick="checkout()">Quero o Kit por R$ 29,90 →</button>
   </div>
 
   <script>
@@ -424,7 +446,8 @@
         window.location.href = CHECKOUT_URL;
         return;
       }
-      alert('Insira o endereço real do checkout na constante CHECKOUT_URL antes de publicar a página.');
+      document.querySelectorAll('.checkout-help').forEach((el) => el.classList.add('is-visible'));
+      document.querySelector('.checkout-help.is-visible')?.scrollIntoView({behavior: 'smooth', block: 'center'});
     }
   </script>
 </body>
