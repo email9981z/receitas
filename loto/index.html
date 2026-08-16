@@ -356,6 +356,10 @@
     .guarantee { border: 1px solid #eadfc9; border-radius: 2px; }
     footer { border-top: 4px solid #2f2924; }
     .sticky-cta { border: 1px solid #443b34; border-radius: 3px; }
+    .urgency-bar { display: flex; align-items: center; gap: 9px; margin: 0 0 15px; padding: 10px 12px; color: #5e3f1e; background: var(--gold-tint); border-left: 3px solid var(--gold); font-size: 11px; line-height: 1.4; }
+    .urgency-bar strong { color: #76531f; font-weight: 900; white-space: nowrap; }
+    .video-card, #responsabilidade { display: none; }
+    .editorial-meta span:last-child { display: none; }
 
     @media (max-width: 720px) {
       .masthead { border-top-width: 3px; }
@@ -376,6 +380,9 @@
       .preview { border-radius: 2px; }
       .checkout { padding: 20px 15px; border-top-width: 2px; }
       .sticky-cta { border-radius: 3px; }
+      .urgency-bar { display: block; margin-bottom: 13px; padding: 9px 10px; font-size: 10px; }
+      .urgency-bar strong { display: block; margin-bottom: 2px; }
+      .editorial-meta span:last-child { display: none; }
     }
   </style>
 </head>
@@ -400,11 +407,10 @@
   <nav class="nav" aria-label="Navegação principal">
     <div class="wrap">
       <div class="nav-links">
-        <a class="active" href="#topo">Lotofácil</a>
+        <a class="active" href="#topo">Especial</a>
         <a href="#conteudo">O estudo</a>
-        <a href="#previas">Prévia</a>
-        <a href="#responsabilidade">Jogo responsável</a>
-        <a href="#faq">Perguntas</a>
+        <a href="#previas">O que inclui</a>
+        <a href="#faq">Dúvidas</a>
       </div>
       <a class="nav-cta" href="#checkout">Ver o estudo →</a>
     </div>
@@ -417,9 +423,12 @@
       <p class="dek">Um estudo digital, visual e direto para consultar resultados históricos, revisar combinações e tomar decisões dentro de um orçamento previamente definido — sem promessas de prêmio.</p>
 
       <div class="hero-actions">
-        <a class="primary-btn" href="#checkout">Ver o conteúdo completo <span aria-hidden="true">→</span></a>
+        <a class="primary-btn" href="#checkout">Acessar por R$ 47,90 <span aria-hidden="true">→</span></a>
         <span class="microtrust">Acesso digital imediato<br>Sem assinatura automática · garantia de 7 dias</span>
       </div>
+
+      <!-- Mantenha esta faixa somente se a data de revisão do preço for real e estiver documentada. -->
+      <div class="urgency-bar" role="note"><strong>Condição atual da oferta</strong><span>R$ 47,90 até 31 de agosto ou enquanto esta condição comercial estiver disponível.</span></div>
 
       <div class="editorial-meta">
         <span>Por <strong>Núcleo de Conteúdo Ponto de Vista</strong></span><span class="dot">·</span>
@@ -438,7 +447,7 @@
         <div class="offer-price">
           <strong>R$ 47,90</strong>
           <span>Acesso único · sem mensalidade</span>
-          <a class="primary-btn" href="#checkout">Ver oferta</a>
+          <a class="primary-btn" href="#checkout">Acessar por R$ 47,90</a>
         </div>
       </section>
 
@@ -497,10 +506,10 @@
         <p>Um estudo para organizar critérios e limites pessoais de jogo. Não oferece números vencedores, promessa de retorno ou qualquer garantia de resultado em loteria.</p>
         <div class="checkout-benefits"><span>PDF + arquivos complementares</span><span>Envio por e-mail</span><span>Compra única</span><span>Garantia de 7 dias</span></div>
         <div class="payment-box">
-          <div class="payment-label">Oferta de acesso ao estudo</div>
+          <div class="payment-label">Condição atual da oferta</div>
           <div class="price-row"><strong>R$ 47,90</strong></div>
           <p class="installment">ou até 3x de R$ 15,97 sem juros · Pix, cartão ou boleto</p>
-          <a class="payment-btn" href="COLOQUE_AQUI_O_LINK_REAL_DO_CHECKOUT">Acessar o estudo →</a>
+          <a class="payment-btn" href="COLOQUE_AQUI_O_LINK_REAL_DO_CHECKOUT">Acessar por R$ 47,90 →</a>
           <p class="payment-note">Produto digital para maiores de 18 anos. Confira as informações e o valor final no checkout antes de concluir a compra.</p>
         </div>
         <div class="guarantee"><b>✓</b><span><strong>Garantia de 7 dias.</strong> Se o material não for adequado para você, consulte os termos da oferta e solicite o cancelamento pelo canal de suporte informado.</span></div>
@@ -519,8 +528,8 @@
   </footer>
 
   <div class="sticky-cta" id="stickyCta">
-    <span>Estudo Lotofácil · acesso digital</span>
-    <a href="#checkout">Acessar estudo</a>
+    <span>Estudo Lotofácil · R$ 47,90</span>
+    <a href="#checkout">Acessar agora</a>
     <button class="sticky-close" type="button" aria-label="Fechar barra fixa" onclick="document.getElementById('stickyCta').classList.add('hidden')">×</button>
   </div>
 </body>
