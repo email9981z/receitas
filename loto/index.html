@@ -268,6 +268,39 @@
       .sticky-cta span { font-size: 9px; }
       .sticky-cta a { padding-left: 9px; padding-right: 9px; font-size: 10px; }
     }
+    /* Enquadramento estrutural definitivo para mobile */
+    @media (max-width: 720px) {
+      main { width: 100%; padding-left: 0; padding-right: 0; }
+      main > .article { width: calc(100% - 32px); max-width: none; margin-left: auto; margin-right: auto; }
+      .article > * { max-width: 100%; }
+      .nav .wrap { width: 100%; max-width: none; }
+      .topline .wrap, .masthead .wrap { width: calc(100% - 32px); }
+      .editorial-meta { display: block; }
+      .editorial-meta span { display: inline; }
+      .editorial-meta span + span::before { content: ' · '; color: var(--soft); }
+      .editorial-meta .dot { display: none; }
+      .offer-strip { display: block; width: 100%; }
+      .offer-price { display: flex; align-items: center; justify-content: space-between; gap: 10px; width: 100%; margin-top: 12px; text-align: left; }
+      .offer-price strong, .offer-price span { display: inline; }
+      .offer-price span { flex: 1; }
+      .section, .video-card, .checkout { width: 100%; }
+      .included { width: 100%; }
+      .preview-grid { display: flex; width: 100%; margin: 18px 0 0; padding: 0 0 8px; gap: 10px; overflow-x: auto; }
+      .preview { flex: 0 0 calc(100% - 28px); width: calc(100% - 28px); }
+      .preview-page { width: 100%; }
+      .checkout-benefits span { min-width: 0; }
+      .payment-box { width: 100%; }
+      .price-row { align-items: baseline; }
+      .sticky-cta { width: auto; }
+    }
+    @media (max-width: 390px) {
+      main > .article { width: calc(100% - 24px); }
+      .topline .wrap, .masthead .wrap { width: calc(100% - 24px); }
+      .nav .wrap { padding-left: 12px; }
+      .offer-price { align-items: flex-start; flex-wrap: wrap; }
+      .offer-price span { flex-basis: 100%; order: 3; }
+      .preview { flex-basis: calc(100% - 18px); width: calc(100% - 18px); }
+    }
   </style>
 </head>
 <body>
