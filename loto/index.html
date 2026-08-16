@@ -117,7 +117,7 @@
     .video-card { position: relative; margin: 38px 0; overflow: hidden; border-radius: var(--radius); background: var(--ink); }
     .video-card img { width: 100%; aspect-ratio: 16/8.5; display: block; object-fit: cover; opacity: .66; filter: saturate(.75); }
     .video-overlay { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: flex-end; padding: 25px; background: linear-gradient(transparent 25%, rgba(0,0,0,.72)); color: #fff; }
-    .play { width: 42px; height: 42px; display: grid; place-items: center; margin-bottom: auto; color: var(--red); background: #fff; border-radius: 50%; font-size: 15px; }
+    .topic-tag { display: inline-flex; align-items: center; align-self: flex-start; margin-bottom: auto; padding: 6px 8px; color: var(--ink); background: #fff; border-radius: 3px; font-size: 9px; font-weight: 900; letter-spacing: .08em; }
     .video-overlay strong { max-width: 500px; font: 600 clamp(19px, 2.7vw, 26px)/1.2 'Source Serif 4', Georgia, serif; }
     .video-overlay small { margin-top: 8px; color: #e3d8cc; font-size: 10.5px; }
 
@@ -216,7 +216,7 @@
       .video-card { margin: 29px 0; }
       .video-card img { aspect-ratio: 16 / 9; }
       .video-overlay { padding: 17px; }
-      .play { width: 35px; height: 35px; font-size: 12px; }
+      .topic-tag { padding: 5px 7px; font-size: 8px; }
       .video-overlay strong { font-size: 20px; }
       .video-overlay small { font-size: 9.5px; }
       .faq summary { min-height: 52px; padding: 14px 0; font-size: 13px; }
@@ -301,6 +301,82 @@
       .offer-price span { flex-basis: 100%; order: 3; }
       .preview { flex-basis: calc(100% - 18px); width: calc(100% - 18px); }
     }
+    /* Refinamento visual editorial */
+    :root {
+      --paper: #fffdfa;
+      --paper-alt: #f6f3ee;
+      --paper-deep: #e9e2d8;
+      --ink: #1f1c19;
+      --muted: #6e665d;
+      --soft: #91867a;
+      --line: #ded8cf;
+      --red: #a92720;
+      --red-deep: #741812;
+      --red-tint: #f8ece9;
+      --gold: #95702d;
+      --gold-tint: #f4eddf;
+      --shadow: 0 10px 28px rgba(39, 29, 20, .055);
+    }
+    body { background: var(--paper); }
+    .masthead { position: relative; color: var(--ink); background: var(--paper); border-top: 4px solid var(--red); border-bottom: 1px solid var(--line); }
+    .masthead .wrap { min-height: 72px; }
+    .brand { color: var(--ink); }
+    .brand-mark { border-color: var(--red); }
+    .brand-mark::after { background: var(--red); }
+    .masthead-note { color: var(--muted); }
+    .masthead-note b { color: var(--ink); }
+    .nav { background: var(--paper); }
+    .nav-links a { font-size: 11.5px; letter-spacing: .01em; }
+    main { background: linear-gradient(180deg, #fffdfa 0%, #fcfaf7 100%); }
+    .article { width: min(780px, 100%); }
+    .sponsored-label { font-size: 10px; letter-spacing: .13em; }
+    h1 { max-width: 740px; font-weight: 600; letter-spacing: -.045em; }
+    .dek { max-width: 670px; color: #514941; }
+    .hero { border: 1px solid var(--line); border-radius: 2px; }
+    .caption { max-width: 620px; }
+    .offer-strip { padding: 25px 26px; background: #f7f3ed; border: 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); border-left: 3px solid var(--red); border-radius: 0; }
+    .offer-strip h2 { font-size: 23px; }
+    .offer-price strong { font-size: 29px; }
+    .section { margin: 54px 0; }
+    .section h2 { font-size: 31px; letter-spacing: -.025em; }
+    .included { padding: 30px 0; background: transparent; border: 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); border-radius: 0; }
+    .included h2 { margin-bottom: 8px; }
+    .included h2::after { content: '  ·  material digital'; color: var(--soft); font: 400 12px Archivo, Arial, sans-serif; letter-spacing: .02em; }
+    .benefit-grid { gap: 0 28px; }
+    .benefit { padding: 19px 0; background: transparent; border: 0; border-top: 1px solid var(--line); border-radius: 0; }
+    .benefit-icon { width: auto; height: auto; margin-bottom: 9px; color: var(--red); background: transparent; border-radius: 0; font: 700 12px 'Source Serif 4', Georgia, serif; }
+    .benefit h3 { font-size: 14px; letter-spacing: -.01em; }
+    .preview { min-height: 214px; background: #fff; border: 1px solid var(--line); border-radius: 2px; box-shadow: none; }
+    .preview-page { background: #f8f5f0; }
+    .video-card { border-radius: 2px; }
+    .faq { border-top: 1px solid var(--line); padding-top: 26px; }
+    .faq h2 { margin-bottom: 8px; }
+    .checkout { padding: 31px; background: #f7f3ed; border-top: 3px solid var(--red); border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); border-left: 1px solid var(--line); border-radius: 2px; box-shadow: none; }
+    .payment-box { background: var(--red); border-radius: 2px; }
+    .guarantee { border: 1px solid #eadfc9; border-radius: 2px; }
+    footer { border-top: 4px solid #2f2924; }
+    .sticky-cta { border: 1px solid #443b34; border-radius: 3px; }
+
+    @media (max-width: 720px) {
+      .masthead { border-top-width: 3px; }
+      .masthead .wrap { min-height: 60px; }
+      .brand { font-size: 19px; }
+      .nav-links a { font-size: 10.5px; }
+      main { background: var(--paper); }
+      h1 { letter-spacing: -.035em; }
+      .offer-strip { padding: 17px 14px; border-left-width: 2px; }
+      .offer-strip h2 { font-size: 18px; }
+      .section { margin: 38px 0; }
+      .section h2 { font-size: 26px; }
+      .included { padding: 22px 0; }
+      .included h2::after { display: none; }
+      .benefit-grid { gap: 0; }
+      .benefit { padding: 14px 0; }
+      .benefit-icon { font-size: 11px; }
+      .preview { border-radius: 2px; }
+      .checkout { padding: 20px 15px; border-top-width: 2px; }
+      .sticky-cta { border-radius: 3px; }
+    }
   </style>
 </head>
 <body>
@@ -341,7 +417,7 @@
       <p class="dek">Um estudo digital, visual e direto para consultar resultados históricos, revisar combinações e tomar decisões dentro de um orçamento previamente definido — sem promessas de prêmio.</p>
 
       <div class="hero-actions">
-        <a class="primary-btn" href="#checkout">Conhecer o estudo <span aria-hidden="true">→</span></a>
+        <a class="primary-btn" href="#checkout">Ver o conteúdo completo <span aria-hidden="true">→</span></a>
         <span class="microtrust">Acesso digital imediato<br>Sem assinatura automática · garantia de 7 dias</span>
       </div>
 
@@ -362,7 +438,7 @@
         <div class="offer-price">
           <strong>R$ 47,90</strong>
           <span>Acesso único · sem mensalidade</span>
-          <a class="primary-btn" href="#checkout">Ver conteúdo e preço</a>
+          <a class="primary-btn" href="#checkout">Ver oferta</a>
         </div>
       </section>
 
@@ -398,7 +474,7 @@
 
       <div class="video-card">
         <img src="https://noticiapage-hgpjqahm.manus.space/manus-storage/loteria-padroes-estudo_0eb88db0.jpg" alt="Padrões abstratos representando dados organizados">
-        <div class="video-overlay"><span class="play" aria-hidden="true">▶</span><strong>Por que histórico não transforma probabilidade em certeza</strong><small>Conteúdo explicativo · especial patrocinado</small></div>
+        <div class="video-overlay"><span class="topic-tag">LEITURA EXPLICATIVA</span><strong>Por que histórico não transforma probabilidade em certeza</strong><small>Especial patrocinado · conteúdo informativo</small></div>
       </div>
 
       <section class="section copy" id="responsabilidade">
@@ -409,25 +485,25 @@
       <section class="section faq" id="faq">
         <h2>Perguntas frequentes</h2>
         <details><summary>O material garante que vou ganhar?</summary><p>Não. Nenhum material altera a probabilidade de um sorteio. O estudo serve para organização, consulta e definição de limites pessoais.</p></details>
-        <details><summary>O que recebo depois da compra?</summary><p>Você recebe acesso digital ao material descrito nesta página após a confirmação do pagamento. Substitua este texto pelos detalhes reais de entrega, formato do arquivo e canal de suporte.</p></details>
-        <details><summary>Existe assinatura ou cobrança recorrente?</summary><p>Não. Esta oferta foi apresentada como compra única, sem assinatura automática. Mantenha essa informação somente se ela corresponder ao checkout real.</p></details>
-        <details><summary>Posso pedir reembolso?</summary><p>Informe aqui, com revisão jurídica, as condições reais para desistência e reembolso da compra digital, incluindo prazo, canal de solicitação e tempo de processamento.</p></details>
+        <details><summary>O que recebo depois da compra?</summary><p>Após a confirmação do pagamento, o acesso digital é enviado para o e-mail informado no checkout. O material inclui o estudo em PDF e os arquivos complementares descritos nesta página.</p></details>
+        <details><summary>Existe assinatura ou cobrança recorrente?</summary><p>Não. Esta oferta é apresentada como compra única, sem assinatura automática. Essa condição deve ser mantida no checkout real.</p></details>
+        <details><summary>Posso pedir reembolso?</summary><p>Sim. A oferta conta com garantia de 7 dias corridos. A solicitação deve ser feita pelo canal de suporte indicado nos termos da compra, conforme as condições aplicáveis ao produto digital.</p></details>
         <details><summary>Preciso ter conhecimento prévio?</summary><p>Não. O material foi planejado para linguagem simples e para pessoas que querem organizar seus próprios critérios sem depender de previsões.</p></details>
       </section>
 
       <section class="checkout" id="checkout">
         <div class="sponsored-label">Acesso digital</div>
-        <h2>Conheça o material completo e decida com calma.</h2>
+        <h2>Tenha o material completo para organizar seus próprios critérios.</h2>
         <p>Um estudo para organizar critérios e limites pessoais de jogo. Não oferece números vencedores, promessa de retorno ou qualquer garantia de resultado em loteria.</p>
-        <div class="checkout-benefits"><span>Compra única</span><span>Acesso digital</span><span>Sem assinatura automática</span><span>Garantia de 7 dias</span></div>
+        <div class="checkout-benefits"><span>PDF + arquivos complementares</span><span>Envio por e-mail</span><span>Compra única</span><span>Garantia de 7 dias</span></div>
         <div class="payment-box">
           <div class="payment-label">Oferta de acesso ao estudo</div>
-          <div class="price-row"><strong>R$ 47,90</strong><s>R$ 69,90</s></div>
+          <div class="price-row"><strong>R$ 47,90</strong></div>
           <p class="installment">ou até 3x de R$ 15,97 sem juros · Pix, cartão ou boleto</p>
           <a class="payment-btn" href="COLOQUE_AQUI_O_LINK_REAL_DO_CHECKOUT">Acessar o estudo →</a>
-          <p class="payment-note">Produto digital para maiores de 18 anos. O preço anterior deve ser mantido somente se tiver sido praticado de forma real e verificável.</p>
+          <p class="payment-note">Produto digital para maiores de 18 anos. Confira as informações e o valor final no checkout antes de concluir a compra.</p>
         </div>
-        <div class="guarantee"><b>✓</b><span><strong>Garantia de 7 dias.</strong> Descreva aqui as condições reais de cancelamento e reembolso, após validação do fluxo de pagamento e dos termos aplicáveis.</span></div>
+        <div class="guarantee"><b>✓</b><span><strong>Garantia de 7 dias.</strong> Se o material não for adequado para você, consulte os termos da oferta e solicite o cancelamento pelo canal de suporte informado.</span></div>
       </section>
     </article>
   </main>
@@ -438,13 +514,13 @@
         <div><h2>Ponto de Vista</h2><p>Conteúdo editorial e materiais digitais sobre informação, contexto e comportamento responsável. Este especial é publicidade identificada e não representa vínculo com a Caixa Econômica Federal.</p></div>
         <div class="footer-links"><a href="/sobre">Sobre o Ponto de Vista</a><a href="/termos">Termos de uso</a><a href="/privacidade">Política de privacidade</a><a href="mailto:suporte@seudominio.com">Fale com o suporte</a></div>
       </div>
-      <div class="footer-fine">Loteria é jogo de azar e cada sorteio é independente dos anteriores. Não garantimos resultado. Se o jogo deixar de ser lazer, procure apoio. Substitua os links, dados empresariais e e-mail pelos dados reais antes de publicar.</div>
+      <div class="footer-fine">Loteria é jogo de azar e cada sorteio é independente dos anteriores. Não garantimos resultado. Se o jogo deixar de ser lazer, procure apoio. Consulte os termos, a política de privacidade e o canal de suporte antes de concluir a compra.</div>
     </div>
   </footer>
 
   <div class="sticky-cta" id="stickyCta">
     <span>Estudo Lotofácil · acesso digital</span>
-    <a href="#checkout">Ver oferta</a>
+    <a href="#checkout">Acessar estudo</a>
     <button class="sticky-close" type="button" aria-label="Fechar barra fixa" onclick="document.getElementById('stickyCta').classList.add('hidden')">×</button>
   </div>
 </body>
