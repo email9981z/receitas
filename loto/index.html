@@ -297,7 +297,12 @@
       main > .article { width: calc(100% - 24px); }
       .topline .wrap, .masthead .wrap { width: calc(100% - 24px); }
       .nav .wrap { padding-left: 12px; }
+      .urgent-offer-banner .wrap { min-height: 59px; }
+      .urgent-offer-copy span { font-size: 9px; }
       .hero { max-height: 124px; aspect-ratio: 16 / 7.5; }
+      .urgency-bar { font-size: 9px; }
+      .countdown span { min-width: 19px; }
+      .countdown b { font-size: 12px; }
       .offer-price { align-items: flex-start; flex-wrap: wrap; }
       .offer-price span { flex-basis: 100%; order: 3; }
       .preview { flex-basis: calc(100% - 18px); width: calc(100% - 18px); }
@@ -358,13 +363,28 @@
     .guarantee { border: 1px solid #eadfc9; border-radius: 2px; }
     footer { border-top: 4px solid #2f2924; }
     .sticky-cta { border: 1px solid #443b34; border-radius: 3px; }
+    .urgent-offer-banner { color: #fff; background: var(--red); }
+    .urgent-offer-banner .wrap { min-height: 45px; display: flex; align-items: center; justify-content: space-between; gap: 15px; }
+    .urgent-offer-copy { display: flex; align-items: baseline; gap: 9px; min-width: 0; }
+    .urgent-offer-copy strong { font-size: 10px; letter-spacing: .1em; white-space: nowrap; }
+    .urgent-offer-copy span { color: #f8d9d4; font-size: 11px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .urgent-offer-banner .countdown { color: #fff; }
+    .urgent-offer-banner .countdown small { color: #f8d9d4; }
     .special-intro { background: #f7f4ef; border-bottom: 1px solid var(--line); }
     .special-intro .wrap { min-height: 34px; display: flex; align-items: center; gap: 10px; }
     .special-intro-label { color: var(--red); font-size: 9px; font-weight: 900; letter-spacing: .12em; }
     .special-intro-title { color: var(--muted); font: 500 12px 'Source Serif 4', Georgia, serif; }
     .special-intro-date { margin-left: auto; color: var(--soft); font-size: 9.5px; }
-    .urgency-bar { display: flex; align-items: center; gap: 9px; margin: 0 0 15px; padding: 10px 12px; color: #5e3f1e; background: var(--gold-tint); border-left: 3px solid var(--gold); font-size: 11px; line-height: 1.4; }
-    .urgency-bar strong { color: #76531f; font-weight: 900; white-space: nowrap; }
+    .urgency-bar { display: flex; align-items: center; justify-content: space-between; gap: 15px; margin: 0 0 15px; padding: 10px 12px; color: #5e3f1e; background: var(--gold-tint); border-left: 3px solid var(--gold); font-size: 11px; line-height: 1.4; }
+    .urgency-bar strong { display: block; margin-bottom: 2px; color: #76531f; font-weight: 900; }
+    .urgency-bar span { display: block; }
+    .countdown { display: flex; align-items: center; gap: 4px; flex: 0 0 auto; color: #76531f; }
+    .countdown span { min-width: 27px; text-align: center; }
+    .countdown b { display: block; font: 700 17px/1 'Source Serif 4', Georgia, serif; }
+    .countdown small { display: block; margin-top: 3px; font-size: 8px; text-transform: uppercase; }
+    .countdown i { font-style: normal; font-weight: 900; }
+    .countdown.expired { color: var(--muted); }
+    .countdown.expired b { font-size: 11px; }
     .video-card, #responsabilidade { display: none; }
     .editorial-meta span:last-child { display: none; }
 
@@ -373,6 +393,14 @@
       .masthead .wrap { min-height: 54px; }
       .brand { font-size: 19px; }
       .nav-links a { font-size: 10.5px; }
+      .urgent-offer-banner .wrap { min-height: 55px; padding-top: 8px; padding-bottom: 8px; }
+      .urgent-offer-copy { display: block; min-width: 0; }
+      .urgent-offer-copy strong { display: block; margin-bottom: 2px; font-size: 8.5px; }
+      .urgent-offer-copy span { display: block; font-size: 9.5px; }
+      .urgent-offer-banner .countdown { gap: 2px; }
+      .urgent-offer-banner .countdown span { min-width: 20px; }
+      .urgent-offer-banner .countdown b { font-size: 13px; }
+      .urgent-offer-banner .countdown small { font-size: 6.5px; }
       .special-intro .wrap { min-height: 31px; gap: 7px; }
       .special-intro-title { font-size: 10.5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
       .special-intro-date { display: none; }
@@ -394,8 +422,13 @@
       .preview { border-radius: 2px; }
       .checkout { padding: 20px 15px; border-top-width: 2px; }
       .sticky-cta { border-radius: 3px; }
-      .urgency-bar { display: block; margin-bottom: 13px; padding: 9px 10px; font-size: 10px; }
-      .urgency-bar strong { display: block; margin-bottom: 2px; }
+      .urgency-bar { display: flex; align-items: flex-start; gap: 8px; margin-bottom: 13px; padding: 9px 10px; font-size: 9.5px; }
+      .urgency-bar > div:first-child { min-width: 0; }
+      .urgency-bar strong { margin-bottom: 2px; }
+      .countdown { gap: 2px; }
+      .countdown span { min-width: 22px; }
+      .countdown b { font-size: 14px; }
+      .countdown small { font-size: 7px; }
       .editorial-meta span:last-child { display: none; }
     }
   </style>
@@ -438,6 +471,13 @@
     </div>
   </div>
 
+  <div class="urgent-offer-banner" role="note">
+    <div class="wrap">
+      <div class="urgent-offer-copy"><strong>ÚLTIMA CONDIÇÃO DE PREÇO</strong><span>R$ 47,90 até 31 de agosto. Depois disso, o valor poderá ser revisado.</span></div>
+      <div class="countdown countdown-top" aria-label="Tempo restante da condição atual"><span><b data-unit="days">00</b><small>dias</small></span><i>:</i><span><b data-unit="hours">00</b><small>h</small></span><i>:</i><span><b data-unit="minutes">00</b><small>min</small></span><i>:</i><span><b data-unit="seconds">00</b><small>s</small></span></div>
+    </div>
+  </div>
+
   <main id="topo">
     <article class="article">
       <figure class="hero-figure">
@@ -455,7 +495,10 @@
       </div>
 
       <!-- Mantenha esta faixa somente se a data de revisão do preço for real e estiver documentada. -->
-      <div class="urgency-bar" role="note"><strong>Condição atual da oferta</strong><span>R$ 47,90 até 31 de agosto ou enquanto esta condição comercial estiver disponível.</span></div>
+      <div class="urgency-bar" role="note">
+        <div><strong>Condição atual da oferta</strong><span>R$ 47,90 até 31 de agosto, conforme a política comercial desta oferta.</span></div>
+        <div class="countdown" aria-label="Tempo restante da condição atual"><span><b data-unit="days">00</b><small>dias</small></span><i>:</i><span><b data-unit="hours">00</b><small>h</small></span><i>:</i><span><b data-unit="minutes">00</b><small>min</small></span><i>:</i><span><b data-unit="seconds">00</b><small>s</small></span></div>
+      </div>
 
       <div class="editorial-meta">
         <span>Por <strong>Núcleo de Conteúdo Ponto de Vista</strong></span><span class="dot">·</span>
@@ -556,5 +599,28 @@
     <a href="#checkout">Acessar agora</a>
     <button class="sticky-close" type="button" aria-label="Fechar barra fixa" onclick="document.getElementById('stickyCta').classList.add('hidden')">×</button>
   </div>
+<script>
+  // Prazo fixo: altere somente se a condição comercial real da oferta mudar.
+  const OFFER_DEADLINE = '2026-08-31T23:59:59-03:00';
+  const countdown = document.querySelector('.countdown');
+  const deadline = new Date(OFFER_DEADLINE).getTime();
+  const countdowns = document.querySelectorAll('.countdown');
+  function updateCountdown() {
+    const distance = deadline - Date.now();
+    if (distance <= 0) {
+      countdowns.forEach((item) => { item.classList.add('expired'); item.innerHTML = '<span><b>Prazo encerrado</b></span>'; });
+      return;
+    }
+    const values = {
+      days: String(Math.floor(distance / 86400000)).padStart(2, '0'),
+      hours: String(Math.floor((distance % 86400000) / 3600000)).padStart(2, '0'),
+      minutes: String(Math.floor((distance % 3600000) / 60000)).padStart(2, '0'),
+      seconds: String(Math.floor((distance % 60000) / 1000)).padStart(2, '0')
+    };
+    countdowns.forEach((item) => item.querySelectorAll('[data-unit]').forEach((el) => { el.textContent = values[el.dataset.unit]; }));
+  }
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+</script>
 </body>
 </html>
