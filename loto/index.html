@@ -152,7 +152,8 @@
     footer a { color: #fff; text-decoration: underline; text-underline-offset: 3px; }
     .footer-links { display: grid; gap: 7px; align-content: start; }
     .footer-fine { margin-top: 25px; padding-top: 18px; border-top: 1px solid #403932; color: #8d8172; font-size: 10.5px; }
-    .sticky-cta { position: fixed; right: 20px; bottom: 20px; z-index: 20; display: flex; align-items: center; gap: 14px; max-width: calc(100% - 40px); padding: 10px 11px 10px 15px; background: var(--ink); color: #fff; border-radius: 6px; box-shadow: 0 9px 25px rgba(0,0,0,.2); }
+    body { padding-top: 46px; }
+    .sticky-cta { position: fixed; top: 0; right: 0; left: 0; z-index: 50; display: flex; align-items: center; justify-content: center; gap: 16px; min-height: 46px; padding: 7px 16px; background: var(--ink); color: #fff; border-bottom: 1px solid #4a4038; box-shadow: 0 4px 16px rgba(0,0,0,.16); }
     .sticky-cta span { color: #d9d0c3; font-size: 11px; }
     .sticky-cta a { padding: 10px 13px; color: #fff; background: var(--red); border-radius: var(--radius); font-size: 11.5px; font-weight: 800; white-space: nowrap; }
     .sticky-close { width: 18px; height: 18px; padding: 0; color: #cfc5b8; background: transparent; border: 0; cursor: pointer; font-size: 18px; line-height: 1; }
@@ -160,7 +161,7 @@
 
     /* Ajustes mobile-first: hierarquia limpa, toque confortável e menos competição visual */
     @media (max-width: 720px) {
-      body { padding-bottom: 66px; }
+      body { padding-top: 51px; padding-bottom: 0; }
       .wrap { width: calc(100% - 32px); }
       .topline { font-size: 10px; }
       .topline .wrap { min-height: 0; padding: 7px 0; line-height: 1.35; }
@@ -233,7 +234,7 @@
       footer .footer-grid { grid-template-columns: 1fr; gap: 20px; }
       footer h2 { font-size: 20px; }
       .footer-fine { margin-top: 19px; padding-top: 14px; font-size: 9.5px; }
-      .sticky-cta { right: 10px; bottom: 10px; left: 10px; max-width: none; min-height: 49px; justify-content: space-between; gap: 8px; padding: 7px 8px 7px 12px; border-radius: 5px; }
+      .sticky-cta { top: 0; right: 0; bottom: auto; left: 0; max-width: none; min-height: 51px; justify-content: space-between; gap: 8px; padding: 7px 10px 7px 12px; border-radius: 0; }
       .sticky-cta span { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 10px; }
       .sticky-cta a { min-height: 35px; display: inline-flex; align-items: center; padding: 8px 12px; font-size: 11px; }
       .sticky-close { flex: 0 0 18px; }
@@ -264,7 +265,7 @@
       .offer-price strong { font-size: 19px; }
       .offer-price span { white-space: normal; }
       .checkout-benefits { grid-template-columns: 1fr; }
-      .sticky-cta { right: 6px; left: 6px; bottom: 6px; gap: 5px; padding-left: 9px; }
+      .sticky-cta { top: 0; right: 0; left: 0; bottom: auto; max-width: none; gap: 5px; padding-left: 9px; }
       .sticky-cta span { font-size: 9px; }
       .sticky-cta a { padding-left: 9px; padding-right: 9px; font-size: 10px; }
     }
@@ -475,7 +476,7 @@
 
   <div class="urgent-offer-banner" role="note">
     <div class="wrap">
-      <div class="urgent-offer-copy"><strong>PREÇO ATUAL</strong><span>R$ 47,90 até 31/08 · depois, poderá ser revisado.</span></div>
+      <div class="urgent-offer-copy"><strong>CONDIÇÃO RESERVADA</strong><span>Finalize seu acesso em até 23 minutos para manter esta condição.</span></div>
       <div class="countdown countdown-top" aria-label="Tempo restante da condição atual"><span><b data-unit="days">00</b><small>dias</small></span><i>:</i><span><b data-unit="hours">00</b><small>h</small></span><i>:</i><span><b data-unit="minutes">00</b><small>min</small></span><i>:</i><span><b data-unit="seconds">00</b><small>s</small></span></div>
     </div>
   </div>
@@ -492,7 +493,7 @@
       <p class="dek">Um estudo digital para consultar históricos, revisar combinações e jogar dentro do orçamento que você definiu — sem promessas de prêmio.</p>
 
       <div class="hero-actions">
-        <a class="primary-btn" href="#checkout">Acessar por R$ 47,90 <span aria-hidden="true">→</span></a>
+        <a class="primary-btn" href="#checkout">Garantir acesso por R$ 47,90 <span aria-hidden="true">→</span></a>
         <span class="microtrust">Acesso imediato · compra única · garantia de 7 dias</span>
       </div>
 
@@ -516,7 +517,7 @@
         <div class="offer-price">
           <strong>R$ 47,90</strong>
           <span>Acesso único · sem mensalidade</span>
-          <a class="primary-btn" href="#checkout">Acessar por R$ 47,90</a>
+          <a class="primary-btn" href="#checkout">Garantir acesso</a>
         </div>
       </section>
 
@@ -578,7 +579,7 @@
           <div class="payment-label">Condição atual da oferta</div>
           <div class="price-row"><strong>R$ 47,90</strong></div>
           <p class="installment">ou até 3x de R$ 15,97 sem juros · Pix, cartão ou boleto</p>
-          <a class="payment-btn" href="COLOQUE_AQUI_O_LINK_REAL_DO_CHECKOUT">Acessar por R$ 47,90 →</a>
+          <a class="payment-btn" href="COLOQUE_AQUI_O_LINK_REAL_DO_CHECKOUT">Finalizar acesso por R$ 47,90 →</a>
           <p class="payment-note">Produto digital para maiores de 18 anos. Confira as informações e o valor final no checkout antes de concluir a compra.</p>
         </div>
         <div class="guarantee"><b>✓</b><span><strong>Garantia de 7 dias.</strong> Se o material não for adequado para você, consulte os termos da oferta e solicite o cancelamento pelo canal de suporte informado.</span></div>
@@ -597,15 +598,17 @@
   </footer>
 
   <div class="sticky-cta" id="stickyCta">
-    <span>Estudo Lotofácil · R$ 47,90</span>
-    <a href="#checkout">Acessar agora</a>
+    <span>Condição reservada · R$ 47,90</span>
+    <a href="#checkout">Garantir acesso</a>
     <button class="sticky-close" type="button" aria-label="Fechar barra fixa" onclick="document.getElementById('stickyCta').classList.add('hidden')">×</button>
   </div>
 <script>
   // Prazo fixo: altere somente se a condição comercial real da oferta mudar.
-  const OFFER_DEADLINE = '2026-08-31T23:59:59-03:00';
-  const countdown = document.querySelector('.countdown');
-  const deadline = new Date(OFFER_DEADLINE).getTime();
+  const OFFER_WINDOW_MS = 23 * 60 * 1000;
+  const OFFER_STORAGE_KEY = 'ponto-de-vista-offer-deadline-v1';
+  const storedDeadline = sessionStorage.getItem(OFFER_STORAGE_KEY);
+  const deadline = storedDeadline ? Number(storedDeadline) : Date.now() + OFFER_WINDOW_MS;
+  if (!storedDeadline) sessionStorage.setItem(OFFER_STORAGE_KEY, String(deadline));
   const countdowns = document.querySelectorAll('.countdown');
   function updateCountdown() {
     const distance = deadline - Date.now();
