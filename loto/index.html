@@ -152,8 +152,8 @@
     footer a { color: #fff; text-decoration: underline; text-underline-offset: 3px; }
     .footer-links { display: grid; gap: 7px; align-content: start; }
     .footer-fine { margin-top: 25px; padding-top: 18px; border-top: 1px solid #403932; color: #8d8172; font-size: 10.5px; }
-    body { padding-top: 46px; }
-    .sticky-cta { position: fixed; top: 0; right: 0; left: 0; z-index: 50; display: flex; align-items: center; justify-content: center; gap: 16px; min-height: 46px; padding: 7px 16px; background: var(--ink); color: #fff; border-bottom: 1px solid #4a4038; box-shadow: 0 4px 16px rgba(0,0,0,.16); }
+    body { padding-top: 0; }
+    .sticky-cta { display: none !important; }
     .sticky-cta span { color: #d9d0c3; font-size: 11px; }
     .sticky-cta a { padding: 10px 13px; color: #fff; background: var(--red); border-radius: var(--radius); font-size: 11.5px; font-weight: 800; white-space: nowrap; }
     .sticky-close { width: 18px; height: 18px; padding: 0; color: #cfc5b8; background: transparent; border: 0; cursor: pointer; font-size: 18px; line-height: 1; }
@@ -161,7 +161,7 @@
 
     /* Ajustes mobile-first: hierarquia limpa, toque confortável e menos competição visual */
     @media (max-width: 720px) {
-      body { padding-top: 51px; padding-bottom: 0; }
+      body { padding-top: 0; padding-bottom: 0; }
       .wrap { width: calc(100% - 32px); }
       .topline { font-size: 10px; }
       .topline .wrap { min-height: 0; padding: 7px 0; line-height: 1.35; }
@@ -298,8 +298,8 @@
       main > .article { width: calc(100% - 24px); }
       .topline .wrap, .masthead .wrap { width: calc(100% - 24px); }
       .nav .wrap { padding-left: 12px; }
-      .urgent-offer-banner .wrap { min-height: 59px; }
-      .urgent-offer-copy span { font-size: 9px; }
+      .urgent-offer-banner .wrap { width: calc(100% - 24px); }
+      .urgent-offer-copy span { font-size: 8.5px; }
       .hero { max-height: 124px; aspect-ratio: 16 / 7.5; }
       .urgency-bar { font-size: 9px; }
       .countdown span { min-width: 19px; }
@@ -364,13 +364,13 @@
     .guarantee { border: 1px solid #eadfc9; border-radius: 2px; }
     footer { border-top: 4px solid #2f2924; }
     .sticky-cta { border: 1px solid #443b34; border-radius: 3px; }
-    .urgent-offer-banner { color: #fff; background: var(--red); }
-    .urgent-offer-banner .wrap { min-height: 45px; display: flex; align-items: center; justify-content: space-between; gap: 15px; }
-    .urgent-offer-copy { display: flex; align-items: baseline; gap: 9px; min-width: 0; }
-    .urgent-offer-copy strong { font-size: 10px; letter-spacing: .1em; white-space: nowrap; }
-    .urgent-offer-copy span { color: #f8d9d4; font-size: 11px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-    .urgent-offer-banner .countdown { color: #fff; }
-    .urgent-offer-banner .countdown small { color: #f8d9d4; }
+    .urgent-offer-banner { background: transparent; }
+    .urgent-offer-banner .wrap { width: min(780px, calc(100% - 44px)); min-height: 0; display: flex; align-items: center; justify-content: space-between; gap: 18px; margin: 18px auto 0; padding: 12px 14px; color: var(--ink); background: #f7f3ed; border: 1px solid var(--line); border-left: 3px solid var(--red); border-radius: 6px; }
+    .urgent-offer-copy { min-width: 0; }
+    .urgent-offer-copy strong { display: block; margin-bottom: 3px; color: var(--red); font-size: 9px; letter-spacing: .1em; }
+    .urgent-offer-copy span { display: block; color: var(--muted); font-size: 11px; line-height: 1.35; }
+    .urgent-offer-banner .countdown { padding: 7px 9px; color: var(--ink); background: #fff; border: 1px solid var(--line); border-radius: 4px; }
+    .urgent-offer-banner .countdown small { color: var(--muted); }
     .special-intro { background: #f7f4ef; border-bottom: 1px solid var(--line); }
     .special-intro .wrap { min-height: 34px; display: flex; align-items: center; gap: 10px; }
     .special-intro-label { color: var(--red); font-size: 9px; font-weight: 900; letter-spacing: .12em; }
@@ -395,14 +395,14 @@
       .masthead .wrap { min-height: 54px; }
       .brand { font-size: 19px; }
       .nav-links a { font-size: 10.5px; }
-      .urgent-offer-banner .wrap { min-height: 55px; padding-top: 8px; padding-bottom: 8px; }
+      .urgent-offer-banner .wrap { width: calc(100% - 32px); min-height: 0; margin-top: 13px; padding: 10px; gap: 9px; border-left-width: 2px; border-radius: 5px; }
       .urgent-offer-copy { display: block; min-width: 0; }
-      .urgent-offer-copy strong { display: block; margin-bottom: 2px; font-size: 8.5px; }
-      .urgent-offer-copy span { display: block; font-size: 9.5px; }
-      .urgent-offer-banner .countdown { gap: 2px; }
-      .urgent-offer-banner .countdown span { min-width: 20px; }
-      .urgent-offer-banner .countdown b { font-size: 13px; }
-      .urgent-offer-banner .countdown small { font-size: 6.5px; }
+      .urgent-offer-copy strong { margin-bottom: 2px; font-size: 8px; letter-spacing: .08em; }
+      .urgent-offer-copy span { font-size: 9px; line-height: 1.3; }
+      .urgent-offer-banner .countdown { gap: 1px; padding: 6px 5px; }
+      .urgent-offer-banner .countdown span { min-width: 18px; }
+      .urgent-offer-banner .countdown b { font-size: 12px; }
+      .urgent-offer-banner .countdown small { font-size: 6px; }
       .special-intro .wrap { min-height: 31px; gap: 7px; }
       .special-intro-title { font-size: 10.5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
       .special-intro-date { display: none; }
@@ -476,7 +476,7 @@
 
   <div class="urgent-offer-banner" role="note">
     <div class="wrap">
-      <div class="urgent-offer-copy"><strong>CONDIÇÃO RESERVADA</strong><span>Finalize seu acesso em até 23 minutos para manter esta condição.</span></div>
+      <div class="urgent-offer-copy"><strong>CONDIÇÃO ATUAL DA OFERTA</strong><span>Conclua o acesso em até 23 minutos para manter esta condição.</span></div>
       <div class="countdown countdown-top" aria-label="Tempo restante da condição atual"><span><b data-unit="days">00</b><small>dias</small></span><i>:</i><span><b data-unit="hours">00</b><small>h</small></span><i>:</i><span><b data-unit="minutes">00</b><small>min</small></span><i>:</i><span><b data-unit="seconds">00</b><small>s</small></span></div>
     </div>
   </div>
@@ -597,12 +597,7 @@
     </div>
   </footer>
 
-  <div class="sticky-cta" id="stickyCta">
-    <span>Condição reservada · R$ 47,90</span>
-    <a href="#checkout">Garantir acesso</a>
-    <button class="sticky-close" type="button" aria-label="Fechar barra fixa" onclick="document.getElementById('stickyCta').classList.add('hidden')">×</button>
-  </div>
-<script>
+  <script>
   // Prazo fixo: altere somente se a condição comercial real da oferta mudar.
   const OFFER_WINDOW_MS = 23 * 60 * 1000;
   const OFFER_STORAGE_KEY = 'ponto-de-vista-offer-deadline-v1';
