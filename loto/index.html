@@ -158,26 +158,85 @@
     .sticky-close { width: 18px; height: 18px; padding: 0; color: #cfc5b8; background: transparent; border: 0; cursor: pointer; font-size: 18px; line-height: 1; }
     .hidden { display: none; }
 
+    /* Ajustes mobile-first: hierarquia limpa, toque confortável e menos competição visual */
     @media (max-width: 720px) {
-      .wrap { width: min(100% - 32px, 760px); }
-      .topline .wrap { min-height: 0; padding: 8px 0; line-height: 1.45; }
+      body { padding-bottom: 66px; }
+      .wrap { width: calc(100% - 32px); }
+      .topline { font-size: 10px; }
+      .topline .wrap { min-height: 0; padding: 7px 0; line-height: 1.35; }
       .topline a { display: none; }
-      .masthead .wrap { min-height: 68px; }
+      .masthead .wrap { min-height: 61px; }
+      .brand { font-size: 20px; }
+      .brand-mark { width: 24px; height: 24px; }
+      .brand-mark::after { width: 7px; height: 7px; }
       .masthead-note { display: none; }
-      .nav .wrap { width: 100%; padding-left: 16px; }
-      .nav-links { gap: 19px; }
-      .nav-cta { margin-right: 16px; font-size: 11px; }
-      main { padding-top: 36px; }
+      .nav .wrap { width: 100%; min-height: 45px; padding-left: 16px; gap: 0; }
+      .nav-links { flex: 1; gap: 21px; min-width: 0; }
+      .nav-links a { padding: 14px 0 11px; font-size: 11px; }
+      .nav-cta { display: none; }
+      main { padding: 30px 0 45px; }
       .article { width: 100%; }
-      .offer-strip { grid-template-columns: 1fr; gap: 14px; }
-      .offer-price { text-align: left; }
-      .offer-strip .primary-btn { margin-top: 10px; }
-      .benefit-grid, .preview-grid { grid-template-columns: 1fr; }
-      .preview { min-height: 0; }
-      footer .footer-grid { grid-template-columns: 1fr; gap: 25px; }
-      .sticky-cta { right: 10px; bottom: 10px; left: 10px; max-width: none; justify-content: space-between; }
-      .sticky-cta span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-      .sticky-cta a { flex: 0 0 auto; }
+      .sponsored-label { margin-bottom: 12px; font-size: 9.5px; letter-spacing: .075em; }
+      .sponsored-label::before { width: 6px; height: 6px; }
+      h1 { margin-bottom: 14px; font-size: clamp(32px, 9.2vw, 42px); line-height: 1.04; letter-spacing: -.03em; }
+      .dek { font-size: 18px; line-height: 1.45; }
+      .hero-actions { display: block; margin: 22px 0 14px; }
+      .hero-actions .primary-btn { width: 100%; min-height: 49px; }
+      .microtrust { display: block; margin-top: 10px; text-align: center; font-size: 10.5px; }
+      .editorial-meta { gap: 5px 8px; padding: 12px 0; font-size: 10px; line-height: 1.4; }
+      .editorial-meta .dot { display: none; }
+      .hero { aspect-ratio: 16 / 9; margin: 18px 0 7px; border-radius: 3px; }
+      .caption { margin-bottom: 24px; font-size: 9.5px; }
+      .offer-strip { grid-template-columns: 1fr auto; gap: 12px; margin: 0 0 31px; padding: 16px; border-left-width: 3px; }
+      .offer-strip h2 { margin-bottom: 4px; font-size: 18px; line-height: 1.15; }
+      .offer-strip p { font-size: 10.5px; line-height: 1.4; }
+      .offer-price { text-align: right; }
+      .offer-price strong { font-size: 22px; }
+      .offer-price span { font-size: 9px; }
+      .offer-strip .primary-btn { display: none; }
+      .section { margin: 34px 0; }
+      .section h2 { margin-bottom: 12px; font-size: 25px; line-height: 1.13; }
+      .section-intro { margin-bottom: 17px; font-size: 12.5px; line-height: 1.55; }
+      .copy p { margin-bottom: 17px; font-size: 17px; line-height: 1.58; }
+      .warning { margin: 22px 0; padding: 14px 15px; }
+      .warning p { font-size: 12.5px; line-height: 1.5; }
+      .included { padding: 18px 15px; }
+      .included h2 { margin-bottom: 14px; }
+      .benefit-grid { grid-template-columns: 1fr; gap: 9px; }
+      .benefit { display: grid; grid-template-columns: 27px 1fr; column-gap: 10px; padding: 13px; }
+      .benefit-icon { grid-row: span 2; margin: 0; width: 27px; height: 27px; font-size: 10px; }
+      .benefit h3 { align-self: end; margin: 0 0 3px; font-size: 13px; }
+      .benefit p { align-self: start; font-size: 11px; line-height: 1.4; }
+      .preview-grid { display: flex; overflow-x: auto; gap: 10px; margin: 18px -16px 0; padding: 0 16px 8px; scroll-snap-type: x mandatory; scrollbar-width: none; }
+      .preview-grid::-webkit-scrollbar { display: none; }
+      .preview { flex: 0 0 78%; min-height: 0; padding: 11px; scroll-snap-align: start; }
+      .preview-page { height: 112px; padding: 12px; }
+      .preview strong { margin-top: 9px; font-size: 11.5px; }
+      .preview span { font-size: 10px; }
+      .video-card { margin: 29px 0; }
+      .video-card img { aspect-ratio: 16 / 9; }
+      .video-overlay { padding: 17px; }
+      .play { width: 35px; height: 35px; font-size: 12px; }
+      .video-overlay strong { font-size: 20px; }
+      .video-overlay small { font-size: 9.5px; }
+      .faq summary { min-height: 52px; padding: 14px 0; font-size: 13px; }
+      .faq details p { margin-bottom: 14px; font-size: 12px; line-height: 1.55; }
+      .checkout { margin-top: 37px; padding: 20px 15px; border-top-width: 3px; box-shadow: none; }
+      .checkout h2 { font-size: 26px; }
+      .checkout > p { font-size: 14px; line-height: 1.5; }
+      .checkout-benefits { display: grid; grid-template-columns: 1fr 1fr; gap: 7px 10px; margin-bottom: 16px; font-size: 10px; }
+      .payment-box { padding: 18px 15px; }
+      .price-row strong { font-size: 30px; }
+      .payment-btn { min-height: 49px; padding: 15px 10px; font-size: 13px; }
+      .guarantee { margin-top: 12px; padding: 12px; font-size: 10.5px; }
+      footer { padding: 30px 0 40px; font-size: 10.5px; }
+      footer .footer-grid { grid-template-columns: 1fr; gap: 20px; }
+      footer h2 { font-size: 20px; }
+      .footer-fine { margin-top: 19px; padding-top: 14px; font-size: 9.5px; }
+      .sticky-cta { right: 10px; bottom: 10px; left: 10px; max-width: none; min-height: 49px; justify-content: space-between; gap: 8px; padding: 7px 8px 7px 12px; border-radius: 5px; }
+      .sticky-cta span { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 10px; }
+      .sticky-cta a { min-height: 35px; display: inline-flex; align-items: center; padding: 8px 12px; font-size: 11px; }
+      .sticky-close { flex: 0 0 18px; }
     }
   </style>
 </head>
