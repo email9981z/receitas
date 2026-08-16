@@ -184,6 +184,7 @@
       .hero-actions { display: block; margin: 22px 0 14px; }
       .hero-actions .primary-btn { width: 100%; min-height: 49px; }
       .microtrust { display: block; margin-top: 10px; text-align: center; font-size: 10px; line-height: 1.35; }
+      .quick-proof { justify-content: center; gap: 4px 10px; margin: -1px 0 14px; font-size: 9px; }
       .editorial-meta { gap: 5px 8px; padding: 12px 0; font-size: 10px; line-height: 1.4; }
       .editorial-meta .dot { display: none; }
       .hero { aspect-ratio: 16 / 9; margin: 18px 0 7px; border-radius: 3px; }
@@ -369,6 +370,8 @@
     .offer-timer-clock small { display: block; margin-top: 2px; color: var(--muted); font-size: 7px; text-transform: uppercase; }
     .offer-timer-clock i { color: var(--red); font-style: normal; font-weight: 900; }
     .offer-timer.expired .offer-timer-clock b { font-size: 11px; }
+    .quick-proof { display: flex; flex-wrap: wrap; gap: 6px 15px; margin: -2px 0 16px; color: var(--muted); font-size: 10px; }
+    .quick-proof span::before { content: '✓'; margin-right: 4px; color: var(--gold); font-weight: 900; }
     .special-intro { background: #f7f4ef; border-bottom: 1px solid var(--line); }
     .special-intro .wrap { min-height: 34px; display: flex; align-items: center; gap: 10px; }
     .special-intro-label { color: var(--red); font-size: 9px; font-weight: 900; letter-spacing: .12em; }
@@ -441,7 +444,7 @@
         <a href="#previas">O que inclui</a>
         <a href="#faq">Dúvidas</a>
       </div>
-      <a class="nav-cta" href="#checkout">Ver o estudo →</a>
+      <a class="nav-cta" href="#checkout">Ver oferta →</a>
     </div>
   </nav>
 
@@ -470,9 +473,11 @@
       </div>
 
       <div class="offer-timer" role="note" aria-label="Condição atual da oferta">
-        <div class="offer-timer-copy"><strong>Condição atual da oferta</strong><span>Finalize o acesso dentro da janela abaixo para manter o valor informado.</span></div>
+        <div class="offer-timer-copy"><strong>Condição comercial atual</strong><span>O valor de R$ 47,90 fica reservado durante esta janela.</span></div>
         <div class="offer-timer-clock" aria-label="Tempo restante"><span><b data-unit="minutes">23</b><small>min</small></span><i>:</i><span><b data-unit="seconds">00</b><small>seg</small></span></div>
       </div>
+
+      <div class="quick-proof" aria-label="Resumo da entrega"><span>PDF + planilha</span><span>Acesso imediato</span><span>Compra única</span></div>
 
       <div class="editorial-meta">
         <span>Por <strong>Núcleo de Conteúdo Ponto de Vista</strong></span><span class="dot">·</span>
