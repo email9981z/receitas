@@ -297,6 +297,7 @@
       main > .article { width: calc(100% - 24px); }
       .topline .wrap, .masthead .wrap { width: calc(100% - 24px); }
       .nav .wrap { padding-left: 12px; }
+      .hero { max-height: 178px; aspect-ratio: 16 / 8.5; }
       .offer-price { align-items: flex-start; flex-wrap: wrap; }
       .offer-price span { flex-basis: 100%; order: 3; }
       .preview { flex-basis: calc(100% - 18px); width: calc(100% - 18px); }
@@ -332,8 +333,9 @@
     .sponsored-label { font-size: 10px; letter-spacing: .13em; }
     h1 { max-width: 740px; font-weight: 600; letter-spacing: -.045em; }
     .dek { max-width: 670px; color: #514941; }
-    .hero { border: 1px solid var(--line); border-radius: 2px; }
-    .caption { max-width: 620px; }
+    .hero-figure { width: 94%; margin: 0 auto 27px; }
+    .hero { width: 100%; max-height: 310px; aspect-ratio: 16 / 7; display: block; object-fit: cover; object-position: center 46%; border: 1px solid var(--line); border-radius: 14px; }
+    .caption { max-width: 620px; margin: 8px 2px 0; color: var(--soft); font-size: 10px; line-height: 1.45; }
     .offer-strip { padding: 25px 26px; background: #f7f3ed; border: 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); border-left: 3px solid var(--red); border-radius: 0; }
     .offer-strip h2 { font-size: 23px; }
     .offer-price strong { font-size: 29px; }
@@ -368,6 +370,9 @@
       .nav-links a { font-size: 10.5px; }
       main { background: var(--paper); }
       h1 { letter-spacing: -.035em; }
+      .hero-figure { width: 100%; margin-bottom: 22px; }
+      .hero { max-height: 205px; aspect-ratio: 16 / 8.5; object-position: center 45%; border-radius: 10px; }
+      .caption { margin-top: 7px; font-size: 9px; }
       .offer-strip { padding: 17px 14px; border-left-width: 2px; }
       .offer-strip h2 { font-size: 18px; }
       .section { margin: 38px 0; }
@@ -418,6 +423,11 @@
 
   <main id="topo">
     <article class="article">
+      <figure class="hero-figure">
+        <img class="hero" src="https://noticiapage-hgpjqahm.manus.space/manus-storage/lotofacil-estudo-mesa_731533c9.jpg" alt="Mesa com caderno, anotações e gráficos de organização de dados da Lotofácil">
+        <figcaption class="caption">Imagem ilustrativa. Dados históricos servem para consulta e organização; não preveem nem alteram o resultado de sorteios futuros.</figcaption>
+      </figure>
+
       <div class="sponsored-label">Especial patrocinado · Estudo Lotofácil</div>
       <h1>Organize seus critérios, entenda as probabilidades e defina seu limite antes de jogar.</h1>
       <p class="dek">Um estudo digital, visual e direto para consultar resultados históricos, revisar combinações e tomar decisões dentro de um orçamento previamente definido — sem promessas de prêmio.</p>
@@ -435,9 +445,6 @@
         <span>Atualizado em 15/08/2026</span><span class="dot">·</span>
         <span>Leitura: 4 minutos</span>
       </div>
-
-      <img class="hero" src="https://noticiapage-hgpjqahm.manus.space/manus-storage/lotofacil-estudo-mesa_731533c9.jpg" alt="Mesa com caderno, anotações e gráficos de organização de dados da Lotofácil">
-      <p class="caption">Imagem ilustrativa. Dados históricos servem para consulta e organização; não preveem nem alteram o resultado de sorteios futuros.</p>
 
       <section class="offer-strip" aria-label="Resumo da oferta">
         <div>
