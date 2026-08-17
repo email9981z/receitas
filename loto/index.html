@@ -1,601 +1,157 @@
 <!doctype html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Estudo digital para organizar critérios, compreender probabilidades e definir limites pessoais ao jogar Lotofácil — sem promessas de prêmio.">
-  <title>Ponto de Vista | Estudo Lotofácil</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Source+Serif+4:opsz,wght@8..60,400;500;600;700&display=swap" rel="stylesheet">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#b60000" />
+  <title>Finanças Hub — Comunicação Comercial</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,400..900&display=swap" rel="stylesheet" />
   <style>
-    :root {
-      --paper: #fcfaf7;
-      --paper-alt: #f3eee7;
-      --paper-deep: #e9e0d4;
-      --ink: #211e1b;
-      --muted: #675e54;
-      --soft: #8a7d6f;
-      --line: #dfd6ca;
-      --red: #ae2b21;
-      --red-deep: #761a14;
-      --red-tint: #f8e9e5;
-      --gold: #9b732e;
-      --gold-tint: #f5eddc;
-      --white: #fff;
-      --radius: 4px;
-      --shadow: 0 12px 34px rgba(49, 34, 20, .08);
-    }
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body { margin: 0; color: var(--ink); background: var(--paper); font-family: Archivo, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
-    img { max-width: 100%; }
-    a { color: inherit; text-decoration: none; }
-    button, a { -webkit-tap-highlight-color: transparent; }
-    :focus-visible { outline: 3px solid #e9b24a; outline-offset: 3px; }
-    .wrap { width: min(1140px, calc(100% - 44px)); margin: 0 auto; }
-    .serif { font-family: 'Source Serif 4', Georgia, serif; }
+    :root { --red:#b60000; --dark-red:#8f0303; --yellow:#ffca19; --ink:#080808; --muted:#606469; --paper:#f4f1eb; --ease:cubic-bezier(.23,1,.32,1); }
+    * { box-sizing:border-box; }
+    html { background:#fff; }
+    body { margin:0; color:var(--ink); background:#fff; font-family:Arial,Helvetica,sans-serif; -webkit-font-smoothing:antialiased; }
+    button { font:inherit; cursor:pointer; }
+    a { color:inherit; }
 
-    /* Identidade editorial */
-    .topline { background: var(--ink); color: #ded5c9; font-size: 11px; }
-    .topline .wrap { min-height: 34px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
-    .topline strong { color: #fff; font-weight: 800; }
-    .topline a { text-decoration: underline; text-underline-offset: 3px; }
-    .masthead { background: var(--red); color: #fff; }
-    .masthead .wrap { min-height: 78px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
-    .brand { display: inline-flex; align-items: center; gap: 11px; font-weight: 900; font-size: 23px; letter-spacing: -.055em; }
-    .brand-mark { width: 28px; height: 28px; border: 2px solid #fff; border-radius: 50%; display: grid; place-items: center; position: relative; }
-    .brand-mark::after { content: ''; width: 8px; height: 8px; background: #fff; border-radius: 50%; }
-    .masthead-note { max-width: 390px; text-align: right; color: #f6d9d4; font-size: 11px; line-height: 1.45; }
-    .masthead-note b { color: #fff; }
-    .nav { background: var(--paper); border-bottom: 1px solid var(--line); }
-    .nav .wrap { min-height: 52px; display: flex; align-items: center; justify-content: space-between; gap: 22px; }
-    .nav-links { display: flex; align-items: center; gap: 25px; overflow-x: auto; white-space: nowrap; scrollbar-width: none; }
-    .nav-links::-webkit-scrollbar { display: none; }
-    .nav-links a { color: var(--muted); padding: 17px 0 14px; border-bottom: 3px solid transparent; font-size: 12px; font-weight: 800; }
-    .nav-links a:hover, .nav-links a.active { color: var(--red); border-color: var(--red); }
-    .nav-cta { flex: 0 0 auto; padding: 10px 15px; color: #fff; background: var(--red); border-radius: var(--radius); font-size: 12px; font-weight: 800; }
-    .nav-cta:hover { background: var(--red-deep); }
+    .site-header { position:relative; z-index:5; height:40px; color:#fff; background-color:var(--red); background-image:radial-gradient(rgba(255,255,255,.07) .7px, transparent .8px),linear-gradient(90deg,rgba(255,255,255,.02),rgba(0,0,0,.09)); background-size:7px 7px,auto; border-bottom:1px solid rgba(65,0,0,.3); }
+    .header-inner { width:min(100%,1040px); height:100%; margin:0 auto; padding:0 30px; display:grid; grid-template-columns:40px 1fr 40px; align-items:center; }
+    .icon-button { width:36px; height:36px; display:grid; place-items:center; padding:0; color:#fff; border:0; background:transparent; transition:transform 160ms var(--ease),background 160ms var(--ease); }
+    .icon-button:last-child { justify-self:end; }
+    .icon-button:hover { background:rgba(255,255,255,.12); }
+    .icon-button:active { transform:scale(.93); }
+    .icon-button svg { width:20px; height:20px; fill:none; stroke:currentColor; stroke-width:3; stroke-linecap:round; stroke-linejoin:round; }
+    .masthead { justify-self:center; display:inline-flex; align-items:center; gap:4px; font-family:Archivo,Arial,sans-serif; font-size:16px; font-weight:800; letter-spacing:-.65px; }
+    .masthead b { align-self:flex-start; margin:4px 0 0 1px; color:var(--yellow); font-size:7px; letter-spacing:.7px; line-height:1; }
+    .masthead-stamp { width:14px; height:14px; display:grid; place-items:center; border-radius:2px; color:var(--red); background:#fff; font-size:10px; transform:rotate(-7deg); }
+    .utility-panel { position:absolute; top:calc(100% + 7px); right:max(22px,calc((100vw - 980px)/2)); z-index:10; min-width:286px; color:#111; background:#fff; border:1px solid #dedede; box-shadow:0 12px 30px rgba(0,0,0,.18); opacity:0; pointer-events:none; transform:translateY(-7px) scale(.97); transition:opacity 180ms var(--ease),transform 180ms var(--ease); }
+    .utility-panel.is-visible { opacity:1; pointer-events:auto; transform:translateY(0) scale(1); }
+    .utility-panel-content { min-height:84px; padding:17px 42px 17px 17px; display:grid; gap:4px; position:relative; }
+    .utility-panel strong { font-family:Archivo,Arial,sans-serif; font-size:14px; }
+    .utility-panel span { color:#5f6368; font-size:12px; line-height:1.35; }
+    .panel-close { position:absolute; top:11px; right:11px; padding:3px; color:#333; border:0; background:transparent; font-size:18px; }
 
-    /* Conteúdo principal */
-    main { padding: 56px 0 90px; }
-    .article { width: min(760px, 100%); margin: 0 auto; }
-    .sponsored-label { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 17px; color: var(--red); font-size: 11px; font-weight: 900; letter-spacing: .1em; text-transform: uppercase; }
-    .sponsored-label::before { content: ''; width: 8px; height: 8px; background: var(--red); border-radius: 50%; }
-    h1 { margin: 0 0 18px; font: 600 clamp(36px, 5.5vw, 60px)/1.05 'Source Serif 4', Georgia, serif; letter-spacing: -.035em; }
-    .dek { margin: 0; max-width: 690px; color: #4d443c; font: 400 clamp(18px, 2.1vw, 22px)/1.5 'Source Serif 4', Georgia, serif; }
-    .hero-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 15px 20px; margin: 29px 0 16px; }
-    .primary-btn { display: inline-flex; align-items: center; justify-content: center; gap: 11px; padding: 15px 21px; color: #fff; background: var(--red); border-radius: var(--radius); box-shadow: 0 4px 0 var(--red-deep); font-size: 14px; font-weight: 900; transition: transform .15s ease, background .15s ease; }
-    .primary-btn:hover { transform: translateY(-2px); background: var(--red-deep); }
-    .microtrust { color: var(--muted); font-size: 11.5px; line-height: 1.55; }
-    .editorial-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 7px 12px; padding: 15px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); color: var(--muted); font-size: 11.5px; }
-    .editorial-meta strong { color: var(--ink); }
-    .dot { color: var(--soft); }
-    .hero { width: 100%; aspect-ratio: 16 / 8.5; display: block; object-fit: cover; margin: 25px 0 9px; border-radius: var(--radius); }
-    .caption { margin: 0 0 36px; color: var(--soft); font-size: 10.5px; line-height: 1.5; }
+    .news-ticker { height:28px; display:flex; align-items:center; overflow:hidden; white-space:nowrap; color:#fff; background:var(--dark-red); border-bottom:1px solid #9c2525; }
+    .ticker-track { width:max-content; color:rgba(255,255,255,.9); font-family:Archivo,Arial,sans-serif; font-size:8px; font-weight:700; letter-spacing:1.35px; transform:translateX(-12px); }
+    main { padding-bottom:1px; }
+    .story-wrap { width:min(100% - 48px,680px); margin:34px auto 0; }
+    .commercial-label { display:inline-flex; align-items:center; gap:7px; min-height:25px; padding:4px 9px 4px 6px; color:#850000; background:#fff3f3; border:1px solid #f0cfcf; font-family:Archivo,Arial,sans-serif; font-size:9px; font-weight:800; letter-spacing:1.05px; }
+    .siren { font-size:15px; line-height:1; }
+    h1 { max-width:675px; margin:14px 0 0; color:#060606; font-family:Archivo,Arial,sans-serif; font-size:clamp(34px,3.65vw,44px); font-weight:900; letter-spacing:-1.7px; line-height:.99; }
+    .story-lede { max-width:568px; margin:14px 0 0; color:#4b4d50; font-size:16px; line-height:1.43; }
+    .byline { margin-top:18px; display:grid; gap:4px; font-size:12px; line-height:1.2; }
+    .byline strong { font-size:12px; }
+    .byline span { color:#6c6c6c; }
+    .pre-cta-notice { max-width:570px; margin:19px 0 0; padding:11px 15px 12px; display:grid; grid-template-columns:5px 1fr; gap:11px; color:#191919; background:var(--paper); border-top:1px solid #1b1b1b; border-bottom:1px solid #1b1b1b; }
+    .notice-rule { min-height:100%; background:var(--red); }
+    .pre-cta-notice strong { display:block; margin:0 0 4px; color:#8d0000; font-family:Archivo,Arial,sans-serif; font-size:9px; font-weight:900; letter-spacing:1.05px; }
+    .pre-cta-notice p { margin:0; font-size:12px; font-weight:700; line-height:1.32; }
+    .join-cta { width:min(100%,570px); min-height:76px; margin:15px 0 0; padding:11px 23px 13px 27px; display:flex; align-items:center; justify-content:center; gap:13px; color:#020202; background:linear-gradient(90deg,rgba(255,255,255,.14),rgba(214,153,0,.04)),var(--yellow); border:1px solid #d99500; border-bottom:5px solid #78630c; border-radius:999px; box-shadow:0 2px 0 rgba(0,0,0,.18),inset 0 1px 0 rgba(255,255,255,.75); font-family:Archivo,Arial,sans-serif; font-size:clamp(21px,3vw,29px); font-weight:800; letter-spacing:-1.1px; line-height:1; text-decoration:none; transition:transform 160ms var(--ease),box-shadow 160ms var(--ease),filter 160ms var(--ease); }
+    .join-cta:hover { filter:brightness(1.03); box-shadow:0 4px 0 rgba(0,0,0,.17),inset 0 1px 0 rgba(255,255,255,.75); transform:translateY(-1px); }
+    .join-cta:active { border-bottom-width:3px; box-shadow:0 1px 0 rgba(0,0,0,.18),inset 0 1px 0 rgba(255,255,255,.75); transform:translateY(2px) scale(.99); }
+    .join-cta svg { width:20px; height:20px; fill:none; stroke:currentColor; stroke-width:3; stroke-linecap:round; stroke-linejoin:round; }
+    .cta-caption { max-width:570px; margin:9px 0 0; color:#72767a; font-size:11px; line-height:1.35; }
 
-    /* Oferta resumida */
-    .offer-strip { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 22px; margin: 0 0 42px; padding: 22px 24px; background: var(--paper-alt); border: 1px solid var(--line); border-left: 4px solid var(--red); border-radius: var(--radius); }
-    .offer-strip h2 { margin: 0 0 5px; font: 600 22px/1.15 'Source Serif 4', Georgia, serif; }
-    .offer-strip p { margin: 0; color: var(--muted); font-size: 12px; line-height: 1.5; }
-    .offer-price { text-align: right; white-space: nowrap; }
-    .offer-price strong { display: block; color: var(--red); font: 700 27px/1 'Source Serif 4', Georgia, serif; }
-    .offer-price span { display: block; margin-top: 4px; color: var(--muted); font-size: 10.5px; }
-    .offer-strip .primary-btn { margin-top: 12px; padding: 11px 14px; box-shadow: none; font-size: 12px; }
+    .offer-area { width:min(100% - 48px,680px); margin:44px auto 0; padding:0 29px 8px; background:#fff; border:1px solid #202020; border-top:6px solid var(--red); }
+    .section-kicker { width:max-content; margin:0 0 15px -30px; padding:7px 13px 7px 29px; display:flex; align-items:center; gap:7px; color:#fff; background:var(--red); font-family:Archivo,Arial,sans-serif; font-size:10px; font-weight:900; letter-spacing:1.15px; }
+    .section-kicker svg { width:16px; height:16px; fill:none; stroke:currentColor; stroke-width:2.8; stroke-linecap:round; stroke-linejoin:round; }
+    .offer-area h2 { max-width:520px; margin:0 0 22px; color:#050505; font-family:Archivo,Arial,sans-serif; font-size:clamp(26px,2.65vw,34px); font-weight:900; letter-spacing:-1.35px; line-height:.96; }
+    .offer-list { border-top:3px solid #161616; }
+    .offer-item { display:grid; grid-template-columns:40px 1fr 24px; gap:11px; align-items:start; padding:16px 1px; border-bottom:1px solid #242424; }
+    .offer-number { position:relative; color:#9b0000; font-family:Archivo,Arial,sans-serif; font-size:15px; font-weight:900; line-height:1.25; }
+    .offer-number:after { content:""; display:block; width:26px; height:3px; margin-top:4px; background:#181818; }
+    .offer-item h3 { margin:0 0 4px; color:#111; font-family:Archivo,Arial,sans-serif; font-size:16px; font-weight:850; letter-spacing:-.45px; }
+    .offer-item p { margin:0; color:#4a4d50; font-size:13px; line-height:1.42; }
+    .offer-check { margin-top:2px; color:#8a0000; font-family:Archivo,Arial,sans-serif; font-size:20px; font-weight:900; }
 
-    /* Conteúdo */
-    .section { margin: 45px 0; }
-    .section h2 { margin: 0 0 15px; font: 600 29px/1.15 'Source Serif 4', Georgia, serif; letter-spacing: -.015em; }
-    .section-intro { margin: 0 0 22px; color: var(--muted); font-size: 13.5px; line-height: 1.65; }
-    .copy p { margin: 0 0 22px; color: #34302c; font: 400 18px/1.68 'Source Serif 4', Georgia, serif; }
-    .included { padding: 27px; background: var(--paper-alt); border: 1px solid var(--line); border-radius: var(--radius); }
-    .included h2 { margin-bottom: 20px; }
-    .benefit-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
-    .benefit { padding: 18px; background: rgba(255,255,255,.55); border: 1px solid var(--line); border-radius: var(--radius); }
-    .benefit-icon { width: 26px; height: 26px; display: grid; place-items: center; margin-bottom: 10px; color: var(--gold); background: var(--gold-tint); border-radius: 50%; font-size: 13px; font-weight: 900; }
-    .benefit h3 { margin: 0 0 6px; font-size: 14px; }
-    .benefit p { margin: 0; color: var(--muted); font-size: 12.5px; line-height: 1.55; }
+    .responsible-area { width:min(100% - 48px,680px); margin:18px auto 0; padding:24px 29px 26px; display:grid; grid-template-columns:36px 1fr; gap:15px; color:#f4f1ea; background:#161616; }
+    .responsible-icon { padding-top:2px; color:var(--yellow); font-size:23px; }
+    .responsible-eyebrow { margin:0 0 7px; color:var(--yellow); font-family:Archivo,Arial,sans-serif; font-size:9px; font-weight:800; letter-spacing:1.15px; }
+    .responsible-area h2 { margin:0; font-family:Archivo,Arial,sans-serif; font-size:clamp(20px,2.3vw,26px); font-weight:800; letter-spacing:-.8px; line-height:1.04; }
+    .responsible-area div > p:not(.responsible-eyebrow) { margin:11px 0 0; color:#c6c6c6; font-size:13px; line-height:1.48; }
+    .text-cta { width:max-content; max-width:100%; margin-top:17px; padding-bottom:3px; display:inline-flex; align-items:center; gap:2px; color:#fff; border-bottom:2px solid var(--yellow); font-family:Archivo,Arial,sans-serif; font-size:13px; font-weight:750; text-decoration:none; transition:color 160ms var(--ease),transform 160ms var(--ease); }
+    .text-cta:hover { color:var(--yellow); transform:translateX(2px); }
+    .site-footer { max-width:700px; margin:0 auto; padding:51px 24px 28px; display:grid; gap:6px; color:#585858; font-size:10px; line-height:1.4; text-align:center; }
+    .site-footer strong { color:#333; font-family:Archivo,Arial,sans-serif; font-size:10px; letter-spacing:.2px; }
 
-    .warning { margin: 28px 0; padding: 18px 20px; background: var(--red-tint); border-left: 4px solid var(--red); border-radius: 0 var(--radius) var(--radius) 0; }
-    .warning strong { display: block; margin-bottom: 5px; color: var(--red-deep); font-size: 11px; letter-spacing: .07em; text-transform: uppercase; }
-    .warning p { margin: 0; color: #44332f; font: 400 14px/1.55 Archivo, Arial, sans-serif; }
-
-    /* Prévia do produto */
-    .preview-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 24px; }
-    .preview { min-height: 214px; padding: 14px; background: #fff; border: 1px solid var(--line); border-radius: var(--radius); box-shadow: 0 5px 18px rgba(60,40,20,.06); }
-    .preview-page { height: 130px; padding: 15px; background: linear-gradient(135deg, #fff 0%, #f2eee8 100%); border: 1px solid #e6ded3; }
-    .preview-page small { display: block; margin-bottom: 10px; color: var(--red); font-size: 8px; font-weight: 900; letter-spacing: .08em; text-transform: uppercase; }
-    .fake-line { height: 6px; margin: 7px 0; background: #d9d0c4; border-radius: 10px; }
-    .fake-line.short { width: 62%; }
-    .fake-line.red { width: 78%; background: #ca8179; }
-    .fake-table { display: grid; grid-template-columns: repeat(5, 1fr); gap: 4px; margin-top: 13px; }
-    .fake-cell { height: 12px; background: #d8cdc0; border-radius: 2px; }
-    .fake-cell.active { background: var(--red); }
-    .preview strong { display: block; margin-top: 12px; font-size: 12px; }
-    .preview span { display: block; margin-top: 4px; color: var(--muted); font-size: 10.5px; line-height: 1.45; }
-
-    .video-card { position: relative; margin: 38px 0; overflow: hidden; border-radius: var(--radius); background: var(--ink); }
-    .video-card img { width: 100%; aspect-ratio: 16/8.5; display: block; object-fit: cover; opacity: .66; filter: saturate(.75); }
-    .video-overlay { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: flex-end; padding: 25px; background: linear-gradient(transparent 25%, rgba(0,0,0,.72)); color: #fff; }
-    .topic-tag { display: inline-flex; align-items: center; align-self: flex-start; margin-bottom: auto; padding: 6px 8px; color: var(--ink); background: #fff; border-radius: 3px; font-size: 9px; font-weight: 900; letter-spacing: .08em; }
-    .video-overlay strong { max-width: 500px; font: 600 clamp(19px, 2.7vw, 26px)/1.2 'Source Serif 4', Georgia, serif; }
-    .video-overlay small { margin-top: 8px; color: #e3d8cc; font-size: 10.5px; }
-
-    /* FAQ e checkout */
-    .faq details { border-bottom: 1px solid var(--line); }
-    .faq summary { display: flex; align-items: center; justify-content: space-between; gap: 15px; padding: 17px 2px; cursor: pointer; list-style: none; font-size: 14px; font-weight: 800; }
-    .faq summary::-webkit-details-marker { display: none; }
-    .faq summary::after { content: '+'; color: var(--red); font-size: 21px; font-weight: 400; }
-    .faq details[open] summary::after { content: '−'; }
-    .faq details p { max-width: 650px; margin: 0 2px 17px; color: var(--muted); font-size: 13px; line-height: 1.65; }
-    .checkout { margin-top: 52px; padding: 30px; background: var(--paper-alt); border-top: 4px solid var(--red); border-radius: var(--radius); box-shadow: var(--shadow); }
-    .checkout h2 { margin: 5px 0 9px; font: 600 30px/1.1 'Source Serif 4', Georgia, serif; }
-    .checkout > p { max-width: 590px; margin: 0 0 20px; color: var(--muted); font: 400 15px/1.55 'Source Serif 4', Georgia, serif; }
-    .checkout-benefits { display: flex; flex-wrap: wrap; gap: 8px 18px; margin-bottom: 20px; color: var(--muted); font-size: 11px; }
-    .checkout-benefits span::before { content: '✓'; margin-right: 5px; color: var(--gold); font-weight: 900; }
-    .payment-box { padding: 23px; color: #fff; background: var(--red); border-radius: var(--radius); }
-    .payment-label { margin-bottom: 9px; color: #f8d5d0; font-size: 10px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
-    .price-row { display: flex; align-items: baseline; gap: 9px; }
-    .price-row strong { font: 700 33px/1 'Source Serif 4', Georgia, serif; }
-    .price-row s { color: #f5c2bc; font-size: 12px; }
-    .installment { margin: 6px 0 17px; color: #fbd9d4; font-size: 11.5px; }
-    .payment-btn { display: block; padding: 15px; text-align: center; color: var(--red-deep); background: #fff; border-radius: var(--radius); box-shadow: 0 4px 0 var(--red-deep); font-size: 13.5px; font-weight: 900; }
-    .payment-btn:hover { background: #fff7f5; }
-    .payment-note { margin: 12px 0 0; color: #f6c7c1; font-size: 10.5px; line-height: 1.5; }
-    .guarantee { display: flex; align-items: flex-start; gap: 10px; margin-top: 16px; padding: 14px; background: var(--gold-tint); border-radius: var(--radius); color: #4a3b1e; font-size: 11.5px; line-height: 1.5; }
-    .guarantee b { color: var(--gold); }
-
-    footer { padding: 38px 0 100px; color: #eee7dc; background: var(--ink); font-size: 11.5px; line-height: 1.7; }
-    footer .footer-grid { display: grid; grid-template-columns: 1.2fr .8fr; gap: 35px; }
-    footer h2 { margin: 0 0 10px; color: #fff; font: 600 22px 'Source Serif 4', Georgia, serif; }
-    footer p { margin: 0; color: #bdb2a4; }
-    footer a { color: #fff; text-decoration: underline; text-underline-offset: 3px; }
-    .footer-links { display: grid; gap: 7px; align-content: start; }
-    .footer-fine { margin-top: 25px; padding-top: 18px; border-top: 1px solid #403932; color: #8d8172; font-size: 10.5px; }
-    body { padding-top: 0; }
-    .sticky-cta { display: none !important; }
-    .sticky-cta span { color: #d9d0c3; font-size: 11px; }
-    .sticky-cta a { padding: 10px 13px; color: #fff; background: var(--red); border-radius: var(--radius); font-size: 11.5px; font-weight: 800; white-space: nowrap; }
-    .sticky-close { width: 18px; height: 18px; padding: 0; color: #cfc5b8; background: transparent; border: 0; cursor: pointer; font-size: 18px; line-height: 1; }
-    .hidden { display: none; }
-
-    /* Ajustes mobile-first: hierarquia limpa, toque confortável e menos competição visual */
-    @media (max-width: 720px) {
-      body { padding-top: 0; padding-bottom: 0; }
-      .wrap { width: calc(100% - 32px); }
-      .topline { font-size: 10px; }
-      .topline .wrap { min-height: 0; padding: 7px 0; line-height: 1.35; }
-      .topline a { display: none; }
-      .masthead .wrap { min-height: 61px; }
-      .brand { font-size: 20px; }
-      .brand-mark { width: 24px; height: 24px; }
-      .brand-mark::after { width: 7px; height: 7px; }
-      .masthead-note { display: none; }
-      .nav .wrap { width: 100%; min-height: 45px; padding-left: 16px; gap: 0; }
-      .nav-links { flex: 1; gap: 21px; min-width: 0; }
-      .nav-links a { padding: 14px 0 11px; font-size: 11px; }
-      .nav-cta { display: none; }
-      main { padding: 30px 0 45px; }
-      .article { width: 100%; }
-      .sponsored-label { margin-bottom: 12px; font-size: 9.5px; letter-spacing: .075em; }
-      .sponsored-label::before { width: 6px; height: 6px; }
-      h1 { margin-bottom: 14px; font-size: clamp(32px, 9.2vw, 42px); line-height: 1.04; letter-spacing: -.03em; }
-      .dek { font-size: 18px; line-height: 1.45; }
-      .hero-actions { display: block; margin: 22px 0 14px; }
-      .hero-actions .primary-btn { width: 100%; min-height: 49px; }
-      .microtrust { display: block; margin-top: 10px; text-align: center; font-size: 10px; line-height: 1.35; }
-      .quick-proof { justify-content: center; gap: 4px 10px; margin: -1px 0 14px; font-size: 9px; }
-      .editorial-meta { gap: 5px 8px; padding: 12px 0; font-size: 10px; line-height: 1.4; }
-      .editorial-meta .dot { display: none; }
-      .hero { aspect-ratio: 16 / 9; margin: 18px 0 7px; border-radius: 3px; }
-      .caption { margin-bottom: 24px; font-size: 9.5px; }
-      .offer-strip { grid-template-columns: 1fr auto; gap: 12px; margin: 0 0 31px; padding: 16px; border-left-width: 3px; }
-      .offer-strip h2 { margin-bottom: 4px; font-size: 18px; line-height: 1.15; }
-      .offer-strip p { font-size: 10.5px; line-height: 1.4; }
-      .offer-price { text-align: right; }
-      .offer-price strong { font-size: 22px; }
-      .offer-price span { font-size: 9px; }
-      .offer-strip .primary-btn { display: none; }
-      .section { margin: 34px 0; }
-      .section h2 { margin-bottom: 12px; font-size: 25px; line-height: 1.13; }
-      .section-intro { margin-bottom: 17px; font-size: 12.5px; line-height: 1.55; }
-      .copy p { margin-bottom: 17px; font-size: 17px; line-height: 1.58; }
-      .warning { margin: 22px 0; padding: 14px 15px; }
-      .warning p { font-size: 12.5px; line-height: 1.5; }
-      .included { padding: 18px 15px; }
-      .included h2 { margin-bottom: 14px; }
-      .benefit-grid { grid-template-columns: 1fr; gap: 9px; }
-      .benefit { display: grid; grid-template-columns: 27px 1fr; column-gap: 10px; padding: 13px; }
-      .benefit-icon { grid-row: span 2; margin: 0; width: 27px; height: 27px; font-size: 10px; }
-      .benefit h3 { align-self: end; margin: 0 0 3px; font-size: 13px; }
-      .benefit p { align-self: start; font-size: 11px; line-height: 1.4; }
-      .preview-grid { display: flex; overflow-x: auto; gap: 10px; margin: 18px -16px 0; padding: 0 16px 8px; scroll-snap-type: x mandatory; scrollbar-width: none; }
-      .preview-grid::-webkit-scrollbar { display: none; }
-      .preview { flex: 0 0 78%; min-height: 0; padding: 11px; scroll-snap-align: start; }
-      .preview-page { height: 112px; padding: 12px; }
-      .preview strong { margin-top: 9px; font-size: 11.5px; }
-      .preview span { font-size: 10px; }
-      .video-card { margin: 29px 0; }
-      .video-card img { aspect-ratio: 16 / 9; }
-      .video-overlay { padding: 17px; }
-      .topic-tag { padding: 5px 7px; font-size: 8px; }
-      .video-overlay strong { font-size: 20px; }
-      .video-overlay small { font-size: 9.5px; }
-      .faq summary { min-height: 52px; padding: 14px 0; font-size: 13px; }
-      .faq details p { margin-bottom: 14px; font-size: 12px; line-height: 1.55; }
-      .checkout { margin-top: 37px; padding: 20px 15px; border-top-width: 3px; box-shadow: none; }
-      .checkout h2 { font-size: 26px; }
-      .checkout > p { font-size: 14px; line-height: 1.5; }
-      .checkout-benefits { display: grid; grid-template-columns: 1fr 1fr; gap: 7px 10px; margin-bottom: 16px; font-size: 10px; }
-      .payment-box { padding: 18px 15px; }
-      .price-row strong { font-size: 30px; }
-      .payment-btn { min-height: 49px; padding: 15px 10px; font-size: 13px; }
-      .guarantee { margin-top: 12px; padding: 12px; font-size: 10.5px; }
-      footer { padding: 30px 0 40px; font-size: 10.5px; }
-      footer .footer-grid { grid-template-columns: 1fr; gap: 20px; }
-      footer h2 { font-size: 20px; }
-      .footer-fine { margin-top: 19px; padding-top: 14px; font-size: 9.5px; }
-      .sticky-cta { top: 0; right: 0; bottom: auto; left: 0; max-width: none; min-height: 51px; justify-content: space-between; gap: 8px; padding: 7px 10px 7px 12px; border-radius: 0; }
-      .sticky-cta span { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 10px; }
-      .sticky-cta a { min-height: 35px; display: inline-flex; align-items: center; padding: 8px 12px; font-size: 11px; }
-      .sticky-close { flex: 0 0 18px; }
-    }
-    /* Correções finais para larguras estreitas e conteúdo longo */
-    html, body { width: 100%; max-width: 100%; overflow-x: hidden; }
-    *, *::before, *::after { min-width: 0; }
-    img, svg, video, iframe { max-width: 100%; }
-    p, h1, h2, h3, a, span, strong, small { overflow-wrap: anywhere; }
-    .wrap, .article, main, footer, header, nav, section, article { max-width: 100%; }
-    .nav-links { min-width: 0; }
-    .offer-strip, .included, .checkout, .payment-box, .warning { max-width: 100%; overflow: hidden; }
-    .price-row { flex-wrap: wrap; }
-    .payment-btn, .primary-btn { max-width: 100%; white-space: normal; }
-    .sticky-cta { max-width: calc(100vw - 20px); }
-
-    @media (max-width: 390px) {
-      .wrap { width: calc(100% - 24px); }
-      .nav .wrap { padding-left: 12px; }
-      .nav-links { gap: 16px; }
-      .nav-links a { font-size: 10px; }
-      main { padding-top: 25px; }
-      h1 { font-size: clamp(30px, 9vw, 36px); }
-      .dek { font-size: 16.5px; }
-      .offer-strip { grid-template-columns: minmax(0, 1fr) auto; gap: 8px; padding: 13px 12px; }
-      .offer-strip h2 { font-size: 16px; }
-      .offer-strip p { font-size: 10px; }
-      .offer-price strong { font-size: 19px; }
-      .offer-price span { white-space: normal; }
-      .checkout-benefits { grid-template-columns: 1fr; }
-      .sticky-cta { top: 0; right: 0; left: 0; bottom: auto; max-width: none; gap: 5px; padding-left: 9px; }
-      .sticky-cta span { font-size: 9px; }
-      .sticky-cta a { padding-left: 9px; padding-right: 9px; font-size: 10px; }
-    }
-    /* Enquadramento estrutural definitivo para mobile */
-    @media (max-width: 720px) {
-      main { width: 100%; padding-left: 0; padding-right: 0; }
-      main > .article { width: calc(100% - 32px); max-width: none; margin-left: auto; margin-right: auto; }
-      .article > * { max-width: 100%; }
-      .nav .wrap { width: 100%; max-width: none; }
-      .topline .wrap, .masthead .wrap { width: calc(100% - 32px); }
-      .editorial-meta { display: block; }
-      .editorial-meta span { display: inline; }
-      .editorial-meta span + span::before { content: ' · '; color: var(--soft); }
-      .editorial-meta .dot { display: none; }
-      .offer-strip { display: block; width: 100%; }
-      .offer-price { display: flex; align-items: center; justify-content: space-between; gap: 10px; width: 100%; margin-top: 12px; text-align: left; }
-      .offer-price strong, .offer-price span { display: inline; }
-      .offer-price span { flex: 1; }
-      .section, .video-card, .checkout { width: 100%; }
-      .included { width: 100%; }
-      .preview-grid { display: flex; width: 100%; margin: 18px 0 0; padding: 0 0 8px; gap: 10px; overflow-x: auto; }
-      .preview { flex: 0 0 calc(100% - 28px); width: calc(100% - 28px); }
-      .preview-page { width: 100%; }
-      .checkout-benefits span { min-width: 0; }
-      .payment-box { width: 100%; }
-      .price-row { align-items: baseline; }
-      .sticky-cta { width: auto; }
-    }
-    @media (max-width: 390px) {
-      main > .article { width: calc(100% - 24px); }
-      .topline .wrap, .masthead .wrap { width: calc(100% - 24px); }
-      .nav .wrap { padding-left: 12px; }
-      .hero { max-height: 124px; aspect-ratio: 16 / 7.5; }
-      .offer-price { align-items: flex-start; flex-wrap: wrap; }
-      .offer-price span { flex-basis: 100%; order: 3; }
-      .preview { flex-basis: calc(100% - 18px); width: calc(100% - 18px); }
-    }
-    /* Refinamento visual editorial */
-    :root {
-      --paper: #fffdfa;
-      --paper-alt: #f6f3ee;
-      --paper-deep: #e9e2d8;
-      --ink: #1f1c19;
-      --muted: #6e665d;
-      --soft: #91867a;
-      --line: #ded8cf;
-      --red: #a92720;
-      --red-deep: #741812;
-      --red-tint: #f8ece9;
-      --gold: #95702d;
-      --gold-tint: #f4eddf;
-      --shadow: 0 10px 28px rgba(39, 29, 20, .055);
-    }
-    body { background: var(--paper); }
-    .masthead { position: relative; color: var(--ink); background: var(--paper); border-top: 4px solid var(--red); border-bottom: 1px solid var(--line); }
-    .masthead .wrap { min-height: 72px; }
-    .brand { color: var(--ink); }
-    .brand-mark { border-color: var(--red); }
-    .brand-mark::after { background: var(--red); }
-    .masthead-note { color: var(--muted); }
-    .masthead-note b { color: var(--ink); }
-    .nav { background: var(--paper); }
-    .nav-links a { font-size: 11.5px; letter-spacing: .01em; }
-    main { background: linear-gradient(180deg, #fffdfa 0%, #fcfaf7 100%); }
-    .article { width: min(780px, 100%); }
-    .sponsored-label { font-size: 10px; letter-spacing: .13em; }
-    h1 { max-width: 740px; font-weight: 600; letter-spacing: -.045em; }
-    .dek { max-width: 670px; color: #514941; }
-    .hero-figure { width: 94%; margin: 0 auto 27px; }
-    .hero { width: 100%; max-height: 310px; aspect-ratio: 16 / 7; display: block; object-fit: cover; object-position: center 46%; border: 1px solid var(--line); border-radius: 14px; }
-    .caption { max-width: 620px; margin: 8px 2px 0; color: var(--soft); font-size: 10px; line-height: 1.45; }
-    .offer-strip { padding: 25px 26px; background: #f7f3ed; border: 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); border-left: 3px solid var(--red); border-radius: 0; }
-    .offer-strip h2 { font-size: 23px; }
-    .offer-price strong { font-size: 29px; }
-    .section { margin: 54px 0; }
-    .section h2 { font-size: 31px; letter-spacing: -.025em; }
-    .included { padding: 30px 0; background: transparent; border: 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); border-radius: 0; }
-    .included h2 { margin-bottom: 8px; }
-    .included h2::after { content: '  ·  material digital'; color: var(--soft); font: 400 12px Archivo, Arial, sans-serif; letter-spacing: .02em; }
-    .benefit-grid { gap: 0 28px; }
-    .benefit { padding: 19px 0; background: transparent; border: 0; border-top: 1px solid var(--line); border-radius: 0; }
-    .benefit-icon { width: auto; height: auto; margin-bottom: 9px; color: var(--red); background: transparent; border-radius: 0; font: 700 12px 'Source Serif 4', Georgia, serif; }
-    .benefit h3 { font-size: 14px; letter-spacing: -.01em; }
-    .preview { min-height: 214px; background: #fff; border: 1px solid var(--line); border-radius: 2px; box-shadow: none; }
-    .preview-page { background: #f8f5f0; }
-    .video-card { border-radius: 2px; }
-    .faq { border-top: 1px solid var(--line); padding-top: 26px; }
-    .faq h2 { margin-bottom: 8px; }
-    .checkout { padding: 31px; background: #f7f3ed; border-top: 3px solid var(--red); border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); border-left: 1px solid var(--line); border-radius: 2px; box-shadow: none; }
-    .payment-box { background: var(--red); border-radius: 2px; }
-    .guarantee { border: 1px solid #eadfc9; border-radius: 2px; }
-    footer { border-top: 4px solid #2f2924; }
-    .sticky-cta { border: 1px solid #443b34; border-radius: 3px; }
-    .offer-timer { display: flex; align-items: center; justify-content: space-between; gap: 15px; margin: 15px 0 17px; padding: 11px 13px; background: #f7f3ed; border: 1px solid var(--line); border-left: 3px solid var(--red); border-radius: 6px; }
-    .offer-timer-copy { min-width: 0; }
-    .offer-timer-copy strong { display: block; margin-bottom: 2px; color: var(--red); font-size: 9px; letter-spacing: .08em; text-transform: uppercase; }
-    .offer-timer-copy span { display: block; color: var(--muted); font-size: 10.5px; line-height: 1.35; }
-    .offer-timer-clock { display: flex; align-items: center; gap: 4px; flex: 0 0 auto; padding: 5px 8px; color: var(--ink); background: #fff; border: 1px solid var(--line); border-radius: 4px; }
-    .offer-timer-clock span { min-width: 29px; text-align: center; }
-    .offer-timer-clock b { display: block; font: 700 19px/1 'Source Serif 4', Georgia, serif; }
-    .offer-timer-clock small { display: block; margin-top: 2px; color: var(--muted); font-size: 7px; text-transform: uppercase; }
-    .offer-timer-clock i { color: var(--red); font-style: normal; font-weight: 900; }
-    .offer-timer.expired .offer-timer-clock b { font-size: 11px; }
-    .quick-proof { display: flex; flex-wrap: wrap; gap: 6px 15px; margin: -2px 0 16px; color: var(--muted); font-size: 10px; }
-    .quick-proof span::before { content: '✓'; margin-right: 4px; color: var(--gold); font-weight: 900; }
-    .special-intro { background: #f7f4ef; border-bottom: 1px solid var(--line); }
-    .special-intro .wrap { min-height: 34px; display: flex; align-items: center; gap: 10px; }
-    .special-intro-label { color: var(--red); font-size: 9px; font-weight: 900; letter-spacing: .12em; }
-    .special-intro-title { color: var(--muted); font: 500 12px 'Source Serif 4', Georgia, serif; }
-    .special-intro-date { margin-left: auto; color: var(--soft); font-size: 9.5px; }
-    .video-card, #responsabilidade { display: none; }
-    .editorial-meta span:last-child { display: none; }
-
-    @media (max-width: 720px) {
-      .masthead { border-top-width: 3px; }
-      .masthead .wrap { min-height: 54px; }
-      .brand { font-size: 19px; }
-      .nav-links a { font-size: 10.5px; }
-      .special-intro .wrap { min-height: 31px; gap: 7px; }
-      .special-intro-title { font-size: 10.5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-      .special-intro-date { display: none; }
-      main { padding-top: 17px; background: var(--paper); }
-      h1 { max-width: 340px; margin-bottom: 11px; font-size: clamp(30px, 8.4vw, 37px); line-height: 1.06; letter-spacing: -.035em; }
-      .dek { max-width: 340px; font-size: 16px; line-height: 1.42; }
-      .hero-figure { width: 100%; margin-bottom: 17px; }
-      .hero { max-height: 138px; aspect-ratio: 16 / 7.5; object-position: center 45%; border-radius: 10px; }
-      .caption { margin-top: 6px; font-size: 8.5px; line-height: 1.3; }
-      .offer-strip { padding: 15px 13px; border-left-width: 2px; }
-      .offer-strip p { display: none; }
-      .offer-strip h2 { font-size: 18px; }
-      .section { margin: 38px 0; }
-      .section h2 { font-size: 26px; }
-      .included { padding: 22px 0; }
-      .included h2::after { display: none; }
-      .benefit-grid { gap: 0; }
-      .benefit { padding: 14px 0; }
-      .benefit-icon { font-size: 11px; }
-      .preview { border-radius: 2px; }
-      .checkout { padding: 20px 15px; border-top-width: 2px; }
-      .sticky-cta { border-radius: 3px; }
-      .offer-timer { align-items: flex-start; gap: 9px; margin: 13px 0 15px; padding: 10px; border-left-width: 2px; border-radius: 5px; }
-      .offer-timer-copy strong { font-size: 8px; }
-      .offer-timer-copy span { font-size: 9px; }
-      .offer-timer-clock { gap: 2px; padding: 5px 4px; }
-      .offer-timer-clock span { min-width: 23px; }
-      .offer-timer-clock b { font-size: 15px; }
-      .offer-timer-clock small { font-size: 6px; }
-      .editorial-meta span:last-child { display: none; }
-    }
+    @media (max-width:700px) { .header-inner { padding:0 15px; } .story-wrap,.offer-area,.responsible-area { width:min(100% - 40px,680px); } .story-wrap { margin-top:28px; } h1 { font-size:clamp(32px,9.5vw,42px); letter-spacing:-1.35px; } .story-lede { font-size:15px; } .join-cta { min-height:66px; margin-top:15px; padding-left:16px; padding-right:16px; font-size:clamp(18px,5.7vw,27px); } .offer-area { margin-top:37px; padding:0 20px 8px; } .section-kicker { margin-left:-21px; padding-left:20px; } .responsible-area { padding:23px 20px; grid-template-columns:30px 1fr; gap:11px; } .utility-panel { right:11px; } }
+    @media (max-width:420px) { .ticker-track { font-size:7px; letter-spacing:1.05px; } .story-wrap,.offer-area,.responsible-area { width:min(100% - 30px,680px); } h1 { font-size:31px; } .commercial-label { font-size:8px; } .masthead b { display:none; } .join-cta { font-size:17px; letter-spacing:-.75px; } .offer-item { grid-template-columns:30px 1fr 20px; gap:8px; } }
+    @media (prefers-reduced-motion:reduce) { *,*:before,*:after { scroll-behavior:auto!important; transition-duration:1ms!important; } }
   </style>
 </head>
 <body>
-  <div class="topline">
-    <div class="wrap">
-      <span><strong>Publicidade</strong> · +18 · sem promessa de prêmio</span>
-      <a href="#transparencia">Como este conteúdo é produzido</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <button class="icon-button" type="button" data-panel="search-panel" aria-label="Abrir pesquisa" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="5.6"></circle><path d="m16 16 4.2 4.2"></path></svg>
+      </button>
+      <span class="masthead"><span class="masthead-stamp">🚨</span>FINANÇAS <b>HUB</b></span>
+      <button class="icon-button" type="button" data-panel="menu-panel" aria-label="Abrir menu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
+      </button>
     </div>
-  </div>
-
-  <header class="masthead">
-    <div class="wrap">
-      <a class="brand" href="#topo" aria-label="Ponto de Vista - início">
-        <span class="brand-mark" aria-hidden="true"></span>
-        Ponto de Vista
-      </a>
-      <div class="masthead-note"><b>Informação, contexto e responsabilidade.</b><br>Um especial sobre organização e jogo consciente.</div>
+    <div class="utility-panel" id="search-panel" role="dialog" aria-label="Pesquisa" aria-hidden="true">
+      <div class="utility-panel-content"><strong>Pesquisa</strong><span>A pesquisa está indisponível neste protótipo.</span><button class="panel-close" type="button" aria-label="Fechar">×</button></div>
+    </div>
+    <div class="utility-panel" id="menu-panel" role="dialog" aria-label="Menu" aria-hidden="true">
+      <div class="utility-panel-content"><strong>Menu</strong><span>A navegação está indisponível neste protótipo.</span><button class="panel-close" type="button" aria-label="Fechar">×</button></div>
     </div>
   </header>
 
-  <nav class="nav" aria-label="Navegação principal">
-    <div class="wrap">
-      <div class="nav-links">
-        <a class="active" href="#topo">Especial</a>
-        <a href="#conteudo">O estudo</a>
-        <a href="#previas">O que inclui</a>
-        <a href="#faq">Dúvidas</a>
-      </div>
-      <a class="nav-cta" href="#checkout">Ver oferta →</a>
-    </div>
-  </nav>
+  <div class="news-ticker" aria-label="Identificação da página"><div class="ticker-track">COMUNICAÇÃO COMERCIAL · CONFIRA AS CONDIÇÕES ANTES DE PROSSEGUIR&nbsp; — &nbsp; COMUNICAÇÃO COMERCIAL · CONFIRA AS CONDIÇÕES ANTES DE PROSSEGUIR&nbsp; — &nbsp; COMUNICAÇÃO COMERCIAL · CONFIRA AS CONDIÇÕES ANTES DE PROSSEGUIR&nbsp; — &nbsp;</div></div>
 
-  <div class="special-intro" aria-label="Identificação do especial">
-    <div class="wrap">
-      <span class="special-intro-label">GUIA DIGITAL</span>
-      <span class="special-intro-title">Especial patrocinado · organização e probabilidades</span>
-      <span class="special-intro-date">15/08/2026</span>
-    </div>
-  </div>
-
-  <main id="topo">
-    <article class="article">
-      <figure class="hero-figure">
-        <img class="hero" src="lotofacil-estudo-mesa_731533c9.jpg" alt="Mesa com caderno, anotações e gráficos de organização de dados da Lotofácil">
-        <figcaption class="caption">Imagem ilustrativa. Dados históricos servem para consulta e organização; não preveem nem alteram o resultado de sorteios futuros.</figcaption>
-      </figure>
-
-      <div class="sponsored-label">Especial patrocinado · Estudo Lotofácil</div>
-      <h1>Organize suas escolhas na Lotofácil com critérios claros e limite definido.</h1>
-      <p class="dek">Um estudo digital para consultar históricos, revisar combinações e jogar dentro do orçamento que você definiu — sem promessas de prêmio.</p>
-
-      <div class="hero-actions">
-        <a class="primary-btn" href="#checkout">Garantir acesso por R$ 47,90 <span aria-hidden="true">→</span></a>
-        <span class="microtrust">Acesso imediato · compra única · garantia de 7 dias</span>
-      </div>
-
-      <div class="offer-timer" role="note" aria-label="Condição atual da oferta">
-        <div class="offer-timer-copy"><strong>Condição comercial atual</strong><span>O valor de R$ 47,90 fica reservado durante esta janela.</span></div>
-        <div class="offer-timer-clock" aria-label="Tempo restante"><span><b data-unit="minutes">23</b><small>min</small></span><i>:</i><span><b data-unit="seconds">00</b><small>seg</small></span></div>
-      </div>
-
-      <div class="quick-proof" aria-label="Resumo da entrega"><span>PDF + planilha</span><span>Acesso imediato</span><span>Compra única</span></div>
-
-      <div class="editorial-meta">
-        <span>Por <strong>Núcleo de Conteúdo Ponto de Vista</strong></span><span class="dot">·</span>
-        <span>Atualizado em 15/08/2026</span><span class="dot">·</span>
-        <span>Leitura: 4 minutos</span>
-      </div>
-
-      <section class="offer-strip" aria-label="Resumo da oferta">
-        <div>
-          <h2>Um material para jogar com mais organização.</h2>
-          <p>PDF explicativo, ficha de revisão, planilha de orçamento e guia de probabilidades.</p>
-        </div>
-        <div class="offer-price">
-          <strong>R$ 47,90</strong>
-          <span>Acesso único · sem mensalidade</span>
-          <a class="primary-btn" href="#checkout">Garantir acesso</a>
-        </div>
-      </section>
-
-      <section class="section copy" id="conteudo">
-        <h2>O problema não é encontrar uma fórmula mágica.</h2>
-        <p>É jogar sem um critério definido: escolher dezenas no impulso, não registrar quanto já foi gasto ou confundir uma sequência histórica com uma previsão do próximo concurso.</p>
-        <p>O estudo foi criado para transformar uma escolha improvisada em um processo simples de consultar, revisar, registrar e respeitar um limite previamente estabelecido.</p>
-        <div class="warning">
-          <strong>Aviso essencial</strong>
-          <p>Cada sorteio é independente dos anteriores. O material não aumenta a probabilidade de uma combinação, não fornece números vencedores e não garante retorno financeiro.</p>
-        </div>
-      </section>
-
-      <section class="section included" aria-labelledby="included-title">
-        <h2 id="included-title">O que você recebe</h2>
-        <div class="benefit-grid">
-          <article class="benefit"><div class="benefit-icon">01</div><h3>Leitura histórica organizada</h3><p>Uma forma prática de consultar concursos anteriores sem transformar histórico em previsão.</p></article>
-          <article class="benefit"><div class="benefit-icon">02</div><h3>Ficha de revisão da combinação</h3><p>Um quadro para observar como as dezenas escolhidas estão distribuídas, conforme seus próprios critérios.</p></article>
-          <article class="benefit"><div class="benefit-icon">03</div><h3>Planilha de orçamento</h3><p>Espaço para registrar um limite máximo antes de jogar e acompanhar suas decisões.</p></article>
-          <article class="benefit"><div class="benefit-icon">04</div><h3>Guia de probabilidades</h3><p>Explicações simples para entender combinações, acaso e os limites de qualquer análise.</p></article>
-        </div>
-      </section>
-
-      <section class="section" id="previas">
-        <h2>Veja como o material é organizado</h2>
-        <p class="section-intro">As imagens abaixo representam a estrutura das páginas. O conteúdo final deve corresponder exatamente ao arquivo entregue após a compra.</p>
-        <div class="preview-grid">
-          <article class="preview"><div class="preview-page"><small>Estudo Lotofácil</small><div class="fake-line red"></div><div class="fake-line"></div><div class="fake-line short"></div><div class="fake-table"><i class="fake-cell active"></i><i class="fake-cell"></i><i class="fake-cell"></i><i class="fake-cell active"></i><i class="fake-cell"></i><i class="fake-cell"></i><i class="fake-cell active"></i><i class="fake-cell"></i><i class="fake-cell"></i><i class="fake-cell"></i></div></div><strong>Leitura histórica</strong><span>Consulta visual e organizada dos dados.</span></article>
-          <article class="preview"><div class="preview-page"><small>Ficha de revisão</small><div class="fake-line"></div><div class="fake-line short"></div><div class="fake-table"><i class="fake-cell"></i><i class="fake-cell active"></i><i class="fake-cell"></i><i class="fake-cell"></i><i class="fake-cell active"></i><i class="fake-cell"></i><i class="fake-cell"></i><i class="fake-cell"></i><i class="fake-cell active"></i><i class="fake-cell"></i></div><div class="fake-line"></div></div><strong>Ficha de revisão</strong><span>Um apoio para registrar seus próprios critérios.</span></article>
-          <article class="preview"><div class="preview-page"><small>Orçamento</small><div class="fake-line red"></div><div class="fake-line"></div><div class="fake-line"></div><div class="fake-line short"></div><div class="fake-line"></div></div><strong>Planilha de orçamento</strong><span>Defina o limite antes de começar.</span></article>
-        </div>
-      </section>
-
-      <div class="video-card">
-        <img src="https://noticiapage-hgpjqahm.manus.space/manus-storage/loteria-padroes-estudo_0eb88db0.jpg" alt="Padrões abstratos representando dados organizados">
-        <div class="video-overlay"><span class="topic-tag">LEITURA EXPLICATIVA</span><strong>Por que histórico não transforma probabilidade em certeza</strong><small>Especial patrocinado · conteúdo informativo</small></div>
-      </div>
-
-      <section class="section copy" id="responsabilidade">
-        <h2>Como usar o material com responsabilidade</h2>
-        <p>Defina um limite de gasto antes de começar, trate-o como encerrado e evite apostar para tentar recuperar perdas. Se perceber que o jogo deixou de ser lazer ou que está afetando seu tempo e dinheiro, converse com alguém de confiança e procure apoio profissional.</p>
-      </section>
-
-      <section class="section faq" id="faq">
-        <h2>Perguntas frequentes</h2>
-        <details><summary>O material garante que vou ganhar?</summary><p>Não. Nenhum material altera a probabilidade de um sorteio. O estudo serve para organização, consulta e definição de limites pessoais.</p></details>
-        <details><summary>O que recebo depois da compra?</summary><p>Após a confirmação do pagamento, o acesso digital é enviado para o e-mail informado no checkout. O material inclui o estudo em PDF e os arquivos complementares descritos nesta página.</p></details>
-        <details><summary>Existe assinatura ou cobrança recorrente?</summary><p>Não. Esta oferta é apresentada como compra única, sem assinatura automática. Essa condição deve ser mantida no checkout real.</p></details>
-        <details><summary>Posso pedir reembolso?</summary><p>Sim. A oferta conta com garantia de 7 dias corridos. A solicitação deve ser feita pelo canal de suporte indicado nos termos da compra, conforme as condições aplicáveis ao produto digital.</p></details>
-        <details><summary>Preciso ter conhecimento prévio?</summary><p>Não. O material foi planejado para linguagem simples e para pessoas que querem organizar seus próprios critérios sem depender de previsões.</p></details>
-      </section>
-
-      <section class="checkout" id="checkout">
-        <div class="sponsored-label">Acesso digital</div>
-        <h2>Tenha o material completo para organizar seus próprios critérios.</h2>
-        <p>Um estudo para organizar critérios e limites pessoais de jogo. Não oferece números vencedores, promessa de retorno ou qualquer garantia de resultado em loteria.</p>
-        <div class="checkout-benefits"><span>PDF + arquivos complementares</span><span>Envio por e-mail</span><span>Compra única</span><span>Garantia de 7 dias</span></div>
-        <div class="payment-box">
-          <div class="payment-label">Condição atual da oferta</div>
-          <div class="price-row"><strong>R$ 47,90</strong></div>
-          <p class="installment">ou até 3x de R$ 15,97 sem juros · Pix, cartão ou boleto</p>
-          <a class="payment-btn" href="COLOQUE_AQUI_O_LINK_REAL_DO_CHECKOUT">Finalizar acesso por R$ 47,90 →</a>
-          <p class="payment-note">Produto digital para maiores de 18 anos. Confira as informações e o valor final no checkout antes de concluir a compra.</p>
-        </div>
-        <div class="guarantee"><b>✓</b><span><strong>Garantia de 7 dias.</strong> Se o material não for adequado para você, consulte os termos da oferta e solicite o cancelamento pelo canal de suporte informado.</span></div>
-      </section>
+  <main>
+    <article class="story-wrap">
+      <div class="commercial-label"><span class="siren" aria-hidden="true">🚨</span> COMUNICAÇÃO COMERCIAL</div>
+      <h1>ANTES DO CLIQUE, VEJA EXATAMENTE O QUE ESTÁ SENDO OFERECIDO.</h1>
+      <p class="story-lede">Conheça o que está incluído, consulte as condições e decida com informação antes de avançar.</p>
+      <div class="byline"><strong>Conteúdo patrocinado</strong><span>Atualizado em 17/08/2026</span></div>
+      <aside class="pre-cta-notice" aria-label="Informação de risco e identificação comercial"><span class="notice-rule" aria-hidden="true"></span><div><strong>DECISÃO RESPONSÁVEL</strong><p>Comunicação comercial. O checkout é demonstrativo e nenhuma compra ou aposta garante retorno.</p></div></aside>
+      <!-- Troque a URL abaixo pelo seu checkout real. -->
+      <a class="join-cta checkout-link" href="https://example.com/checkout" target="_blank" rel="noreferrer"><span>VER DETALHES DA OFERTA</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3h6v6M21 3l-9 9"></path><path d="M19 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h6"></path></svg></a>
+      <p class="cta-caption">Link de checkout demonstrativo. Leia preço, regras e condições antes de comprar.</p>
     </article>
+
+    <section class="offer-area" aria-labelledby="offer-title">
+      <div class="section-kicker"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 4 6v5c0 5.1 3.4 8.6 8 10 4.6-1.4 8-4.9 8-10V6l-8-3Z"></path><path d="m9 12 2 2 4-4"></path></svg> GUIA DE LEITURA DA OFERTA</div>
+      <h2 id="offer-title">ANTES DE COMPRAR, CONFIRA ISTO.</h2>
+      <div class="offer-list">
+        <article class="offer-item"><span class="offer-number">01</span><div><h3>Como o conteúdo é organizado</h3><p>Uma visão direta dos materiais, etapas de acesso e orientações de uso antes da compra.</p></div><span class="offer-check" aria-hidden="true">✓</span></article>
+        <article class="offer-item"><span class="offer-number">02</span><div><h3>Condições visíveis antes do checkout</h3><p>A página de destino deve apresentar preço, regras e política aplicável antes de qualquer decisão.</p></div><span class="offer-check" aria-hidden="true">✓</span></article>
+        <article class="offer-item"><span class="offer-number">03</span><div><h3>Acesso para consulta digital</h3><p>Uma experiência pensada para leitura no celular ou computador, conforme os detalhes da oferta.</p></div><span class="offer-check" aria-hidden="true">✓</span></article>
+      </div>
+    </section>
+
+    <section class="responsible-area" aria-labelledby="responsible-title"><div class="responsible-icon" aria-hidden="true">⚠</div><div><p class="responsible-eyebrow">DECISÃO RESPONSÁVEL</p><h2 id="responsible-title">Nenhuma compra ou aposta garante retorno.</h2><p>Jogos e apostas envolvem risco financeiro. Este protótipo não processa pagamentos; o link de checkout é apenas ilustrativo. Prossiga somente se tiver idade legal e após consultar os termos aplicáveis.</p><a class="text-cta checkout-link" href="https://example.com/checkout" target="_blank" rel="noreferrer">Consultar condições da oferta&nbsp; ›</a></div></section>
   </main>
 
-  <footer id="transparencia">
-    <div class="wrap">
-      <div class="footer-grid">
-        <div><h2>Ponto de Vista</h2><p>Conteúdo editorial e materiais digitais sobre informação, contexto e comportamento responsável. Este especial é publicidade identificada e não representa vínculo com a Caixa Econômica Federal.</p></div>
-        <div class="footer-links"><a href="/sobre">Sobre o Ponto de Vista</a><a href="/termos">Termos de uso</a><a href="/privacidade">Política de privacidade</a><a href="mailto:suporte@seudominio.com">Fale com o suporte</a></div>
-      </div>
-      <div class="footer-fine">Loteria é jogo de azar e cada sorteio é independente dos anteriores. Não garantimos resultado. Se o jogo deixar de ser lazer, procure apoio. Consulte os termos, a política de privacidade e o canal de suporte antes de concluir a compra.</div>
-    </div>
-  </footer>
+  <footer class="site-footer"><strong>COMUNICAÇÃO COMERCIAL — PROTÓTIPO</strong><span>Esta página não é uma matéria jornalística independente e não apresenta resultados garantidos.</span></footer>
 
-<script>
-  // Use somente se a condição comercial realmente ficar disponível por 23 minutos.
-  const OFFER_WINDOW_MS = 23 * 60 * 1000;
-  const OFFER_STORAGE_KEY = 'ponto-de-vista-offer-window-v2';
-  const storedDeadline = sessionStorage.getItem(OFFER_STORAGE_KEY);
-  const deadline = storedDeadline ? Number(storedDeadline) : Date.now() + OFFER_WINDOW_MS;
-  if (!storedDeadline) sessionStorage.setItem(OFFER_STORAGE_KEY, String(deadline));
-  const timer = document.querySelector('.offer-timer');
-  const minuteEl = timer.querySelector('[data-unit="minutes"]');
-  const secondEl = timer.querySelector('[data-unit="seconds"]');
-  function updateOfferTimer() {
-    const distance = deadline - Date.now();
-    if (distance <= 0) {
-      timer.classList.add('expired');
-      timer.querySelector('.offer-timer-copy span').textContent = 'A condição de preço terminou. Consulte a oferta atual abaixo.';
-      timer.querySelector('.offer-timer-clock').innerHTML = '<span><b>Encerrado</b></span>';
-      return;
-    }
-    minuteEl.textContent = String(Math.floor(distance / 60000)).padStart(2, '0');
-    secondEl.textContent = String(Math.floor((distance % 60000) / 1000)).padStart(2, '0');
-  }
-  updateOfferTimer();
-  setInterval(updateOfferTimer, 1000);
-</script>
+  <script>
+    // Altere somente esta constante para trocar todos os links de checkout do protótipo.
+    const checkoutUrl = 'https://example.com/checkout';
+    document.querySelectorAll('.checkout-link').forEach((link) => link.href = checkoutUrl);
+
+    const triggers = document.querySelectorAll('[data-panel]');
+    const panels = document.querySelectorAll('.utility-panel');
+    const closePanels = () => {
+      panels.forEach((panel) => { panel.classList.remove('is-visible'); panel.setAttribute('aria-hidden', 'true'); });
+      triggers.forEach((trigger) => trigger.setAttribute('aria-expanded', 'false'));
+    };
+
+    triggers.forEach((trigger) => {
+      trigger.addEventListener('click', () => {
+        const panel = document.getElementById(trigger.dataset.panel);
+        const opening = !panel.classList.contains('is-visible');
+        closePanels();
+        if (opening) { panel.classList.add('is-visible'); panel.setAttribute('aria-hidden', 'false'); trigger.setAttribute('aria-expanded', 'true'); }
+      });
+    });
+    document.querySelectorAll('.panel-close').forEach((button) => button.addEventListener('click', closePanels));
+    document.addEventListener('keydown', (event) => { if (event.key === 'Escape') closePanels(); });
+    document.addEventListener('click', (event) => { if (!event.target.closest('.site-header')) closePanels(); });
+  </script>
 </body>
 </html>
