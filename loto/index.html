@@ -61,6 +61,7 @@
     .launch-copy { display:grid; gap:4px; }
     .launch-copy strong { color:var(--yellow); font-family:var(--display); font-size:10px; font-weight:900; letter-spacing:1.2px; }
     .launch-copy span { color:rgba(255,255,255,.88); font-size:11px; line-height:1.38; }
+    .launch-deadline { display:none; margin-top:3px; color:var(--yellow); font-family:var(--display); font-size:11px; font-weight:900; letter-spacing:.35px; }
     .launch-timer { min-width:150px; color:#fff; font-family:var(--display); font-size:27px; font-weight:900; letter-spacing:-.9px; line-height:1; text-align:right; }
     .launch-timer small { display:block; margin-top:4px; color:rgba(255,255,255,.65); font-family:Arial,Helvetica,sans-serif; font-size:9px; font-weight:400; letter-spacing:0; }
     .launch-window.is-pending { color:#555; background:#f2f0eb; border-left-color:#999; }
@@ -68,6 +69,11 @@
     .launch-window.is-pending .launch-copy span,.launch-window.is-pending .launch-timer,.launch-window.is-pending .launch-timer small { color:#686868; }
     .launch-window.is-ended { color:#fff; background:#252525; border-left-color:#777; }
     .launch-window.is-ended .launch-copy strong { color:#fff; }
+    .launch-window.is-active { padding:19px 20px; background:linear-gradient(105deg,#990000,#c80000); border-left-color:var(--yellow); box-shadow:0 4px 0 rgba(0,0,0,.2); }
+    .launch-window.is-active .launch-copy strong { font-size:11px; }
+    .launch-window.is-active .launch-deadline { display:block; }
+    .launch-window.is-active .launch-timer { min-width:175px; color:var(--yellow); font-size:36px; letter-spacing:-1.4px; text-shadow:1px 1px 0 rgba(0,0,0,.22); }
+    .launch-window.is-active .launch-timer small { color:rgba(255,255,255,.82); font-family:var(--display); font-size:9px; font-weight:800; letter-spacing:.8px; }
     .checkout-link.is-disabled { opacity:.55; pointer-events:none; filter:grayscale(.8); }
     .article-body { padding:28px 0 0; }
     .article-body > p { max-width:690px; margin:0 0 17px; color:var(--text); font-family:var(--serif); font-size:19px; line-height:1.55; }
@@ -160,7 +166,7 @@
       <p class="article-deck">Uma proposta de leitura para quem busca mais organização, critérios e consciência antes de registrar qualquer jogo.</p>
       <div class="byline"><div class="author"><span class="author-mark">E</span><div><strong>Equipe de Conteúdo</strong><span>Atualizado em 18/08/2026</span></div></div><span class="reading-time">Leitura estimada: 4 min<br />Conteúdo patrocinado</span></div>
       <section class="lead-cta" aria-label="Acesso à oferta"><div class="lead-cta-copy"><strong>Quer acessar o Estudo Secreto?</strong><span>Veja o conteúdo da oferta e avance para o checkout quando estiver pronto.</span></div><a class="cta-button checkout-link" href="https://example.com/checkout" target="_blank" rel="noreferrer">ACESSAR O ESTUDO <span aria-hidden="true">→</span></a></section>
-      <section class="launch-window is-pending" id="launch-window" aria-live="polite"><div class="launch-copy"><strong id="launch-kicker">JANELA DE LANÇAMENTO</strong><span id="launch-copy">A oferta será disponibilizada por quatro horas. Configure a data e hora reais de encerramento antes de ativar a campanha.</span></div><time class="launch-timer" id="launch-timer" datetime="PT4H">04:00:00<small id="launch-subtitle">CONFIGURAÇÃO PENDENTE</small></time></section>
+      <section class="launch-window is-pending" id="launch-window" aria-live="polite"><div class="launch-copy"><strong id="launch-kicker">JANELA DE LANÇAMENTO</strong><span id="launch-copy">A oferta será disponibilizada por quatro horas. Configure a data e hora reais de encerramento antes de ativar a campanha.</span><b class="launch-deadline" id="launch-deadline"></b></div><time class="launch-timer" id="launch-timer" datetime="PT4H">04:00:00<small id="launch-subtitle">CONFIGURAÇÃO PENDENTE</small></time></section>
 
       <div class="article-body">
         <p>Antes de decidir, vale entender o que está sendo oferecido. Este material foi pensado como um <strong>estudo de leitura e organização</strong>, não como promessa de resultado ou vantagem garantida em loterias.</p>
@@ -210,7 +216,8 @@
     */
     const campaignConfig = {
       launchEndsAt: '',
-      windowHours: 4
+      windowHours: 4,
+      timezone: 'America/Sao_Paulo'
     };
     document.querySelectorAll('.checkout-link').forEach((link) => link.href = offerConfig.checkoutUrl);
     document.getElementById('offer-content').textContent = offerConfig.content;
@@ -220,6 +227,7 @@
     const launchWindow = document.getElementById('launch-window');
     const launchKicker = document.getElementById('launch-kicker');
     const launchCopy = document.getElementById('launch-copy');
+    const launchDeadline = document.getElementById('launch-deadline');
     const launchTimer = document.getElementById('launch-timer');
     const launchSubtitle = document.getElementById('launch-subtitle');
     let campaignInterval;
@@ -235,15 +243,18 @@
         launchWindow.className = 'launch-window is-ended';
         launchKicker.textContent = 'LANÇAMENTO ENCERRADO';
         launchCopy.textContent = 'A janela de quatro horas foi concluída. Consulte a próxima disponibilidade oficial antes de tentar acessar a oferta.';
+        launchDeadline.textContent = '';
         launchTimer.textContent = '00:00:00'; launchSubtitle.textContent = 'PRAZO ENCERRADO';
         disableCheckoutLinks(); clearInterval(campaignInterval); return;
       }
       const hours = String(Math.floor(remaining / 3600000)).padStart(2,'0');
       const minutes = String(Math.floor((remaining % 3600000) / 60000)).padStart(2,'0');
       const seconds = String(Math.floor((remaining % 60000) / 1000)).padStart(2,'0');
-      launchWindow.className = 'launch-window';
-      launchKicker.textContent = 'JANELA DE LANÇAMENTO ATIVA';
-      launchCopy.textContent = 'Esta condição comercial encerra no horário informado. Confira a oferta antes do término da janela.';
+      const endDisplay = new Intl.DateTimeFormat('pt-BR',{ timeZone:campaignConfig.timezone, day:'2-digit', month:'2-digit', year:'numeric', hour:'2-digit', minute:'2-digit', hour12:false, timeZoneName:'short' }).format(new Date(end));
+      launchWindow.className = 'launch-window is-active';
+      launchKicker.textContent = 'ÚLTIMAS HORAS DA JANELA DE LANÇAMENTO';
+      launchCopy.textContent = 'As inscrições desta rodada serão fechadas quando o contador chegar a zero.';
+      launchDeadline.textContent = `ENCERRAMENTO CONFIRMADO: ${endDisplay}`;
       launchTimer.firstChild.textContent = `${hours}:${minutes}:${seconds}`;
       launchSubtitle.textContent = 'TEMPO RESTANTE';
     }
