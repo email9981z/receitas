@@ -54,13 +54,13 @@
     .author strong { display:block; font-size:11px; }
     .author span { display:block; margin-top:2px; color:var(--muted); font-size:10px; }
     .reading-time { color:var(--muted); font-size:10px; text-align:right; }
-    .lead-cta { margin:24px 0 0; padding:17px 18px 18px; display:flex; align-items:center; justify-content:space-between; gap:18px; color:#111; background:var(--yellow); border-bottom:5px solid #907100; box-shadow:0 3px 0 rgba(0,0,0,.18); }
-    .lead-cta-copy { min-width:0; display:grid; gap:4px; }
-    .lead-cta-kicker { color:#6f5700; font-family:var(--display); font-size:9px; font-weight:900; letter-spacing:1.05px; line-height:1; text-transform:uppercase; }
-    .lead-cta-copy strong { font-family:var(--display); font-size:15px; font-weight:900; letter-spacing:-.45px; line-height:1.08; }
-    .lead-cta-copy span:not(.lead-cta-kicker) { max-width:430px; color:#2f2b1d; font-size:10.5px; line-height:1.38; }
-    .lead-cta .cta-button { flex:0 0 auto; min-height:48px; padding:0 17px; color:#fff; background:var(--red); border:1px solid #870000; box-shadow:2px 2px 0 rgba(0,0,0,.26); font-size:11px; letter-spacing:.15px; white-space:nowrap; }
-    .lead-cta .cta-button:hover { background:#d30808; border-color:#a30000; box-shadow:4px 4px 0 rgba(0,0,0,.23); }
+    .lead-cta { margin:24px 0 0; padding:20px 20px 21px; display:flex; align-items:stretch; justify-content:space-between; gap:22px; color:#fff; background:var(--ink); border-left:6px solid var(--red); border-bottom:3px solid #000; box-shadow:0 5px 0 rgba(0,0,0,.18); }
+    .lead-cta-copy { min-width:0; display:grid; align-content:center; gap:5px; }
+    .lead-cta-kicker { color:var(--yellow); font-family:var(--display); font-size:9px; font-weight:900; letter-spacing:1.15px; line-height:1; text-transform:uppercase; }
+    .lead-cta-copy strong { max-width:445px; color:#fff; font-family:var(--display); font-size:17px; font-weight:900; letter-spacing:-.55px; line-height:1.04; }
+    .lead-cta-copy span:not(.lead-cta-kicker) { max-width:455px; color:#d3d3d3; font-size:10.5px; line-height:1.42; }
+    .lead-cta .cta-button { flex:0 0 190px; min-height:56px; align-self:center; padding:0 17px; color:#111; background:var(--yellow); border:1px solid #d8a900; box-shadow:3px 3px 0 rgba(0,0,0,.45); font-size:11.5px; font-weight:900; letter-spacing:.25px; white-space:nowrap; text-transform:uppercase; }
+    .lead-cta .cta-button:hover { color:#111; background:#ffe16a; border-color:#edc117; box-shadow:5px 5px 0 rgba(0,0,0,.42); }
     .launch-window { margin:22px 0 0; padding:0; display:block; color:var(--red); background:transparent; border:0; box-shadow:none; }
     .launch-copy { margin:0; color:var(--red); font-family:var(--display); font-size:clamp(22px,3.6vw,38px); font-weight:900; letter-spacing:-1.35px; line-height:1; }
     .launch-window.is-pending { color:#666; background:transparent; }
@@ -166,7 +166,7 @@
     .sticky-cta span { font-size:17px; }
 
     @media (max-width:760px) { .article-shell,.faq-wrap { width:min(100% - 32px,760px); } .header-inner,.footer-inner { width:min(100% - 30px,1120px); } .article { padding-top:32px; } .article h1 { font-size:42px; letter-spacing:-2px; } .article-deck { font-size:19px; } .byline { align-items:flex-start; } .reading-grid { grid-template-columns:1fr; } .reading-card { min-height:160px; } .reading-card h3 { margin-top:18px; } .footer-inner { display:grid; gap:16px; } .footer p { text-align:left; } .sticky-cta { left:12px; right:12px; justify-content:center; bottom:12px; } }
-    @media (max-width:500px) { .masthead { font-size:15px; } .article h1 { font-size:36px; } .article-deck { font-size:18px; } .byline { display:grid; } .reading-time { text-align:left; } .lead-cta,.inline-cta { display:grid; } .lead-cta .cta-button,.inline-cta .cta-button { width:100%; } .launch-window { margin-top:18px; } .launch-copy { font-size:clamp(20px,7vw,29px); letter-spacing:-.9px; } .launch-window.is-critical .launch-copy,.launch-window.is-final .launch-copy { font-size:clamp(22px,7.5vw,31px); } .article-callout { padding:20px; grid-template-columns:35px 1fr; gap:12px; } .article-callout h2 { font-size:20px; } .article-cta { padding:22px; } .cta-button { width:100%; font-size:12px; } }
+    @media (max-width:500px) { .masthead { font-size:15px; } .article h1 { font-size:36px; } .article-deck { font-size:18px; } .byline { display:grid; } .reading-time { text-align:left; } .lead-cta,.inline-cta { display:grid; } .lead-cta { gap:14px; } .lead-cta .cta-button,.inline-cta .cta-button { width:100%; flex-basis:auto; } .launch-window { margin-top:18px; } .launch-copy { font-size:clamp(20px,7vw,29px); letter-spacing:-.9px; } .launch-window.is-critical .launch-copy,.launch-window.is-final .launch-copy { font-size:clamp(22px,7.5vw,31px); } .article-callout { padding:20px; grid-template-columns:35px 1fr; gap:12px; } .article-callout h2 { font-size:20px; } .article-cta { padding:22px; } .cta-button { width:100%; font-size:12px; } }
     @media (prefers-reduced-motion:reduce) { *,*:before,*:after { transition-duration:1ms!important; animation-duration:1ms!important; animation-iteration-count:1!important; scroll-behavior:auto!important; } }
   </style>
 </head>
@@ -190,7 +190,7 @@
       <h1>Você tem <em>4 horas</em> para decidir. Depois disso, esta oferta estará encerrada.</h1>
       <p class="article-deck">O acesso fica disponível somente durante esta janela. Quando o prazo terminar, o checkout será fechado e não haverá compra posterior desta oferta nesta campanha.</p>
       <div class="byline"><div class="author"><span class="author-mark">E</span><div><strong>Equipe de Conteúdo</strong><span>Atualizado em 18/08/2026</span></div></div><span class="reading-time">Leitura estimada: 4 min<br />Janela de acesso: 4 horas</span></div>
-      <section class="lead-cta" aria-label="Acesso imediato à oferta"><div class="lead-cta-copy"><span class="lead-cta-kicker">ACESSO ABERTO AGORA · PRAZO FINAL</span><strong>Veja a oferta antes que o checkout feche.</strong><span>Confira conteúdo, valor e condições no próximo passo. Se fizer sentido, conclua enquanto o acesso estiver aberto.</span></div><a class="cta-button checkout-link" href="https://example.com/checkout" target="_blank" rel="noopener noreferrer">ACESSAR AGORA <span aria-hidden="true">→</span></a></section>
+      <section class="lead-cta" aria-label="Consultar conteúdo e condições da oferta"><div class="lead-cta-copy"><span class="lead-cta-kicker">PRÓXIMO PASSO · INFORMAÇÃO COMPLETA</span><strong>Veja exatamente o que está incluído antes de decidir.</strong><span>Confira conteúdo, valor e condições na próxima etapa para avaliar a oferta com clareza.</span></div><a class="cta-button checkout-link" href="https://example.com/checkout" target="_blank" rel="noopener noreferrer">VER OFERTA E CONDIÇÕES <span aria-hidden="true">→</span></a></section>
       <p class="launch-window is-pending" id="launch-window" aria-live="polite" aria-label="Prazo de acesso"><span class="launch-copy" id="launch-copy">O acesso termina em 17:35.</span></p>
 
       <div class="article-body">
