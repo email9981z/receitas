@@ -52,11 +52,12 @@
     .author span { display:block; margin-top:2px; color:var(--muted); font-size:10px; }
     .reading-time { color:var(--muted); font-size:10px; text-align:right; }
     .lead-cta { margin:24px 0 0; padding:16px 17px 17px; display:flex; align-items:center; justify-content:space-between; gap:18px; color:#111; background:var(--yellow); border-bottom:4px solid #907100; box-shadow:0 2px 0 rgba(0,0,0,.15); }
-    .lead-cta-copy { display:grid; gap:3px; }
-    .lead-cta-copy strong { font-family:var(--display); font-size:14px; font-weight:900; letter-spacing:-.4px; }
-    .lead-cta-copy span { font-size:10px; line-height:1.35; }
-    .lead-cta .cta-button { flex:0 0 auto; min-height:45px; padding:0 16px; color:#fff; background:var(--red); box-shadow:2px 2px 0 rgba(0,0,0,.26); font-size:11px; }
-    .lead-cta .cta-button:hover { background:#d30808; box-shadow:4px 4px 0 rgba(0,0,0,.23); }
+    .lead-cta-copy { min-width:0; display:grid; gap:4px; }
+    .lead-cta-kicker { color:#6f5700; font-family:var(--display); font-size:9px; font-weight:900; letter-spacing:1.05px; line-height:1; text-transform:uppercase; }
+    .lead-cta-copy strong { font-family:var(--display); font-size:15px; font-weight:900; letter-spacing:-.45px; line-height:1.08; }
+    .lead-cta-copy span:not(.lead-cta-kicker) { max-width:430px; color:#2f2b1d; font-size:10.5px; line-height:1.38; }
+    .lead-cta .cta-button { flex:0 0 auto; min-height:48px; padding:0 17px; color:#fff; background:var(--red); border:1px solid #870000; box-shadow:2px 2px 0 rgba(0,0,0,.26); font-size:11px; letter-spacing:.15px; white-space:nowrap; }
+    .lead-cta .cta-button:hover { background:#d30808; border-color:#a30000; box-shadow:4px 4px 0 rgba(0,0,0,.23); }
     .launch-window { margin:13px 0 0; padding:16px 17px; display:grid; grid-template-columns:1fr auto; align-items:center; gap:18px; color:#fff; background:var(--red-deep); border-left:5px solid var(--yellow); }
     .launch-copy { display:grid; gap:4px; }
     .launch-copy strong { color:var(--yellow); font-family:var(--display); font-size:10px; font-weight:900; letter-spacing:1.2px; }
@@ -205,7 +206,7 @@
       <h1>ATENÇÃO: você tem <em>4 horas.</em> Depois disso, esta oferta será encerrada definitivamente.</h1>
       <p class="article-deck">Esta é a única janela de acesso desta oferta. Após o cronômetro zerar, a página será encerrada e não haverá compra posterior desta condição.</p>
       <div class="byline"><div class="author"><span class="author-mark">E</span><div><strong>Equipe de Conteúdo</strong><span>Atualizado em 18/08/2026</span></div></div><span class="reading-time">Leitura estimada: 4 min<br />Janela de acesso: 4 horas</span></div>
-      <section class="lead-cta" aria-label="Acesso à oferta"><div class="lead-cta-copy"><strong>Não conte com uma segunda chance.</strong><span>Depois das 4 horas, esta oferta sai do ar. Veja agora o conteúdo, o preço e as condições antes de decidir.</span></div><a class="cta-button checkout-link" href="https://example.com/checkout" target="_blank" rel="noopener noreferrer">ACESSAR ANTES DO FIM <span aria-hidden="true">→</span></a></section>
+      <section class="lead-cta" aria-label="Acesso à oferta"><div class="lead-cta-copy"><span class="lead-cta-kicker">JANELA DE ACESSO · 4 HORAS</span><strong>Confira a oferta completa antes de decidir.</strong><span>Veja o conteúdo, o valor e as condições no próximo passo. Se fizer sentido para você, conclua enquanto a janela estiver aberta.</span></div><a class="cta-button checkout-link" href="https://example.com/checkout" target="_blank" rel="noopener noreferrer">VER OFERTA E CONDIÇÕES <span aria-hidden="true">→</span></a></section>
       <section class="launch-window is-pending" id="launch-window" aria-live="polite" aria-label="Cronômetro da janela de lançamento"><div class="launch-copy"><strong id="launch-kicker">ÚLTIMA JANELA · 4 HORAS · ATIVAÇÃO PENDENTE</strong><span id="launch-copy">O cronômetro só começa quando você informar o horário real de encerramento. Após o zero, a oferta será encerrada definitivamente.</span><b class="launch-deadline" id="launch-deadline"></b></div><time class="launch-timer" id="launch-timer" datetime="PT4H">--:--:--<small id="launch-subtitle">ATIVAÇÃO NECESSÁRIA</small></time></section>
       <div class="conversion-proof" aria-label="Resumo da experiência"><span><b>01</b> uma única janela de 4 horas</span><span><b>02</b> sem compra após o encerramento</span><span><b>03</b> decisão antes do zero</span></div>
 
