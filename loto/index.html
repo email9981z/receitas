@@ -57,6 +57,18 @@
     .lead-cta-copy span { font-size:10px; line-height:1.35; }
     .lead-cta .cta-button { flex:0 0 auto; min-height:45px; padding:0 16px; color:#fff; background:var(--red); box-shadow:2px 2px 0 rgba(0,0,0,.26); font-size:11px; }
     .lead-cta .cta-button:hover { background:#d30808; box-shadow:4px 4px 0 rgba(0,0,0,.23); }
+    .launch-window { margin:13px 0 0; padding:16px 17px; display:grid; grid-template-columns:1fr auto; align-items:center; gap:18px; color:#fff; background:var(--red-deep); border-left:5px solid var(--yellow); }
+    .launch-copy { display:grid; gap:4px; }
+    .launch-copy strong { color:var(--yellow); font-family:var(--display); font-size:10px; font-weight:900; letter-spacing:1.2px; }
+    .launch-copy span { color:rgba(255,255,255,.88); font-size:11px; line-height:1.38; }
+    .launch-timer { min-width:150px; color:#fff; font-family:var(--display); font-size:27px; font-weight:900; letter-spacing:-.9px; line-height:1; text-align:right; }
+    .launch-timer small { display:block; margin-top:4px; color:rgba(255,255,255,.65); font-family:Arial,Helvetica,sans-serif; font-size:9px; font-weight:400; letter-spacing:0; }
+    .launch-window.is-pending { color:#555; background:#f2f0eb; border-left-color:#999; }
+    .launch-window.is-pending .launch-copy strong { color:#555; }
+    .launch-window.is-pending .launch-copy span,.launch-window.is-pending .launch-timer,.launch-window.is-pending .launch-timer small { color:#686868; }
+    .launch-window.is-ended { color:#fff; background:#252525; border-left-color:#777; }
+    .launch-window.is-ended .launch-copy strong { color:#fff; }
+    .checkout-link.is-disabled { opacity:.55; pointer-events:none; filter:grayscale(.8); }
     .article-body { padding:28px 0 0; }
     .article-body > p { max-width:690px; margin:0 0 17px; color:var(--text); font-family:var(--serif); font-size:19px; line-height:1.55; }
     .article-body > p strong { color:#111; }
@@ -124,7 +136,7 @@
     .sticky-cta span { font-size:17px; }
 
     @media (max-width:760px) { .article-shell,.faq-wrap { width:min(100% - 32px,760px); } .header-inner,.footer-inner { width:min(100% - 30px,1120px); } .article { padding-top:32px; } .article h1 { font-size:42px; letter-spacing:-2px; } .article-deck { font-size:19px; } .byline { align-items:flex-start; } .reading-grid { grid-template-columns:1fr; } .reading-card { min-height:160px; } .reading-card h3 { margin-top:18px; } .footer-inner { display:grid; gap:16px; } .footer p { text-align:left; } .sticky-cta { left:12px; right:12px; justify-content:center; bottom:12px; } }
-    @media (max-width:500px) { .masthead { font-size:15px; } .article h1 { font-size:36px; } .article-deck { font-size:18px; } .byline { display:grid; } .reading-time { text-align:left; } .lead-cta,.inline-cta { display:grid; } .lead-cta .cta-button,.inline-cta .cta-button { width:100%; } .article-callout { padding:20px; grid-template-columns:35px 1fr; gap:12px; } .article-callout h2 { font-size:20px; } .article-cta { padding:22px; } .cta-button { width:100%; font-size:12px; } }
+    @media (max-width:500px) { .masthead { font-size:15px; } .article h1 { font-size:36px; } .article-deck { font-size:18px; } .byline { display:grid; } .reading-time { text-align:left; } .lead-cta,.inline-cta { display:grid; } .lead-cta .cta-button,.inline-cta .cta-button { width:100%; } .launch-window { grid-template-columns:1fr; } .launch-timer { text-align:left; } .article-callout { padding:20px; grid-template-columns:35px 1fr; gap:12px; } .article-callout h2 { font-size:20px; } .article-cta { padding:22px; } .cta-button { width:100%; font-size:12px; } }
     @media (prefers-reduced-motion:reduce) { *,*:before,*:after { transition-duration:1ms!important; scroll-behavior:auto!important; } }
   </style>
 </head>
@@ -148,6 +160,7 @@
       <p class="article-deck">Uma proposta de leitura para quem busca mais organização, critérios e consciência antes de registrar qualquer jogo.</p>
       <div class="byline"><div class="author"><span class="author-mark">E</span><div><strong>Equipe de Conteúdo</strong><span>Atualizado em 18/08/2026</span></div></div><span class="reading-time">Leitura estimada: 4 min<br />Conteúdo patrocinado</span></div>
       <section class="lead-cta" aria-label="Acesso à oferta"><div class="lead-cta-copy"><strong>Quer acessar o Estudo Secreto?</strong><span>Veja o conteúdo da oferta e avance para o checkout quando estiver pronto.</span></div><a class="cta-button checkout-link" href="https://example.com/checkout" target="_blank" rel="noreferrer">ACESSAR O ESTUDO <span aria-hidden="true">→</span></a></section>
+      <section class="launch-window is-pending" id="launch-window" aria-live="polite"><div class="launch-copy"><strong id="launch-kicker">JANELA DE LANÇAMENTO</strong><span id="launch-copy">A oferta será disponibilizada por quatro horas. Configure a data e hora reais de encerramento antes de ativar a campanha.</span></div><time class="launch-timer" id="launch-timer" datetime="PT4H">04:00:00<small id="launch-subtitle">CONFIGURAÇÃO PENDENTE</small></time></section>
 
       <div class="article-body">
         <p>Antes de decidir, vale entender o que está sendo oferecido. Este material foi pensado como um <strong>estudo de leitura e organização</strong>, não como promessa de resultado ou vantagem garantida em loterias.</p>
@@ -190,10 +203,51 @@
       format: 'Confirme o formato de acesso e os dispositivos compatíveis antes de comprar.',
       conditions: 'Leia preço, regras, política de suporte e os demais termos na página de condições.'
     };
+    /*
+      CAMPANHA REAL: informe a data e hora de encerramento no formato ISO com fuso.
+      Exemplo (BRT): '2026-08-18T18:00:00-03:00'. A janela deve ter duração real de 4 horas.
+      Enquanto launchEndsAt estiver vazio, o contador permanece claramente marcado como pendente.
+    */
+    const campaignConfig = {
+      launchEndsAt: '',
+      windowHours: 4
+    };
     document.querySelectorAll('.checkout-link').forEach((link) => link.href = offerConfig.checkoutUrl);
     document.getElementById('offer-content').textContent = offerConfig.content;
     document.getElementById('offer-format').textContent = offerConfig.format;
     document.getElementById('offer-conditions').textContent = offerConfig.conditions;
+
+    const launchWindow = document.getElementById('launch-window');
+    const launchKicker = document.getElementById('launch-kicker');
+    const launchCopy = document.getElementById('launch-copy');
+    const launchTimer = document.getElementById('launch-timer');
+    const launchSubtitle = document.getElementById('launch-subtitle');
+    let campaignInterval;
+    function disableCheckoutLinks() {
+      document.querySelectorAll('.checkout-link').forEach((link) => {
+        link.classList.add('is-disabled'); link.setAttribute('aria-disabled','true'); link.removeAttribute('target'); link.removeAttribute('href');
+      });
+    }
+    function updateCampaignClock() {
+      const end = new Date(campaignConfig.launchEndsAt).getTime();
+      const remaining = end - Date.now();
+      if (remaining <= 0) {
+        launchWindow.className = 'launch-window is-ended';
+        launchKicker.textContent = 'LANÇAMENTO ENCERRADO';
+        launchCopy.textContent = 'A janela de quatro horas foi concluída. Consulte a próxima disponibilidade oficial antes de tentar acessar a oferta.';
+        launchTimer.textContent = '00:00:00'; launchSubtitle.textContent = 'PRAZO ENCERRADO';
+        disableCheckoutLinks(); clearInterval(campaignInterval); return;
+      }
+      const hours = String(Math.floor(remaining / 3600000)).padStart(2,'0');
+      const minutes = String(Math.floor((remaining % 3600000) / 60000)).padStart(2,'0');
+      const seconds = String(Math.floor((remaining % 60000) / 1000)).padStart(2,'0');
+      launchWindow.className = 'launch-window';
+      launchKicker.textContent = 'JANELA DE LANÇAMENTO ATIVA';
+      launchCopy.textContent = 'Esta condição comercial encerra no horário informado. Confira a oferta antes do término da janela.';
+      launchTimer.firstChild.textContent = `${hours}:${minutes}:${seconds}`;
+      launchSubtitle.textContent = 'TEMPO RESTANTE';
+    }
+    if (campaignConfig.launchEndsAt) { updateCampaignClock(); campaignInterval = window.setInterval(updateCampaignClock,1000); }
 
     const menuButton = document.getElementById('menu-button');
     const searchButton = document.getElementById('search-button');
