@@ -74,7 +74,33 @@
     .launch-window.is-active .launch-deadline { display:block; }
     .launch-window.is-active .launch-timer { min-width:175px; color:var(--yellow); font-size:36px; letter-spacing:-1.4px; text-shadow:1px 1px 0 rgba(0,0,0,.22); }
     .launch-window.is-active .launch-timer small { color:rgba(255,255,255,.82); font-family:var(--display); font-size:9px; font-weight:800; letter-spacing:.8px; }
+    @keyframes timerPulse { 0%,100% { transform:scale(1); } 50% { transform:scale(1.06); } }
+    @keyframes urgentFlash { 0%,100% { background:linear-gradient(105deg,#990000,#c80000); } 50% { background:linear-gradient(105deg,#c80000,#ef2323); } }
+    @keyframes criticalFlash { 0%,100% { background:linear-gradient(105deg,#7a0000,#c80000); } 50% { background:linear-gradient(105deg,#ff2b2b,#ffb400); } }
+    @keyframes ctaPulse { 0%,100% { transform:scale(1); box-shadow:3px 3px 0 rgba(0,0,0,.25); } 50% { transform:scale(1.035); box-shadow:5px 5px 16px rgba(185,0,0,.5); } }
+    @keyframes toastIn { from { transform:translate(-50%,-140%); } to { transform:translate(-50%,0); } }
+    .launch-window.is-urgent { animation:urgentFlash 1.7s ease-in-out infinite; }
+    .launch-window.is-urgent .launch-timer { animation:timerPulse 1s ease-in-out infinite; }
+    .launch-window.is-urgent .launch-copy strong { letter-spacing:1.3px; }
+    .launch-window.is-critical { animation:criticalFlash 0.85s ease-in-out infinite; border-left-color:#fff; }
+    .launch-window.is-critical .launch-copy strong { color:#fff; }
+    .launch-window.is-critical .launch-timer { animation:timerPulse .55s ease-in-out infinite; font-size:41px; color:#fff; text-shadow:0 0 12px rgba(255,255,255,.65),1px 1px 0 rgba(0,0,0,.3); }
+    .checkout-link.is-urgent-cta { animation:ctaPulse 1.15s ease-in-out infinite; }
     .checkout-link.is-disabled { opacity:.55; pointer-events:none; filter:grayscale(.8); }
+    .sticky-timer { color:#900000; font-size:10px; font-weight:800; opacity:.85; }
+    .sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
+    .milestone-toast { position:fixed; z-index:35; left:50%; top:14px; width:min(340px,92vw); padding:12px 16px; display:flex; align-items:center; gap:10px; color:#fff; background:var(--ink); border-left:5px solid var(--yellow); box-shadow:0 10px 26px rgba(0,0,0,.32); font-family:var(--display); font-size:11px; font-weight:700; line-height:1.4; letter-spacing:.1px; transform:translate(-50%,-140%); opacity:0; transition:transform 280ms var(--ease),opacity 280ms var(--ease); }
+    .milestone-toast.is-visible { transform:translate(-50%,0); opacity:1; }
+    .exit-modal-overlay { position:fixed; inset:0; z-index:40; display:flex; align-items:center; justify-content:center; padding:20px; background:rgba(10,10,10,.72); opacity:0; pointer-events:none; transition:opacity 200ms var(--ease); }
+    .exit-modal-overlay.is-open { opacity:1; pointer-events:auto; }
+    .exit-modal { position:relative; width:min(420px,100%); padding:28px 24px 24px; color:#111; background:#fff; border-top:6px solid var(--red); box-shadow:0 20px 50px rgba(0,0,0,.35); transform:translateY(14px); transition:transform 200ms var(--ease); }
+    .exit-modal-overlay.is-open .exit-modal { transform:translateY(0); }
+    .exit-modal strong { display:block; font-family:var(--display); font-size:19px; font-weight:900; letter-spacing:-.5px; line-height:1.15; }
+    .exit-modal p { margin:9px 0 0; color:var(--muted); font-size:12.5px; line-height:1.5; }
+    .exit-modal .exit-timer { margin:15px 0 0; padding:11px 12px; color:#fff; background:var(--red-deep); font-family:var(--display); font-size:21px; font-weight:900; text-align:center; letter-spacing:-.3px; }
+    .exit-modal .cta-button { width:100%; margin-top:16px; }
+    .exit-modal-close { position:absolute; top:9px; right:10px; width:30px; height:30px; display:grid; place-items:center; color:#777; background:transparent; border:0; font-size:20px; line-height:1; }
+    .exit-modal-close:hover { color:#111; }
     .article-body { padding:28px 0 0; }
     .article-body > p { max-width:690px; margin:0 0 17px; color:var(--text); font-family:var(--serif); font-size:19px; line-height:1.55; }
     .article-body > p strong { color:#111; }
@@ -143,7 +169,7 @@
 
     @media (max-width:760px) { .article-shell,.faq-wrap { width:min(100% - 32px,760px); } .header-inner,.footer-inner { width:min(100% - 30px,1120px); } .article { padding-top:32px; } .article h1 { font-size:42px; letter-spacing:-2px; } .article-deck { font-size:19px; } .byline { align-items:flex-start; } .reading-grid { grid-template-columns:1fr; } .reading-card { min-height:160px; } .reading-card h3 { margin-top:18px; } .footer-inner { display:grid; gap:16px; } .footer p { text-align:left; } .sticky-cta { left:12px; right:12px; justify-content:center; bottom:12px; } }
     @media (max-width:500px) { .masthead { font-size:15px; } .article h1 { font-size:36px; } .article-deck { font-size:18px; } .byline { display:grid; } .reading-time { text-align:left; } .lead-cta,.inline-cta { display:grid; } .lead-cta .cta-button,.inline-cta .cta-button { width:100%; } .launch-window { grid-template-columns:1fr; } .launch-timer { text-align:left; } .article-callout { padding:20px; grid-template-columns:35px 1fr; gap:12px; } .article-callout h2 { font-size:20px; } .article-cta { padding:22px; } .cta-button { width:100%; font-size:12px; } }
-    @media (prefers-reduced-motion:reduce) { *,*:before,*:after { transition-duration:1ms!important; scroll-behavior:auto!important; } }
+    @media (prefers-reduced-motion:reduce) { *,*:before,*:after { transition-duration:1ms!important; animation-duration:1ms!important; animation-iteration-count:1!important; scroll-behavior:auto!important; } }
   </style>
 </head>
 <body>
@@ -155,7 +181,7 @@
       <span class="masthead"><i></i> FINANÇAS</span>
       <button class="header-button" type="button" aria-label="Abrir menu" id="menu-button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg></button>
     </div>
-    <div class="ticker"><div class="ticker-track">CONTEÚDO COMERCIAL · CONFIRA AS CONDIÇÕES ANTES DE PROSSEGUIR&nbsp; — &nbsp; CONTEÚDO COMERCIAL · CONFIRA AS CONDIÇÕES ANTES DE PROSSEGUIR&nbsp; — &nbsp; CONTEÚDO COMERCIAL · CONFIRA AS CONDIÇÕES ANTES DE PROSSEGUIR&nbsp; — &nbsp;</div></div>
+    <div class="ticker"><div class="ticker-track" id="ticker-track">CONTEÚDO COMERCIAL · CONFIRA AS CONDIÇÕES ANTES DE PROSSEGUIR&nbsp; — &nbsp; CONTEÚDO COMERCIAL · CONFIRA AS CONDIÇÕES ANTES DE PROSSEGUIR&nbsp; — &nbsp; CONTEÚDO COMERCIAL · CONFIRA AS CONDIÇÕES ANTES DE PROSSEGUIR&nbsp; — &nbsp;</div></div>
     <aside class="menu-panel" id="menu-panel" aria-hidden="true"><strong>Informações da página</strong><p>Este é um conteúdo comercial. Consulte os detalhes da oferta e as condições antes de prosseguir.</p></aside>
   </header>
 
@@ -166,7 +192,7 @@
       <p class="article-deck">Uma proposta de leitura para quem busca mais organização, critérios e consciência antes de registrar qualquer jogo.</p>
       <div class="byline"><div class="author"><span class="author-mark">E</span><div><strong>Equipe de Conteúdo</strong><span>Atualizado em 18/08/2026</span></div></div><span class="reading-time">Leitura estimada: 4 min<br />Conteúdo patrocinado</span></div>
       <section class="lead-cta" aria-label="Acesso à oferta"><div class="lead-cta-copy"><strong>Quer acessar o Estudo Secreto?</strong><span>Veja o conteúdo da oferta e avance para o checkout quando estiver pronto.</span></div><a class="cta-button checkout-link" href="https://example.com/checkout" target="_blank" rel="noreferrer">ACESSAR O ESTUDO <span aria-hidden="true">→</span></a></section>
-      <section class="launch-window is-pending" id="launch-window" aria-live="polite"><div class="launch-copy"><strong id="launch-kicker">JANELA DE LANÇAMENTO</strong><span id="launch-copy">A oferta será disponibilizada por quatro horas. Configure a data e hora reais de encerramento antes de ativar a campanha.</span><b class="launch-deadline" id="launch-deadline"></b></div><time class="launch-timer" id="launch-timer" datetime="PT4H">04:00:00<small id="launch-subtitle">CONFIGURAÇÃO PENDENTE</small></time></section>
+      <section class="launch-window is-pending" id="launch-window"><div class="launch-copy"><strong id="launch-kicker">JANELA DE LANÇAMENTO</strong><span id="launch-copy">A oferta será disponibilizada por quatro horas. Configure a data e hora reais de encerramento antes de ativar a campanha.</span><b class="launch-deadline" id="launch-deadline"></b></div><time class="launch-timer" id="launch-timer" datetime="PT4H">04:00:00<small id="launch-subtitle">CONFIGURAÇÃO PENDENTE</small></time></section>
 
       <div class="article-body">
         <p>Antes de decidir, vale entender o que está sendo oferecido. Este material foi pensado como um <strong>estudo de leitura e organização</strong>, não como promessa de resultado ou vantagem garantida em loterias.</p>
@@ -199,7 +225,18 @@
   </main>
 
   <footer class="footer"><div class="footer-inner"><div class="footer-brand">ESTUDO SECRETO DA LOTOFÁCIL<small>COMUNICAÇÃO COMERCIAL</small></div><p>Esta página não é uma matéria jornalística independente e não é associada a órgãos oficiais de loteria. Jogos e apostas envolvem risco financeiro; nenhuma informação ou material garante resultados.</p></div></footer>
-  <a class="sticky-cta checkout-link" id="sticky-cta" href="https://example.com/checkout" target="_blank" rel="noreferrer">ACESSAR O ESTUDO <span aria-hidden="true">→</span></a>
+  <a class="sticky-cta checkout-link" id="sticky-cta" href="https://example.com/checkout" target="_blank" rel="noreferrer">ACESSAR O ESTUDO<span class="sticky-timer" id="sticky-timer"></span> <span aria-hidden="true">→</span></a>
+
+  <div class="exit-modal-overlay" id="exit-modal-overlay" aria-hidden="true">
+    <div class="exit-modal" role="dialog" aria-modal="true" aria-labelledby="exit-modal-title">
+      <button class="exit-modal-close" type="button" id="exit-modal-close" aria-label="Fechar">×</button>
+      <strong id="exit-modal-title">Antes de sair, veja quanto tempo resta</strong>
+      <p>A janela de lançamento é limitada e fecha quando o cronômetro abaixo chegar a zero.</p>
+      <div class="exit-timer" id="exit-modal-timer">--:--:--</div>
+      <a class="cta-button checkout-link" id="exit-modal-cta" href="https://example.com/checkout" target="_blank" rel="noreferrer">VER A OFERTA <span aria-hidden="true">→</span></a>
+    </div>
+  </div>
+  <div class="sr-only" aria-live="polite" id="sr-announcer"></div>
 
   <script>
     /* Preencha com dados reais antes de publicar. */
@@ -230,12 +267,75 @@
     const launchDeadline = document.getElementById('launch-deadline');
     const launchTimer = document.getElementById('launch-timer');
     const launchSubtitle = document.getElementById('launch-subtitle');
+    const stickyTimer = document.getElementById('sticky-timer');
+    const tickerTrack = document.getElementById('ticker-track');
+    const srAnnouncer = document.getElementById('sr-announcer');
+    const exitOverlay = document.getElementById('exit-modal-overlay');
+    const exitTimerEl = document.getElementById('exit-modal-timer');
+    const exitCloseBtn = document.getElementById('exit-modal-close');
     let campaignInterval;
+    const originalTitle = document.title;
+    const originalTickerText = tickerTrack.textContent;
+    const urgentTickerText = '⏰ ÚLTIMA HORA · A JANELA DE LANÇAMENTO ESTÁ FECHANDO — CONFIRA AS CONDIÇÕES ANTES DE PROSSEGUIR — '.repeat(3);
+    const criticalTickerText = '🚨 ÚLTIMOS MINUTOS · A OFERTA FECHA QUANDO O CRONÔMETRO CHEGAR A ZERO — CONFIRA AS CONDIÇÕES ANTES DE PROSSEGUIR — '.repeat(3);
+    let currentTier = 'normal';
+    let exitModalShown = false;
+    const milestonesShown = new Set();
+    const MILESTONES = [
+      [60 * 60000, 'Falta 1 hora para o encerramento da janela de lançamento.'],
+      [30 * 60000, 'Faltam 30 minutos para o encerramento.'],
+      [15 * 60000, 'Últimos 15 minutos da janela de lançamento.'],
+      [5 * 60000, 'Faltam 5 minutos. A janela fecha em instantes.']
+    ];
     function disableCheckoutLinks() {
       document.querySelectorAll('.checkout-link').forEach((link) => {
-        link.classList.add('is-disabled'); link.setAttribute('aria-disabled','true'); link.removeAttribute('target'); link.removeAttribute('href');
+        link.classList.remove('is-urgent-cta'); link.classList.add('is-disabled'); link.setAttribute('aria-disabled','true'); link.removeAttribute('target'); link.removeAttribute('href');
       });
     }
+    function announce(message) { srAnnouncer.textContent = ''; window.setTimeout(() => { srAnnouncer.textContent = message; }, 40); }
+    function showMilestoneToast(message) {
+      const toast = document.createElement('div');
+      toast.className = 'milestone-toast';
+      toast.textContent = message;
+      document.body.appendChild(toast);
+      window.requestAnimationFrame(() => toast.classList.add('is-visible'));
+      window.setTimeout(() => { toast.classList.remove('is-visible'); window.setTimeout(() => toast.remove(), 320); }, 4200);
+      announce(message);
+    }
+    function checkMilestones(remaining) {
+      MILESTONES.forEach(([threshold, message]) => {
+        if (remaining <= threshold && !milestonesShown.has(threshold)) { milestonesShown.add(threshold); showMilestoneToast(message); }
+      });
+    }
+    function setTier(remaining) {
+      const tier = remaining <= 15 * 60000 ? 'critical' : remaining <= 60 * 60000 ? 'urgent' : 'normal';
+      if (tier === currentTier) return;
+      currentTier = tier;
+      launchWindow.classList.remove('is-urgent','is-critical');
+      document.querySelectorAll('.checkout-link').forEach((link) => link.classList.remove('is-urgent-cta'));
+      if (tier === 'urgent') {
+        launchWindow.classList.add('is-urgent');
+        tickerTrack.textContent = urgentTickerText;
+        document.querySelectorAll('.checkout-link').forEach((link) => link.classList.add('is-urgent-cta'));
+      } else if (tier === 'critical') {
+        launchWindow.classList.add('is-critical');
+        tickerTrack.textContent = criticalTickerText;
+        document.querySelectorAll('.checkout-link').forEach((link) => link.classList.add('is-urgent-cta'));
+      } else {
+        tickerTrack.textContent = originalTickerText;
+      }
+    }
+    function openExitModal() {
+      if (exitModalShown || currentTier === 'normal' || launchWindow.classList.contains('is-ended') || launchWindow.classList.contains('is-pending')) return;
+      exitModalShown = true;
+      exitOverlay.classList.add('is-open');
+      exitOverlay.setAttribute('aria-hidden','false');
+    }
+    function closeExitModal() { exitOverlay.classList.remove('is-open'); exitOverlay.setAttribute('aria-hidden','true'); }
+    exitCloseBtn.addEventListener('click', closeExitModal);
+    exitOverlay.addEventListener('click', (event) => { if (event.target === exitOverlay) closeExitModal(); });
+    document.addEventListener('keydown', (event) => { if (event.key === 'Escape') closeExitModal(); });
+    document.addEventListener('mouseout', (event) => { if (!event.relatedTarget && event.clientY <= 0) openExitModal(); });
     function updateCampaignClock() {
       const end = new Date(campaignConfig.launchEndsAt).getTime();
       const remaining = end - Date.now();
@@ -244,19 +344,29 @@
         launchKicker.textContent = 'LANÇAMENTO ENCERRADO';
         launchCopy.textContent = 'A janela de quatro horas foi concluída. Consulte a próxima disponibilidade oficial antes de tentar acessar a oferta.';
         launchDeadline.textContent = '';
-        launchTimer.textContent = '00:00:00'; launchSubtitle.textContent = 'PRAZO ENCERRADO';
+        launchTimer.firstChild.textContent = '00:00:00'; launchSubtitle.textContent = 'PRAZO ENCERRADO';
+        if (stickyTimer) stickyTimer.textContent = ' · encerrado';
+        tickerTrack.textContent = originalTickerText;
+        document.title = originalTitle;
+        closeExitModal();
         disableCheckoutLinks(); clearInterval(campaignInterval); return;
       }
       const hours = String(Math.floor(remaining / 3600000)).padStart(2,'0');
       const minutes = String(Math.floor((remaining % 3600000) / 60000)).padStart(2,'0');
       const seconds = String(Math.floor((remaining % 60000) / 1000)).padStart(2,'0');
       const endDisplay = new Intl.DateTimeFormat('pt-BR',{ timeZone:campaignConfig.timezone, day:'2-digit', month:'2-digit', year:'numeric', hour:'2-digit', minute:'2-digit', hour12:false, timeZoneName:'short' }).format(new Date(end));
-      launchWindow.className = 'launch-window is-active';
-      launchKicker.textContent = 'ÚLTIMAS HORAS DA JANELA DE LANÇAMENTO';
+      setTier(remaining);
+      checkMilestones(remaining);
+      launchWindow.classList.remove('is-pending','is-ended');
+      if (!launchWindow.classList.contains('is-active')) launchWindow.classList.add('is-active');
+      launchKicker.textContent = currentTier === 'critical' ? 'ÚLTIMOS MINUTOS · A OFERTA FECHA JÁ JÁ' : currentTier === 'urgent' ? 'ÚLTIMA HORA DA JANELA DE LANÇAMENTO' : 'ÚLTIMAS HORAS DA JANELA DE LANÇAMENTO';
       launchCopy.textContent = 'As inscrições desta rodada serão fechadas quando o contador chegar a zero.';
       launchDeadline.textContent = `ENCERRAMENTO CONFIRMADO: ${endDisplay}`;
       launchTimer.firstChild.textContent = `${hours}:${minutes}:${seconds}`;
       launchSubtitle.textContent = 'TEMPO RESTANTE';
+      if (stickyTimer) stickyTimer.textContent = ` · ${hours}:${minutes}:${seconds}`;
+      exitTimerEl.textContent = `${hours}:${minutes}:${seconds}`;
+      document.title = `⏳ ${hours}:${minutes}:${seconds} restantes | Estudo Secreto`;
     }
     if (campaignConfig.launchEndsAt) { updateCampaignClock(); campaignInterval = window.setInterval(updateCampaignClock,1000); }
 
