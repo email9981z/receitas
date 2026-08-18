@@ -4,8 +4,8 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#0b3829" />
-  <meta name="description" content="Estudo Secreto da Lotofácil — uma proposta de estudo para jogar com mais organização e consciência." />
-  <title>Estudo Secreto da Lotofácil</title>
+  <meta name="description" content="Estudo Secreto da Lotofácil — um material digital para organizar critérios, limites e decisões antes de jogar." />
+  <title>Estudo Secreto da Lotofácil | Organize sua decisão</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet" />
@@ -61,12 +61,24 @@
     .primary-cta:active { box-shadow:1px 1px 0 rgba(0,0,0,.25); transform:translate(2px,2px); }
     .arrow-icon { font-size:20px; line-height:1; }
     .hero-actions small { max-width:240px; color:rgba(255,255,255,.56); font-size:10px; line-height:1.45; }
-    .review-timer { width:min(100%,570px); margin-top:20px; padding:13px 15px; display:grid; grid-template-columns:1fr auto; align-items:center; gap:17px; border:1px solid rgba(240,200,74,.43); background:rgba(5,34,24,.5); }
+    .review-timer { width:min(100%,570px); margin-top:20px; padding:15px; display:grid; grid-template-columns:1fr auto; align-items:center; gap:17px; border:1px solid rgba(240,200,74,.55); background:rgba(5,34,24,.72); }
     .review-timer-copy { display:grid; gap:3px; }
     .review-timer-copy strong { color:var(--gold); font-family:var(--mono); font-size:9px; font-weight:500; letter-spacing:1.2px; }
     .review-timer-copy span { color:rgba(255,255,255,.79); font-size:11px; line-height:1.38; }
+    .timer-disclosure { display:block; margin-top:4px; color:rgba(255,255,255,.52); font-size:9px; line-height:1.35; }
     .timer-readout { min-width:86px; color:#fff; font-family:var(--mono); font-size:19px; font-weight:500; letter-spacing:.8px; text-align:right; }
     .timer-readout.is-finished { color:var(--gold); font-size:11px; letter-spacing:.5px; }
+    .hero-trust { margin-top:25px; display:flex; flex-wrap:wrap; gap:10px 18px; color:rgba(255,255,255,.7); font-size:10px; }
+    .hero-trust span { display:inline-flex; align-items:center; gap:6px; }
+    .hero-trust span:before { content:'✓'; color:var(--gold); font-weight:800; }
+    .offer-meta { margin:17px 0 0; padding:13px 0; display:grid; grid-template-columns:1fr 1fr; gap:13px; border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+    .offer-meta div { display:grid; gap:4px; }
+    .offer-meta div+div { padding-left:13px; border-left:1px solid var(--line); }
+    .offer-meta span { color:var(--muted); font-family:var(--mono); font-size:8px; letter-spacing:1px; }
+    .offer-meta strong { color:var(--forest); font-size:13px; }
+    .offer-urgency { margin:17px 0 0; padding:11px 12px; color:#5b4010; background:var(--gold-soft); border-left:4px solid var(--gold); font-size:11px; line-height:1.45; }
+    .offer-urgency strong { color:var(--forest); }
+    .offer-disclosure { display:block; margin-top:11px; color:var(--muted); font-size:9px; line-height:1.45; }
     .hero-index { align-self:center; justify-self:end; width:260px; padding:26px; color:rgba(255,255,255,.86); border:1px solid rgba(240,200,74,.4); background:rgba(5,34,24,.58); backdrop-filter:blur(7px); }
     .index-topline { display:flex; justify-content:space-between; align-items:center; padding-bottom:13px; border-bottom:1px solid rgba(255,255,255,.18); color:var(--gold); font-family:var(--mono); font-size:9px; letter-spacing:1.2px; }
     .index-number { margin:21px 0 5px; color:var(--gold); font-family:var(--display); font-size:61px; line-height:.82; }
@@ -197,72 +209,74 @@
       <div class="hero-inner">
         <div class="hero-content">
           <p class="eyebrow">ESTUDO SECRETO DA LOTOFÁCIL</p>
-          <h1 id="hero-title">O estudo secreto que te ajuda a jogar <em>com sabedoria.</em></h1>
-          <p class="hero-lede">Uma proposta de estudo para quem prefere <strong>organização, critérios e consciência</strong> antes de registrar qualquer jogo.</p>
+          <h1 id="hero-title">Organize sua próxima decisão na Lotofácil <em>antes de jogar.</em></h1>
+          <p class="hero-lede">Um material digital para quem quer trocar o impulso por <strong>critérios, limites e uma leitura mais organizada</strong> antes de registrar qualquer jogo.</p>
           <div class="hero-actions">
             <!-- Troque a constante checkoutUrl, no script ao fim do arquivo, pelo checkout real. -->
-            <a class="primary-cta checkout-link" href="https://example.com/checkout" target="_blank" rel="noreferrer">CONHECER O ESTUDO <span class="arrow-icon" aria-hidden="true">→</span></a>
-            <small>Conteúdo comercial. Consulte termos, preço e condições antes de prosseguir.</small>
+            <a class="primary-cta checkout-link" href="https://example.com/checkout" target="_blank" rel="noreferrer">VER O QUE VOCÊ RECEBE <span class="arrow-icon" aria-hidden="true">→</span></a>
+            <small>Leia os detalhes, confira o preço e decida somente se fizer sentido para você.</small>
           </div>
           <div class="review-timer" aria-live="polite">
-            <div class="review-timer-copy"><strong>LEMBRETE DE LEITURA</strong><span>Reserve este tempo para conhecer a proposta e decida somente quando estiver seguro.</span></div>
-            <time class="timer-readout" id="review-timer" datetime="PT23M">23:00</time>
+            <div class="review-timer-copy"><strong>CONDIÇÃO DESTA SESSÃO</strong><span>Você tem 20 minutos para conferir a condição exibida nesta página antes que ela seja atualizada.</span><small class="timer-disclosure">Use este contador somente se houver uma regra real de prazo no checkout.</small></div>
+            <time class="timer-readout" id="review-timer" datetime="PT20M">20:00</time>
           </div>
+          <div class="hero-trust" aria-label="Informações essenciais"><span>Material digital</span><span>Sem promessa de ganho</span><span>Termos antes da compra</span></div>
         </div>
         <aside class="hero-index" aria-label="Resumo da proposta">
-          <div class="index-topline"><span>EDIÇÃO DIGITAL</span><span>01/03</span></div>
-          <div class="index-number">15</div>
-          <strong>Mais método. Menos impulso.</strong>
-          <p>O foco não é prever resultados: é oferecer uma forma mais estruturada de refletir sobre escolhas de jogo.</p>
+          <div class="index-topline"><span>ACESSO DIGITAL</span><span>EDIÇÃO 01</span></div>
+          <div class="index-number">20'</div>
+          <strong>Mais clareza. Menos impulso.</strong>
+          <p>O material não prevê resultados. Ele ajuda você a entender o processo, conferir limites e decidir com mais consciência.</p>
         </aside>
       </div>
-      <div class="hero-bottom" aria-label="Princípios da oferta"><div><b>01</b><span>Material apresentado como estudo, não como promessa de resultado.</span></div><div><b>02</b><span>Leitura direta para apoiar decisões mais conscientes.</span></div><div><b>03</b><span>Link de checkout claramente identificado como comercial.</span></div></div>
+          <div class="hero-bottom" aria-label="Princípios da oferta"><div><b>01</b><span>Você entende a proposta antes de comprar.</span></div><div><b>02</b><span>Você encontra critérios e limites em uma única leitura.</span></div><div><b>03</b><span>Você vê preço e termos no checkout antes de concluir.</span></div></div>
     </section>
 
     <section class="paper-section" id="metodo" aria-labelledby="principles-title">
       <div class="intro-grid">
-        <div><span class="side-label">A PROPOSTA</span><h2 class="side-title" id="principles-title">Quando o jogo deixa de ser apenas impulso.</h2><p class="side-note">O Estudo Secreto da Lotofácil foi desenhado para apresentar uma leitura mais organizada do processo de escolha, mantendo a responsabilidade no centro da decisão.</p></div>
+          <div><span class="side-label">A PROPOSTA</span><h2 class="side-title" id="principles-title">Da curiosidade a uma decisão mais organizada.</h2><p class="side-note">O Estudo Secreto da Lotofácil foi desenhado para tornar a proposta concreta: o que observar, como organizar critérios e quais limites considerar antes de qualquer jogo.</p></div>
         <div class="principle-list">
-          <article class="principle"><span class="principle-number">01</span><div><h3>Organize antes de decidir</h3><p>Use a informação como ponto de partida para refletir sobre escolhas, limites pessoais e a forma como você se relaciona com o jogo.</p></div></article>
-          <article class="principle"><span class="principle-number">02</span><div><h3>Transforme curiosidade em critério</h3><p>O objetivo é substituir decisões apressadas por um processo de leitura, comparação e registro mais consciente.</p></div></article>
-          <article class="principle"><span class="principle-number">03</span><div><h3>Reconheça os limites do acaso</h3><p>Nenhum método altera a natureza aleatória de uma loteria. O estudo não garante ganhos nem reduz o risco financeiro.</p></div></article>
+          <article class="principle"><span class="principle-number">01</span><div><h3>Entenda o que você está comprando</h3><p>Conheça a proposta, os limites do material e as condições de acesso antes de chegar ao checkout.</p></div></article>
+          <article class="principle"><span class="principle-number">02</span><div><h3>Troque impulso por um próximo passo</h3><p>Use uma sequência simples para observar, comparar e registrar suas próprias perguntas antes de decidir.</p></div></article>
+          <article class="principle"><span class="principle-number">03</span><div><h3>Reconheça o limite do método</h3><p>Nenhum método altera a natureza aleatória de uma loteria. O estudo não garante ganhos nem reduz o risco financeiro.</p></div></article>
         </div>
       </div>
     </section>
 
     <section class="method-section" id="conteudo" aria-labelledby="method-title">
       <div class="method-inner">
-        <div class="section-heading"><p class="eyebrow">O QUE ORIENTA O ESTUDO</p><h2 id="method-title">Uma leitura em três movimentos.</h2><p>Uma estrutura simples para compreender o material e refletir sobre sua própria forma de jogar, sem atalhos e sem alegações de retorno.</p></div>
+          <div class="section-heading"><p class="eyebrow">COMO VOCÊ USA O MATERIAL</p><h2 id="method-title">Uma leitura em três movimentos.</h2><p>Uma estrutura simples para compreender a proposta, organizar suas perguntas e avaliar com calma se este material é adequado para você.</p></div>
         <div class="method-grid">
-          <article class="method-card"><div class="card-seq"><span>01</span><span></span></div><h3>Observar</h3><p>Comece pela leitura do conteúdo e pela identificação de dúvidas, hábitos e expectativas que influenciam suas decisões.</p></article>
-          <article class="method-card"><div class="card-seq"><span>02</span><span></span></div><h3>Organizar</h3><p>Estruture os pontos que deseja considerar e defina limites pessoais antes de participar de qualquer aposta.</p></article>
-          <article class="method-card"><div class="card-seq"><span>03</span><span></span></div><h3>Decidir</h3><p>Faça escolhas compatíveis com sua realidade, lembrando que jogos de loteria são aleatórios e envolvem risco.</p></article>
+          <article class="method-card"><div class="card-seq"><span>01</span><span></span></div><h3>Observar</h3><p>Identifique suas dúvidas, hábitos e expectativas antes de transformar curiosidade em uma decisão de compra ou de jogo.</p></article>
+          <article class="method-card"><div class="card-seq"><span>02</span><span></span></div><h3>Organizar</h3><p>Coloque critérios, perguntas e limites em uma sequência que possa ser consultada no seu próprio ritmo.</p></article>
+          <article class="method-card"><div class="card-seq"><span>03</span><span></span></div><h3>Decidir</h3><p>Confira preço, acesso e termos; só avance se a proposta couber no seu orçamento e fizer sentido para você.</p></article>
         </div>
       </div>
     </section>
 
     <section class="what-section" aria-labelledby="what-title">
-      <div class="what-head"><div><span class="side-label">LEIA COM ATENÇÃO</span><h2 id="what-title">O que esta proposta prioriza.</h2></div><p>Antes de avançar, confira a descrição completa no checkout e adapte estes pontos ao conteúdo real da sua oferta.</p></div>
+          <div class="what-head"><div><span class="side-label">O QUE VOCÊ ENCONTRA AQUI</span><h2 id="what-title">Uma proposta clara para decidir melhor.</h2></div><p>Os três pontos abaixo funcionam como promessa de comunicação. Mantenha apenas o que realmente existe no seu produto e no checkout.</p></div>
       <div class="what-cards">
         <article class="what-card"><span class="what-icon">A1</span><h3>Clareza de contexto</h3><p>Explicar a oferta, suas condições e seus limites de forma legível, antes de qualquer decisão de compra.</p></article>
         <article class="what-card"><span class="what-icon">B2</span><h3>Material estruturado</h3><p>Apresentar o estudo em uma sequência de leitura que seja simples de consultar e revisar no seu próprio ritmo.</p></article>
         <article class="what-card"><span class="what-icon">C3</span><h3>Jogo responsável</h3><p>Reforçar que loterias dependem do acaso e que nenhuma compra, estratégia ou estudo assegura retorno financeiro.</p></article>
       </div>
-      <div class="value-note"><b>NOTA IMPORTANTE</b><span>Substitua os textos descritivos desta seção pelos módulos, formatos de acesso e regras que realmente fazem parte do seu produto. Precisão é parte essencial de uma comunicação profissional.</span></div>
+          <div class="value-note"><b>PROVA DE CLAREZA</b><span>Liste nesta área os entregáveis reais — por exemplo, módulos, formato, prazo de acesso e suporte — e remova qualquer item que não esteja disponível. Especificidade reduz dúvidas e melhora a decisão.</span></div>
     </section>
 
     <section class="decision-section" aria-labelledby="decision-title">
       <div class="decision-inner">
-        <div class="decision-copy"><p class="eyebrow">ANTES DE AVANÇAR</p><h2 id="decision-title">Leia, compare e escolha no seu tempo.</h2><p>O checkout é a página adequada para apresentar valores, o que está incluído, termos de acesso e política aplicável. Use essas informações para avaliar se a proposta faz sentido para você.</p><div class="responsibility"><b aria-hidden="true">⚠</b><span>Jogos e apostas envolvem risco financeiro. Este conteúdo tem caráter informativo e comercial, não representa recomendação financeira e não oferece garantia de resultado.</span></div></div>
-        <aside class="offer-panel" aria-label="Resumo da oferta"><span class="offer-kicker">ESTUDO SECRETO DA LOTOFÁCIL</span><h3>Veja todos os detalhes antes de comprar.</h3><ul><li>Condições de acesso apresentadas no destino</li><li>Preço e regras visíveis antes da conclusão</li><li>Comunicação comercial identificada</li></ul><a class="primary-cta checkout-link" href="https://example.com/checkout" target="_blank" rel="noreferrer">IR PARA AS CONDIÇÕES <span class="arrow-icon" aria-hidden="true">→</span></a><small>Destino demonstrativo. Altere a URL de checkout no JavaScript deste arquivo.</small></aside>
+        <div class="decision-copy"><p class="eyebrow">ÚLTIMO PASSO</p><h2 id="decision-title">Confira a condição e decida com clareza.</h2><p>O checkout deve mostrar o preço, o que está incluído, o prazo de acesso, os termos e a política aplicável. Se a condição desta sessão for real, ela pode ser encerrada quando o cronômetro chegar a zero.</p><div class="responsibility"><b aria-hidden="true">!</b><span>Jogos e apostas envolvem risco financeiro. Este conteúdo não promete ganho, não altera o acaso e não deve ser comprado com dinheiro destinado a necessidades essenciais.</span></div></div>
+        <aside class="offer-panel" aria-label="Resumo da oferta"><span class="offer-kicker">CONDIÇÃO DESTA SESSÃO</span><h3>Veja o que você recebe antes de comprar.</h3><div class="offer-meta"><div><span>ACESSO</span><strong>Digital</strong></div><div><span>DECISÃO</span><strong>Sem promessa</strong></div></div><ul><li>Descrição clara do material e do formato de acesso</li><li>Preço, prazo e regras visíveis antes da conclusão</li><li>Comunicação comercial identificada</li></ul><p class="offer-urgency"><strong>O cronômetro está ativo:</strong> se existir uma condição temporária real, ela deve ser atualizada no checkout quando o prazo acabar.</p><a class="primary-cta checkout-link" href="https://example.com/checkout" target="_blank" rel="noreferrer">CONFERIR A OFERTA <span class="arrow-icon" aria-hidden="true">→</span></a><small class="offer-disclosure">Não use escassez, prazo ou desconto fictícios. O destino precisa refletir exatamente a condição anunciada.</small></aside>
       </div>
     </section>
 
     <section class="paper-section" id="duvidas" aria-labelledby="faq-title">
-      <div class="faq-section"><div class="faq-head"><div><span class="side-label">DÚVIDAS FREQUENTES</span><h2 id="faq-title">Transparência também é responder.</h2></div><p>Edite estas perguntas e respostas para refletir com precisão o funcionamento real da sua oferta.</p></div>
+          <div class="faq-section"><div class="faq-head"><div><span class="side-label">DÚVIDAS FREQUENTES</span><h2 id="faq-title">Remova a dúvida que trava a compra.</h2></div><p>Responda às objeções reais com informações concretas. Não prometa o que o produto não entrega.</p></div>
         <div class="faq-list">
           <article class="faq-item is-open"><button class="faq-trigger" type="button" aria-expanded="true"><span>Este estudo garante algum resultado em loterias?</span><span aria-hidden="true">+</span></button><div class="faq-answer"><p>Não. Loterias são aleatórias e não existe garantia de retorno. A proposta é oferecer um conteúdo de estudo e organização, não uma promessa de ganho.</p></div></article>
-          <article class="faq-item"><button class="faq-trigger" type="button" aria-expanded="false"><span>O que preciso conferir antes da compra?</span><span aria-hidden="true">+</span></button><div class="faq-answer"><p>Confira o preço, os itens incluídos, a forma de acesso, os termos, as políticas aplicáveis e qualquer informação relevante da página de checkout antes de concluir uma compra.</p></div></article>
+          <article class="faq-item"><button class="faq-trigger" type="button" aria-expanded="false"><span>O que preciso conferir antes da compra?</span><span aria-hidden="true">+</span></button><div class="faq-answer"><p>Confira o preço, os itens incluídos, a forma de acesso, os termos, o prazo da condição apresentada e as políticas aplicáveis antes de concluir a compra.</p></div></article>
+          <article class="faq-item"><button class="faq-trigger" type="button" aria-expanded="false"><span>O que acontece quando o cronômetro chega a zero?</span><span aria-hidden="true">+</span></button><div class="faq-answer"><p>A resposta deve refletir a regra real da oferta: a condição pode ser atualizada, encerrada ou permanecer igual. Nunca exiba um prazo sem que o checkout consiga cumprir exatamente essa regra.</p></div></article>
           <article class="faq-item"><button class="faq-trigger" type="button" aria-expanded="false"><span>Este material substitui orientação financeira?</span><span aria-hidden="true">+</span></button><div class="faq-answer"><p>Não. O conteúdo não é aconselhamento financeiro. Estabeleça limites e não utilize recursos destinados a despesas essenciais ou compromissos financeiros.</p></div></article>
         </div>
       </div>
@@ -276,23 +290,32 @@
     const checkoutUrl = 'https://example.com/checkout';
     document.querySelectorAll('.checkout-link').forEach((link) => { link.href = checkoutUrl; });
 
-    // Cronômetro de leitura: não indica vencimento de oferta, preço, vaga ou acesso.
+    // IMPORTANTE: o prazo precisa existir de verdade no checkout.
     const timerElement = document.getElementById('review-timer');
-    let secondsRemaining = 23 * 60;
+    const timerKey = 'estudo-secreto-offer-deadline-v1';
+    const sessionDuration = 20 * 60 * 1000;
+    let deadline = Number(window.localStorage.getItem(timerKey));
+    if (!Number.isFinite(deadline)) {
+      deadline = Date.now() + sessionDuration;
+      window.localStorage.setItem(timerKey, String(deadline));
+    }
+    let secondsRemaining = Math.max(0, Math.ceil((deadline - Date.now()) / 1000));
+    let offerTimer;
     const updateReviewTimer = () => {
       const minutes = String(Math.floor(secondsRemaining / 60)).padStart(2, '0');
       const seconds = String(secondsRemaining % 60).padStart(2, '0');
       timerElement.textContent = `${minutes}:${seconds}`;
+      timerElement.setAttribute('datetime', `PT${minutes}M${seconds}S`);
       if (secondsRemaining <= 0) {
-        timerElement.textContent = 'REVISÃO CONCLUÍDA';
+        timerElement.textContent = 'CONDIÇÃO ATUALIZADA';
         timerElement.classList.add('is-finished');
-        clearInterval(reviewTimer);
+        clearInterval(offerTimer);
         return;
       }
-      secondsRemaining -= 1;
+      secondsRemaining = Math.max(0, Math.ceil((deadline - Date.now()) / 1000));
     };
     updateReviewTimer();
-    const reviewTimer = window.setInterval(updateReviewTimer, 1000);
+    offerTimer = window.setInterval(updateReviewTimer, 1000);
 
     const menuButton = document.querySelector('.menu-button');
     const mobileMenu = document.querySelector('.mobile-menu');
