@@ -1,338 +1,193 @@
 <!doctype html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#0b3829" />
-  <meta name="description" content="Estudo Secreto da Lotofácil — um material digital para organizar critérios, limites e decisões antes de jogar." />
-  <title>Estudo Secreto da Lotofácil | Organize sua decisão</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+  <meta name="theme-color" content="#b90000" />
+  <meta name="description" content="Estudo Secreto da Lotofácil: conheça o conteúdo e as condições antes de decidir." />
+  <title>Finanças | Estudo Secreto da Lotofácil</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Source+Serif+4:ital,wght@0,500;0,600;0,700;1,600&display=swap" rel="stylesheet" />
   <style>
-    :root {
-      --forest:#0b3829; --forest-deep:#06251b; --forest-soft:#164a38;
-      --gold:#f0c84a; --gold-soft:#fff5cf; --cream:#f8f6ee; --paper:#fffefa;
-      --ink:#14211c; --muted:#65706b; --line:#d6d9cd; --red:#a51d21;
-      --display:"Playfair Display",Georgia,serif; --sans:Manrope,Arial,sans-serif; --mono:"DM Mono",monospace;
-      --ease:cubic-bezier(.23,1,.32,1);
-    }
+    :root { --red:#b90000; --red-deep:#900000; --yellow:#ffc914; --ink:#111111; --text:#313131; --muted:#6b6b6b; --line:#dbdbdb; --paper:#ffffff; --soft:#f5f5f3; --display:Archivo,Arial,sans-serif; --serif:"Source Serif 4",Georgia,serif; --ease:cubic-bezier(.23,1,.32,1); }
     * { box-sizing:border-box; }
-    html { scroll-behavior:smooth; background:var(--cream); }
-    body { min-width:320px; margin:0; color:var(--ink); background:var(--cream); font-family:var(--sans); -webkit-font-smoothing:antialiased; }
+    html { scroll-behavior:smooth; background:#fff; }
+    body { margin:0; color:var(--ink); background:#fff; font-family:Arial,Helvetica,sans-serif; -webkit-font-smoothing:antialiased; }
     a { color:inherit; }
     button { font:inherit; cursor:pointer; }
-    .skip-link { position:fixed; z-index:30; top:8px; left:8px; padding:10px 14px; color:#fff; background:var(--forest); transform:translateY(-150%); transition:transform 160ms var(--ease); }
+    .skip-link { position:absolute; z-index:50; top:8px; left:8px; padding:9px 13px; color:#fff; background:var(--red); transform:translateY(-160%); transition:transform 160ms var(--ease); }
     .skip-link:focus { transform:translateY(0); }
 
-    /* Header */
-    .site-header { position:relative; z-index:10; color:#fff; background:var(--forest); border-bottom:1px solid rgba(255,255,255,.18); }
-    .header-bar { width:min(1180px,100% - 44px); height:76px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; gap:24px; }
-    .brand { display:inline-flex; align-items:center; gap:11px; text-decoration:none; }
-    .brand-mark { width:35px; height:35px; display:grid; place-items:center; color:var(--forest); background:var(--gold); clip-path:polygon(50% 0,93% 25%,93% 75%,50% 100%,7% 75%,7% 25%); font-family:var(--mono); font-size:11px; font-weight:500; letter-spacing:-1px; }
-    .brand-copy { display:grid; gap:1px; line-height:1; }
-    .brand-copy strong { font-size:13px; font-weight:800; letter-spacing:.4px; }
-    .brand-copy span { color:rgba(255,255,255,.69); font-family:var(--mono); font-size:8px; letter-spacing:1.3px; }
-    .header-nav { display:flex; align-items:center; gap:27px; }
-    .header-nav a { color:rgba(255,255,255,.79); font-size:12px; font-weight:700; text-decoration:none; transition:color 160ms var(--ease); }
-    .header-nav a:hover { color:var(--gold); }
-    .header-cta { padding:11px 16px; color:var(--forest)!important; background:var(--gold); font-size:11px!important; letter-spacing:.1px; }
-    .menu-button { display:none; width:42px; height:42px; padding:0; color:#fff; background:transparent; border:1px solid rgba(255,255,255,.3); }
-    .menu-button svg { width:21px; fill:none; stroke:currentColor; stroke-linecap:round; stroke-width:2; }
-    .mobile-menu { display:none; padding:0 22px 17px; }
-    .mobile-menu.is-open { display:grid; gap:1px; }
-    .mobile-menu a { padding:12px 0; color:rgba(255,255,255,.87); border-bottom:1px solid rgba(255,255,255,.15); font-size:13px; font-weight:700; text-decoration:none; }
+    /* Portal header */
+    .progress { position:fixed; z-index:30; top:0; left:0; width:0; height:3px; background:var(--yellow); transition:width 60ms linear; }
+    .site-header { position:relative; z-index:20; color:#fff; background-color:var(--red); background-image:radial-gradient(rgba(255,255,255,.09) .7px,transparent .8px),linear-gradient(90deg,rgba(255,255,255,.025),rgba(0,0,0,.09)); background-size:7px 7px,auto; border-bottom:1px solid rgba(77,0,0,.4); }
+    .header-inner { width:min(1120px,calc(100% - 36px)); height:49px; margin:0 auto; display:grid; grid-template-columns:44px 1fr 44px; align-items:center; }
+    .header-button { width:36px; height:36px; display:grid; place-items:center; padding:0; color:#fff; border:0; background:transparent; transition:background 160ms var(--ease),transform 160ms var(--ease); }
+    .header-button:last-child { justify-self:end; }
+    .header-button:hover { background:rgba(255,255,255,.13); }
+    .header-button:active { transform:scale(.94); }
+    .header-button svg { width:20px; fill:none; stroke:currentColor; stroke-width:3; stroke-linecap:round; stroke-linejoin:round; }
+    .masthead { justify-self:center; display:inline-flex; align-items:center; gap:7px; color:#fff; font-family:var(--display); font-size:17px; font-weight:800; letter-spacing:-.6px; }
+    .masthead i { width:8px; height:8px; display:inline-block; background:var(--yellow); transform:rotate(45deg); }
+    .ticker { height:27px; display:flex; align-items:center; overflow:hidden; color:#fff; white-space:nowrap; background:var(--red-deep); border-bottom:1px solid #9c2929; }
+    .ticker-track { width:max-content; color:rgba(255,255,255,.9); font-family:var(--display); font-size:8px; font-weight:700; letter-spacing:1.45px; transform:translateX(-15px); }
+    .menu-panel { position:absolute; z-index:22; top:calc(100% + 7px); right:max(18px,calc((100% - 1120px)/2)); width:282px; padding:18px; color:#111; background:#fff; border:1px solid #ddd; box-shadow:0 13px 32px rgba(0,0,0,.19); opacity:0; pointer-events:none; transform:translateY(-7px) scale(.97); transition:opacity 180ms var(--ease),transform 180ms var(--ease); }
+    .menu-panel.is-open { opacity:1; pointer-events:auto; transform:translateY(0) scale(1); }
+    .menu-panel strong { display:block; font-family:var(--display); font-size:14px; }
+    .menu-panel p { margin:5px 0 0; color:var(--muted); font-size:12px; line-height:1.4; }
 
-    /* Hero */
-    .hero { position:relative; overflow:hidden; color:#fff; background:var(--forest); }
-    .hero:before { content:""; position:absolute; inset:0; pointer-events:none; opacity:.25; background-image:linear-gradient(90deg,rgba(255,255,255,.1) 1px,transparent 1px),linear-gradient(rgba(255,255,255,.1) 1px,transparent 1px); background-size:52px 52px; mask-image:linear-gradient(90deg,transparent,black 30%,black 70%,transparent); }
-    .hero:after { content:""; position:absolute; right:-160px; top:80px; width:580px; height:580px; border:1px solid rgba(240,200,74,.18); border-radius:50%; box-shadow:0 0 0 52px rgba(240,200,74,.04),0 0 0 104px rgba(240,200,74,.03); }
-    .hero-inner { position:relative; z-index:1; width:min(1180px,100% - 44px); min-height:598px; margin:0 auto; padding:79px 0 74px; display:grid; grid-template-columns:minmax(0,690px) 1fr; align-items:end; }
-    .hero-content { max-width:676px; }
-    .eyebrow { display:inline-flex; align-items:center; gap:9px; margin:0; color:var(--gold); font-family:var(--mono); font-size:10px; letter-spacing:1.65px; }
-    .eyebrow:before { content:""; width:25px; height:1px; background:currentColor; }
-    h1 { max-width:720px; margin:18px 0 0; font-family:var(--display); font-size:clamp(43px,6.1vw,76px); font-weight:700; letter-spacing:-3.2px; line-height:.98; }
-    h1 em { color:var(--gold); font-style:italic; }
-    .hero-lede { max-width:570px; margin:25px 0 0; color:rgba(255,255,255,.78); font-size:17px; line-height:1.58; }
-    .hero-lede strong { color:#fff; }
-    .hero-actions { margin-top:31px; display:flex; flex-wrap:wrap; align-items:center; gap:18px; }
-    .primary-cta { min-height:58px; padding:0 22px; display:inline-flex; align-items:center; justify-content:center; gap:12px; color:var(--forest); background:var(--gold); border:1px solid var(--gold); box-shadow:4px 4px 0 rgba(0,0,0,.28); font-size:13px; font-weight:800; text-decoration:none; transition:transform 160ms var(--ease),box-shadow 160ms var(--ease),background 160ms var(--ease); }
-    .primary-cta:hover { background:#ffe084; box-shadow:6px 6px 0 rgba(0,0,0,.25); transform:translate(-2px,-2px); }
-    .primary-cta:active { box-shadow:1px 1px 0 rgba(0,0,0,.25); transform:translate(2px,2px); }
-    .arrow-icon { font-size:20px; line-height:1; }
-    .hero-actions small { max-width:240px; color:rgba(255,255,255,.56); font-size:10px; line-height:1.45; }
-    .review-timer { width:min(100%,570px); margin-top:20px; padding:15px; display:grid; grid-template-columns:1fr auto; align-items:center; gap:17px; border:1px solid rgba(240,200,74,.55); background:rgba(5,34,24,.72); }
-    .review-timer-copy { display:grid; gap:3px; }
-    .review-timer-copy strong { color:var(--gold); font-family:var(--mono); font-size:9px; font-weight:500; letter-spacing:1.2px; }
-    .review-timer-copy span { color:rgba(255,255,255,.79); font-size:11px; line-height:1.38; }
-    .timer-disclosure { display:block; margin-top:4px; color:rgba(255,255,255,.52); font-size:9px; line-height:1.35; }
-    .timer-readout { min-width:86px; color:#fff; font-family:var(--mono); font-size:19px; font-weight:500; letter-spacing:.8px; text-align:right; }
-    .timer-readout.is-finished { color:var(--gold); font-size:11px; letter-spacing:.5px; }
-    .hero-trust { margin-top:25px; display:flex; flex-wrap:wrap; gap:10px 18px; color:rgba(255,255,255,.7); font-size:10px; }
-    .hero-trust span { display:inline-flex; align-items:center; gap:6px; }
-    .hero-trust span:before { content:'✓'; color:var(--gold); font-weight:800; }
-    .offer-meta { margin:17px 0 0; padding:13px 0; display:grid; grid-template-columns:1fr 1fr; gap:13px; border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
-    .offer-meta div { display:grid; gap:4px; }
-    .offer-meta div+div { padding-left:13px; border-left:1px solid var(--line); }
-    .offer-meta span { color:var(--muted); font-family:var(--mono); font-size:8px; letter-spacing:1px; }
-    .offer-meta strong { color:var(--forest); font-size:13px; }
-    .offer-urgency { margin:17px 0 0; padding:11px 12px; color:#5b4010; background:var(--gold-soft); border-left:4px solid var(--gold); font-size:11px; line-height:1.45; }
-    .offer-urgency strong { color:var(--forest); }
-    .offer-disclosure { display:block; margin-top:11px; color:var(--muted); font-size:9px; line-height:1.45; }
-    .hero-index { align-self:center; justify-self:end; width:260px; padding:26px; color:rgba(255,255,255,.86); border:1px solid rgba(240,200,74,.4); background:rgba(5,34,24,.58); backdrop-filter:blur(7px); }
-    .index-topline { display:flex; justify-content:space-between; align-items:center; padding-bottom:13px; border-bottom:1px solid rgba(255,255,255,.18); color:var(--gold); font-family:var(--mono); font-size:9px; letter-spacing:1.2px; }
-    .index-number { margin:21px 0 5px; color:var(--gold); font-family:var(--display); font-size:61px; line-height:.82; }
-    .hero-index strong { display:block; font-size:13px; line-height:1.3; }
-    .hero-index p { margin:11px 0 0; color:rgba(255,255,255,.66); font-size:11px; line-height:1.5; }
-    .hero-bottom { position:relative; z-index:2; width:min(1180px,100% - 44px); margin:0 auto; display:grid; grid-template-columns:repeat(3,1fr); border-top:1px solid rgba(255,255,255,.17); }
-    .hero-bottom div { min-height:72px; padding:16px 25px 16px 0; display:flex; align-items:center; gap:12px; border-right:1px solid rgba(255,255,255,.17); color:rgba(255,255,255,.7); font-size:11px; line-height:1.37; }
-    .hero-bottom div+div { padding-left:25px; }
-    .hero-bottom div:last-child { border-right:0; }
-    .hero-bottom b { color:var(--gold); font-family:var(--mono); font-size:12px; }
+    /* Article opening */
+    .article-shell { width:min(100% - 44px,760px); margin:0 auto; }
+    .article { padding:45px 0 0; }
+    .commercial-label { display:inline-flex; align-items:center; gap:7px; padding:6px 9px; color:#8d0000; background:#fff2f2; border:1px solid #efcece; font-family:var(--display); font-size:9px; font-weight:800; letter-spacing:1.05px; }
+    .commercial-label b { width:6px; height:6px; background:var(--red); border-radius:50%; }
+    .article h1 { max-width:750px; margin:15px 0 0; font-family:var(--display); font-size:clamp(39px,5vw,59px); font-weight:900; letter-spacing:-2.7px; line-height:.97; }
+    .article h1 em { color:var(--red); font-style:normal; }
+    .article-deck { max-width:660px; margin:18px 0 0; color:#434343; font-family:var(--serif); font-size:21px; line-height:1.37; }
+    .byline { margin-top:23px; padding:12px 0; display:flex; align-items:center; justify-content:space-between; gap:18px; border-top:1px solid var(--line); border-bottom:1px solid var(--line); font-size:11px; }
+    .author { display:flex; align-items:center; gap:8px; }
+    .author-mark { width:24px; height:24px; display:grid; place-items:center; color:#fff; background:var(--ink); border-radius:50%; font-family:var(--display); font-size:10px; font-weight:800; }
+    .author strong { display:block; font-size:11px; }
+    .author span { display:block; margin-top:2px; color:var(--muted); font-size:10px; }
+    .reading-time { color:var(--muted); font-size:10px; text-align:right; }
+    .article-body { padding:28px 0 0; }
+    .article-body > p { max-width:690px; margin:0 0 17px; color:var(--text); font-family:var(--serif); font-size:19px; line-height:1.55; }
+    .article-body > p strong { color:#111; }
 
-    /* Main editorial sections */
-    .paper-section { background:var(--paper); }
-    .intro-grid { width:min(1120px,100% - 44px); margin:0 auto; padding:96px 0 100px; display:grid; grid-template-columns:1fr 1.17fr; gap:104px; }
-    .side-label { color:var(--red); font-family:var(--mono); font-size:10px; letter-spacing:1.5px; }
-    .side-title { max-width:330px; margin:16px 0 0; font-family:var(--display); font-size:clamp(34px,3.7vw,48px); letter-spacing:-2.2px; line-height:1.02; }
-    .side-note { max-width:330px; margin:20px 0 0; color:var(--muted); font-size:13px; line-height:1.6; }
-    .principle-list { border-top:1px solid var(--line); }
-    .principle { padding:27px 0; display:grid; grid-template-columns:56px 1fr; gap:23px; border-bottom:1px solid var(--line); }
-    .principle-number { color:var(--red); font-family:var(--display); font-size:29px; line-height:1; }
-    .principle h3 { margin:0; font-size:17px; letter-spacing:-.5px; }
-    .principle p { margin:7px 0 0; color:var(--muted); font-size:14px; line-height:1.55; }
+    /* Sales modules styled as editorial cards */
+    .article-callout { margin:30px 0; padding:23px 25px; display:grid; grid-template-columns:49px 1fr; gap:17px; color:#111; background:var(--soft); border-top:4px solid var(--red); }
+    .callout-number { color:var(--red); font-family:var(--display); font-size:30px; font-weight:900; letter-spacing:-1px; line-height:1; }
+    .article-callout h2 { margin:0; font-family:var(--display); font-size:22px; font-weight:900; letter-spacing:-.7px; line-height:1.05; }
+    .article-callout p { margin:7px 0 0; color:#525252; font-size:13px; line-height:1.5; }
+    .offer-facts { margin:0; border-top:3px solid var(--ink); }
+    .offer-fact { padding:18px 1px; display:grid; grid-template-columns:40px 1fr; gap:13px; border-bottom:1px solid var(--line); }
+    .offer-fact b { color:var(--red); font-family:var(--display); font-size:16px; }
+    .offer-fact h3 { margin:0; font-family:var(--display); font-size:15px; font-weight:800; letter-spacing:-.35px; }
+    .offer-fact p { margin:5px 0 0; color:var(--muted); font-size:13px; line-height:1.48; }
+    .article-cta { margin:31px 0 36px; padding:26px; color:#fff; background:var(--ink); border-left:6px solid var(--yellow); }
+    .article-cta .cta-kicker { color:var(--yellow); font-family:var(--display); font-size:10px; font-weight:800; letter-spacing:1.2px; }
+    .article-cta h2 { max-width:500px; margin:9px 0 0; font-family:var(--display); font-size:27px; font-weight:900; letter-spacing:-1px; line-height:1; }
+    .article-cta p { max-width:555px; margin:10px 0 18px; color:#d3d3d3; font-size:13px; line-height:1.5; }
+    .cta-button { min-height:53px; padding:0 20px; display:inline-flex; align-items:center; justify-content:center; gap:11px; color:#111; background:var(--yellow); box-shadow:3px 3px 0 rgba(0,0,0,.25); font-family:var(--display); font-size:13px; font-weight:900; text-decoration:none; transition:transform 160ms var(--ease),box-shadow 160ms var(--ease),background 160ms var(--ease); }
+    .cta-button:hover { background:#ffdf6d; box-shadow:5px 5px 0 rgba(0,0,0,.25); transform:translate(-2px,-2px); }
+    .cta-button:active { box-shadow:1px 1px 0 rgba(0,0,0,.25); transform:translate(2px,2px); }
+    .cta-button span { font-size:19px; }
+    .article-cta small { display:block; margin-top:11px; color:#a9a9a9; font-size:10px; line-height:1.4; }
 
-    .method-section { position:relative; overflow:hidden; color:#fff; background:var(--forest-deep); }
-    .method-section:before { content:""; position:absolute; left:-74px; top:70px; width:300px; height:300px; border:1px solid rgba(240,200,74,.22); transform:rotate(45deg); }
-    .method-inner { position:relative; z-index:1; width:min(1120px,100% - 44px); margin:0 auto; padding:97px 0; }
-    .section-heading { max-width:630px; }
-    .section-heading .eyebrow { color:var(--gold); }
-    .section-heading h2 { margin:15px 0 0; font-family:var(--display); font-size:clamp(36px,4.3vw,57px); letter-spacing:-2.6px; line-height:.98; }
-    .section-heading p { max-width:570px; margin:20px 0 0; color:rgba(255,255,255,.7); font-size:15px; line-height:1.6; }
-    .method-grid { margin-top:51px; display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:rgba(255,255,255,.17); border:1px solid rgba(255,255,255,.17); }
-    .method-card { min-height:267px; padding:29px; background:var(--forest-deep); }
-    .card-seq { display:flex; justify-content:space-between; align-items:center; color:var(--gold); font-family:var(--mono); font-size:10px; letter-spacing:1.2px; }
-    .card-seq span:last-child { width:31px; height:1px; background:var(--gold); }
-    .method-card h3 { margin:59px 0 0; font-family:var(--display); font-size:29px; letter-spacing:-1px; line-height:1; }
-    .method-card p { margin:12px 0 0; color:rgba(255,255,255,.66); font-size:13px; line-height:1.52; }
+    .section-divider { margin:42px 0 0; display:flex; align-items:center; gap:11px; color:var(--red); font-family:var(--display); font-size:10px; font-weight:900; letter-spacing:1.25px; }
+    .section-divider:before,.section-divider:after { content:""; height:1px; flex:1; background:var(--line); }
+    .reading-grid { margin:23px 0 0; display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--line); border:1px solid var(--line); }
+    .reading-card { min-height:205px; padding:22px; background:#fff; }
+    .reading-card span { color:var(--red); font-family:var(--display); font-size:24px; font-weight:900; }
+    .reading-card h3 { margin:25px 0 0; font-family:var(--display); font-size:17px; font-weight:900; letter-spacing:-.5px; }
+    .reading-card p { margin:8px 0 0; color:var(--muted); font-size:12px; line-height:1.5; }
 
-    .what-section { width:min(1120px,100% - 44px); margin:0 auto; padding:94px 0 97px; }
-    .what-head { display:flex; align-items:end; justify-content:space-between; gap:38px; padding-bottom:31px; border-bottom:3px solid var(--ink); }
-    .what-head h2 { max-width:610px; margin:15px 0 0; font-family:var(--display); font-size:clamp(35px,4vw,52px); letter-spacing:-2.5px; line-height:.99; }
-    .what-head p { max-width:280px; margin:0; color:var(--muted); font-size:12px; line-height:1.55; }
-    .what-cards { display:grid; grid-template-columns:repeat(3,1fr); gap:28px; padding-top:32px; }
-    .what-card { padding:0 0 18px; border-bottom:1px solid var(--ink); }
-    .what-icon { width:38px; height:38px; display:grid; place-items:center; color:var(--forest); background:var(--gold); font-family:var(--mono); font-size:12px; font-weight:500; }
-    .what-card h3 { margin:19px 0 0; font-size:16px; letter-spacing:-.5px; }
-    .what-card p { margin:8px 0 0; color:var(--muted); font-size:13px; line-height:1.55; }
-    .value-note { margin-top:43px; padding:20px 23px; display:flex; gap:16px; align-items:flex-start; color:#493814; background:var(--gold-soft); border-left:5px solid var(--gold); font-size:13px; line-height:1.55; }
-    .value-note b { color:var(--forest); font-family:var(--mono); font-size:11px; letter-spacing:1px; white-space:nowrap; }
+    .decision-note { margin:35px 0 0; padding:17px 18px; display:grid; grid-template-columns:22px 1fr; gap:10px; color:#4f504d; background:#fff8dc; border-left:4px solid var(--yellow); font-size:12px; line-height:1.5; }
+    .decision-note b { color:#8e7000; font-size:16px; }
+    .decision-note strong { color:#222; }
 
-    /* Conversion close */
-    .decision-section { color:#fff; background:var(--forest); }
-    .decision-inner { width:min(1120px,100% - 44px); margin:0 auto; padding:86px 0; display:grid; grid-template-columns:1fr 390px; align-items:center; gap:90px; }
-    .decision-copy h2 { max-width:600px; margin:15px 0 0; font-family:var(--display); font-size:clamp(37px,4.2vw,55px); letter-spacing:-2.5px; line-height:.98; }
-    .decision-copy > p { max-width:565px; margin:21px 0 0; color:rgba(255,255,255,.71); font-size:15px; line-height:1.6; }
-    .responsibility { margin-top:25px; padding:15px 16px; display:grid; grid-template-columns:22px 1fr; gap:11px; color:rgba(255,255,255,.83); border-top:1px solid rgba(255,255,255,.25); border-bottom:1px solid rgba(255,255,255,.25); font-size:11px; line-height:1.5; }
-    .responsibility b { color:var(--gold); font-size:16px; }
-    .offer-panel { padding:30px; color:var(--ink); background:var(--paper); box-shadow:8px 8px 0 rgba(0,0,0,.25); }
-    .offer-panel .offer-kicker { color:var(--red); font-family:var(--mono); font-size:9px; font-weight:500; letter-spacing:1.3px; }
-    .offer-panel h3 { margin:14px 0 0; font-family:var(--display); font-size:30px; letter-spacing:-1.2px; line-height:1; }
-    .offer-panel ul { margin:20px 0 25px; padding:0; list-style:none; border-top:1px solid var(--line); }
-    .offer-panel li { padding:12px 0; display:flex; gap:10px; align-items:flex-start; border-bottom:1px solid var(--line); color:#48534d; font-size:12px; line-height:1.4; }
-    .offer-panel li:before { content:"✓"; color:var(--forest); font-weight:800; }
-    .offer-panel .primary-cta { width:100%; min-height:53px; font-size:12px; }
-    .offer-panel small { display:block; margin-top:12px; color:var(--muted); font-size:9px; line-height:1.45; text-align:center; }
-
-    /* FAQ and footer */
-    .faq-section { width:min(870px,100% - 44px); margin:0 auto; padding:92px 0; }
-    .faq-head { display:flex; justify-content:space-between; align-items:end; gap:30px; margin-bottom:31px; }
-    .faq-head h2 { margin:14px 0 0; font-family:var(--display); font-size:clamp(34px,3.8vw,48px); letter-spacing:-2.2px; line-height:1; }
-    .faq-head p { max-width:240px; margin:0; color:var(--muted); font-size:12px; line-height:1.5; }
-    .faq-list { border-top:2px solid var(--ink); }
+    /* FAQ */
+    .faq-wrap { width:min(100% - 44px,760px); margin:0 auto; padding:65px 0 81px; }
+    .faq-wrap h2 { margin:13px 0 0; font-family:var(--display); font-size:clamp(31px,3.8vw,43px); font-weight:900; letter-spacing:-1.9px; line-height:1; }
+    .faq-wrap > p { max-width:580px; margin:13px 0 0; color:var(--muted); font-size:13px; line-height:1.55; }
+    .faq-list { margin-top:29px; border-top:3px solid var(--ink); }
     .faq-item { border-bottom:1px solid var(--line); }
-    .faq-trigger { width:100%; padding:21px 2px; display:flex; align-items:center; justify-content:space-between; gap:18px; color:var(--ink); text-align:left; background:transparent; border:0; font-size:14px; font-weight:800; }
-    .faq-trigger span:last-child { width:25px; height:25px; display:grid; place-items:center; flex:0 0 25px; color:var(--forest); background:var(--gold); font-size:19px; font-weight:400; transition:transform 160ms var(--ease); }
-    .faq-item.is-open .faq-trigger span:last-child { transform:rotate(45deg); }
+    .faq-trigger { width:100%; padding:20px 2px; display:flex; align-items:center; justify-content:space-between; gap:18px; color:#111; background:transparent; border:0; text-align:left; font-family:var(--display); font-size:14px; font-weight:800; }
+    .faq-trigger i { width:24px; height:24px; display:grid; place-items:center; flex:0 0 24px; color:#fff; background:var(--red); font-family:Arial,sans-serif; font-size:18px; font-style:normal; font-weight:400; transition:transform 160ms var(--ease); }
+    .faq-item.is-open .faq-trigger i { transform:rotate(45deg); }
     .faq-answer { max-height:0; overflow:hidden; color:var(--muted); transition:max-height 250ms var(--ease); }
-    .faq-answer p { max-width:660px; margin:0; padding:0 2px 22px; font-size:13px; line-height:1.58; }
-    .faq-item.is-open .faq-answer { max-height:170px; }
-    .site-footer { color:rgba(255,255,255,.68); background:var(--forest-deep); }
-    .footer-inner { width:min(1120px,100% - 44px); margin:0 auto; padding:36px 0; display:flex; justify-content:space-between; gap:35px; align-items:flex-end; }
-    .footer-brand { display:flex; align-items:center; gap:10px; color:#fff; font-size:12px; font-weight:800; }
-    .footer-brand .brand-mark { width:27px; height:27px; font-size:8px; }
-    .footer-note { max-width:530px; margin:0; font-size:10px; line-height:1.5; text-align:right; }
+    .faq-answer p { margin:0; padding:0 2px 21px; font-size:13px; line-height:1.56; }
+    .faq-item.is-open .faq-answer { max-height:165px; }
 
-    @media (max-width:900px) {
-      .header-nav { display:none; } .menu-button { display:grid; place-items:center; }
-      .hero-inner { min-height:auto; padding:69px 0 66px; grid-template-columns:1fr; } .hero-index { display:none; }
-      .intro-grid { gap:52px; grid-template-columns:1fr; } .side-title,.side-note { max-width:520px; }
-      .method-grid,.what-cards { grid-template-columns:1fr; } .method-card { min-height:210px; } .method-card h3 { margin-top:37px; }
-      .decision-inner { grid-template-columns:1fr; gap:45px; } .offer-panel { max-width:450px; }
-    }
-    @media (max-width:620px) {
-      .header-bar,.hero-inner,.hero-bottom,.intro-grid,.method-inner,.what-section,.decision-inner,.footer-inner { width:min(100% - 32px,1120px); }
-      .header-bar { height:68px; } .brand-copy strong { font-size:11px; } .brand-copy span { font-size:7px; }
-      .hero-inner { padding:57px 0 55px; } h1 { font-size:45px; letter-spacing:-2px; } .hero-lede { font-size:15px; }
-      .hero-actions { align-items:stretch; gap:13px; } .primary-cta { width:100%; } .hero-actions small { max-width:100%; }
-      .review-timer { grid-template-columns:1fr; gap:8px; } .timer-readout { text-align:left; }
-      .hero-bottom { display:block; padding-bottom:20px; } .hero-bottom div { min-height:auto; padding:12px 0!important; border-right:0; border-bottom:1px solid rgba(255,255,255,.17); } .hero-bottom div:last-child { border-bottom:0; }
-      .intro-grid { padding:67px 0; } .side-title { font-size:38px; } .principle { grid-template-columns:39px 1fr; gap:16px; }
-      .method-inner { padding:69px 0; } .section-heading h2,.what-head h2,.decision-copy h2 { letter-spacing:-1.8px; }
-      .what-section { padding:67px 0; } .what-head,.faq-head { display:block; } .what-head p,.faq-head p { margin-top:17px; } .value-note { display:block; } .value-note b { display:block; margin-bottom:8px; }
-      .decision-inner { padding:67px 0; } .offer-panel { padding:24px; }
-      .faq-section { width:min(100% - 32px,870px); padding:67px 0; }
-      .footer-inner { display:grid; gap:16px; } .footer-note { text-align:left; }
-    }
-    @media (prefers-reduced-motion:reduce) { *,*:before,*:after { scroll-behavior:auto!important; transition-duration:1ms!important; } }
+    .footer { color:rgba(255,255,255,.72); background:var(--ink); }
+    .footer-inner { width:min(1120px,calc(100% - 36px)); margin:0 auto; padding:34px 0; display:flex; align-items:flex-end; justify-content:space-between; gap:35px; }
+    .footer-brand { color:#fff; font-family:var(--display); font-size:13px; font-weight:900; }
+    .footer-brand small { display:block; margin-top:3px; color:var(--yellow); font-size:8px; letter-spacing:1px; }
+    .footer p { max-width:530px; margin:0; font-size:10px; line-height:1.5; text-align:right; }
+    .sticky-cta { position:fixed; z-index:19; right:17px; bottom:17px; min-height:46px; padding:0 16px; display:flex; align-items:center; gap:9px; color:#111; background:var(--yellow); box-shadow:4px 4px 0 rgba(0,0,0,.24); font-family:var(--display); font-size:11px; font-weight:900; text-decoration:none; transform:translateY(130%); transition:transform 220ms var(--ease); }
+    .sticky-cta.is-visible { transform:translateY(0); }
+    .sticky-cta span { font-size:17px; }
+
+    @media (max-width:760px) { .article-shell,.faq-wrap { width:min(100% - 32px,760px); } .header-inner,.footer-inner { width:min(100% - 30px,1120px); } .article { padding-top:32px; } .article h1 { font-size:42px; letter-spacing:-2px; } .article-deck { font-size:19px; } .byline { align-items:flex-start; } .reading-grid { grid-template-columns:1fr; } .reading-card { min-height:160px; } .reading-card h3 { margin-top:18px; } .footer-inner { display:grid; gap:16px; } .footer p { text-align:left; } .sticky-cta { left:12px; right:12px; justify-content:center; bottom:12px; } }
+    @media (max-width:500px) { .masthead { font-size:15px; } .article h1 { font-size:36px; } .article-deck { font-size:18px; } .byline { display:grid; } .reading-time { text-align:left; } .article-callout { padding:20px; grid-template-columns:35px 1fr; gap:12px; } .article-callout h2 { font-size:20px; } .article-cta { padding:22px; } .cta-button { width:100%; font-size:12px; } }
+    @media (prefers-reduced-motion:reduce) { *,*:before,*:after { transition-duration:1ms!important; scroll-behavior:auto!important; } }
   </style>
 </head>
 <body>
   <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
+  <div class="progress" id="progress"></div>
   <header class="site-header">
-    <div class="header-bar">
-      <a class="brand" href="#top" aria-label="Estudo Secreto da Lotofácil — início">
-        <span class="brand-mark">15</span><span class="brand-copy"><strong>ESTUDO SECRETO</strong><span>LOTOFÁCIL</span></span>
-      </a>
-      <nav class="header-nav" aria-label="Navegação principal">
-        <a href="#metodo">A proposta</a><a href="#conteudo">O que estudar</a><a href="#duvidas">Dúvidas</a><a class="header-cta checkout-link" href="https://example.com/checkout" target="_blank" rel="noreferrer">Ver condições</a>
-      </nav>
-      <button class="menu-button" type="button" aria-label="Abrir menu" aria-controls="mobile-menu" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg></button>
+    <div class="header-inner">
+      <button class="header-button" type="button" aria-label="Abrir pesquisa" id="search-button"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="5.6"></circle><path d="m16 16 4.2 4.2"></path></svg></button>
+      <span class="masthead"><i></i> FINANÇAS</span>
+      <button class="header-button" type="button" aria-label="Abrir menu" id="menu-button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg></button>
     </div>
-    <nav class="mobile-menu" id="mobile-menu" aria-label="Navegação mobile">
-      <a href="#metodo">A proposta</a><a href="#conteudo">O que estudar</a><a href="#duvidas">Dúvidas</a><a class="checkout-link" href="https://example.com/checkout" target="_blank" rel="noreferrer">Ver condições da oferta</a>
-    </nav>
+    <div class="ticker"><div class="ticker-track">CONTEÚDO COMERCIAL · CONFIRA AS CONDIÇÕES ANTES DE PROSSEGUIR&nbsp; — &nbsp; CONTEÚDO COMERCIAL · CONFIRA AS CONDIÇÕES ANTES DE PROSSEGUIR&nbsp; — &nbsp; CONTEÚDO COMERCIAL · CONFIRA AS CONDIÇÕES ANTES DE PROSSEGUIR&nbsp; — &nbsp;</div></div>
+    <aside class="menu-panel" id="menu-panel" aria-hidden="true"><strong>Informações da página</strong><p>Este é um conteúdo comercial. Consulte os detalhes da oferta e as condições antes de prosseguir.</p></aside>
   </header>
 
-  <main id="top">
-    <section class="hero" aria-labelledby="hero-title">
-      <div class="hero-inner">
-        <div class="hero-content">
-          <p class="eyebrow">ESTUDO SECRETO DA LOTOFÁCIL</p>
-          <h1 id="hero-title">Organize sua próxima decisão na Lotofácil <em>antes de jogar.</em></h1>
-          <p class="hero-lede">Um material digital para quem quer trocar o impulso por <strong>critérios, limites e uma leitura mais organizada</strong> antes de registrar qualquer jogo.</p>
-          <div class="hero-actions">
-            <!-- Troque a constante checkoutUrl, no script ao fim do arquivo, pelo checkout real. -->
-            <a class="primary-cta checkout-link" href="https://example.com/checkout" target="_blank" rel="noreferrer">VER O QUE VOCÊ RECEBE <span class="arrow-icon" aria-hidden="true">→</span></a>
-            <small>Leia os detalhes, confira o preço e decida somente se fizer sentido para você.</small>
-          </div>
-          <div class="review-timer" aria-live="polite">
-            <div class="review-timer-copy"><strong>CONDIÇÃO DESTA SESSÃO</strong><span>Você tem 20 minutos para conferir a condição exibida nesta página antes que ela seja atualizada.</span><small class="timer-disclosure">Use este contador somente se houver uma regra real de prazo no checkout.</small></div>
-            <time class="timer-readout" id="review-timer" datetime="PT20M">20:00</time>
-          </div>
-          <div class="hero-trust" aria-label="Informações essenciais"><span>Material digital</span><span>Sem promessa de ganho</span><span>Termos antes da compra</span></div>
-        </div>
-        <aside class="hero-index" aria-label="Resumo da proposta">
-          <div class="index-topline"><span>ACESSO DIGITAL</span><span>EDIÇÃO 01</span></div>
-          <div class="index-number">20'</div>
-          <strong>Mais clareza. Menos impulso.</strong>
-          <p>O material não prevê resultados. Ele ajuda você a entender o processo, conferir limites e decidir com mais consciência.</p>
-        </aside>
-      </div>
-          <div class="hero-bottom" aria-label="Princípios da oferta"><div><b>01</b><span>Você entende a proposta antes de comprar.</span></div><div><b>02</b><span>Você encontra critérios e limites em uma única leitura.</span></div><div><b>03</b><span>Você vê preço e termos no checkout antes de concluir.</span></div></div>
-    </section>
+  <main id="conteudo">
+    <article class="article-shell article">
+      <span class="commercial-label"><b></b> CONTEÚDO COMERCIAL</span>
+      <h1>Estudo Secreto da Lotofácil: o estudo que te ajuda a jogar <em>com sabedoria.</em></h1>
+      <p class="article-deck">Uma proposta de leitura para quem busca mais organização, critérios e consciência antes de registrar qualquer jogo.</p>
+      <div class="byline"><div class="author"><span class="author-mark">E</span><div><strong>Equipe de Conteúdo</strong><span>Atualizado em 18/08/2026</span></div></div><span class="reading-time">Leitura estimada: 4 min<br />Conteúdo patrocinado</span></div>
 
-    <section class="paper-section" id="metodo" aria-labelledby="principles-title">
-      <div class="intro-grid">
-          <div><span class="side-label">A PROPOSTA</span><h2 class="side-title" id="principles-title">Da curiosidade a uma decisão mais organizada.</h2><p class="side-note">O Estudo Secreto da Lotofácil foi desenhado para tornar a proposta concreta: o que observar, como organizar critérios e quais limites considerar antes de qualquer jogo.</p></div>
-        <div class="principle-list">
-          <article class="principle"><span class="principle-number">01</span><div><h3>Entenda o que você está comprando</h3><p>Conheça a proposta, os limites do material e as condições de acesso antes de chegar ao checkout.</p></div></article>
-          <article class="principle"><span class="principle-number">02</span><div><h3>Troque impulso por um próximo passo</h3><p>Use uma sequência simples para observar, comparar e registrar suas próprias perguntas antes de decidir.</p></div></article>
-          <article class="principle"><span class="principle-number">03</span><div><h3>Reconheça o limite do método</h3><p>Nenhum método altera a natureza aleatória de uma loteria. O estudo não garante ganhos nem reduz o risco financeiro.</p></div></article>
-        </div>
+      <div class="article-body">
+        <p>Antes de decidir, vale entender o que está sendo oferecido. Este material foi pensado como um <strong>estudo de leitura e organização</strong>, não como promessa de resultado ou vantagem garantida em loterias.</p>
+        <p>Na página de condições, você deve encontrar as informações essenciais para avaliar a proposta: conteúdo, formato, acesso, preço e regras aplicáveis.</p>
       </div>
-    </section>
 
-    <section class="method-section" id="conteudo" aria-labelledby="method-title">
-      <div class="method-inner">
-          <div class="section-heading"><p class="eyebrow">COMO VOCÊ USA O MATERIAL</p><h2 id="method-title">Uma leitura em três movimentos.</h2><p>Uma estrutura simples para compreender a proposta, organizar suas perguntas e avaliar com calma se este material é adequado para você.</p></div>
-        <div class="method-grid">
-          <article class="method-card"><div class="card-seq"><span>01</span><span></span></div><h3>Observar</h3><p>Identifique suas dúvidas, hábitos e expectativas antes de transformar curiosidade em uma decisão de compra ou de jogo.</p></article>
-          <article class="method-card"><div class="card-seq"><span>02</span><span></span></div><h3>Organizar</h3><p>Coloque critérios, perguntas e limites em uma sequência que possa ser consultada no seu próprio ritmo.</p></article>
-          <article class="method-card"><div class="card-seq"><span>03</span><span></span></div><h3>Decidir</h3><p>Confira preço, acesso e termos; só avance se a proposta couber no seu orçamento e fizer sentido para você.</p></article>
-        </div>
-      </div>
-    </section>
+      <section class="article-callout" aria-labelledby="callout-title"><span class="callout-number">01</span><div><h2 id="callout-title">O que conferir antes de avançar</h2><p>Leia os detalhes da oferta e tome sua decisão somente depois de entender exatamente o que está incluído.</p></div></section>
 
-    <section class="what-section" aria-labelledby="what-title">
-          <div class="what-head"><div><span class="side-label">O QUE VOCÊ ENCONTRA AQUI</span><h2 id="what-title">Uma proposta clara para decidir melhor.</h2></div><p>Os três pontos abaixo funcionam como promessa de comunicação. Mantenha apenas o que realmente existe no seu produto e no checkout.</p></div>
-      <div class="what-cards">
-        <article class="what-card"><span class="what-icon">A1</span><h3>Clareza de contexto</h3><p>Explicar a oferta, suas condições e seus limites de forma legível, antes de qualquer decisão de compra.</p></article>
-        <article class="what-card"><span class="what-icon">B2</span><h3>Material estruturado</h3><p>Apresentar o estudo em uma sequência de leitura que seja simples de consultar e revisar no seu próprio ritmo.</p></article>
-        <article class="what-card"><span class="what-icon">C3</span><h3>Jogo responsável</h3><p>Reforçar que loterias dependem do acaso e que nenhuma compra, estratégia ou estudo assegura retorno financeiro.</p></article>
-      </div>
-          <div class="value-note"><b>PROVA DE CLAREZA</b><span>Liste nesta área os entregáveis reais — por exemplo, módulos, formato, prazo de acesso e suporte — e remova qualquer item que não esteja disponível. Especificidade reduz dúvidas e melhora a decisão.</span></div>
-    </section>
+      <section class="offer-facts" aria-label="Resumo da oferta">
+        <article class="offer-fact"><b>01</b><div><h3>Conteúdo do estudo</h3><p id="offer-content">Consulte no checkout os módulos e tópicos realmente incluídos no material.</p></div></article>
+        <article class="offer-fact"><b>02</b><div><h3>Formato e acesso</h3><p id="offer-format">Confirme o formato de acesso e os dispositivos compatíveis antes de comprar.</p></div></article>
+        <article class="offer-fact"><b>03</b><div><h3>Preço e condições</h3><p id="offer-conditions">Leia preço, regras, política de suporte e os demais termos na página de condições.</p></div></article>
+      </section>
 
-    <section class="decision-section" aria-labelledby="decision-title">
-      <div class="decision-inner">
-        <div class="decision-copy"><p class="eyebrow">ÚLTIMO PASSO</p><h2 id="decision-title">Confira a condição e decida com clareza.</h2><p>O checkout deve mostrar o preço, o que está incluído, o prazo de acesso, os termos e a política aplicável. Se a condição desta sessão for real, ela pode ser encerrada quando o cronômetro chegar a zero.</p><div class="responsibility"><b aria-hidden="true">!</b><span>Jogos e apostas envolvem risco financeiro. Este conteúdo não promete ganho, não altera o acaso e não deve ser comprado com dinheiro destinado a necessidades essenciais.</span></div></div>
-        <aside class="offer-panel" aria-label="Resumo da oferta"><span class="offer-kicker">CONDIÇÃO DESTA SESSÃO</span><h3>Veja o que você recebe antes de comprar.</h3><div class="offer-meta"><div><span>ACESSO</span><strong>Digital</strong></div><div><span>DECISÃO</span><strong>Sem promessa</strong></div></div><ul><li>Descrição clara do material e do formato de acesso</li><li>Preço, prazo e regras visíveis antes da conclusão</li><li>Comunicação comercial identificada</li></ul><p class="offer-urgency"><strong>O cronômetro está ativo:</strong> se existir uma condição temporária real, ela deve ser atualizada no checkout quando o prazo acabar.</p><a class="primary-cta checkout-link" href="https://example.com/checkout" target="_blank" rel="noreferrer">CONFERIR A OFERTA <span class="arrow-icon" aria-hidden="true">→</span></a><small class="offer-disclosure">Não use escassez, prazo ou desconto fictícios. O destino precisa refletir exatamente a condição anunciada.</small></aside>
-      </div>
-    </section>
+      <section class="article-cta" aria-labelledby="cta-title"><span class="cta-kicker">PRÓXIMO PASSO</span><h2 id="cta-title">Veja o conteúdo e as condições da oferta.</h2><p>O destino apresenta as informações que você precisa avaliar antes de concluir qualquer compra.</p><a class="cta-button checkout-link" href="https://example.com/checkout" target="_blank" rel="noreferrer">VER CONTEÚDO E CONDIÇÕES <span aria-hidden="true">→</span></a><small>Loterias são aleatórias e envolvem risco financeiro. Não há garantia de retorno.</small></section>
 
-    <section class="paper-section" id="duvidas" aria-labelledby="faq-title">
-          <div class="faq-section"><div class="faq-head"><div><span class="side-label">DÚVIDAS FREQUENTES</span><h2 id="faq-title">Remova a dúvida que trava a compra.</h2></div><p>Responda às objeções reais com informações concretas. Não prometa o que o produto não entrega.</p></div>
-        <div class="faq-list">
-          <article class="faq-item is-open"><button class="faq-trigger" type="button" aria-expanded="true"><span>Este estudo garante algum resultado em loterias?</span><span aria-hidden="true">+</span></button><div class="faq-answer"><p>Não. Loterias são aleatórias e não existe garantia de retorno. A proposta é oferecer um conteúdo de estudo e organização, não uma promessa de ganho.</p></div></article>
-          <article class="faq-item"><button class="faq-trigger" type="button" aria-expanded="false"><span>O que preciso conferir antes da compra?</span><span aria-hidden="true">+</span></button><div class="faq-answer"><p>Confira o preço, os itens incluídos, a forma de acesso, os termos, o prazo da condição apresentada e as políticas aplicáveis antes de concluir a compra.</p></div></article>
-          <article class="faq-item"><button class="faq-trigger" type="button" aria-expanded="false"><span>O que acontece quando o cronômetro chega a zero?</span><span aria-hidden="true">+</span></button><div class="faq-answer"><p>A resposta deve refletir a regra real da oferta: a condição pode ser atualizada, encerrada ou permanecer igual. Nunca exiba um prazo sem que o checkout consiga cumprir exatamente essa regra.</p></div></article>
-          <article class="faq-item"><button class="faq-trigger" type="button" aria-expanded="false"><span>Este material substitui orientação financeira?</span><span aria-hidden="true">+</span></button><div class="faq-answer"><p>Não. O conteúdo não é aconselhamento financeiro. Estabeleça limites e não utilize recursos destinados a despesas essenciais ou compromissos financeiros.</p></div></article>
-        </div>
-      </div>
-    </section>
+      <div class="section-divider">COMO LER O ESTUDO</div>
+      <section class="reading-grid" aria-label="Etapas de leitura"><article class="reading-card"><span>01</span><h3>Observar</h3><p>Leia o material e reconheça quais informações, hábitos e expectativas influenciam suas decisões.</p></article><article class="reading-card"><span>02</span><h3>Organizar</h3><p>Use os critérios apresentados para estruturar limites e avaliar escolhas no seu próprio ritmo.</p></article><article class="reading-card"><span>03</span><h3>Decidir</h3><p>Avance somente se a proposta estiver clara para você e fizer sentido dentro de limites responsáveis.</p></article></section>
+
+      <aside class="decision-note"><b aria-hidden="true">⚠</b><span><strong>Decisão responsável.</strong> Jogos e apostas envolvem risco financeiro. Este conteúdo é comercial e informativo; ele não representa aconselhamento financeiro e não garante resultados.</span></aside>
+    </article>
+
+    <section class="faq-wrap" id="duvidas" aria-labelledby="faq-title"><span class="commercial-label"><b></b> PERGUNTAS FREQUENTES</span><h2 id="faq-title">Antes de comprar, tire suas dúvidas.</h2><p>Estas respostas devem ser ajustadas para refletir o funcionamento real, os termos e a política da sua oferta.</p><div class="faq-list"><article class="faq-item is-open"><button class="faq-trigger" type="button" aria-expanded="true"><span>Este estudo garante algum resultado em loterias?</span><i aria-hidden="true">+</i></button><div class="faq-answer"><p>Não. Loterias são aleatórias e não existe garantia de retorno. A proposta é oferecer um material de estudo e organização, não uma promessa de ganho.</p></div></article><article class="faq-item"><button class="faq-trigger" type="button" aria-expanded="false"><span>O que preciso conferir antes da compra?</span><i aria-hidden="true">+</i></button><div class="faq-answer"><p>Confira os itens incluídos, o formato de acesso, o preço, as regras, os termos e as políticas aplicáveis. Todas essas informações devem estar disponíveis antes da conclusão.</p></div></article><article class="faq-item"><button class="faq-trigger" type="button" aria-expanded="false"><span>Este material substitui orientação financeira?</span><i aria-hidden="true">+</i></button><div class="faq-answer"><p>Não. O conteúdo não é aconselhamento financeiro. Estabeleça limites e não utilize recursos destinados a despesas essenciais ou compromissos financeiros.</p></div></article></div></section>
   </main>
 
-  <footer class="site-footer"><div class="footer-inner"><div class="footer-brand"><span class="brand-mark">15</span><span>ESTUDO SECRETO DA LOTOFÁCIL</span></div><p class="footer-note">Comunicação comercial. Este site não é associado a órgãos oficiais de loteria. Jogos e apostas envolvem risco financeiro; nenhuma informação ou material garante resultados.</p></div></footer>
+  <footer class="footer"><div class="footer-inner"><div class="footer-brand">ESTUDO SECRETO DA LOTOFÁCIL<small>COMUNICAÇÃO COMERCIAL</small></div><p>Esta página não é uma matéria jornalística independente e não é associada a órgãos oficiais de loteria. Jogos e apostas envolvem risco financeiro; nenhuma informação ou material garante resultados.</p></div></footer>
+  <a class="sticky-cta checkout-link" id="sticky-cta" href="https://example.com/checkout" target="_blank" rel="noreferrer">VER CONDIÇÕES <span aria-hidden="true">→</span></a>
 
   <script>
-    // CONFIGURAÇÃO PRINCIPAL: substitua pelo link real e autorizado do seu checkout.
-    const checkoutUrl = 'https://example.com/checkout';
-    document.querySelectorAll('.checkout-link').forEach((link) => { link.href = checkoutUrl; });
-
-    // IMPORTANTE: o prazo precisa existir de verdade no checkout.
-    const timerElement = document.getElementById('review-timer');
-    const timerKey = 'estudo-secreto-offer-deadline-v1';
-    const sessionDuration = 20 * 60 * 1000;
-    let deadline = Number(window.localStorage.getItem(timerKey));
-    if (!Number.isFinite(deadline)) {
-      deadline = Date.now() + sessionDuration;
-      window.localStorage.setItem(timerKey, String(deadline));
-    }
-    let secondsRemaining = Math.max(0, Math.ceil((deadline - Date.now()) / 1000));
-    let offerTimer;
-    const updateReviewTimer = () => {
-      const minutes = String(Math.floor(secondsRemaining / 60)).padStart(2, '0');
-      const seconds = String(secondsRemaining % 60).padStart(2, '0');
-      timerElement.textContent = `${minutes}:${seconds}`;
-      timerElement.setAttribute('datetime', `PT${minutes}M${seconds}S`);
-      if (secondsRemaining <= 0) {
-        timerElement.textContent = 'CONDIÇÃO ATUALIZADA';
-        timerElement.classList.add('is-finished');
-        clearInterval(offerTimer);
-        return;
-      }
-      secondsRemaining = Math.max(0, Math.ceil((deadline - Date.now()) / 1000));
+    /* Preencha com dados reais antes de publicar. */
+    const offerConfig = {
+      checkoutUrl: 'https://example.com/checkout',
+      content: 'Consulte no checkout os módulos e tópicos realmente incluídos no material.',
+      format: 'Confirme o formato de acesso e os dispositivos compatíveis antes de comprar.',
+      conditions: 'Leia preço, regras, política de suporte e os demais termos na página de condições.'
     };
-    updateReviewTimer();
-    offerTimer = window.setInterval(updateReviewTimer, 1000);
+    document.querySelectorAll('.checkout-link').forEach((link) => link.href = offerConfig.checkoutUrl);
+    document.getElementById('offer-content').textContent = offerConfig.content;
+    document.getElementById('offer-format').textContent = offerConfig.format;
+    document.getElementById('offer-conditions').textContent = offerConfig.conditions;
 
-    const menuButton = document.querySelector('.menu-button');
-    const mobileMenu = document.querySelector('.mobile-menu');
-    menuButton.addEventListener('click', () => {
-      const open = mobileMenu.classList.toggle('is-open');
-      menuButton.setAttribute('aria-expanded', String(open));
-    });
-    mobileMenu.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => { mobileMenu.classList.remove('is-open'); menuButton.setAttribute('aria-expanded', 'false'); }));
+    const menuButton = document.getElementById('menu-button');
+    const searchButton = document.getElementById('search-button');
+    const menuPanel = document.getElementById('menu-panel');
+    function togglePanel() { const opening = !menuPanel.classList.contains('is-open'); menuPanel.classList.toggle('is-open', opening); menuPanel.setAttribute('aria-hidden', String(!opening)); }
+    menuButton.addEventListener('click', togglePanel);
+    searchButton.addEventListener('click', togglePanel);
+    document.addEventListener('keydown', (event) => { if (event.key === 'Escape') { menuPanel.classList.remove('is-open'); menuPanel.setAttribute('aria-hidden','true'); } });
 
     document.querySelectorAll('.faq-trigger').forEach((trigger) => {
-      trigger.addEventListener('click', () => {
-        const item = trigger.closest('.faq-item');
-        const wasOpen = item.classList.contains('is-open');
-        document.querySelectorAll('.faq-item').forEach((faq) => { faq.classList.remove('is-open'); faq.querySelector('.faq-trigger').setAttribute('aria-expanded', 'false'); });
-        if (!wasOpen) { item.classList.add('is-open'); trigger.setAttribute('aria-expanded', 'true'); }
-      });
+      trigger.addEventListener('click', () => { const item = trigger.closest('.faq-item'); const wasOpen = item.classList.contains('is-open'); document.querySelectorAll('.faq-item').forEach((faq) => { faq.classList.remove('is-open'); faq.querySelector('.faq-trigger').setAttribute('aria-expanded','false'); }); if (!wasOpen) { item.classList.add('is-open'); trigger.setAttribute('aria-expanded','true'); } });
     });
+    const sticky = document.getElementById('sticky-cta');
+    const progress = document.getElementById('progress');
+    window.addEventListener('scroll', () => { const maximum = document.documentElement.scrollHeight - window.innerHeight; const ratio = maximum > 0 ? (window.scrollY / maximum) * 100 : 0; progress.style.width = ratio + '%'; sticky.classList.toggle('is-visible', window.scrollY > 540); }, { passive:true });
   </script>
 </body>
 </html>
