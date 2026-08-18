@@ -42,6 +42,9 @@
     .article { padding:45px 0 0; }
     .commercial-label { display:inline-flex; align-items:center; gap:7px; padding:6px 9px; color:#8d0000; background:#fff2f2; border:1px solid #efcece; font-family:var(--display); font-size:9px; font-weight:800; letter-spacing:1.05px; }
     .commercial-label b { width:6px; height:6px; background:var(--red); border-radius:50%; }
+    .hero-alert { margin:16px 0 0; padding:10px 12px; display:flex; align-items:center; gap:9px; color:#fff; background:var(--red); border-left:5px solid var(--yellow); font-family:var(--display); font-size:10px; font-weight:800; letter-spacing:.45px; line-height:1.2; text-transform:uppercase; }
+    .hero-alert b { width:7px; height:7px; flex:0 0 7px; background:var(--yellow); border-radius:50%; box-shadow:0 0 0 4px rgba(255,201,20,.18); }
+    .hero-alert span { color:rgba(255,255,255,.82); font-size:9px; font-weight:600; letter-spacing:.25px; text-transform:none; }
     .article h1 { max-width:750px; margin:15px 0 0; font-family:var(--display); font-size:clamp(39px,5vw,59px); font-weight:900; letter-spacing:-2.7px; line-height:.97; }
     .article h1 em { color:var(--red); font-style:normal; }
     .article-deck { max-width:660px; margin:18px 0 0; color:#434343; font-family:var(--serif); font-size:21px; line-height:1.37; }
@@ -51,7 +54,7 @@
     .author strong { display:block; font-size:11px; }
     .author span { display:block; margin-top:2px; color:var(--muted); font-size:10px; }
     .reading-time { color:var(--muted); font-size:10px; text-align:right; }
-    .lead-cta { margin:24px 0 0; padding:16px 17px 17px; display:flex; align-items:center; justify-content:space-between; gap:18px; color:#111; background:var(--yellow); border-bottom:4px solid #907100; box-shadow:0 2px 0 rgba(0,0,0,.15); }
+    .lead-cta { margin:24px 0 0; padding:17px 18px 18px; display:flex; align-items:center; justify-content:space-between; gap:18px; color:#111; background:var(--yellow); border-bottom:5px solid #907100; box-shadow:0 3px 0 rgba(0,0,0,.18); }
     .lead-cta-copy { min-width:0; display:grid; gap:4px; }
     .lead-cta-kicker { color:#6f5700; font-family:var(--display); font-size:9px; font-weight:900; letter-spacing:1.05px; line-height:1; text-transform:uppercase; }
     .lead-cta-copy strong { font-family:var(--display); font-size:15px; font-weight:900; letter-spacing:-.45px; line-height:1.08; }
@@ -59,7 +62,7 @@
     .lead-cta .cta-button { flex:0 0 auto; min-height:48px; padding:0 17px; color:#fff; background:var(--red); border:1px solid #870000; box-shadow:2px 2px 0 rgba(0,0,0,.26); font-size:11px; letter-spacing:.15px; white-space:nowrap; }
     .lead-cta .cta-button:hover { background:#d30808; border-color:#a30000; box-shadow:4px 4px 0 rgba(0,0,0,.23); }
     .launch-window { margin:22px 0 0; padding:0; display:block; color:var(--red); background:transparent; border:0; box-shadow:none; }
-    .launch-copy { margin:0; color:var(--red); font-family:var(--display); font-size:clamp(21px,3.2vw,34px); font-weight:900; letter-spacing:-1.15px; line-height:1.02; }
+    .launch-copy { margin:0; color:var(--red); font-family:var(--display); font-size:clamp(22px,3.6vw,38px); font-weight:900; letter-spacing:-1.35px; line-height:1; }
     .launch-window.is-pending { color:#666; background:transparent; }
     .launch-window.is-pending .launch-copy { color:var(--red); }
     .launch-window.is-ended { color:var(--red); background:transparent; border:0; box-shadow:none; }
@@ -183,11 +186,12 @@
   <main id="conteudo">
     <article class="article-shell article">
       <span class="commercial-label"><b></b> CONTEÚDO COMERCIAL</span>
-      <h1>ATENÇÃO: você tem <em>4 horas.</em> Depois disso, esta oferta será encerrada definitivamente.</h1>
-      <p class="article-deck">Esta é a única janela de acesso desta oferta. Após o cronômetro zerar, a página será encerrada e não haverá compra posterior desta condição.</p>
+      <div class="hero-alert" aria-label="Aviso de encerramento"><b aria-hidden="true"></b><strong>ENCERRAMENTO DEFINITIVO HOJE</strong><span>Uma única janela de acesso nesta campanha</span></div>
+      <h1>Você tem <em>4 horas</em> para decidir. Depois disso, esta oferta estará encerrada.</h1>
+      <p class="article-deck">O acesso fica disponível somente durante esta janela. Quando o prazo terminar, o checkout será fechado e não haverá compra posterior desta oferta nesta campanha.</p>
       <div class="byline"><div class="author"><span class="author-mark">E</span><div><strong>Equipe de Conteúdo</strong><span>Atualizado em 18/08/2026</span></div></div><span class="reading-time">Leitura estimada: 4 min<br />Janela de acesso: 4 horas</span></div>
-      <section class="lead-cta" aria-label="Acesso à oferta"><div class="lead-cta-copy"><span class="lead-cta-kicker">JANELA DE ACESSO · 4 HORAS</span><strong>Confira a oferta completa antes de decidir.</strong><span>Veja o conteúdo, o valor e as condições no próximo passo. Se fizer sentido para você, conclua enquanto a janela estiver aberta.</span></div><a class="cta-button checkout-link" href="https://example.com/checkout" target="_blank" rel="noopener noreferrer">VER OFERTA E CONDIÇÕES <span aria-hidden="true">→</span></a></section>
-      <p class="launch-window is-pending" id="launch-window" aria-live="polite" aria-label="Disponibilidade do estudo"><span class="launch-copy" id="launch-copy">O estudo estará disponível pelos próximos 17:35</span></p>
+      <section class="lead-cta" aria-label="Acesso imediato à oferta"><div class="lead-cta-copy"><span class="lead-cta-kicker">ACESSO ABERTO AGORA · PRAZO FINAL</span><strong>Veja a oferta antes que o checkout feche.</strong><span>Confira conteúdo, valor e condições no próximo passo. Se fizer sentido, conclua enquanto o acesso estiver aberto.</span></div><a class="cta-button checkout-link" href="https://example.com/checkout" target="_blank" rel="noopener noreferrer">ACESSAR AGORA <span aria-hidden="true">→</span></a></section>
+      <p class="launch-window is-pending" id="launch-window" aria-live="polite" aria-label="Prazo de acesso"><span class="launch-copy" id="launch-copy">O acesso termina em 17:35.</span></p>
 
       <div class="article-body">
         <p>Antes de decidir, vale entender o que está sendo oferecido. Este material foi pensado como um <strong>estudo de leitura e organização</strong>, não como promessa de resultado ou vantagem garantida em loterias.</p>
@@ -207,11 +211,11 @@
         <article class="offer-fact"><b>03</b><div><h3>Preço e condições</h3><p id="offer-conditions">Leia preço, regras, política de suporte e os demais termos na página de condições.</p></div></article>
       </section>
 
-      <section class="article-cta" aria-labelledby="cta-title"><span class="cta-kicker">ÚLTIMA E ÚNICA JANELA · FECHAMENTO DEFINITIVO</span><h2 id="cta-title">Se você sair agora, poderá perder esta oferta de forma definitiva.</h2><p>O cronômetro não é uma reserva para depois: ele marca o prazo final. Quando chegar a zero, esta condição será encerrada e não estará disponível para compra nesta campanha.</p><a class="cta-button checkout-link" href="https://example.com/checkout" target="_blank" rel="noopener noreferrer">VER E DECIDIR ANTES DO ZERO <span aria-hidden="true">→</span></a><small>Loterias são aleatórias e envolvem risco financeiro. Não há garantia de retorno.</small></section>
+      <section class="article-cta" aria-labelledby="cta-title"><span class="cta-kicker">PRAZO FINAL · ENCERRAMENTO DEFINITIVO</span><h2 id="cta-title">Se você pretende acessar, faça isso enquanto esta janela estiver aberta.</h2><p>O próximo passo mostra o conteúdo, o valor e as condições. Depois do encerramento, o checkout será fechado nesta campanha.</p><a class="cta-button checkout-link" href="https://example.com/checkout" target="_blank" rel="noopener noreferrer">VER OFERTA AGORA <span aria-hidden="true">→</span></a><small>Loterias são aleatórias e envolvem risco financeiro. Não há garantia de retorno.</small></section>
 
       <div class="section-divider">COMO LER O ESTUDO</div>
       <section class="reading-grid" aria-label="Etapas de leitura"><article class="reading-card"><span>01</span><h3>Observar</h3><p>Leia o material e reconheça quais informações, hábitos e expectativas influenciam suas decisões.</p></article><article class="reading-card"><span>02</span><h3>Organizar</h3><p>Use os critérios apresentados para estruturar limites e avaliar escolhas no seu próprio ritmo.</p></article><article class="reading-card"><span>03</span><h3>Decidir</h3><p>Avance somente se a proposta estiver clara para você e fizer sentido dentro de limites responsáveis.</p></article></section>
-      <section class="inline-cta" aria-label="Segundo ponto de acesso"><div><strong>Última oportunidade desta campanha.</strong><span>Não deixe para comprar depois: após o encerramento, esta oferta não estará mais disponível.</span></div><a class="cta-button checkout-link" href="https://example.com/checkout" target="_blank" rel="noopener noreferrer">ACESSAR AGORA <span aria-hidden="true">→</span></a></section>
+      <section class="inline-cta" aria-label="Segundo ponto de acesso"><div><strong>O prazo continua correndo.</strong><span>Se esta oferta fizer sentido para você, consulte as condições antes do encerramento definitivo.</span></div><a class="cta-button checkout-link" href="https://example.com/checkout" target="_blank" rel="noopener noreferrer">CONSULTAR AGORA <span aria-hidden="true">→</span></a></section>
 
       <aside class="decision-note"><b aria-hidden="true">⚠</b><span><strong>Decisão responsável.</strong> Jogos e apostas envolvem risco financeiro. Este conteúdo é comercial e informativo; ele não representa aconselhamento financeiro e não garante resultados.</span></aside>
     </article>
@@ -220,15 +224,15 @@
   </main>
 
   <footer class="footer"><div class="footer-inner"><div class="footer-brand">ESTUDO SECRETO DA LOTOFÁCIL<small>COMUNICAÇÃO COMERCIAL</small></div><p>Esta página não é uma matéria jornalística independente e não é associada a órgãos oficiais de loteria. Jogos e apostas envolvem risco financeiro; nenhuma informação ou material garante resultados.</p></div></footer>
-  <a class="sticky-cta checkout-link" id="sticky-cta" href="https://example.com/checkout" target="_blank" rel="noopener noreferrer">ÚLTIMA CHANCE<span class="sticky-timer" id="sticky-timer"></span> <span aria-hidden="true">→</span></a>
+  <a class="sticky-cta checkout-link" id="sticky-cta" href="https://example.com/checkout" target="_blank" rel="noopener noreferrer">ACESSAR ANTES DO ENCERRAMENTO<span class="sticky-timer" id="sticky-timer"></span> <span aria-hidden="true">→</span></a>
 
   <div class="exit-modal-overlay" id="exit-modal-overlay" aria-hidden="true">
     <div class="exit-modal" role="dialog" aria-modal="true" aria-labelledby="exit-modal-title">
       <button class="exit-modal-close" type="button" id="exit-modal-close" aria-label="Fechar">×</button>
-      <strong id="exit-modal-title">Não saia para decidir depois: esta é a última janela</strong>
-      <p>O prazo é definitivo. Quando o cronômetro chegar a zero, esta oferta será encerrada e não poderá mais ser comprada nesta campanha.</p>
+      <strong id="exit-modal-title">O checkout será fechado quando o prazo terminar</strong>
+      <p>Esta é uma janela única de acesso. Se você pretende consultar a oferta, faça isso agora — depois do encerramento, esta campanha não aceitará novas compras.</p>
       <div class="exit-timer" id="exit-modal-timer">--:--:--</div>
-      <a class="cta-button checkout-link" id="exit-modal-cta" href="https://example.com/checkout" target="_blank" rel="noopener noreferrer">NÃO PERDER ESTA JANELA <span aria-hidden="true">→</span></a>
+      <a class="cta-button checkout-link" id="exit-modal-cta" href="https://example.com/checkout" target="_blank" rel="noopener noreferrer">CONSULTAR OFERTA AGORA <span aria-hidden="true">→</span></a>
     </div>
   </div>
   <div class="sr-only" aria-live="polite" id="sr-announcer"></div>
@@ -344,8 +348,8 @@
       if (remaining <= 0) {
         currentTier = 'ended';
         launchWindow.className = 'launch-window is-ended';
-        launchCopy.textContent = 'O estudo estará disponível pelos próximos 00:00';
-        launchWindow.setAttribute('aria-label', 'O estudo não está mais disponível. A oferta foi encerrada definitivamente.');
+        launchCopy.textContent = 'ACESSO ENCERRADO DEFINITIVAMENTE.';
+        launchWindow.setAttribute('aria-label', 'O acesso foi encerrado definitivamente.');
         if (stickyTimer) stickyTimer.textContent = ' · encerrado';
         tickerTrack.textContent = originalTickerText;
         document.title = originalTitle;
@@ -361,8 +365,8 @@
       checkMilestones(remaining);
       launchWindow.classList.remove('is-pending','is-ended');
       if (!launchWindow.classList.contains('is-active')) launchWindow.classList.add('is-active');
-      launchCopy.textContent = `O estudo estará disponível pelos próximos ${countdownDisplay}`;
-      launchWindow.setAttribute('aria-label', launchCopy.textContent);
+      launchCopy.textContent = `O acesso termina em ${countdownDisplay}.`;
+      launchWindow.setAttribute('aria-label', `O acesso termina em ${countdownDisplay}.`);
       if (stickyTimer) stickyTimer.textContent = ` · ${hours}:${minutes}:${seconds}`;
       exitTimerEl.textContent = `${hours}:${minutes}:${seconds}`;
       const titlePrefix = currentTier === 'final' ? 'ÚLTIMA CHANCE' : currentTier === 'critical' ? 'FECHAMENTO DEFINITIVO' : currentTier === 'urgent' ? 'NÃO DEIXE PARA DEPOIS' : 'PRAZO FINAL';
