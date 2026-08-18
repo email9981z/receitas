@@ -51,9 +51,18 @@
     .author strong { display:block; font-size:11px; }
     .author span { display:block; margin-top:2px; color:var(--muted); font-size:10px; }
     .reading-time { color:var(--muted); font-size:10px; text-align:right; }
+    .lead-cta { margin:24px 0 0; padding:16px 17px 17px; display:flex; align-items:center; justify-content:space-between; gap:18px; color:#111; background:var(--yellow); border-bottom:4px solid #907100; box-shadow:0 2px 0 rgba(0,0,0,.15); }
+    .lead-cta-copy { display:grid; gap:3px; }
+    .lead-cta-copy strong { font-family:var(--display); font-size:14px; font-weight:900; letter-spacing:-.4px; }
+    .lead-cta-copy span { font-size:10px; line-height:1.35; }
+    .lead-cta .cta-button { flex:0 0 auto; min-height:45px; padding:0 16px; color:#fff; background:var(--red); box-shadow:2px 2px 0 rgba(0,0,0,.26); font-size:11px; }
+    .lead-cta .cta-button:hover { background:#d30808; box-shadow:4px 4px 0 rgba(0,0,0,.23); }
     .article-body { padding:28px 0 0; }
     .article-body > p { max-width:690px; margin:0 0 17px; color:var(--text); font-family:var(--serif); font-size:19px; line-height:1.55; }
     .article-body > p strong { color:#111; }
+    .editorial-figure { margin:31px 0 29px; }
+    .editorial-figure img { width:100%; height:auto; min-height:260px; display:block; object-fit:cover; background:#e8e8e5; filter:saturate(.82) contrast(1.04); }
+    .editorial-figure figcaption { margin-top:8px; padding-left:10px; color:var(--muted); border-left:3px solid var(--red); font-size:10px; line-height:1.45; }
 
     /* Sales modules styled as editorial cards */
     .article-callout { margin:30px 0; padding:23px 25px; display:grid; grid-template-columns:49px 1fr; gap:17px; color:#111; background:var(--soft); border-top:4px solid var(--red); }
@@ -74,6 +83,11 @@
     .cta-button:active { box-shadow:1px 1px 0 rgba(0,0,0,.25); transform:translate(2px,2px); }
     .cta-button span { font-size:19px; }
     .article-cta small { display:block; margin-top:11px; color:#a9a9a9; font-size:10px; line-height:1.4; }
+    .inline-cta { margin:29px 0 0; padding:18px 0; display:flex; align-items:center; justify-content:space-between; gap:18px; border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+    .inline-cta strong { display:block; font-family:var(--display); font-size:17px; font-weight:900; letter-spacing:-.55px; }
+    .inline-cta span { display:block; margin-top:3px; color:var(--muted); font-size:11px; line-height:1.4; }
+    .inline-cta .cta-button { min-height:45px; padding:0 15px; color:#fff; background:var(--red); box-shadow:2px 2px 0 rgba(0,0,0,.24); font-size:11px; }
+    .inline-cta .cta-button:hover { background:#d30808; }
 
     .section-divider { margin:42px 0 0; display:flex; align-items:center; gap:11px; color:var(--red); font-family:var(--display); font-size:10px; font-weight:900; letter-spacing:1.25px; }
     .section-divider:before,.section-divider:after { content:""; height:1px; flex:1; background:var(--line); }
@@ -110,7 +124,7 @@
     .sticky-cta span { font-size:17px; }
 
     @media (max-width:760px) { .article-shell,.faq-wrap { width:min(100% - 32px,760px); } .header-inner,.footer-inner { width:min(100% - 30px,1120px); } .article { padding-top:32px; } .article h1 { font-size:42px; letter-spacing:-2px; } .article-deck { font-size:19px; } .byline { align-items:flex-start; } .reading-grid { grid-template-columns:1fr; } .reading-card { min-height:160px; } .reading-card h3 { margin-top:18px; } .footer-inner { display:grid; gap:16px; } .footer p { text-align:left; } .sticky-cta { left:12px; right:12px; justify-content:center; bottom:12px; } }
-    @media (max-width:500px) { .masthead { font-size:15px; } .article h1 { font-size:36px; } .article-deck { font-size:18px; } .byline { display:grid; } .reading-time { text-align:left; } .article-callout { padding:20px; grid-template-columns:35px 1fr; gap:12px; } .article-callout h2 { font-size:20px; } .article-cta { padding:22px; } .cta-button { width:100%; font-size:12px; } }
+    @media (max-width:500px) { .masthead { font-size:15px; } .article h1 { font-size:36px; } .article-deck { font-size:18px; } .byline { display:grid; } .reading-time { text-align:left; } .lead-cta,.inline-cta { display:grid; } .lead-cta .cta-button,.inline-cta .cta-button { width:100%; } .article-callout { padding:20px; grid-template-columns:35px 1fr; gap:12px; } .article-callout h2 { font-size:20px; } .article-cta { padding:22px; } .cta-button { width:100%; font-size:12px; } }
     @media (prefers-reduced-motion:reduce) { *,*:before,*:after { transition-duration:1ms!important; scroll-behavior:auto!important; } }
   </style>
 </head>
@@ -133,11 +147,17 @@
       <h1>Estudo Secreto da Lotofácil: o estudo que te ajuda a jogar <em>com sabedoria.</em></h1>
       <p class="article-deck">Uma proposta de leitura para quem busca mais organização, critérios e consciência antes de registrar qualquer jogo.</p>
       <div class="byline"><div class="author"><span class="author-mark">E</span><div><strong>Equipe de Conteúdo</strong><span>Atualizado em 18/08/2026</span></div></div><span class="reading-time">Leitura estimada: 4 min<br />Conteúdo patrocinado</span></div>
+      <section class="lead-cta" aria-label="Acesso à oferta"><div class="lead-cta-copy"><strong>Quer acessar o Estudo Secreto?</strong><span>Veja o conteúdo da oferta e avance para o checkout quando estiver pronto.</span></div><a class="cta-button checkout-link" href="https://example.com/checkout" target="_blank" rel="noreferrer">ACESSAR O ESTUDO <span aria-hidden="true">→</span></a></section>
 
       <div class="article-body">
         <p>Antes de decidir, vale entender o que está sendo oferecido. Este material foi pensado como um <strong>estudo de leitura e organização</strong>, não como promessa de resultado ou vantagem garantida em loterias.</p>
         <p>Na página de condições, você deve encontrar as informações essenciais para avaliar a proposta: conteúdo, formato, acesso, preço e regras aplicáveis.</p>
       </div>
+
+      <figure class="editorial-figure">
+        <img src="/manus-storage/lottery-editorial-ticket_289e2b16.jpg" alt="Volante genérico de loteria com caneta sobre uma mesa de trabalho" />
+        <figcaption>Imagem editorial ilustrativa: um volante de loteria exige leitura atenta das regras e decisão responsável antes de qualquer registro.</figcaption>
+      </figure>
 
       <section class="article-callout" aria-labelledby="callout-title"><span class="callout-number">01</span><div><h2 id="callout-title">O que conferir antes de avançar</h2><p>Leia os detalhes da oferta e tome sua decisão somente depois de entender exatamente o que está incluído.</p></div></section>
 
@@ -147,10 +167,11 @@
         <article class="offer-fact"><b>03</b><div><h3>Preço e condições</h3><p id="offer-conditions">Leia preço, regras, política de suporte e os demais termos na página de condições.</p></div></article>
       </section>
 
-      <section class="article-cta" aria-labelledby="cta-title"><span class="cta-kicker">PRÓXIMO PASSO</span><h2 id="cta-title">Veja o conteúdo e as condições da oferta.</h2><p>O destino apresenta as informações que você precisa avaliar antes de concluir qualquer compra.</p><a class="cta-button checkout-link" href="https://example.com/checkout" target="_blank" rel="noreferrer">VER CONTEÚDO E CONDIÇÕES <span aria-hidden="true">→</span></a><small>Loterias são aleatórias e envolvem risco financeiro. Não há garantia de retorno.</small></section>
+      <section class="article-cta" aria-labelledby="cta-title"><span class="cta-kicker">ACESSO AO ESTUDO</span><h2 id="cta-title">Comece agora pelo conteúdo completo do Estudo Secreto.</h2><p>Ao avançar, você confere a oferta, as condições e o caminho para acessar o material.</p><a class="cta-button checkout-link" href="https://example.com/checkout" target="_blank" rel="noreferrer">QUERO ACESSAR O ESTUDO <span aria-hidden="true">→</span></a><small>Loterias são aleatórias e envolvem risco financeiro. Não há garantia de retorno.</small></section>
 
       <div class="section-divider">COMO LER O ESTUDO</div>
       <section class="reading-grid" aria-label="Etapas de leitura"><article class="reading-card"><span>01</span><h3>Observar</h3><p>Leia o material e reconheça quais informações, hábitos e expectativas influenciam suas decisões.</p></article><article class="reading-card"><span>02</span><h3>Organizar</h3><p>Use os critérios apresentados para estruturar limites e avaliar escolhas no seu próprio ritmo.</p></article><article class="reading-card"><span>03</span><h3>Decidir</h3><p>Avance somente se a proposta estiver clara para você e fizer sentido dentro de limites responsáveis.</p></article></section>
+      <section class="inline-cta" aria-label="Segundo ponto de acesso"><div><strong>Pronto para conhecer a proposta completa?</strong><span>O acesso à oferta é apresentado no próximo passo.</span></div><a class="cta-button checkout-link" href="https://example.com/checkout" target="_blank" rel="noreferrer">VER A OFERTA <span aria-hidden="true">→</span></a></section>
 
       <aside class="decision-note"><b aria-hidden="true">⚠</b><span><strong>Decisão responsável.</strong> Jogos e apostas envolvem risco financeiro. Este conteúdo é comercial e informativo; ele não representa aconselhamento financeiro e não garante resultados.</span></aside>
     </article>
@@ -159,7 +180,7 @@
   </main>
 
   <footer class="footer"><div class="footer-inner"><div class="footer-brand">ESTUDO SECRETO DA LOTOFÁCIL<small>COMUNICAÇÃO COMERCIAL</small></div><p>Esta página não é uma matéria jornalística independente e não é associada a órgãos oficiais de loteria. Jogos e apostas envolvem risco financeiro; nenhuma informação ou material garante resultados.</p></div></footer>
-  <a class="sticky-cta checkout-link" id="sticky-cta" href="https://example.com/checkout" target="_blank" rel="noreferrer">VER CONDIÇÕES <span aria-hidden="true">→</span></a>
+  <a class="sticky-cta checkout-link" id="sticky-cta" href="https://example.com/checkout" target="_blank" rel="noreferrer">ACESSAR O ESTUDO <span aria-hidden="true">→</span></a>
 
   <script>
     /* Preencha com dados reais antes de publicar. */
