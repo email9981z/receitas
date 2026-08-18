@@ -102,6 +102,26 @@
     .article-body { padding:28px 0 0; }
     .article-body > p { max-width:690px; margin:0 0 17px; color:var(--text); font-family:var(--serif); font-size:19px; line-height:1.55; }
     .article-body > p strong { color:#111; }
+    .comments-module { margin:31px 0 29px; }
+    .comments-header { padding:0 0 13px; border-bottom:3px solid var(--ink); }
+    .comments-kicker { color:var(--red); font-family:var(--display); font-size:9px; font-weight:900; letter-spacing:1.15px; }
+    .comments-header h2 { margin:7px 0 0; font-family:var(--display); font-size:clamp(22px,3vw,30px); font-weight:900; letter-spacing:-1px; line-height:1; }
+    .comments-disclaimer { margin:8px 0 0; padding:8px 10px; color:#5b4700; background:#fff5c7; border-left:4px solid var(--yellow); font-family:var(--display); font-size:10px; font-weight:800; line-height:1.35; }
+    .comments-count { margin:12px 0 0; color:#3e3e3e; font-family:var(--display); font-size:11px; font-weight:900; }
+    .comments-list { margin-top:8px; padding:13px 10px 18px; display:grid; gap:8px; background:#fff; border:1px solid #dfe1e3; border-radius:14px; box-shadow:0 1px 0 rgba(0,0,0,.04); }
+    .comment-item { padding:4px 0; display:grid; grid-template-columns:32px 1fr; gap:9px; }
+    .comment-item.comment-reply { width:calc(100% - 24px); margin-left:24px; }
+    .comment-avatar { width:32px; height:32px; display:grid; place-items:center; color:#fff; background:var(--red); border-radius:50%; font-family:var(--display); font-size:9px; font-weight:900; }
+    .comment-bubble { padding:9px 10px 8px; background:#eef0f2; border-radius:10px; }
+    .comment-meta { display:flex; align-items:baseline; flex-wrap:wrap; gap:6px; }
+    .comment-meta strong { color:#242424; font-family:var(--display); font-size:11px; font-weight:900; }
+    .comment-meta span { color:#8a8a8a; font-size:9px; }
+    .comment-example-tag { display:inline-block; margin-right:5px; padding:2px 4px; color:#8d0000; background:#fff0f0; border:1px solid #efcece; font-family:var(--display); font-size:7px; font-weight:900; letter-spacing:.55px; vertical-align:1px; }
+    .comment-bubble p { margin:4px 0 0; color:#373737; font-size:12px; line-height:1.42; }
+    .comment-actions { margin:4px 0 0 4px; display:flex; gap:8px; color:#8a8a8a; font-size:9px; font-weight:700; }
+    .comment-actions span:first-child { color:var(--red); }
+    .comment-reaction { margin-left:auto; color:#777; font-size:9px; } 
+    .comments-closed { margin:12px 0 0; padding-top:11px; color:#777; border-top:1px solid #e4e5e6; font-size:10px; line-height:1.4; text-align:center; }
     .editorial-figure { margin:31px 0 29px; }
     .editorial-figure img { width:100%; height:auto; min-height:260px; display:block; object-fit:cover; background:#e8e8e5; filter:saturate(.82) contrast(1.04); }
     .editorial-figure figcaption { margin-top:8px; padding-left:10px; color:var(--muted); border-left:3px solid var(--red); font-size:10px; line-height:1.45; }
@@ -166,7 +186,7 @@
     .sticky-cta span { font-size:17px; }
 
     @media (max-width:760px) { .article-shell,.faq-wrap { width:min(100% - 32px,760px); } .header-inner,.footer-inner { width:min(100% - 30px,1120px); } .article { padding-top:32px; } .article h1 { font-size:42px; letter-spacing:-2px; } .article-deck { font-size:19px; } .byline { align-items:flex-start; } .reading-grid { grid-template-columns:1fr; } .reading-card { min-height:160px; } .reading-card h3 { margin-top:18px; } .footer-inner { display:grid; gap:16px; } .footer p { text-align:left; } .sticky-cta { left:12px; right:12px; justify-content:center; bottom:12px; } }
-    @media (max-width:500px) { .masthead { font-size:15px; } .article h1 { font-size:36px; } .article-deck { font-size:18px; } .byline { display:grid; } .reading-time { text-align:left; } .lead-cta,.inline-cta { display:grid; } .lead-cta { gap:8px; } .lead-cta-button,.inline-cta .cta-button { width:100%; flex-basis:auto; } .launch-window { margin-top:18px; } .launch-copy { font-size:clamp(20px,7vw,29px); letter-spacing:-.9px; } .launch-window.is-critical .launch-copy,.launch-window.is-final .launch-copy { font-size:clamp(22px,7.5vw,31px); } .article-callout { padding:20px; grid-template-columns:35px 1fr; gap:12px; } .article-callout h2 { font-size:20px; } .article-cta { padding:22px; } .cta-button { width:100%; font-size:12px; } }
+    @media (max-width:500px) { .masthead { font-size:15px; } .article h1 { font-size:36px; } .article-deck { font-size:18px; } .byline { display:grid; } .reading-time { text-align:left; } .lead-cta,.inline-cta { display:grid; } .lead-cta { gap:8px; } .lead-cta-button,.inline-cta .cta-button { width:100%; flex-basis:auto; } .launch-window { margin-top:18px; } .launch-copy { font-size:clamp(20px,7vw,29px); letter-spacing:-.9px; } .comments-header { align-items:flex-start; flex-direction:column; gap:8px; } .comments-list { padding:8px; } .comment-item.comment-reply { width:calc(100% - 12px); margin-left:12px; } .launch-window.is-critical .launch-copy,.launch-window.is-final .launch-copy { font-size:clamp(22px,7.5vw,31px); } .article-callout { padding:20px; grid-template-columns:35px 1fr; gap:12px; } .article-callout h2 { font-size:20px; } .article-cta { padding:22px; } .cta-button { width:100%; font-size:12px; } }
     @media (prefers-reduced-motion:reduce) { *,*:before,*:after { transition-duration:1ms!important; animation-duration:1ms!important; animation-iteration-count:1!important; scroll-behavior:auto!important; } }
   </style>
 </head>
@@ -193,8 +213,8 @@
       <section class="lead-cta" aria-label="Acesso à oferta"><a class="lead-cta-button checkout-link" href="https://example.com/checkout" target="_blank" rel="noopener noreferrer"><span class="lead-cta-prefix">SIM!</span> QUERO VER A OFERTA <span aria-hidden="true">→</span></a><p class="lead-cta-note">Veja o conteúdo, o valor e as condições antes de decidir.</p></section>
       <p class="launch-window is-pending" id="launch-window" aria-live="polite" aria-label="Prazo de acesso"><span class="launch-copy" id="launch-copy">O acesso termina em 17:35.</span></p>
 
+      <section class="comments-module" aria-labelledby="comments-title"><div class="comments-header"><span class="comments-kicker">SEÇÃO DEMONSTRATIVA</span><h2 id="comments-title">Comentários de exemplo</h2><p class="comments-disclaimer">EXEMPLO ILUSTRATIVO · Os comentários abaixo são fictícios e servem apenas para demonstrar o layout. Não são depoimentos reais.</p></div><div class="comments-count">3 comentários de exemplo</div><div class="comments-list"><article class="comment-item"><span class="comment-avatar" aria-hidden="true">EX</span><div><div class="comment-bubble"><div class="comment-meta"><strong>Leitor de exemplo</strong><span>agora · conteúdo fictício</span></div><p><span class="comment-example-tag">EXEMPLO</span>Quero entender exatamente o que está incluído no estudo e como funciona o acesso.</p></div><div class="comment-actions"><span>Curtir</span><span>Responder</span><span>·</span><span>agora</span><span class="comment-reaction">0</span></div></div></article><article class="comment-item"><span class="comment-avatar" aria-hidden="true">EX</span><div><div class="comment-bubble"><div class="comment-meta"><strong>Leitor de exemplo</strong><span>agora · conteúdo fictício</span></div><p><span class="comment-example-tag">EXEMPLO</span>Onde encontro o formato de acesso, o preço e as regras aplicáveis à oferta?</p></div><div class="comment-actions"><span>Curtir</span><span>Responder</span><span>·</span><span>agora</span><span class="comment-reaction">0</span></div></div></article><article class="comment-item comment-reply"><span class="comment-avatar" aria-hidden="true">EX</span><div><div class="comment-bubble"><div class="comment-meta"><strong>Resposta de exemplo</strong><span>agora · conteúdo fictício</span></div><p><span class="comment-example-tag">EXEMPLO</span>Consulte a página de condições antes de decidir e confirme todas as informações da oferta.</p></div><div class="comment-actions"><span>Curtir</span><span>Responder</span><span>·</span><span>agora</span><span class="comment-reaction">0</span></div></div></article><p class="comments-closed">Demonstração visual: comentários reais não estão habilitados nesta versão.</p></div></section>
       <div class="article-body">
-        <p>Antes de decidir, vale entender o que está sendo oferecido. Este material foi pensado como um <strong>estudo de leitura e organização</strong>, não como promessa de resultado ou vantagem garantida em loterias.</p>
         <p>Na página de condições, você deve encontrar as informações essenciais para avaliar a proposta: conteúdo, formato, acesso, preço e regras aplicáveis.</p>
       </div>
 
