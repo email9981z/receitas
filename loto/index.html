@@ -593,25 +593,53 @@
 
 <script>
   // Autoplay do video de apresentacao (mudo por padrao, exigido pelos navegadores).
-  // Ao clicar/tocar no video, o som e ativado automaticamente.
+  // - Inicia reproducao automatica ao carregar a pagina (com som mutado)
+  // - Pausa automaticamente quando o usuario rola a pagina para fora do video
+  // - Retoma quando o video volta a ficar visivel na tela
+  // - Ao clicar/tocar no video, o som e ativado automaticamente
   (function () {
     var v = document.getElementById('vsl-video');
     if (!v) return;
-    var tryPlay = function () {
-      v.muted = true;
-      v.play().catch(function () {});
+
+    v.muted = true;
+    v.play().catch(function () {});
+
+    // Ativa o som no primeiro clique/touch
+    var activateSound = function () {
+      if (v.muted) { v.muted = false; v.volume = 1; }
     };
-    tryPlay();
-    v.addEventListener('click', function () {
-      if (v.muted) { v.muted = false; v.volume = 1; }
-    });
     var unmuteOnInteraction = function () {
-      if (v.muted) { v.muted = false; v.volume = 1; }
+      activateSound();
       document.removeEventListener('click', unmuteOnInteraction);
       document.removeEventListener('touchstart', unmuteOnInteraction);
     };
     document.addEventListener('click', unmuteOnInteraction);
     document.addEventListener('touchstart', unmuteOnInteraction);
+    v.addEventListener('click', activateSound);
+
+    // Pausa ao rolar para fora do video, retoma ao voltar
+    if ('IntersectionObserver' in window) {
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            v.play().catch(function () {});
+          } else {
+            v.pause();
+          }
+        });
+      }, { threshold: 0.5 });
+      observer.observe(v);
+    } else {
+      var throttled = false;
+      window.addEventListener('scroll', function () {
+        if (throttled) return;
+        throttled = true;
+        setTimeout(function () { throttled = false; }, 150);
+        var rect = v.getBoundingClientRect();
+        var visible = rect.bottom > 0 && rect.top < window.innerHeight;
+        visible ? v.play().catch(function () {}) : v.pause();
+      });
+    }
   })();
 </script>
 </body>
