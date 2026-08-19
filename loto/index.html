@@ -300,6 +300,9 @@
 
 
 
+
+  /* Forca o video a nunca pausar: preserva o estado de reproducao */
+  .vsl-player{transform:translateZ(0);will-change:transform}
 </style>
 </head>
 <body>
@@ -600,17 +603,21 @@
 </script>
 
 <script>
-  // Video de apresentacao: reproducao automatica (mudo por padrao, exigido pelos navegadores).
-  // - Toca automaticamente ao carregar a pagina
-  // - Ativa o som no primeiro clique/toque em qualquer lugar
-  // - Nunca pausa ao rolar a pagina; recomeca em loop quando termina
+  // Video de apresentacao: reproducao automatica com persistencia total.
+  // - Toca automaticamente ao carregar a pagina (mudo, exigido pelos navegadores)
+  // - Ativa o som no primeiro clique/toque
+  // - Garante reproducao continua mesmo ao rolar a pagina (multiplas camadas)
   (function () {
     var v = document.getElementById('vsl-video');
     if (!v) return;
     v.loop = true;
     v.muted = true;
+    // DisablingPauseAttributes: prevenir pausa nativa por visibilidade
+    v.setAttribute('playsinline', '');
+    v.setAttribute('webkit-playsinline', '');
+    v.playsInline = true;
+    // 1a camada: play inicial
     v.play().catch(function () {
-      // Se o navegador bloquear o autoplay, tenta apos qualquer interacao
       var tryPlay = function () {
         v.play().catch(function () {});
         document.removeEventListener('click', tryPlay);
@@ -618,6 +625,33 @@
       };
       document.addEventListener('click', tryPlay);
       document.addEventListener('touchstart', tryPlay);
+    });
+    // 2a camada: garantir play a cada frame de animacao (enquanto a pagina rola)
+    var wasScrolled = false;
+    function forcePlayLoop() {
+      if (!v.ended && v.paused) {
+        v.play().catch(function () {});
+      }
+      requestAnimationFrame(forcePlayLoop);
+    }
+    requestAnimationFrame(forcePlayLoop);
+    // 3a camada: evento de scroll (imediato, sem delay)
+    window.addEventListener('scroll', function () {
+      if (!v.ended && v.paused) { v.play().catch(function () {}); }
+    }, { passive: true });
+    // 4a camada: qualquer tentativa de pausa e revertida (exceto pausa intencional do usuario)
+    var intentionalPause = false;
+    v.addEventListener('pause', function () {
+      if (!intentionalPause && !v.ended) { v.play().catch(function () {}); }
+    });
+    v.addEventListener('click', function () {
+      // Permitir que o usuario pause via botao de pause dos controles
+      if (!v.paused) { intentionalPause = true; }
+      else { intentionalPause = false; v.play().catch(function () {}); }
+    });
+    // 5a camada: se a aba ficar inativa e voltar, retoma
+    document.addEventListener('visibilitychange', function () {
+      if (!document.hidden && !v.ended) { v.play().catch(function () {}); }
     });
     // Ativa o som no primeiro clique/touch
     var activateSound = function () {
@@ -630,18 +664,7 @@
     };
     document.addEventListener('click', unmuteOnInteraction);
     document.addEventListener('touchstart', unmuteOnInteraction);
-    v.addEventListener('click', activateSound);
-    // Se o video pausar por qualquer motivo (scroll, economia de energia), retoma
-    var ensurePlaying = function () {
-      if (!v.ended) { v.play().catch(function () {}); }
-    };
-    v.addEventListener('pause', ensurePlaying);
-    window.addEventListener('scroll', ensurePlaying, { passive: true });
-    window.addEventListener('resize', ensurePlaying);
-    // Garantia periodica: reafirma a reproducao a cada 3 segundos
-    setInterval(function () {
-      if (v.paused && !v.ended) { ensurePlaying(); }
-    }, 3000);
+    v.addEventListener('click', function () { activateSound(); });
   })();
 </script>
 </body>
