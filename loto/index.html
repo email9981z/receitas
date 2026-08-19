@@ -44,28 +44,9 @@
   .hero .cta svg{stroke:#fff}
   .hero .guarantee-badge{color:var(--muted)}
 
-  /* ─── Hero urgency pricing ─── */
-  .hero-price-row{display:flex;align-items:baseline;justify-content:center;gap:12px;margin-bottom:6px}
-  .hero-price-from{font-size:16px;color:var(--muted);text-decoration:line-through}
-  .hero-price-to{font-size:36px;font-weight:900;color:var(--yellow);letter-spacing:-1px}
-  .hero-price-to span{font-size:18px}
-  .hero-price-label{font-size:11.5px;color:var(--muted);margin-bottom:14px}
-
-  /* ─── Hero timer ─── */
-  .hero-timer{display:flex;justify-content:center;align-items:center;gap:6px;margin-bottom:18px}
-  .hero-timer .t-unit{background:var(--ink);border:2px solid var(--red);border-radius:6px;padding:10px 14px;font-size:20px;font-weight:800;color:#fff;font-variant-numeric:tabular-nums;min-width:48px}
-  .hero-timer .t-sep{color:var(--red);font-size:18px;font-weight:300}
-
-  /* ─── Hero scarcity badge ─── */
-  .hero-scarcity{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:800;color:var(--red);margin-bottom:18px;animation:pulse-scarcity 1.5s ease-in-out infinite;background:rgba(239,68,68,.08);border:2px solid rgba(239,68,68,.4);border-radius:20px;padding:10px 20px}
-  .hero-scarcity .dot{width:8px;height:8px;background:#ef4444;border-radius:50%;animation:blink 1s ease-in-out infinite}
-
-  @keyframes pulse-scarcity{0%,100%{opacity:1}50%{opacity:.7}}
-  @keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
   @keyframes pulse-bg{0%,100%{background:#c02626}50%{background:#a01e1e}}
   @keyframes pulse-bg-dark{0%,100%{background:#1e1e30}50%{background:#252540}}
   @keyframes pulse-cta{0%,100%{box-shadow:0 4px 16px rgba(185,28,28,.3)}50%{box-shadow:0 4px 24px rgba(185,28,28,.45),0 0 0 6px rgba(185,28,28,.06)}}
-
   /* ─── Social proof bar ─── */
   .social-proof{display:flex;justify-content:center;align-items:center;gap:8px;margin-bottom:18px;font-size:13px;color:var(--muted)}
   .social-proof .avatars{display:flex}
@@ -104,11 +85,6 @@
   .product-card .tag{font-size:10px;text-transform:uppercase;letter-spacing:2px;color:var(--yellow);font-weight:700;margin-bottom:10px;opacity:.9}
   .product-card h3{font-size:22px;font-weight:800;margin-bottom:6px;letter-spacing:-.5px}
   .product-card p{font-size:13px;color:#aab;margin-bottom:18px}
-  .product-card .price-row{display:flex;align-items:baseline;justify-content:center;gap:12px}
-  .product-card .price-from{font-size:16px;color:#777;text-decoration:line-through}
-  .product-card .price-to{font-size:40px;font-weight:900;color:var(--yellow);letter-spacing:-1px}
-  .product-card .price-to span{font-size:20px;font-weight:700}
-  .product-card .price-label{font-size:11px;color:#889;margin-top:6px}
 
   .module{display:flex;gap:14px;padding:16px 0;border-bottom:1px solid var(--line);align-items:flex-start}
   .module:last-child{border-bottom:none}
@@ -212,10 +188,6 @@
     .hero .cta{max-width:100%}
     .social-proof{font-size:12px}
     .social-proof .avatars span{width:24px;height:24px;font-size:9px}
-    .hero-price-to{font-size:32px}
-    .hero-price-from{font-size:14px}
-    .hero-timer .t-unit{padding:8px 10px;font-size:17px;min-width:42px}
-    .hero-timer .t-sep{font-size:16px}
 
     /* General container */
     .wrap{width:100%;padding:0 16px}
@@ -227,7 +199,6 @@
     /* Product card */
     .product-card{padding:24px 16px}
 
-    .price-timer-inline{font-size:11.5px!important}
     /* Price card */
     .price-section{padding:28px 0}
     .price-card{padding:24px 16px}
@@ -278,14 +249,18 @@
 
   /* Product Image */
 
+  /* ─── Hero offer (bloco limpo abaixo do video) ─── */
+  .hero-offer{display:flex;flex-direction:column;align-items:center;gap:6px;margin:0 0 18px}
+  .offer-price{display:flex;align-items:baseline;gap:12px}
+  .offer-from{font-size:17px;color:var(--muted);text-decoration:line-through;font-weight:600}
+  .offer-to{font-size:44px;font-weight:900;color:var(--ink);letter-spacing:-1.5px;line-height:1}
+  .offer-rs{font-size:20px;font-weight:700;color:var(--red)}
+  .offer-deal{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:700;color:var(--red);background:var(--red-light);border:1px solid rgba(185,28,28,.18);border-radius:20px;padding:6px 16px}
 
-
-  /* ─── Video player ─── */
-  .video-wrap{width:100%;max-width:560px;margin:0 auto 20px;border-radius:14px;overflow:hidden;background:var(--card-dark);box-shadow:0 12px 36px rgba(0,0,0,.25);position:relative}
-  .video-wrap::after{content:'';position:absolute;inset:0;border-radius:14px;box-shadow:inset 0 1px 0 rgba(255,255,255,.12);pointer-events:none}
-  .vsl-player{width:100%;display:block;background:#000;aspect-ratio:16/9}
-  .video-wrap--card{max-width:100%;box-shadow:0 8px 24px rgba(0,0,0,.3);border-radius:10px}
-  .video-wrap--card .vsl-player{border-radius:10px}
+  /* ─── Price card refinado ─── */
+  .price-card .price-card-label{font-size:12px;color:var(--muted);margin-top:8px}
+  .price-card .to-once{font-size:16px;font-weight:600;color:var(--red)}
+  .price-urgency{font-size:12.5px;color:var(--red);font-weight:700;margin:16px 0 20px;text-align:center;background:rgba(185,28,28,.06);border:1px solid rgba(185,28,28,.2);border-radius:8px;padding:9px 14px}
 
 </style>
 </head>
@@ -328,27 +303,20 @@
         </div>
       </div>
 
-      <!-- Scarcity -->
-      <div class="hero-scarcity"><span class="dot"></span> Última chance — desconto de 70% expira hoje</div>
-
-      <!-- Price with anchor -->
-      <div class="hero-price-row">
-        <span class="hero-price-from">R$ 97</span>
-        <span class="hero-price-to"><span>R$</span> 27</span>
+      <!-- Oferta (bloco unico e limpo) -->
+      <div class="hero-offer">
+        <div class="offer-price">
+          <span class="offer-from">R$ 97</span>
+          <span class="offer-to"><span class="offer-rs">R$</span> 27</span>
+        </div>
+        <div class="offer-deal">
+          <svg viewBox="0 0 24 24" width="15" height="15" stroke="currentColor" stroke-width="2" fill="none"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+          70% OFF só hoje · oferta expira às 23:59
+        </div>
       </div>
-
-      <!-- Timer -->
-      <div class="hero-timer">
-        <div class="t-unit" id="h-t-h">00</div>
-        <span class="t-sep">:</span>
-        <div class="t-unit" id="h-t-m">00</div>
-        <span class="t-sep">:</span>
-        <div class="t-unit" id="h-t-s">00</div>
-      </div>
-      <div class="hero-price-label" style="margin-bottom:14px">⚠ Quando o timer zerar, volta pra <s>R$ 97</s></div>
 
       <a class="cta" href="https://example.com/checkout">
-        SIM! QUERO POR R$ 27 AGORA
+        QUERO O ESTUDO POR R$ 27
         <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
       <div class="guarantee-badge">
@@ -362,7 +330,7 @@
 
   <!-- Problem -->
   <section class="problem">
-    <p>Você já parou pra pensar quanto <b>DINHEIRO</b> já jogou fora? Todo mês R$ 150, R$ 300… e só volta 13, 14 pontos.</p><p style="margin-top:14px">O problema nunca foi sua sorte. É que <b>ninguém te ensinou a jogar certo</b>.</p></p>
+    <p>Você já parou pra pensar quanto <b>DINHEIRO</b> já jogou fora? Todo mês R$ 150, R$ 300… e só volta 13, 14 pontos.</p><p style="margin-top:14px">O problema nunca foi sua sorte. É que <b>ninguém te ensinou a jogar certo</b>.</p>
   </section>
 
   <!-- What you get -->
@@ -374,19 +342,6 @@
       <div class="tag">Material Digital Secreto</div>
       <h3>Estudo Secreto da Lotofácil</h3>
       <p>O método para acertar 15 dezenas</p>
-      <!-- Video de apresentacao (card do produto) -->
-      <div class="video-wrap video-wrap--card" id="video-card">
-        <video class="vsl-player" controls playsinline preload="metadata">
-          <source src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663865742747/MMghhyCOKuguSGUx.mp4" type="video/mp4">
-          Seu navegador nao suporta video HTML5.
-        </video>
-      </div>
-
-      <div class="price-row">
-        <span class="price-from">R$ 97</span>
-        <span class="price-to"><span>R$</span> 27</span>
-      </div>
-
     </div>
 
     <div>
@@ -409,7 +364,7 @@
       <div class="bonus-item"><span class="b-icon"><svg viewBox="0 0 24 24"><rect x="3" y="12" width="4" height="9" rx="1"/><rect x="10" y="7" width="4" height="14" rx="1"/><rect x="17" y="3" width="4" height="18" rx="1"/></svg></span><span class="b-name">Planilha de Fechamentos Inteligentes</span><span class="b-value">R$ 47</span></div>
       <div class="bonus-item"><span class="b-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span><span class="b-name">Guia: O Segredo dos Concursos Finais</span><span class="b-value">R$ 37</span></div>
       <div class="bonus-item"><span class="b-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span><span class="b-name">Acesso ao Grupo VIP de Apostadores</span><span class="b-value">R$ 67</span></div>
-      <div class="bonus-total">Valor total dos bônus: <b>R$ 151 — você leva tudo por apenas R$ 27</b></div>
+      <div class="bonus-total">Valor total dos bônus: <b>R$ 151</b> + material principal · tudo por <b style="color:var(--red)">R$ 27</b></div>
     </div>
   </section>
 
@@ -417,17 +372,19 @@
   <section class="price-section">
     <div class="price-card">
       <div class="price-header">
-        <div class="from">De R$ 97</div>
-        <div class="to"><span>R$</span> 27</div>
+        <div class="from">Valor total: R$ 178</div>
+        <div class="to"><span>R$</span> 27<span class="to-once"> hoje</span></div>
+        <div class="price-card-label">em pagamento único — sem mensalidade, para sempre</div>
       </div>
 
       <div class="price-features">
         <span><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Acesso imediato</span>
+        <span><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Bônus inclusos</span>
         <span><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Sem mensalidade</span>
       </div>
-      <div class="price-timer-inline" style="font-size:12px;color:var(--red);font-weight:700;margin:14px 0;background:rgba(185,28,28,.06);border:1px solid rgba(185,28,28,.2);border-radius:8px;padding:8px 12px">⚠ Depois desse valor, não volta mais</div>
+      <div class="price-urgency">⚠ Essa condição é válida somente hoje — depois, volta para R$ 97</div>
       <a class="cta" href="https://example.com/checkout">
-        QUERO COMEÇAR A GANHAR
+        GARANTIR MINHA VAGA POR R$ 27
         <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
       <div class="trust-row">
@@ -483,7 +440,7 @@
         <div class="testi-avatar" style="background:#059669">MV</div>
         <div class="testi-info">
           <div class="testi-name">Marcos V. · Salvador/BA</div>
-          <div class="testi-stars">★★★★☆</div>
+          <div class="testi-stars">★★★★★</div>
         </div>
       </div>
       <p>"Simples e direto. Não é promessa de prêmio — é um material que organiza como apostar. Vale cada centavo pelo que economizei em apostas sem critério."</p>
@@ -572,12 +529,6 @@
     document.getElementById('t-h').textContent=String(h).padStart(2,'0');
     document.getElementById('t-m').textContent=String(m).padStart(2,'0');
     document.getElementById('t-s').textContent=String(s).padStart(2,'0');
-    const h2=document.getElementById('h-t-h');
-    const m2=document.getElementById('h-t-m');
-    const s2=document.getElementById('h-t-s');
-    if(h2) h2.textContent=String(h).padStart(2,'0');
-    if(m2) m2.textContent=String(m).padStart(2,'0');
-    if(s2) s2.textContent=String(s).padStart(2,'0');
   }
   updateTimer();
   setInterval(updateTimer,1000);
@@ -589,7 +540,6 @@
     else sticky.classList.remove('visible');
   });
 </script>
-
 
 <script>
   // Autoplay do video de apresentacao (mudo por padrao, exigido pelos navegadores).
@@ -617,29 +567,7 @@
     document.addEventListener('touchstart', unmuteOnInteraction);
     v.addEventListener('click', activateSound);
 
-    // Pausa ao rolar para fora do video, retoma ao voltar
-    if ('IntersectionObserver' in window) {
-      var observer = new IntersectionObserver(function (entries) {
-        entries.forEach(function (entry) {
-          if (entry.isIntersecting) {
-            v.play().catch(function () {});
-          } else {
-            v.pause();
-          }
-        });
-      }, { threshold: 0.5 });
-      observer.observe(v);
-    } else {
-      var throttled = false;
-      window.addEventListener('scroll', function () {
-        if (throttled) return;
-        throttled = true;
-        setTimeout(function () { throttled = false; }, 150);
-        var rect = v.getBoundingClientRect();
-        var visible = rect.bottom > 0 && rect.top < window.innerHeight;
-        visible ? v.play().catch(function () {}) : v.pause();
-      });
-    }
+    // O video continua reproduzindo mesmo quando o usuario rola a pagina
   })();
 </script>
 </body>
