@@ -3,123 +3,82 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#ffffff">
-  <title>Pare de apostar no improviso — Quiz Lotofácil</title>
-  <meta name="description" content="Uma avaliação rápida para identificar o que está deixando sua rotina de apostas confusa e improvisada.">
+  <meta name="theme-color" content="#07547f">
+  <meta name="description" content="Página direta do Método Lotofácil para organização de rotina.">
+  <title>Método Lotofácil — Organização antes da decisão</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+
   <style>
-    :root{--blue:#1688a2;--blue-dark:#0f6074;--ink:#0f172a;--muted:#64748b;--line:#e5e7eb;--soft:#f8fafc;--cream:#fffaf0;--amber:#8a641c;--green:#198754;--shadow:0 10px 28px rgba(15,23,42,.07)}
+    /* Estrutura compacta: barra azul, fundo geométrico, card de três itens e CTA. */
+    :root{--ink:#18324b;--blue:#075e9b;--green:#0eaa5b;--paper:#f6fbfe}
     *{box-sizing:border-box}
-    body{margin:0;background:#fff;color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;line-height:1.5}
-    button,a{font:inherit}
-    button{cursor:pointer}
-    .page{width:min(100% - 36px,430px);min-height:100vh;margin:0 auto;padding:28px 0 38px}
-    .brand{text-align:center;color:var(--muted);font-size:11px;font-weight:800;letter-spacing:.7px;text-transform:uppercase;margin-bottom:24px}.brand span{color:var(--blue)}
-    .intro{text-align:center}.intro h1{color:var(--blue);font-size:25px;line-height:1.2;margin:0 auto 16px;max-width:370px;letter-spacing:-.35px}.intro .sub{color:var(--ink);font-size:15px;font-weight:650;line-height:1.45;margin:0 auto;max-width:370px}
-    .illustration{width:min(100%,280px);height:235px;margin:22px auto 12px;display:grid;place-items:center;background:#f1f8fa;border:1px solid #dceff2;border-radius:18px;overflow:hidden;position:relative}.illustration:before,.illustration:after{content:"";position:absolute;border-radius:50%;background:#d9eef1}.illustration:before{width:170px;height:170px;top:-75px;right:-57px}.illustration:after{width:140px;height:140px;bottom:-67px;left:-53px}.paper{position:relative;z-index:1;width:160px;height:174px;padding:18px 16px;background:#fff;border:1px solid #d9e5e8;border-radius:14px;box-shadow:0 12px 26px rgba(15,96,116,.14);transform:rotate(-2deg)}.paper-top{height:8px;width:62px;border-radius:99px;background:#b5dfe5;margin-bottom:18px}.paper-line{height:8px;border-radius:99px;background:#e6eef0;margin:11px 0}.paper-line.short{width:63%}.paper-row{display:flex;align-items:center;gap:8px;margin-top:16px}.paper-row i{display:block;width:19px;height:19px;border-radius:6px;border:2px solid #4fa8b5;position:relative}.paper-row i:after{content:"";position:absolute;left:4px;top:1px;width:5px;height:9px;border:solid #198754;border-width:0 2px 2px 0;transform:rotate(45deg)}.paper-row span{height:7px;flex:1;border-radius:99px;background:#e6eef0}.time{color:var(--muted);font-size:12px;margin:10px 0 15px}.primary{display:block;width:100%;border:0;border-radius:9px;background:linear-gradient(135deg,#1769d2,#2f85df);color:#fff;padding:16px 18px;font-size:14px;font-weight:850;letter-spacing:.2px;box-shadow:0 5px 0 #0e4f9e;transition:transform .15s,box-shadow .15s}.primary:hover{transform:translateY(-1px);box-shadow:0 7px 0 #0e4f9e}.primary:active{transform:translateY(3px);box-shadow:0 2px 0 #0e4f9e}.primary:focus-visible,.choice:focus-visible,.back:focus-visible{outline:3px solid rgba(37,99,166,.3);outline-offset:3px}
-    .notice{margin:18px 0 0;padding:11px 13px;border:1px solid #efdfb6;background:var(--cream);border-radius:10px;color:var(--amber);font-size:11px;text-align:left}.notice strong{color:#61460d}
-    .quiz{display:none}.quiz.active{display:block;animation:enter .25s ease}@keyframes enter{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
-    .quiz-top{display:flex;justify-content:space-between;align-items:center;color:var(--muted);font-size:11px;margin:5px 0 9px}.quiz-top strong{color:var(--ink)}.progress{height:5px;background:#edf1f2;border-radius:99px;overflow:hidden;margin-bottom:26px}.progress-fill{height:100%;width:25%;background:var(--blue);border-radius:99px;transition:width .25s ease}
-    .step{display:none;text-align:center}.step.active{display:block}.step h2{font-size:23px;line-height:1.22;letter-spacing:-.4px;margin:0 auto 9px;max-width:370px}.step .help{font-size:13px;color:var(--muted);margin:0 auto 22px;max-width:350px}
-    .choices{display:grid;gap:10px}.choice{width:100%;min-height:59px;padding:14px 15px;border:1px solid var(--line);border-radius:11px;background:#fff;color:var(--ink);text-align:left;font-size:14px;font-weight:700;transition:border-color .15s,background .15s,transform .15s}.choice:hover{border-color:#a9d6dd;background:#fbfeff;transform:translateY(-1px)}.choice.selected{border-color:var(--blue);background:#eef8fa;box-shadow:0 0 0 2px rgba(22,136,162,.1)}.choice small{display:block;margin-top:2px;color:var(--muted);font-size:11px;font-weight:500}.choice-mark{display:inline-grid;place-items:center;width:23px;height:23px;border-radius:50%;margin-right:9px;background:#eef5f6;color:var(--blue);font-size:11px;vertical-align:middle}.selected .choice-mark{background:var(--blue);color:#fff}
-    .step-actions{display:flex;align-items:center;gap:12px;margin-top:20px}.step-actions .primary{flex:1}.back{border:0;background:transparent;color:var(--muted);font-size:12px;padding:10px 0}.back:hover{color:var(--ink)}.hint{font-size:11px;color:var(--muted);margin-top:12px}
-    .loading,.result{display:none;text-align:center}.loading.active,.result.active{display:block;animation:enter .25s ease}.loading-card,.result-card{padding:28px 16px;border:1px solid var(--line);border-radius:15px;box-shadow:var(--shadow);background:#fff}.loader{width:38px;height:38px;border:4px solid #dceff2;border-top-color:var(--blue);border-radius:50%;margin:0 auto 17px;animation:spin 1s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}.loading h2{font-size:21px;margin:0 0 7px}.loading p{font-size:13px;color:var(--muted);margin:0}.loading-line{height:5px;background:#edf1f2;border-radius:99px;margin:20px auto 0;max-width:260px;overflow:hidden}.loading-line span{display:block;width:0;height:100%;background:var(--blue);transition:width 1s ease}
-    .result-card{padding:27px 18px}.result-kicker{color:var(--green);font-size:10px;font-weight:850;letter-spacing:.7px;text-transform:uppercase}.result h2{font-size:25px;line-height:1.2;margin:11px 0 10px}.result p{font-size:14px;color:var(--muted);margin:0 auto 17px;max-width:370px}.result-list{display:grid;gap:8px;text-align:left;margin:18px 0}.result-list div{padding:10px 12px;border-radius:9px;background:var(--soft);font-size:12px;color:#40505d}.result-list b{color:var(--ink)}.result-mismatch{background:#fff5f1;border:1px solid #efd5c8;border-radius:10px;padding:12px;text-align:left;color:#755046;font-size:12px;margin:15px 0}.result-mismatch strong{display:block;color:#603c34;margin-bottom:3px}.result a{display:block;text-decoration:none}.result .fine{font-size:10px;margin-top:10px}.result .restart{border:0;background:none;color:var(--muted);font-size:12px;padding:12px 0;text-decoration:underline;text-underline-offset:3px}
-    footer{display:none;text-align:center;color:var(--muted);font-size:10px;line-height:1.5;margin-top:20px}footer.active{display:block}footer a{color:var(--blue)}
+    html{scroll-behavior:smooth}
+    body{min-width:320px;margin:0;background:var(--paper);color:var(--ink);font-family:Manrope,Arial,sans-serif}
+    a{color:inherit}
+    .reference-screen{min-height:100svh;overflow:hidden;background:var(--paper)}
+    .reference-bar{position:relative;z-index:2;height:40px;display:flex;align-items:center;padding:0 clamp(18px,6vw,78px);background:linear-gradient(90deg,#07547f 0%,#0573ac 55%,#00609a 100%);box-shadow:0 2px 7px rgba(2,57,92,.28)}
+    .reference-brand{display:inline-flex;align-items:center;gap:8px;color:#fff;font-size:12px;font-weight:700;letter-spacing:-.25px;text-decoration:none}
+    .reference-brand b{color:#aee8d9;font-weight:800}
+    .brand-grid{position:relative;display:grid;grid-template-columns:repeat(3,5px);gap:2px;width:19px;height:14px}
+    .brand-grid i{display:block;width:5px;height:5px;border-radius:50%;background:#63c8c3}.brand-grid i:nth-child(3){background:#e2b342}.brand-grid i:nth-child(5){background:#0b3050}
+    .reference-main{position:relative;min-height:calc(100svh - 40px);display:grid;place-items:center;padding:32px 18px 25px;overflow:hidden}
+    .reference-grid{position:absolute;inset:0;opacity:.82;background-image:linear-gradient(30deg,transparent 46%,rgba(21,115,166,.055) 47%,rgba(21,115,166,.055) 51%,transparent 52%),linear-gradient(150deg,transparent 46%,rgba(21,115,166,.055) 47%,rgba(21,115,166,.055) 51%,transparent 52%),linear-gradient(90deg,transparent 46%,rgba(21,115,166,.04) 47%,rgba(21,115,166,.04) 51%,transparent 52%);background-size:32px 54px;mask-image:linear-gradient(to bottom,#000,rgba(0,0,0,.78) 78%,transparent)}
+    .reference-content{position:relative;z-index:1;width:min(100%,405px);text-align:center;animation:screen-in .32s cubic-bezier(.23,1,.32,1) both}
+    .check-seal{display:grid;place-items:center;width:49px;height:49px;margin:0 auto 10px;border:2px solid #21af64;border-radius:999px;background:#fafffc;color:#15965a;font-size:30px;font-weight:700}
+    h1{margin:0;color:#0965a5;font-size:clamp(31px,5.3vw,39px);font-weight:800;line-height:1;letter-spacing:-1.4px}
+    .intro-text{max-width:360px;margin:10px auto 0;color:#203447;font-size:14px;font-weight:700;line-height:1.48}.intro-text::first-line{color:#0e6ca9}
+    .instruction{margin:55px 0 18px;color:#384d60;font-family:"DM Mono",monospace;font-size:11px;letter-spacing:.55px}.instruction span{color:#cb931d;font-family:Manrope,sans-serif;font-size:19px;vertical-align:-2px}
+    .reference-card{width:100%;padding:16px 18px 15px;text-align:left;border:1px solid #e4e8ed;border-radius:12px;background:rgba(255,255,255,.95);box-shadow:0 7px 14px rgba(29,74,98,.14)}
+    .reference-card h2{margin:0 0 10px;color:#1e2a35;font-size:12px;font-weight:800}.reference-card ol{display:grid;gap:8px;margin:0;padding:0;list-style:none}.reference-card li{display:flex;align-items:center;gap:8px;color:#3e4d59;font-size:11px;line-height:1.35}.reference-card b{color:#27333c;font-weight:800}
+    .bullet{width:11px;height:11px;flex:0 0 11px;border-radius:999px}.bullet-red{background:#ff5c4b}.bullet-green{background:#0db769}.bullet-gold{background:#cf981f}
+    .reference-cta{width:100%;min-height:46px;display:grid;place-items:center;margin:54px 0 8px;color:#fff;border:1px solid #087846;border-radius:7px;background:linear-gradient(180deg,#18aa5f,#089a51);box-shadow:0 4px 0 #067747,0 7px 12px rgba(4,124,69,.19);font:800 15px Manrope,Arial;letter-spacing:1.25px;cursor:pointer;transition:transform 150ms cubic-bezier(.23,1,.32,1),box-shadow 150ms}.reference-cta:hover{transform:translateY(-2px);box-shadow:0 6px 0 #067747,0 10px 15px rgba(4,124,69,.24)}.reference-cta:active{transform:translateY(3px) scale(.985);box-shadow:0 1px 0 #067747}.reference-cta:focus-visible{outline:3px solid rgba(7,94,155,.32);outline-offset:4px}
+    .screen-disclaimer{max-width:375px;margin:13px auto 12px;color:#71808c;font-size:8px;line-height:1.45}.reference-legal{color:#7790a1;font-family:"DM Mono",monospace;font-size:8px;letter-spacing:.12px}.reference-legal a{text-decoration:underline;text-decoration-color:#b6c5ce;text-underline-offset:3px}
+    @keyframes screen-in{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+    @media(max-width:520px){.reference-bar{height:38px;padding:0 17px}.reference-brand{font-size:11px}.reference-main{min-height:calc(100svh - 38px);padding:32px 18px 23px}.check-seal{width:47px;height:47px;margin-bottom:9px}.intro-text{max-width:340px;font-size:13px}.instruction{margin:47px 0 16px;font-size:10px}.reference-card{padding:15px 16px 14px}.reference-cta{min-height:46px;margin-top:48px;font-size:14px}.screen-disclaimer{max-width:345px}}
     @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
   </style>
 </head>
 <body>
-  <main class="page" id="app">
-    <div class="brand">Método <span>Lotofácil</span></div>
+  <div class="reference-screen">
+    <header class="reference-bar">
+      <a class="reference-brand" href="#inicio" aria-label="Método Lotofácil">
+        <span class="brand-grid" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>
+        <span>MÉTODO <b>LOTOFÁCIL</b></span>
+      </a>
+    </header>
 
-    <section class="intro" id="intro" aria-labelledby="title">
-      <h1 id="title">Cansado de apostar no improviso e continuar sem saber o que está fazendo?</h1>
-      <p class="sub">Em quatro perguntas rápidas, descubra o que mais trava sua rotina: jogos espalhados, combinações confusas ou decisões sem um limite definido.</p>
-      <div class="illustration" aria-label="Ilustração de um registro organizado">
-        <div class="paper" aria-hidden="true"><div class="paper-top"></div><div class="paper-line"></div><div class="paper-line short"></div><div class="paper-row"><i></i><span></span></div><div class="paper-row"><i></i><span></span></div><div class="paper-row"><i></i><span></span></div></div>
-      </div>
-      <div class="time">Leva menos de 1 minuto · sem cadastro</div>
-      <button class="primary" id="start" type="button">QUERO PARAR DE APOSTAR NO IMPROVISO</button>
-      <div class="notice"><strong>Sem ilusões:</strong> a Lotofácil é aleatória. Organização não prevê números nem garante prêmio, lucro ou retorno.</div>
-    </section>
+    <main id="inicio" class="reference-main">
+      <div class="reference-grid" aria-hidden="true"></div>
+      <section class="reference-content" aria-labelledby="titulo">
+        <div class="check-seal" aria-hidden="true">✓</div>
+        <h1 id="titulo">TUDO CERTO!</h1>
+        <p class="intro-text">Conheça uma forma mais clara de registrar jogos, comparar combinações e planejar sua rotina na Lotofácil.</p>
+        <p class="instruction">VEJA COMO O MÉTODO FUNCIONA <span aria-hidden="true">↓</span></p>
 
-    <section class="quiz" id="quiz" aria-live="polite">
-      <div class="quiz-top"><span><strong id="count">Pergunta 1 de 4</strong></span><span id="percent">25%</span></div>
-      <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="25" aria-label="Progresso"><div class="progress-fill" id="progressFill"></div></div>
+        <article class="reference-card" aria-labelledby="como-funciona">
+          <h2 id="como-funciona">Como funciona:</h2>
+          <ol>
+            <li><i class="bullet bullet-red" aria-hidden="true"></i><span><b>Registre</b> o que você já fez</span></li>
+            <li><i class="bullet bullet-green" aria-hidden="true"></i><span><b>Compare</b> as escolhas com mais clareza</span></li>
+            <li><i class="bullet bullet-gold" aria-hidden="true"></i><span><b>Planeje</b> seus limites antes de decidir</span></li>
+          </ol>
+        </article>
 
-      <div class="step active" data-step="0">
-        <h2>Seus jogos ficam espalhados e difíceis de recuperar?</h2>
-        <p class="help">Quando cada concurso fica em um lugar, você perde tempo tentando lembrar o que já fez.</p>
-        <div class="choices" role="radiogroup" aria-label="Registro dos jogos">
-          <button class="choice" type="button" data-value="organizado" role="radio" aria-checked="false"><span class="choice-mark">1</span>Tenho tudo em um só lugar<small>Consigo recuperar sem procurar em vários lugares.</small></button>
-          <button class="choice" type="button" data-value="espalhado" role="radio" aria-checked="false"><span class="choice-mark">2</span>Anoto em vários lugares<small>Fico voltando em mensagens, papéis e anotações.</small></button>
-          <button class="choice" type="button" data-value="memoria" role="radio" aria-checked="false"><span class="choice-mark">3</span>Quase nunca consigo recuperar<small>Acabo sem saber exatamente o que já foi feito.</small></button>
-        </div>
-        <div class="step-actions"><button class="back" type="button" data-back>← Voltar</button><button class="primary" type="button" data-next>Continuar</button></div><div class="hint">Selecione uma opção para avançar</div>
-      </div>
-
-      <div class="step" data-step="1">
-        <h2>Na hora de montar um jogo, onde você mais trava?</h2>
-        <p class="help">Sem um critério claro, escolher combinações pode virar mais uma etapa de confusão.</p>
-        <div class="choices" role="radiogroup" aria-label="Dificuldade principal">
-          <button class="choice" type="button" data-value="combinar" role="radio" aria-checked="false"><span class="choice-mark">1</span>Fico perdido nas combinações<small>Não consigo comparar as opções com clareza.</small></button>
-          <button class="choice" type="button" data-value="custo" role="radio" aria-checked="false"><span class="choice-mark">2</span>Não sei comparar o custo<small>Tenho dificuldade para entender quanto cada escolha representa.</small></button>
-          <button class="choice" type="button" data-value="acompanhamento" role="radio" aria-checked="false"><span class="choice-mark">3</span>Repito escolhas sem um critério<small>Faço jogos, mas não sei exatamente o que estou acompanhando.</small></button>
-        </div>
-        <div class="step-actions"><button class="back" type="button" data-back>← Voltar</button><button class="primary" type="button" data-next>Continuar</button></div><div class="hint">Uma resposta por pergunta</div>
-      </div>
-
-      <div class="step" data-step="2">
-        <h2>Você decide o valor antes de apostar ou só na hora?</h2>
-        <p class="help">Decidir no impulso torna mais difícil saber se a escolha cabe no planejamento.</p>
-        <div class="choices" role="radiogroup" aria-label="Limite de orçamento">
-          <button class="choice" type="button" data-value="sim" role="radio" aria-checked="false"><span class="choice-mark">1</span>Sim, com um limite definido<small>Decido o valor e procuro respeitá-lo.</small></button>
-          <button class="choice" type="button" data-value="asvezes" role="radio" aria-checked="false"><span class="choice-mark">2</span>Às vezes decido na hora<small>O valor muda conforme o concurso ou a ocasião.</small></button>
-          <button class="choice" type="button" data-value="nao" role="radio" aria-checked="false"><span class="choice-mark">3</span>Ainda não tenho esse controle<small>Quero uma forma mais clara de acompanhar.</small></button>
-        </div>
-        <div class="step-actions"><button class="back" type="button" data-back>← Voltar</button><button class="primary" type="button" data-next>Continuar</button></div><div class="hint">Quase concluído</div>
-      </div>
-
-      <div class="step" data-step="3">
-        <h2>O que você quer deixar de fazer no improviso?</h2>
-        <p class="help">Escolha o ponto que mais precisa de clareza na sua rotina.</p>
-        <div class="choices" role="radiogroup" aria-label="Objetivo principal">
-          <button class="choice" type="button" data-value="registros" role="radio" aria-checked="false"><span class="choice-mark">1</span>Revirar anotações para lembrar dos jogos<small>Quero consultar tudo sem perder tempo.</small></button>
-          <button class="choice" type="button" data-value="combinacoes" role="radio" aria-checked="false"><span class="choice-mark">2</span>Montar combinações sem um critério claro<small>Quero visualizar melhor as opções.</small></button>
-          <button class="choice" type="button" data-value="planejamento" role="radio" aria-checked="false"><span class="choice-mark">3</span>Decidir valores sem um limite definido<small>Quero planejar antes de decidir.</small></button>
-        </div>
-        <div class="step-actions"><button class="back" type="button" data-back>← Voltar</button><button class="primary" type="button" data-finish>VER O QUE ESTÁ TRAVANDO MINHA ROTINA</button></div><div class="hint">Última pergunta</div>
-      </div>
-    </section>
-
-    <section class="loading" id="loading" aria-live="polite">
-      <div class="loading-card"><div class="loader" aria-hidden="true"></div><h2>Organizando sua orientação</h2><p>Estamos apenas agrupando suas respostas por tema.</p><div class="loading-line"><span id="loadFill"></span></div></div>
-    </section>
-
-    <section class="result" id="result" aria-live="polite">
-      <div class="result-card"><div class="result-kicker">Sua orientação está pronta</div><h2 id="resultTitle">O primeiro problema a cortar é o improviso.</h2><p id="resultText">Um método simples de acompanhamento ajuda a parar de depender da memória, de anotações espalhadas e de decisões tomadas no momento.</p><div class="result-list"><div><b>Pare de depender da memória.</b> Deixe os jogos mais fáceis de recuperar.</div><div><b>Mais clareza nas combinações.</b> Compare possibilidades sem ficar perdido.</div><div><b>Um limite antes da decisão.</b> Evite decidir no impulso.</div></div><a class="primary" id="resultCta" href="https://SEU-DOMINIO-REAL.com/checkout">QUERO CONHECER O MÉTODO</a><div class="result-mismatch"><strong>O que este método não promete</strong>Ele não prevê o próximo sorteio e não garante acerto, prêmio, lucro ou retorno financeiro. A organização reduz a confusão, não muda a aleatoriedade.</div><button class="restart" id="restart" type="button">Refazer avaliação</button><div class="fine">Confira conteúdo, preço, fornecedor, garantia, reembolso, termos e política de privacidade antes de decidir.</div></div>
-    </section>
-
-    <footer id="footer"><p><strong>[Nome legal do fornecedor]</strong> · [CNPJ ou identificação aplicável] · [e-mail de suporte]</p><p><a href="/termos-de-uso">Termos de Uso</a> · <a href="/politica-de-privacidade">Política de Privacidade</a> · <a href="/reembolso">Garantia e Reembolso</a></p></footer>
-  </main>
+        <button id="continueButton" class="reference-cta" type="button">COMEÇAR</button>
+        <p class="screen-disclaimer">Sorteios são aleatórios. O material não prevê números nem garante acerto, prêmio ou retorno financeiro.</p>
+        <footer class="reference-legal"><a href="termos-de-uso.html">TERMOS DE USO E POLÍTICA DE PRIVACIDADE — MÉTODO LOTOFÁCIL</a></footer>
+      </section>
+    </main>
+  </div>
 
   <script>
-    (function(){
-      const intro=document.getElementById('intro'),quiz=document.getElementById('quiz'),loading=document.getElementById('loading'),result=document.getElementById('result'),footer=document.getElementById('footer');
-      const steps=[...document.querySelectorAll('.step')],answers=[];let current=0,timer;
-      function scrollTop(){window.scrollTo({top:0,behavior:'smooth'})}
-      function progress(){const pct=Math.round(((current+1)/steps.length)*100);document.getElementById('count').textContent='Pergunta '+(current+1)+' de '+steps.length;document.getElementById('percent').textContent=pct+'%';document.getElementById('progressFill').style.width=pct+'%';quiz.querySelector('[role="progressbar"]').setAttribute('aria-valuenow',pct)}
-      function select(index,value){answers[index]=value;steps[index].querySelectorAll('.choice').forEach(btn=>{const on=btn.dataset.value===value;btn.classList.toggle('selected',on);btn.setAttribute('aria-checked',String(on))})}
-      function show(index){current=index;steps.forEach((step,i)=>step.classList.toggle('active',i===current));progress();scrollTop()}
-      function next(){if(!answers[current]){const hint=steps[current].querySelector('.hint');const old=hint.textContent;hint.textContent='Escolha uma opção para continuar';hint.style.color='#915049';setTimeout(()=>{hint.textContent=old;hint.style.color=''},1200);return}if(current<steps.length-1)show(current+1);else finish()}
-      function finish(){quiz.classList.remove('active');loading.classList.add('active');scrollTop();requestAnimationFrame(()=>document.getElementById('loadFill').style.width='100%');timer=setTimeout(()=>{loading.classList.remove('active');buildResult();result.classList.add('active');footer.classList.add('active');scrollTop()},1000)}
-      function buildResult(){const v=answers[3],title=document.getElementById('resultTitle'),text=document.getElementById('resultText');if(v==='combinacoes'){title.textContent='A confusão nas combinações está travando sua rotina.';text.textContent='Quando as opções ficam difíceis de comparar, um método de registro ajuda a visualizar escolhas e custos sem montar tudo no improviso.'}else if(v==='planejamento'){title.textContent='O próximo passo é parar de decidir no momento.';text.textContent='Definir um limite antes da aposta ajuda a evitar decisões soltas e a acompanhar melhor o que foi planejado.'}else{title.textContent='O primeiro problema a cortar é o improviso.';text.textContent='Um método simples de acompanhamento ajuda a parar de depender da memória, de anotações espalhadas e de decisões tomadas no momento.'}}
-      document.getElementById('start').addEventListener('click',()=>{intro.style.display='none';quiz.classList.add('active');progress();scrollTop()});
-      steps.forEach((step,index)=>step.querySelectorAll('.choice').forEach(btn=>btn.addEventListener('click',()=>select(index,btn.dataset.value))));
-      document.querySelectorAll('[data-next]').forEach(btn=>btn.addEventListener('click',next));document.querySelector('[data-finish]').addEventListener('click',next);
-      document.querySelectorAll('[data-back]').forEach(btn=>btn.addEventListener('click',()=>{if(current>0)show(current-1);else{quiz.classList.remove('active');intro.style.display='';scrollTop()}}));
-      document.getElementById('restart').addEventListener('click',()=>{clearTimeout(timer);location.reload()});
-    })();
+    // Altere apenas esta linha se o próximo arquivo tiver outro nome.
+    document.getElementById('continueButton').addEventListener('click', function () {
+      window.location.href = 'veja.html';
+    });
   </script>
 </body>
 </html>
