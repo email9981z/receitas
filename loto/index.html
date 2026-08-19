@@ -1,774 +1,307 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
-  <meta name="theme-color" content="#b90000" />
-<meta name="description" content="Você já acertou 13 e 14 pontos dezenas de vezes e continua no zero? O Estudo Secreto da Lotofácil revela por que apostar por intuição custa caro — e como organizar suas apostas com base nos padrões históricos." />
-  <title>Estudo Secreto da Lotofácil — Pare de perder dinheiro no feeling</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Source+Serif+4:ital,wght@0,500;0,600;0,700;1,600&display=swap" rel="stylesheet" />
-  <style>
-    :root { --red:#b90000; --red-deep:#900000; --yellow:#ffc914; --ink:#111111; --text:#313131; --muted:#6b6b6b; --line:#dbdbdb; --paper:#ffffff; --soft:#f5f5f3; --display:Archivo,Arial,sans-serif; --serif:"Source Serif 4",Georgia,serif; --ease:cubic-bezier(.23,1,.32,1); }
-    * { box-sizing:border-box; }
-    html { scroll-behavior:smooth; background:#fff; }
-    body { margin:0; color:var(--ink); background:#fff; font-family:Arial,Helvetica,sans-serif; -webkit-font-smoothing:antialiased; }
-    a { color:inherit; }
-    button { font:inherit; cursor:pointer; }
-    .skip-link { position:absolute; z-index:50; top:8px; left:8px; padding:9px 13px; color:#fff; background:var(--red); transform:translateY(-160%); transition:transform 160ms var(--ease); }
-    .skip-link:focus { transform:translateY(0); }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Estudo Secreto da Lotofácil — Método para Organizar Apostas</title>
+<style>
+  :root{
+    --red:#b90000; --red-deep:#8b0000; --ink:#111; --yellow:#f5c518;
+    --text:#333; --muted:#666; --line:#e5e5e5; --soft:#f8f8f8; --white:#fff;
+    --display:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+    --ease:cubic-bezier(.4,0,.2,1);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--display);color:var(--ink);background:var(--white);line-height:1.5;-webkit-font-smoothing:antialiased}
+  img{max-width:100%;display:block}
 
-    /* Portal header */
-    .progress { position:fixed; z-index:30; top:0; left:0; width:0; height:3px; background:var(--yellow); transition:width 60ms linear; }
-    .site-header { position:relative; z-index:20; color:#fff; background-color:var(--red); background-image:radial-gradient(rgba(255,255,255,.09) .7px,transparent .8px),linear-gradient(90deg,rgba(255,255,255,.025),rgba(0,0,0,.09)); background-size:7px 7px,auto; border-bottom:1px solid rgba(77,0,0,.4); }
-    .header-inner { width:min(1120px,calc(100% - 36px)); height:49px; margin:0 auto; display:grid; grid-template-columns:44px 1fr 44px; align-items:center; }
-    .header-button { width:36px; height:36px; display:grid; place-items:center; padding:0; color:#fff; border:0; background:transparent; transition:background 160ms var(--ease),transform 160ms var(--ease); }
-    .header-button:last-child { justify-self:end; }
-    .header-button:hover { background:rgba(255,255,255,.13); }
-    .header-button:active { transform:scale(.94); }
-    .header-button svg { width:20px; fill:none; stroke:currentColor; stroke-width:3; stroke-linecap:round; stroke-linejoin:round; }
-    .masthead { justify-self:center; display:inline-flex; align-items:center; gap:7px; color:#fff; font-family:var(--display); font-size:17px; font-weight:800; letter-spacing:-.6px; }
-    .masthead i { width:8px; height:8px; display:inline-block; background:var(--yellow); transform:rotate(45deg); }
-    .ticker { height:27px; display:flex; align-items:center; overflow:hidden; color:#fff; white-space:nowrap; background:var(--red-deep); border-bottom:1px solid #9c2929; }
-    .ticker-track { width:max-content; color:rgba(255,255,255,.9); font-family:var(--display); font-size:8px; font-weight:700; letter-spacing:1.45px; transform:translateX(-15px); }
-    .menu-panel { position:absolute; z-index:22; top:calc(100% + 7px); right:max(18px,calc((100% - 1120px)/2)); width:282px; padding:18px; color:#111; background:#fff; border:1px solid #ddd; box-shadow:0 13px 32px rgba(0,0,0,.19); opacity:0; pointer-events:none; transform:translateY(-7px) scale(.97); transition:opacity 180ms var(--ease),transform 180ms var(--ease); }
-    .menu-panel.is-open { opacity:1; pointer-events:auto; transform:translateY(0) scale(1); }
-    .menu-panel strong { display:block; font-family:var(--display); font-size:14px; }
-    .menu-panel p { margin:5px 0 0; color:var(--muted); font-size:12px; line-height:1.4; }
+  /* Header */
+  .top-bar{background:var(--red);color:#fff;text-align:center;padding:10px 16px;font-size:13px;font-weight:700;letter-spacing:.3px}
+  .top-bar b{color:var(--yellow)}
 
-    /* Article opening */
-    .article-shell { width:min(100% - 44px,760px); margin:0 auto; }
-    .article { padding:45px 0 0; }
-    .commercial-label { display:inline-flex; align-items:center; gap:7px; padding:6px 9px; color:#8d0000; background:#fff2f2; border:1px solid #efcece; font-family:var(--display); font-size:9px; font-weight:800; letter-spacing:1.05px; }
-    .commercial-label b { width:6px; height:6px; background:var(--red); border-radius:50%; }
-    .hero-alert { margin:16px 0 0; padding:10px 12px; display:flex; align-items:center; gap:9px; color:#fff; background:var(--red); border-left:5px solid var(--yellow); font-family:var(--display); font-size:10px; font-weight:800; letter-spacing:.45px; line-height:1.2; text-transform:uppercase; }
-    .hero-alert b { width:7px; height:7px; flex:0 0 7px; background:var(--yellow); border-radius:50%; box-shadow:0 0 0 4px rgba(255,201,20,.18); }
-    .hero-alert span { color:rgba(255,255,255,.82); font-size:9px; font-weight:600; letter-spacing:.25px; text-transform:none; }
-    .article h1 { max-width:750px; margin:15px 0 0; font-family:var(--display); font-size:clamp(39px,5vw,59px); font-weight:900; letter-spacing:-2.7px; line-height:.97; }
-    .article h1 em { color:var(--red); font-style:normal; }
-    .article-deck { max-width:660px; margin:18px 0 0; color:#434343; font-family:var(--serif); font-size:21px; line-height:1.37; }
-    .byline { margin-top:23px; padding:12px 0; display:flex; align-items:center; justify-content:space-between; gap:18px; border-top:1px solid var(--line); border-bottom:1px solid var(--line); font-size:11px; }
-    .author { display:flex; align-items:center; gap:8px; }
-    .author-mark { width:24px; height:24px; display:grid; place-items:center; color:#fff; background:var(--ink); border-radius:50%; font-family:var(--display); font-size:10px; font-weight:800; }
-    .author strong { display:block; font-size:11px; }
-    .author span { display:block; margin-top:2px; color:var(--muted); font-size:10px; }
-    .reading-time { color:var(--muted); font-size:10px; text-align:right; }
-    .lead-cta { margin:24px 0 0; padding:0; display:flex; flex-direction:column; align-items:center; gap:8px; color:var(--ink); background:transparent; border:0; box-shadow:none; }
-    .lead-cta-button { width:100%; min-height:66px; padding:0 24px; display:flex; align-items:center; justify-content:center; gap:9px; color:#111; background:linear-gradient(180deg,#ffe34f 0%,#ffc914 100%); border:2px solid #111; border-radius:999px; box-shadow:0 5px 0 #111; font-family:var(--display); font-size:clamp(16px,2.2vw,23px); font-weight:900; letter-spacing:-.45px; line-height:1; text-align:center; text-decoration:none; transition:transform 160ms var(--ease),box-shadow 160ms var(--ease),background 160ms var(--ease); }
-    .lead-cta-button .lead-cta-prefix { color:var(--red); }
-    .lead-cta-button > span:last-child { color:var(--red); font-size:25px; line-height:1; }
-    .lead-cta-button:hover { color:#111; background:linear-gradient(180deg,#ffeb75 0%,#ffd83d 100%); box-shadow:0 7px 0 #111; transform:translateY(-2px); }
-    .lead-cta-button:active { box-shadow:0 2px 0 #111; transform:translateY(3px); }
-    .lead-cta-note { margin:0; color:var(--muted); font-size:10.5px; line-height:1.35; text-align:center; }
+  /* Container */
+  .container{width:min(100% - 32px,560px);margin:0 auto}
 
-    /* Prova social acima da dobra */
-    .social-proof-strip { margin:14px 0 0; padding:12px 16px; display:flex; align-items:center; justify-content:center; gap:22px; color:#525252; background:var(--soft); border:1px solid var(--line); border-radius:10px; font-family:var(--display); font-size:11px; font-weight:600; }
-    .proof-item { display:flex; align-items:center; gap:6px; }
-    .proof-stars { color:#e8a800; font-size:12px; letter-spacing:1px; }
-    .proof-b { color:var(--ink); font-weight:800; }
-    .guarantee-badge { display:inline-flex; align-items:center; gap:7px; padding:9px 13px; color:#5b3d00; background:#fff8dc; border:1px solid #ecd98b; border-radius:999px; font-family:var(--display); font-size:10.5px; font-weight:800; letter-spacing:.15px; }
-    .guarantee-badge b { color:#8e7000; }
+  /* Hero */
+  .hero{padding:36px 0 28px;text-align:center}
+  .hero h1{font-size:clamp(26px,6vw,34px);font-weight:900;line-height:1.1;letter-spacing:-1px;color:var(--ink);margin-bottom:12px}
+  .hero p.sub{font-size:17px;color:var(--muted);margin-bottom:24px}
+  .hero p.sub b{color:var(--red)}
 
-    /* Countdown card com blocos */
-    .countdown-card { margin:20px 0 0; padding:14px 18px; display:flex; align-items:center; justify-content:center; gap:14px; color:#111; background:var(--ink); border-radius:12px; border:1px solid #2a2a2a; }
-    .countdown-card .cd-label { font-family:var(--display); font-size:10.5px; font-weight:800; letter-spacing:.9px; color:var(--yellow); }
-    .cd-blocks { display:flex; gap:7px; }
-    .cd-block { min-width:46px; padding:7px 0; color:#fff; background:#222; border:1px solid #3a3a3a; border-radius:8px; text-align:center; font-family:var(--display); font-size:19px; font-weight:900; letter-spacing:-.5px; }
-    .cd-block small { display:block; margin-top:1px; color:#9b9b9b; font-size:7.5px; font-weight:700; letter-spacing:1px; }
-    .launch-copy { display:none; }
+  /* CTA Button */
+  .cta{display:block;width:100%;padding:18px 24px;background:var(--red);color:#fff;font-size:17px;font-weight:800;letter-spacing:.5px;border:none;border-radius:10px;cursor:pointer;text-decoration:none;text-align:center;box-shadow:0 4px 0 var(--red-deep);transition:transform .15s var(--ease),box-shadow .15s var(--ease)}
+  .cta:hover{transform:translateY(-2px);box-shadow:0 6px 0 var(--red-deep)}
+  .cta:active{transform:translateY(1px);box-shadow:0 2px 0 var(--red-deep)}
+  .cta span{font-size:20px;margin-left:6px}
 
-    /* Ícones nos cards de oferta */
-    .offer-fact { grid-template-columns:40px 44px 1fr !important; }
-    .offer-fact h3 { margin-top:0; }
-    .offer-icon { width:30px; height:30px; display:grid; place-items:center; flex:0 0 30px; color:#fff; background:var(--red); border-radius:7px; font-size:14px; }
-    .offer-fact .offer-idx { color:var(--red); font-family:var(--display); font-size:16px; font-weight:900; }
+  /* Guarantee badge */
+  .badge{display:inline-flex;align-items:center;gap:6px;margin-top:14px;font-size:12px;color:var(--muted);background:var(--soft);padding:8px 16px;border-radius:20px}
+  .badge svg{width:16px;height:16px;flex-shrink:0}
 
-    /* Bloco de preço com ancoragem */
-    .price-block { margin:22px 0 0; padding:20px 22px; background:#fff; border:2px dashed var(--red); border-radius:12px; }
-    .price-row { display:flex; align-items:baseline; gap:11px; flex-wrap:wrap; }
-    .price-from { color:var(--muted); font-family:var(--display); font-size:13px; font-weight:600; text-decoration:line-through; }
-    .price-to { color:var(--red); font-family:var(--display); font-size:clamp(26px,3.4vw,36px); font-weight:900; letter-spacing:-1.2px; }
-    .price-note { margin:7px 0 0; color:var(--muted); font-size:12.5px; line-height:1.5; }
-    .price-note strong { color:var(--ink); }
+  /* Problem section */
+  .problem{padding:28px 0;background:var(--soft);border-radius:12px;margin:24px 0}
+  .problem p{font-size:15px;color:var(--text);line-height:1.65;text-align:center}
+  .problem p b{color:var(--red)}
 
-    /* Mockup 3D e Value Stack */
-    .offer-bundle { margin:40px 0; padding:32px 24px; background:var(--soft); border:2px solid var(--ink); border-radius:20px; box-shadow:8px 8px 0 rgba(0,0,0,.1); }
-    .bundle-header { text-align:center; margin-bottom:30px; }
-    .bundle-header h2 { margin:0; font-family:var(--display); font-size:28px; font-weight:900; letter-spacing:-1px; }
-    .bundle-header p { margin:8px 0 0; color:var(--muted); font-size:14px; }
-    
-    .mockup-3d { position:relative; width:min(100%, 300px); margin:0 auto 30px; perspective:1000px; }
-    .mockup-inner { position:relative; width:100%; aspect-ratio:3/4; background:var(--ink); border-radius:12px; transform:rotateY(-10deg) rotateX(3deg); box-shadow:25px 25px 60px rgba(0,0,0,.35), 8px 8px 20px rgba(0,0,0,.2); overflow:hidden; border:3px solid #2a2a2a; transition:transform 0.5s ease; }
-    .mockup-inner:hover { transform:rotateY(-3deg) rotateX(1deg); }
-    .mockup-screen { width:100%; height:100%; background:linear-gradient(145deg, var(--red) 0%, var(--red-deep) 60%, #4a0000 100%); display:flex; flex-direction:column; align-items:center; justify-content:center; padding:20px; color:#fff; text-align:center; position:relative; }
-    .mockup-screen::before { content:''; position:absolute; inset:0; border-radius:10px; border:1px solid rgba(255,255,255,0.1); }
-    .mockup-screen b { font-family:var(--display); font-size:22px; line-height:1.15; margin-bottom:10px; text-shadow:0 1px 3px rgba(0,0,0,0.3); }
-    .mockup-screen span { font-size:10px; text-transform:uppercase; letter-spacing:2px; opacity:.85; }
-    .mockup-reflection { position:absolute; inset:0; background:linear-gradient(125deg, rgba(255,255,255,.18) 0%, transparent 45%); pointer-events:none; }
-    
-    .value-stack-list { margin:0; padding:0; list-style:none; border-top:1px solid var(--line); }
-    .stack-item { padding:15px 0; display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--line); font-family:var(--display); font-size:14px; }
-    .stack-item .item-name { font-weight:700; color:var(--ink); }
-    .stack-item .item-value { color:var(--muted); text-decoration:line-through; font-size:12.5px; margin-left:12px; flex-shrink:0; }
-    .stack-item.bonus .item-name { color:var(--red); font-size:13.5px; }
-    .stack-item.bonus .item-name::before { content:"🎁 BÔNUS: "; font-size:10px; vertical-align:middle; }
-    .stack-item:not(.bonus) .item-value { color:#555; font-weight:600; font-size:13px; }
-    
-    .total-value-anchor { margin-top:20px; padding:15px; background:var(--ink); color:#fff; border-radius:10px; text-align:center; }
-    .total-value-anchor .val-label { font-size:11px; text-transform:uppercase; letter-spacing:1px; opacity:.7; }
-    .total-value-anchor .val-amount { display:block; font-family:var(--display); font-size:22px; font-weight:900; color:var(--yellow); }
-    
-    /* Contraste Emocional: Dois Caminhos */
-    .paths-container { margin:45px 0; display:grid; grid-template-columns:1fr 1fr; gap:20px; }
-    .path-card { padding:25px; border-radius:16px; position:relative; overflow:hidden; }
-    .path-card.path-a { background:#f9f9f9; border:1px solid var(--line); opacity:.7; }
-    .path-card.path-b { background:var(--ink); color:#fff; border:2px solid var(--yellow); box-shadow:0 10px 30px rgba(0,0,0,.2); }
-    .path-card h4 { margin:0; font-family:var(--display); font-size:16px; font-weight:900; text-transform:uppercase; letter-spacing:1px; }
-    .path-card.path-a h4 { color:var(--muted); }
-    .path-card.path-b h4 { color:var(--yellow); }
-    .path-card ul { margin:15px 0 0; padding:0 0 0 20px; font-size:13px; line-height:1.5; }
-    .path-card.path-a li { color:var(--muted); margin-bottom:8px; }
-    .path-card.path-b li { color:#d3d3d3; margin-bottom:8px; }
-    .path-card.path-b li strong { color:#fff; }
-    
-    /* Refined Urgency Elements */
-    .urgency-bar { position:fixed; top:0; left:0; width:100%; z-index:100; background:var(--red-deep); color:#fff; padding:9px 12px; text-align:center; font-family:var(--display); font-size:11px; font-weight:700; letter-spacing:0.5px; box-shadow:0 1px 4px rgba(0,0,0,0.1); }
-    .urgency-bar b { color:var(--yellow); }
-    
-    .sale-notification { position:fixed; bottom:24px; left:24px; z-index:90; background:#fff; padding:14px 18px; border-radius:12px; box-shadow:0 8px 32px rgba(0,0,0,0.12); display:flex; align-items:center; gap:12px; transform:translateY(120%); opacity:0; transition:transform 0.6s var(--ease), opacity 0.6s var(--ease); max-width:300px; border:1px solid #e8e8e8; }
-    .sale-notification.is-visible { transform:translateY(0); opacity:1; }
-    .sale-notification img { width:40px; height:40px; border-radius:50%; flex-shrink:0; }
-    .sale-notification .notif-content { font-size:12px; line-height:1.45; color:#444; }
-    .sale-notification .notif-content b { color:var(--ink); display:block; margin-bottom:2px; font-size:12.5px; }
-    .sale-notification .notif-time { font-size:10px; color:#999; display:block; margin-top:4px; }
-    .sale-notification .notif-icon { width:38px; height:38px; display:grid; place-items:center; background:#1a7a33; border-radius:50%; flex-shrink:0; }
-    .sale-notification .notif-icon svg { width:18px; fill:none; stroke:#fff; stroke-width:2.5; }
-    
-    .slot-counter { margin-top:16px; padding:12px 16px; background:linear-gradient(135deg, #fff8f0 0%, #fff 100%); border:1px solid #e8d5c4; border-radius:10px; text-align:center; }
-    .slot-counter p { margin:0; font-family:var(--display); font-size:12px; font-weight:600; color:var(--text); }
-    .slot-counter span { color:var(--red); font-weight:900; font-size:17px; }
-    
-    .cta-button.pulse { animation:ctaPulseRefined 3s ease-in-out infinite; }
-    @keyframes ctaPulseRefined { 0% { transform:scale(1); box-shadow:0 4px 0 #111; } 50% { transform:scale(1.02); box-shadow:0 6px 16px rgba(185,0,0,0.2); } 100% { transform:scale(1); box-shadow:0 4px 0 #111; } }
-    
-    body { padding-top:38px; }
-    @media (max-width:600px) { .paths-container { grid-template-columns:1fr; } body { padding-top:46px; } .sale-notification { left:12px; right:12px; max-width:none; } }
-    
-    /* Sim / Não em 2 colunas */
-    .yn-grid { margin:20px 0 0; display:grid; grid-template-columns:1fr 1fr; gap:16px; }
-    .yn-card { padding:18px 20px; border-radius:12px; }
-    .yn-card.yes { background:#f2fbf4; border:1px solid #d4ead8; }
-    .yn-card.no { background:#fdf4f4; border:1px solid #ecd6d6; }
-    .yn-card strong { display:block; font-family:var(--display); font-size:15px; font-weight:900; letter-spacing:-.3px; }
-    .yn-card.yes strong { color:#1a7a33; }
-    .yn-card.no strong { color:var(--red); }
-    .yn-card ul { margin:9px 0 0; padding:0 0 0 16px; color:#525252; font-size:12.5px; line-height:1.55; }
-    .yn-card li { margin-bottom:4px; }
+  /* What you get */
+  .get-section{padding:32px 0}
+  .get-section h2{font-size:22px;font-weight:900;text-align:center;margin-bottom:24px;letter-spacing:-.5px}
+  .product-card{background:var(--ink);border-radius:14px;padding:32px 24px;text-align:center;color:#fff;margin-bottom:24px}
+  .product-card .tag{font-size:10px;text-transform:uppercase;letter-spacing:1.5px;color:var(--yellow);font-weight:700;margin-bottom:8px}
+  .product-card h3{font-size:20px;font-weight:800;margin-bottom:4px}
+  .product-card p{font-size:13px;color:#aaa;margin-bottom:16px}
+  .product-card .price{font-size:32px;font-weight:900;color:var(--yellow)}
+  .product-card .price small{font-size:14px;color:#888;text-decoration:line-through;margin-right:8px}
 
-    /* Faixa FAQ com fundo soft */
-    .faq-wrap { background:var(--soft); border-top:1px solid var(--line); }
-    .launch-window { margin:22px 0 0; padding:0; display:block; color:var(--red); background:transparent; border:0; box-shadow:none; }
-    .launch-copy { margin:0; color:var(--red); font-family:var(--display); font-size:clamp(22px,3.6vw,38px); font-weight:900; letter-spacing:-1.35px; line-height:1; }
-    .launch-window.is-pending { color:#666; background:transparent; }
-    .launch-window.is-pending .launch-copy { color:var(--red); }
-    .launch-window.is-ended { color:var(--red); background:transparent; border:0; box-shadow:none; }
-    .launch-window.is-ended .launch-copy { color:var(--red); }
-    .launch-window[aria-live="polite"] { contain:layout paint; }
-    .launch-window.is-final { animation:none; }
-    .launch-window.is-final .launch-copy { color:var(--red); font-size:clamp(24px,3.8vw,40px); letter-spacing:-1.45px; }
-    .checkout-link.is-disabled { color:#fff; background:#3b3b3b; box-shadow:none; cursor:not-allowed; opacity:1; filter:none; }
-    .checkout-link.is-disabled:hover { color:#fff; background:#3b3b3b; box-shadow:none; transform:none; }
-    .launch-window.is-active { padding:0; background:transparent; border:0; box-shadow:none; }
-    .launch-window.is-active .launch-copy { color:var(--red); }
-    @keyframes timerPulse { 0%,100% { transform:scale(1); } 50% { transform:scale(1.06); } }
-    @keyframes urgentFlash { 0%,100% { background:linear-gradient(105deg,#990000,#c80000); } 50% { background:linear-gradient(105deg,#c80000,#ef2323); } }
-    @keyframes criticalFlash { 0%,100% { background:linear-gradient(105deg,#7a0000,#c80000); } 50% { background:linear-gradient(105deg,#ff2b2b,#ffb400); } }
-    @keyframes ctaPulse { 0%,100% { transform:scale(1); box-shadow:3px 3px 0 rgba(0,0,0,.25); } 50% { transform:scale(1.035); box-shadow:5px 5px 16px rgba(185,0,0,.5); } }
-    @keyframes toastIn { from { transform:translate(-50%,-140%); } to { transform:translate(-50%,0); } }
-    .launch-window.is-urgent { animation:none; }
-    .launch-window.is-urgent .launch-copy { color:var(--red); }
-    .launch-window.is-critical { animation:none; }
-    .launch-window.is-critical .launch-copy { color:var(--red); font-size:clamp(23px,3.5vw,37px); }
-    .checkout-link.is-urgent-cta { animation:ctaPulse 1.15s ease-in-out infinite; }
-    .checkout-link.is-disabled { opacity:.55; pointer-events:none; filter:grayscale(.8); }
-    .sticky-timer { color:#900000; font-size:10px; font-weight:800; opacity:.85; }
-    .sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
-    .milestone-toast { position:fixed; z-index:35; left:50%; top:14px; width:min(340px,92vw); padding:12px 16px; display:flex; align-items:center; gap:10px; color:#fff; background:var(--ink); border-left:5px solid var(--yellow); box-shadow:0 10px 26px rgba(0,0,0,.32); font-family:var(--display); font-size:11px; font-weight:700; line-height:1.4; letter-spacing:.1px; transform:translate(-50%,-140%); opacity:0; transition:transform 280ms var(--ease),opacity 280ms var(--ease); }
-    .milestone-toast.is-visible { transform:translate(-50%,0); opacity:1; }
-    .exit-modal-overlay { position:fixed; inset:0; z-index:40; display:flex; align-items:center; justify-content:center; padding:20px; background:rgba(10,10,10,.72); opacity:0; pointer-events:none; transition:opacity 200ms var(--ease); }
-    .exit-modal-overlay.is-open { opacity:1; pointer-events:auto; }
-    .exit-modal { position:relative; width:min(420px,100%); padding:28px 24px 24px; color:#111; background:#fff; border-top:6px solid var(--red); box-shadow:0 20px 50px rgba(0,0,0,.35); transform:translateY(14px); transition:transform 200ms var(--ease); }
-    .exit-modal-overlay.is-open .exit-modal { transform:translateY(0); }
-    .exit-modal strong { display:block; font-family:var(--display); font-size:19px; font-weight:900; letter-spacing:-.5px; line-height:1.15; }
-    .exit-modal p { margin:9px 0 0; color:var(--muted); font-size:12.5px; line-height:1.5; }
-    .exit-modal .exit-timer { margin:15px 0 0; padding:11px 12px; color:#fff; background:var(--red-deep); font-family:var(--display); font-size:21px; font-weight:900; text-align:center; letter-spacing:-.3px; }
-    .exit-modal .cta-button { width:100%; margin-top:16px; }
-    .exit-modal-close { position:absolute; top:9px; right:10px; width:30px; height:30px; display:grid; place-items:center; color:#777; background:transparent; border:0; font-size:20px; line-height:1; }
-    .exit-modal-close:hover { color:#111; }
-    .article-body { padding:28px 0 0; }
-    .article-body > p { max-width:690px; margin:0 0 17px; color:var(--text); font-family:var(--serif); font-size:19px; line-height:1.55; }
-    .article-body > p strong { color:#111; }
-    .fb-comments { margin:34px auto 29px; padding:12px; position:relative; color:#4267b2; background:#fff; border:1px solid #e9ebee; border-radius:18px; }
-    .fb-comments-header { padding:0; border-bottom:1px solid #e9ebee; }
-    .fb-comments-header span { display:inline-block; color:#54595f; font-family:Arial,sans-serif; font-size:14px; font-weight:700; padding-bottom:7px; }
-    .fb-comments-demo-note { margin:10px 0 0; padding-left:9px; color:#777; border-left:3px solid var(--yellow); font-family:Arial,sans-serif; font-size:11px; font-weight:400; line-height:1.4; }
-    .fb-comments-wrapper,.fb-comments-reply-wrapper { padding:0; }
-    .fb-comments-reply-wrapper { width:calc(100% - 60px); margin:0 0 0 60px; padding-left:5px; border-left:1px dotted #e9ebee; }
-    .fb-comments-comment { width:100%; margin:20px 0; padding:0; border-collapse:collapse; table-layout:fixed; border:0; }
-    .fb-comments-comment tr,.fb-comments-comment td { padding:2.5px; border:0; background:#fff; }
-    .fb-comments-comment-img { width:53px; padding-right:5px !important; vertical-align:top; }
-    .fb-comments-comment-img img { width:48px; height:48px; display:block; object-fit:cover; border-radius:25px; background:var(--yellow); border:0; }
-    .fb-comments-comment-text { padding:8px 12px 10px !important; color:#000; background:#eaebef !important; border:0; border-radius:21px; font-family:Arial,sans-serif; font-size:14px; font-weight:400; line-height:1.3; }
-    .fb-comments-comment-name { color:#111; font-family:Arial,sans-serif; font-size:12px; font-weight:400; }
-    .fb-comments-comment-name name { color:#365899; text-decoration:none; font-weight:700; }
-    .fb-comments-comment-actions { padding:0 2px !important; color:#90949c; font-family:Arial,sans-serif; font-size:12px; font-weight:400; white-space:nowrap; }
-    .fb-comments-comment-actions like,.fb-comments-comment-actions reply { color:#4267b2; font-size:12px; text-decoration:none; }
-    .fb-comments-comment-actions likes { color:#4267b2; }
-    .fb-comments-comment-actions date { margin-left:3px; color:#90949c; font-size:12px; }
-    .fb-comments-example-tag { display:inline-block; margin:0 5px 0 0; padding:2px 4px; color:#6f5700; background:#fff5c7; border:1px solid #ecd98b; border-radius:3px; font-family:Arial,sans-serif; font-size:9px; font-weight:700; vertical-align:1px; }
-    .fb-comments-reactions { margin:0 0 0 8px; display:inline-flex; align-items:center; gap:4px; vertical-align:middle; float:right; padding:0; background:transparent; border:0; border-radius:0; }
-    .fb-comments-reactions .reaction-icon { width:15px; height:15px; display:block; flex:0 0 auto; fill:currentColor; }
-    .fb-reaction-like { color:#4080ff; }
-    .fb-reaction-heart { color:#e84b55; }
-    .fb-comments-reactions b { position:static; margin:0 0 0 1px; color:#90949c; font-family:Arial,sans-serif; font-size:12px; font-weight:400; line-height:1; }
-    .fb-comments-closed { margin:16px 0 0; padding-top:13px; color:#333; border-top:1px solid #e9ebee; font-family:Arial,sans-serif; font-size:10px; font-weight:700; line-height:1.45; text-align:center; }
-    .editorial-figure { margin:31px 0 29px; }
-    .editorial-figure img { width:100%; height:auto; min-height:260px; display:block; object-fit:cover; background:#e8e8e5; filter:saturate(.82) contrast(1.04); }
-    .editorial-figure figcaption { margin-top:8px; padding-left:10px; color:var(--muted); border-left:3px solid var(--red); font-size:10px; line-height:1.45; }
+  .module{display:flex;gap:12px;padding:14px 0;border-bottom:1px solid var(--line);align-items:flex-start}
+  .module:last-child{border-bottom:none}
+  .module-icon{width:36px;height:36px;background:var(--ink);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+  .module-icon svg{width:18px;height:18px;stroke:#fff;stroke-width:2;fill:none}
+  .module-text h4{font-size:15px;font-weight:800;margin-bottom:2px}
+  .module-text p{font-size:13px;color:var(--muted);line-height:1.45}
 
-    /* Sales modules styled as editorial cards */
-    .article-callout { margin:30px 0; padding:23px 25px; display:grid; grid-template-columns:49px 1fr; gap:17px; color:#111; background:var(--soft); border-top:4px solid var(--red); }
-    .callout-number { color:var(--red); font-family:var(--display); font-size:30px; font-weight:900; letter-spacing:-1px; line-height:1; }
-    .article-callout h2 { margin:0; font-family:var(--display); font-size:22px; font-weight:900; letter-spacing:-.7px; line-height:1.05; }
-    .article-callout p { margin:7px 0 0; color:#525252; font-size:13px; line-height:1.5; }
-    .offer-facts { margin:0; border-top:3px solid var(--ink); }
-    .offer-fact { padding:18px 1px; display:grid; grid-template-columns:40px 1fr; gap:13px; border-bottom:1px solid var(--line); }
-    .offer-fact b { color:var(--red); font-family:var(--display); font-size:16px; }
-    .offer-fact h3 { margin:0; font-family:var(--display); font-size:15px; font-weight:800; letter-spacing:-.35px; }
-    .offer-fact p { margin:5px 0 0; color:var(--muted); font-size:13px; line-height:1.48; }
-    .offer-icon { display:inline-flex; align-items:center; justify-content:center; width:36px; height:36px; border-radius:8px; background:var(--ink); flex-shrink:0; }
-    .offer-icon svg { width:20px; height:20px; stroke:#fff; stroke-width:1.8; fill:none; stroke-linecap:round; stroke-linejoin:round; }
-    .offer-fact { grid-template-columns:36px 36px 1fr !important; gap:10px; align-items:start; }
-    .article-cta { margin:31px 0 36px; padding:26px; color:#fff; background:var(--ink); border-left:6px solid var(--yellow); }
-    .article-cta .cta-kicker { color:var(--yellow); font-family:var(--display); font-size:10px; font-weight:800; letter-spacing:1.2px; }
-    .article-cta h2 { max-width:500px; margin:9px 0 0; font-family:var(--display); font-size:27px; font-weight:900; letter-spacing:-1px; line-height:1; }
-    .article-cta p { max-width:555px; margin:10px 0 18px; color:#d3d3d3; font-size:13px; line-height:1.5; }
-    .cta-button { min-height:53px; padding:0 20px; display:inline-flex; align-items:center; justify-content:center; gap:11px; color:#111; background:var(--yellow); box-shadow:3px 3px 0 rgba(0,0,0,.25); font-family:var(--display); font-size:13px; font-weight:900; text-decoration:none; transition:transform 160ms var(--ease),box-shadow 160ms var(--ease),background 160ms var(--ease); }
-    .cta-button:hover { background:#ffdf6d; box-shadow:5px 5px 0 rgba(0,0,0,.25); transform:translate(-2px,-2px); }
-    .cta-button:active { box-shadow:1px 1px 0 rgba(0,0,0,.25); transform:translate(2px,2px); }
-    .cta-button span { font-size:19px; }
-    .article-cta small { display:block; margin-top:11px; color:#a9a9a9; font-size:10px; line-height:1.4; }
-    .inline-cta { margin:29px 0 0; padding:22px 24px; display:flex; align-items:center; justify-content:space-between; gap:18px; border-top:1px solid var(--line); border-bottom:1px solid var(--line); background:var(--soft); border-radius:8px; }
-    .inline-cta strong { display:block; font-family:var(--display); font-size:17px; font-weight:900; letter-spacing:-.55px; color:var(--ink); }
-    .inline-cta span { display:block; margin-top:4px; color:var(--muted); font-size:12px; line-height:1.5; }
-    .inline-cta .cta-button { min-height:50px; padding:0 22px; color:#fff; background:var(--red); box-shadow:3px 3px 0 rgba(0,0,0,.2); font-size:12px; font-weight:800; white-space:nowrap; flex-shrink:0; border-radius:6px; }
-    .inline-cta .cta-button:hover { background:#d30808; }
+  /* Bonus */
+  .bonus{padding:18px 0;border-top:2px solid var(--red);margin-top:8px}
+  .bonus-title{font-size:12px;text-transform:uppercase;letter-spacing:1px;color:var(--red);font-weight:800;margin-bottom:10px}
+  .bonus-item{display:flex;justify-content:space-between;font-size:14px;padding:6px 0;color:var(--text)}
+  .bonus-item span:last-child{color:var(--muted);font-size:12px;text-decoration:line-through}
 
-    .section-divider { margin:42px 0 0; display:flex; align-items:center; gap:11px; color:var(--red); font-family:var(--display); font-size:10px; font-weight:900; letter-spacing:1.25px; }
-    .section-divider:before,.section-divider:after { content:""; height:1px; flex:1; background:var(--line); }
-    .reading-grid { margin:23px 0 0; display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--line); border:1px solid var(--line); }
-    .reading-card { min-height:205px; padding:24px; background:#fff; border-top:3px solid var(--red); }
-    .reading-card span { color:var(--red); font-family:var(--display); font-size:11px; font-weight:900; text-transform:uppercase; letter-spacing:1px; display:block; margin-bottom:12px; }
-    .reading-card h3 { margin:0; font-family:var(--display); font-size:17px; font-weight:800; letter-spacing:-.5px; color:var(--ink); }
-    .reading-card p { margin:8px 0 0; color:var(--muted); font-size:12.5px; line-height:1.55; }
+  /* Price section */
+  .price-section{padding:32px 0;text-align:center}
+  .price-card{background:var(--soft);border:2px solid var(--red);border-radius:14px;padding:28px 24px;margin-bottom:20px}
+  .price-card .from{font-size:14px;color:var(--muted);text-decoration:line-through;margin-bottom:4px}
+  .price-card .to{font-size:36px;font-weight:900;color:var(--ink);margin-bottom:8px}
+  .price-card .to span{color:var(--red)}
+  .price-card .note{font-size:12px;color:var(--muted);margin-bottom:20px}
+  .price-card .timer{display:flex;justify-content:center;gap:8px;margin-bottom:18px}
+  .price-card .timer div{background:var(--ink);color:#fff;padding:8px 12px;border-radius:6px;font-size:16px;font-weight:800;font-variant-numeric:tabular-nums;min-width:44px}
+  .price-card .timer-label{font-size:11px;color:var(--muted);margin-bottom:8px;text-transform:uppercase;letter-spacing:.5px}
 
-    .decision-note { margin:35px 0 0; padding:17px 18px; display:grid; grid-template-columns:22px 1fr; gap:10px; color:#4f504d; background:#fff8dc; border-left:4px solid var(--yellow); font-size:12px; line-height:1.5; }
-    .decision-note b { color:#8e7000; font-size:16px; }
-    .decision-note strong { color:#222; }
+  /* Timer label */
+  .timer-label-global{font-size:12px;color:var(--red);font-weight:700;text-align:center;margin-bottom:12px}
 
-    /* FAQ */
-    .faq-wrap { width:min(100% - 44px,760px); margin:0 auto; padding:65px 0 81px; }
-    .faq-wrap h2 { margin:
+  /* Testimonials */
+  .testimonials{padding:32px 0;background:var(--soft)}
+  .testimonials h2{font-size:22px;font-weight:900;text-align:center;margin-bottom:20px}
+  .testi{background:var(--white);border-radius:12px;padding:18px;margin-bottom:12px;border:1px solid var(--line)}
+  .testi-head{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+  .testi-avatar{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:800;color:#fff;flex-shrink:0}
+  .testi-name{font-size:14px;font-weight:700}
+  .testi-stars{color:var(--yellow);font-size:12px;letter-spacing:1px}
+  .testi p{font-size:14px;color:var(--text);line-height:1.5}
 
-      13px 0 0; font-family:var(--display); font-size:clamp(31px,3.8vw,43px); font-weight:900; letter-spacing:-1.9px; line-height:1; }
-    .faq-wrap > p { max-width:580px; margin:13px 0 0; color:var(--muted); font-size:13px; line-height:1.55; }
-    .faq-list { margin-top:29px; border-top:3px solid var(--ink); }
-    .faq-item { border-bottom:1px solid var(--line); }
-    .faq-trigger { width:100%; padding:20px 2px; display:flex; align-items:center; justify-content:space-between; gap:18px; color:#111; background:transparent; border:0; text-align:left; font-family:var(--display); font-size:14px; font-weight:800; }
-    .faq-trigger i { width:24px; height:24px; display:grid; place-items:center; flex:0 0 24px; color:#fff; background:var(--red); font-family:Arial,sans-serif; font-size:18px; font-style:normal; font-weight:400; transition:transform 160ms var(--ease); }
-    .faq-item.is-open .faq-trigger i { transform:rotate(45deg); }
-    .faq-answer { max-height:0; overflow:hidden; color:var(--muted); transition:max-height 250ms var(--ease); }
-    .faq-answer p { margin:0; padding:0 2px 21px; font-size:13px; line-height:1.56; }
-    .faq-item.is-open .faq-answer { max-height:165px; }
+  /* FAQ */
+  .faq{padding:32px 0}
+  .faq h2{font-size:22px;font-weight:900;text-align:center;margin-bottom:20px}
+  .faq-item{border:1px solid var(--line);border-radius:10px;margin-bottom:10px;overflow:hidden}
+  .faq-q{display:flex;justify-content:space-between;align-items:center;padding:16px 18px;font-size:15px;font-weight:700;cursor:pointer;background:var(--white);border:none;width:100%;text-align:left}
+  .faq-q::after{content:'+';font-size:20px;font-weight:300;color:var(--red);flex-shrink:0;margin-left:12px}
+  .faq-item.open .faq-q::after{content:'−'}
+  .faq-a{max-height:0;overflow:hidden;transition:max-height .3s var(--ease)}
+  .faq-item.open .faq-a{max-height:200px}
+  .faq-a p{padding:0 18px 16px;font-size:14px;color:var(--text);line-height:1.55}
 
-    .footer { color:rgba(255,255,255,.72); background:var(--ink); }
-    .footer-inner { width:min(1120px,calc(100% - 36px)); margin:0 auto; padding:34px 0; display:flex; align-items:flex-end; justify-content:space-between; gap:35px; }
-    .footer-brand { color:#fff; font-family:var(--display); font-size:13px; font-weight:900; }
-    .footer-brand small { display:block; margin-top:3px; color:var(--yellow); font-size:8px; letter-spacing:1px; }
-    .footer p { max-width:530px; margin:0; font-size:10px; line-height:1.5; text-align:right; }
-    .sticky-cta { position:fixed; z-index:19; right:17px; bottom:17px; min-height:46px; padding:0 16px; display:flex; align-items:center; gap:9px; color:#111; background:var(--yellow); box-shadow:4px 4px 0 rgba(0,0,0,.24); font-family:var(--display); font-size:11px; font-weight:900; text-decoration:none; transform:translateY(130%); transition:transform 220ms var(--ease); }
-    .sticky-cta.is-visible { transform:translateY(0); }
-    .sticky-cta span { font-size:17px; }
-    
-    @media (max-width:500px) {
-      .sticky-cta { bottom:12px; } 
-    }
+  /* Final CTA */
+  .final-cta{padding:36px 0;text-align:center;background:var(--ink);color:#fff}
+  .final-cta h2{font-size:22px;font-weight:900;margin-bottom:10px}
+  .final-cta p{font-size:14px;color:#999;margin-bottom:24px;max-width:340px;margin-left:auto;margin-right:auto}
+  .final-cta .cta{background:var(--yellow);color:var(--ink);box-shadow:0 4px 0 rgba(0,0,0,.4)}
+  .final-cta .cta:hover{box-shadow:0 6px 0 rgba(0,0,0,.4)}
+  .final-cta .cta:active{box-shadow:0 2px 0 rgba(0,0,0,.4)}
 
-    @media (max-width:760px) { .article-shell,.faq-wrap { width:min(100% - 32px,760px); } .header-inner,.footer-inner { width:min(100% - 30px,1120px); } .article { padding-top:32px; } .article h1 { font-size:42px; letter-spacing:-2px; } .article-deck { font-size:19px; } .byline { align-items:flex-start; } .reading-grid { grid-template-columns:1fr; } .reading-card { min-height:160px; } .reading-card h3 { margin-top:18px; } .footer-inner { display:grid; gap:16px; } .footer p { text-align:left; } .sticky-cta { left:12px; right:12px; justify-content:center; bottom:12px; } }
-    @media (max-width:500px) { 
-      .masthead { font-size:15px; } 
-      .article h1 { font-size:32px; letter-spacing:-1.5px; line-height:1.05; } 
-      .article-deck { font-size:17px; line-height:1.5; } 
-      .byline { display:grid; } 
-      .reading-time { text-align:left; } 
-      .lead-cta,.inline-cta { display:grid; } 
-      .lead-cta { gap:10px; } 
-      .lead-cta-button { min-height:58px; font-size:15px; } 
-      .lead-cta-button,.inline-cta .cta-button { width:100%; flex-basis:auto; } 
-      .launch-window { margin-top:18px; } 
-      .launch-copy { font-size:clamp(20px,7vw,29px); letter-spacing:-.9px; } 
-      .comments-header { align-items:flex-start; flex-direction:column; gap:8px; } 
-      .comments-list { padding:8px; } 
-      .comment-item.comment-reply { width:calc(100% - 12px); margin-left:12px; } 
-      .launch-window.is-critical .launch-copy,.launch-window.is-final .launch-copy { font-size:clamp(22px,7.5vw,31px); } 
-      .article-callout { padding:18px; grid-template-columns:35px 1fr; gap:12px; } 
-      .article-callout h2 { font-size:19px; } 
-      .fb-comments-comment-img { width:58px; } 
-      .fb-comments-comment-img img { width:50px; height:50px; } 
-      .fb-comments-comment-text { padding:11px 12px 10px; font-size:13px; } 
-      .fb-comments-comment-name { font-size:12px; } 
-      .fb-comments-comment-actions { padding-left:7px; font-size:9px; } 
-      .fb-comments-reactions i { width:17px; height:17px; font-size:9px; } 
-      .article-cta { padding:20px; } 
-      .cta-button { width:100%; font-size:13px; min-height:52px; } 
-      .paths-container { grid-template-columns:1fr; gap:14px; } 
-      .path-card { padding:18px; } 
-      .inertia-cost { padding:18px 16px; } 
-      .offer-bundle { padding:20px 16px; } 
-      .price-block { padding:16px 18px; } 
-      .countdown-card { padding:12px 14px; } 
-      .social-proof-strip { flex-wrap:wrap; gap:12px; padding:10px 12px; } 
-      .sale-notification { bottom:80px; left:12px; right:12px; max-width:none; } 
-      .sticky-cta { min-height:52px; font-size:12px; } 
-    }
-    @media (prefers-reduced-motion:reduce) { *,*:before,*:after { transition-duration:1ms!important; animation-duration:1ms!important; animation-iteration-count:1!important; scroll-behavior:auto!important; } }
-  </style>
+  /* Sticky CTA */
+  .sticky{position:fixed;bottom:0;left:0;right:0;padding:10px 16px;background:var(--white);border-top:1px solid var(--line);z-index:99;transform:translateY(100%);transition:transform .3s var(--ease)}
+  .sticky.visible{transform:translateY(0)}
+  .sticky .cta{padding:14px 20px;font-size:15px}
+
+  /* Footer */
+  .footer{padding:20px 16px;text-align:center;font-size:11px;color:var(--muted);line-height:1.5;padding-bottom:80px}
+  .footer a{color:var(--muted)}
+
+  /* Mobile */
+  @media(max-width:480px){
+    .hero{padding:28px 0 20px}
+    .hero h1{font-size:24px}
+    .container{width:min(100% - 24px,560px)}
+    .cta{font-size:16px;padding:16px 20px}
+    .price-card .to{font-size:32px}
+  }
+</style>
 </head>
 <body>
-  <div class="urgency-bar">ATENÇÃO: PREÇO PROMOCIONAL EXPIRA EM <span id="bar-timer">--:--:--</span></div>
-  <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
-  <div class="progress" id="progress"></div>
-  
-  <div class="sale-notification" id="sale-notif">
-    <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='40'><circle cx='20' cy='20' r='20' fill='%231a7a33'/><text x='20' y='25' text-anchor='middle' fill='white' font-family='Arial' font-size='14'>✓</text></svg>" alt="Venda confirmada">
-    <div class="notif-content">
-      <b id="notif-name">João de São Paulo</b>
-      acabou de garantir o acesso vitalício.
-      <span class="notif-time">há 2 minutos</span>
+
+<!-- Header -->
+<div class="top-bar">
+  ⏰ OFERTA ENCERRA HOJE ÀS <b>23:59</b>
+</div>
+
+<div class="container">
+
+  <!-- Hero -->
+  <section class="hero">
+    <h1>Você acerta 13 e 14 pontos toda semana.<br>E nunca ganha nada.</h1>
+    <p class="sub">O problema não é sua sorte. É <b>a forma de jogar</b>.</p>
+    <a class="cta" href="https://example.com/checkout">QUERO MUDAR ISSO <span>→</span></a>
+    <div class="badge">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+      Garantia incondicional de 7 dias — 100% do dinheiro de volta
     </div>
+  </section>
+
+  <!-- Problem -->
+  <section class="problem">
+    <p>Todo mês você gasta <b>R$ 150 a R$ 300</b> em apostas soltas. O resultado? Sempre 13 ou 14 pontos. O dinheiro vai embora, o sorteio acaba, e nada muda no próximo concurso. <b>Não é azar — é método.</b></p>
+  </section>
+
+  <!-- What you get -->
+  <section class="get-section">
+    <h2>O que você recebe hoje</h2>
+
+    <div class="product-card">
+      <div class="tag">Material Digital Completo</div>
+      <h3>Estudo Secreto da Lotofácil</h3>
+      <p>Organize suas apostas com base em dados reais</p>
+      <div class="price"><small>R$ 97</small>R$ 27</div>
+    </div>
+
+    <div>
+      <div class="module">
+        <div class="module-icon"><svg viewBox="0 0 24 24"><rect x="3" y="12" width="4" height="9"/><rect x="10" y="7" width="4" height="14"/><rect x="17" y="3" width="4" height="18"/></svg></div>
+        <div class="module-text"><h4>Padrões dos concursos passados</h4><p>Saiba quais dezenas, pares e ímpares saem mais — para apostar com dados, não no chute.</p></div>
+      </div>
+      <div class="module">
+        <div class="module-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5"/></svg></div>
+        <div class="module-text"><h4>Fechamentos inteligentes</h4><p>Cubra mais dezenas gastando o mesmo — ou menos — do que gasta hoje em apostas soltas.</p></div>
+      </div>
+      <div class="module">
+        <div class="module-icon"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
+        <div class="module-text"><h4>Plano de apostas sem esbanjar</h4><p>Defina quanto gastar por concurso e saiba quando é melhor não apostar.</p></div>
+      </div>
+    </div>
+
+    <div class="bonus">
+      <div class="bonus-title">+ Bônus inclusos (sem custo extra)</div>
+      <div class="bonus-item"><span>Planilha de Fechamentos Inteligentes</span><span>R$ 47</span></div>
+      <div class="bonus-item"><span>Guia: O Segredo dos Concursos Finais</span><span>R$ 37</span></div>
+      <div class="bonus-item"><span>Acesso ao Grupo VIP de Estudos</span><span>R$ 67</span></div>
+    </div>
+  </section>
+
+  <!-- Price -->
+  <section class="price-section">
+    <div class="timer-label-global">⏰ Preço promocional encerra em:</div>
+    <div class="price-card">
+      <div class="from">De R$ 97,00</div>
+      <div class="to"><span>R$</span> 27,00</div>
+      <div class="note">Pagamento único · Acesso imediato · Sem mensalidade</div>
+      <div class="timer-label">Tempo restante:</div>
+      <div class="timer">
+        <div id="t-h">00</div>
+        <div style="background:none;color:var(--ink);padding:8px 0;font-size:18px">:</div>
+        <div id="t-m">00</div>
+        <div style="background:none;color:var(--ink);padding:8px 0;font-size:18px">:</div>
+        <div id="t-s">00</div>
+      </div>
+      <a class="cta" href="https://example.com/checkout">GARANTIR ACESSO AGORA <span>→</span></a>
+      <div class="badge" style="margin-top:14px">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+        7 dias de garantia — não gostou, devolvemos tudo
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="testimonials">
+    <h2>Quem já aplica o método</h2>
+    <div class="testi">
+      <div class="testi-head">
+        <div class="testi-avatar" style="background:#2563eb">RM</div>
+        <div><div class="testi-name">Ricardo M. · Porto Alegre/RS</div><div class="testi-stars">★★★★★</div></div>
+      </div>
+      <p>"Faz 3 anos que jogo e sempre acertava 13, 14. Depois que organizei as apostas com o estudo, parei de jogar dezenas repetidas. Já economizei mais de R$ 200."</p>
+    </div>
+    <div class="testi">
+      <div class="testi-head">
+        <div class="testi-avatar" style="background:#7c3aed">SF</div>
+        <div><div class="testi-name">Sandra F. · Goiânia/GO</div><div class="testi-stars">★★★★★</div></div>
+      </div>
+      <p>"Eu gastava R$ 200 por mês em apostas soltas. Agora gasto o mesmo valor, mas com fechamentos que cobrem muito mais combinações. Faz sentido."</p>
+    </div>
+    <div class="testi">
+      <div class="testi-head">
+        <div class="testi-avatar" style="background:#059669">MV</div>
+        <div><div class="testi-name">Marcos V. · Salvador/BA</div><div class="testi-stars">★★★★☆</div></div>
+      </div>
+      <p>"Simples e direto. Não é promessa de prêmio — é um material que organiza como apostar. Vale cada centavo pelo que economizei em apostas sem critério."</p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq">
+    <h2>Dúvidas frequentes</h2>
+    <div class="faq-item">
+      <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">Isso é golpe?</button>
+      <div class="faq-a"><p>Não. É um material de estudo digital que organiza suas apostas com base em dados reais de concursos. Não prometemos prêmio — entregamos método. E você tem 7 dias para testar sem risco.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">Loteria não é aleatória?</button>
+      <div class="faq-a"><p>Sim, é aleatória. O estudo não prevê números. Ele ensina a organizar apostas para cobrir mais combinações úteis com o mesmo valor — evitando gastar em padrões que estatisticamente quase nunca saem.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">E se eu não gostar?</button>
+      <div class="faq-a"><p>Devolução total em 7 dias, sem perguntas. Se o material não te servir, mande um e-mail e recebemos 100% do seu dinheiro de volta.</p></div>
+    </div>
+  </section>
+
+</div>
+
+<!-- Final CTA -->
+<section class="final-cta">
+  <div class="container">
+    <h2>Continuar perdendo ou testar sem risco?</h2>
+    <p>Por R$ 27 você tem acesso imediato + 7 dias para devolver. A escolha é simples.</p>
+    <a class="cta" href="https://example.com/checkout">QUERO TESTAR AGORA <span>→</span></a>
   </div>
-  <header class="site-header">
-    <div class="header-inner">
-      <button class="header-button" type="button" aria-label="Abrir pesquisa" id="search-button"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="5.6"></circle><path d="m16 16 4.2 4.2"></path></svg></button>
-      <span class="masthead"><i></i> FINANÇAS</span>
-      <button class="header-button" type="button" aria-label="Abrir menu" id="menu-button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg></button>
-    </div>
-    <div class="ticker"><div class="ticker-track" id="ticker-track">CONTEÚDO COMERCIAL · CONFIRA AS CONDIÇÕES ANTES DE PROSSEGUIR&nbsp; — &nbsp; CONTEÚDO COMERCIAL · CONFIRA AS CONDIÇÕES ANTES DE PROSSEGUIR&nbsp; — &nbsp; CONTEÚDO COMERCIAL · CONFIRA AS CONDIÇÕES ANTES DE PROSSEGUIR&nbsp; — &nbsp;</div></div>
-    <aside class="menu-panel" id="menu-panel" aria-hidden="true"><strong>Informações da página</strong><p>Este é um conteúdo comercial. Consulte os detalhes da oferta e as condições antes de prosseguir.</p></aside>
-  </header>
+</section>
 
-  <main id="conteudo">
-    <article class="article-shell article">
-      <span class="commercial-label"><b></b> CONTEÚDO COMERCIAL</span>
-<div class="hero-alert" aria-label="Aviso de encerramento"><b aria-hidden="true"></b><strong>ENCERRAMENTO DEFINITIVO HOJE</strong><span>O preço especial de lançamento morre com a janela</span></div>
-      <h1>Por que você acerta 13 e 14 pontos e nunca ganha nada — e o que fazer para mudar isso hoje.</h1>
-      <p class="article-deck">Se você joga Lotofácil há meses ou anos, já deve ter pensado: "só falta uma dezena". O problema não é sua sorte — é que você aposta no chute. O Estudo Secreto da Lotofácil mostra como organizar suas apostas usando os padrões dos concursos reais, para gastar menos e cobrir mais combinações úteis.</p>
-      
-      <div class="inertia-cost" style="margin:28px 0 0; padding:22px 26px; background:var(--soft); border:1px solid var(--line); border-radius:12px; border-left:4px solid var(--red);">
-        <h4 style="font-family:var(--display); font-size:12px; font-weight:800; letter-spacing:1px; text-transform:uppercase; color:var(--red); margin:0 0 14px;">O custo da inércia — próximos 30 dias</h4>
-        <div style="display:grid; grid-template-columns:1fr auto 1fr; gap:16px; align-items:center; font-family:var(--display);">
-          <div style="text-align:center;">
-            <div style="font-size:11px; text-transform:uppercase; letter-spacing:0.8px; color:var(--muted);">Sem o estudo</div>
-            <div style="font-size:22px; font-weight:900; color:var(--red); margin-top:6px;">− R$ 450,00</div>
-            <div style="font-size:11px; color:var(--muted); margin-top:4px;">em apostas sem critério</div>
-          </div>
-          <div style="width:1px; height:60px; background:var(--line);"></div>
-          <div style="text-align:center;">
-            <div style="font-size:11px; text-transform:uppercase; letter-spacing:0.8px; color:var(--muted);">Com o estudo</div>
-            <div style="font-size:22px; font-weight:900; color:var(--ink); margin-top:6px;">− R$ 27,00</div>
-            <div style="font-size:11px; color:#1a7a33; margin-top:4px; font-weight:600;">uma vez só, para sempre</div>
-          </div>
-        </div>
-      </div>
-      <div class="byline"><div class="author"><span class="author-mark">E</span><div><strong>Equipe de Conteúdo</strong><span>Atualizado em 18/08/2026</span></div></div><span class="reading-time">Leitura estimada: 4 min<br />Janela de acesso: 4 horas</span></div>
-      <section class="lead-cta" aria-label="Acesso à oferta"><a class="lead-cta-button checkout-link" href="https://example.com/checkout" target="_blank" rel="noopener noreferrer"><span class="lead-cta-prefix">QUERO</span> VER COMO FUNCIONA <span aria-hidden="true">→</span></a>
-        <p class="guarantee-badge" aria-hidden="true">🛡 <b>GARANTIA DE 7 DIAS</b> · 100% do dinheiro de volta</p>
-        <p class="lead-cta-note">Garantia incondicional: não gostou do estudo, devolvemos 100% do valor. Sem perguntas.</p>
-      </section>
-      <div class="countdown-card" aria-live="polite" aria-label="Tempo restante do preço de lançamento">
-        <span class="cd-label">PREÇO DE LANÇAMENTO EXPIRA EM</span>
-        <div class="cd-blocks"><span class="cd-block" id="cd-hours">--<small>HORAS</small></span><span class="cd-block" id="cd-minutes">--<small>MIN</small></span><span class="cd-block" id="cd-seconds">--<small>SEG</small></span></div>
-      </div>
-      <div class="social-proof-strip" aria-label="Referência social"><span class="proof-item"><span class="proof-stars" aria-hidden="true">★★★★★</span> <span class="proof-b">4,8/5</span> · avaliação dos leitores</span><span class="proof-item"><span class="proof-b">+8.700</span> apostadores aplicaram o método</span><span class="proof-item">Leitura de <span class="proof-b">4 min</span></span></div>
+<!-- Sticky CTA -->
+<div class="sticky" id="sticky">
+  <a class="cta" href="https://example.com/checkout">GARANTIR POR R$ 27 <span>→</span></a>
+</div>
 
-      
+<!-- Footer -->
+<footer class="footer">
+  <p>© 2026 Estudo Secreto da Lotofácil. Todos os direitos reservados.<br>
+  Loterias envolvem risco financeiro. Este material organiza apostas, mas não garante retorno nem prêmio.<br>
+  <a href="#">Termos de Uso</a> · <a href="#">Política de Privacidade</a></p>
+</footer>
 
-            
+<script>
+  // Countdown to 23:59 today
+  function updateTimer(){
+    const now=new Date();
+    const end=new Date();
+    end.setHours(23,59,59,0);
+    if(now>end) end.setDate(end.getDate()+1);
+    const diff=end-now;
+    const h=Math.floor(diff/3600000);
+    const m=Math.floor((diff%3600000)/60000);
+    const s=Math.floor((diff%60000)/1000);
+    document.getElementById('t-h').textContent=String(h).padStart(2,'0');
+    document.getElementById('t-m').textContent=String(m).padStart(2,'0');
+    document.getElementById('t-s').textContent=String(s).padStart(2,'0');
+  }
+  updateTimer();
+  setInterval(updateTimer,1000);
 
-      <div class="article-body">
-        <p>Faça um cálculo honesto: você joga Lotofácil há quantos anos? Multiplique o valor das suas apostas por concurso pelo número de concursos desde então. <strong>Não é raro que apostadores recorrentes tenham gasto mais de R$ 10.000, R$ 20.000 ou até R$ 50.000 em dezenas escolhidas "no feeling"</strong> — números de aniversário, palpites de balcão e repetições sem qualquer critério.</p>
-        <p>E o resultado é sempre o mesmo: a sensação de estar <strong>quase lá</strong>. Você marca o cartão com orgulho, confere o resultado e... 13 pontos. Ou 14. Quase um prêmio, quase uma mudança de vida. E então a frustração: <em>sempre falta uma ou duas dezenas</em>. Você se pergunta por que todos dizem que "está perto", mas o dinheiro nunca volta.</p>
-        <p>Existe uma explicação para isso — e ela não tem nada a ver com azar. Quando você joga dezenas escolhidas por intuição, a matemática trabalha contra você de três formas: <strong>as combinações se sobrepõem</strong> (você paga por resultados praticamente idênticos), <strong>as dezenas ficam mal distribuídas</strong> (a maioria dos concursos não puxa 15 números espalhados como os seus) e <strong>o valor por cobertura é o pior possível</strong> (você aposta o mesmo que qualquer pessoa, mas cobre menos terreno útil).</p>
-        <p>Em outras palavras: <strong>o problema nunca foi sua sorte. Foi a forma de jogar.</strong></p>
-      </div>
+  // Sticky CTA on scroll
+  const sticky=document.getElementById('sticky');
+  window.addEventListener('scroll',()=>{
+    if(window.scrollY>400) sticky.classList.add('visible');
+    else sticky.classList.remove('visible');
+  });
+</script>
 
-      <figure class="editorial-figure">
-        <img src="ticket.jpg" alt="Volante genérico de loteria com caneta sobre uma mesa de trabalho" />
-        <figcaption>Apostas por intuição tendem a concentrar dezenas em padrões previsíveis — enquanto os sorteios históricos da Lotofácil se distribuem de formas bem diferentes.</figcaption>
-      </figure>
-
-      <section class="article-callout" aria-labelledby="callout-title"><span class="callout-number">01</span><div><h2 id="callout-title">O Estudo Secreto não é o que você espera</h2><p>Não é fórmula mágica, não é "desbloqueio de dezenas quentes" e não é promessa de prêmio. É um material de estudo que ensina a organizar apostas com base em como os resultados realmente acontecem — para que você pare de pagar caro por combinações que se repetem.</p></div></section>
-
-      <section class="offer-facts" aria-label="Resumo da oferta">
-<article class="offer-fact"><span class="offer-idx">01</span><span class="offer-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="12" width="4" height="9" rx="1"/><rect x="10" y="7" width="4" height="14" rx="1"/><rect x="17" y="3" width="4" height="18" rx="1"/></svg></span><div><h3>Padrões dos concursos passados</h3><p>Descubra quais dezenas, pares e ímpares aparecem com mais frequência nos sorteios reais da Lotofácil. Em vez de chutar no balcão, você vai apostar sabendo o que a estatística mostra.</p></div></article>
-        <article class="offer-fact"><span class="offer-idx">02</span><span class="offer-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5"/></svg></span><div><h3>Fechamentos que cobrem mais dezenas</h3><p>Aprenda a técnica usada por quem joga há anos: em vez de pagar caro em apostas soltas, feche combinações inteligentes que cobrem mais dezenas gastando o mesmo — ou menos.</p></div></article>
-        <article class="offer-fact"><span class="offer-idx">03</span><span class="offer-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></span><div><h3>Plano de apostas sem esbanjar</h3><p>Defina quanto gastar por concurso e saiba quando é melhor não apostar. O módulo de gestão protege seu bolso e evita que você jogue dinheiro fora em dezenas repetidas.</p></div></article>
-      </section>
-
-      <section class="article-cta" aria-labelledby="cta-title"><span class="cta-kicker">PRAZO FINAL · ENCERRAMENTO DEFINITIVO</span><h2 id="cta-title">Cada concurso sem critério custa dinheiro que não volta.</h2><p>O próximo passo mostra o conteúdo completo, o valor especial de lançamento e as condições. Depois do encerramento, o checkout será fechado nesta campanha — e o preço volta ao valor cheio. E lembre-se: você tem 7 dias de garantia incondicional para testar sem risco.</p><a class="cta-button checkout-link" href="https://example.com/checkout" target="_blank" rel="noopener noreferrer">QUERO ACESSAR O ESTUDO <span aria-hidden="true">→</span></a><small>Loterias são aleatórias e envolvem risco financeiro. Este material organiza suas apostas, mas não garante retorno nem prêmio.</small></section>
-
-<div class="section-divider">O QUE MUDA A PARTIR DO PRÓXIMO CONCURSO</div>
-      <section class="reading-grid" aria-label="O que muda"><article class="reading-card"><span>01</span><h3>Você entende o jogo</h3><p>Para de jogar "no feeling" e passa a conhecer como os resultados da Lotofácil realmente se comportam, com base em dados reais de concursos passados.</p></article><article class="reading-card"><span>02</span><h3>Você organiza suas apostas</h3><p>Usa fechamentos e distribuição inteligente para cobrir mais combinações úteis gastando o mesmo — ou menos — do que gasta hoje.</p></article><article class="reading-card"><span>03</span><h3>Você controla o custo</h3><p>Define orçamento, sabe quando apostar e quando não apostar. O dinheiro deixa de vazar em dezenas repetidas e palpites sem critério.</p></article></section>
-      <section class="inline-cta" aria-label="Segundo ponto de acesso"><div><strong>Cansado de quase acertar?</strong><span>Se você acerta 13 e 14 pontos toda semana e nunca recebe nada, o problema é a forma de apostar. O estudo mostra como mudar isso — com garantia de 7 dias. Se não gostar, devolvemos seu dinheiro.</span></div><a class="cta-button checkout-link" href="https://example.com/checkout" target="_blank" rel="noopener noreferrer">QUERO VER O ESTUDO <span aria-hidden="true">→</span></a></section>
-
-      <div class="section-divider">PARA QUEM ESTE ESTUDO É (E PARA QUEM NÃO É)</div>
-      <div class="yn-grid">
-        <div class="yn-card yes"><strong>✓ É para você se...</strong><ul><li>Já joga Lotofácil há meses ou anos e devolve mais dinheiro do que recebe;</li><li>Vive o ciclo de "quase acertei, semana que vem vai";</li><li>Quer decidir com critério em vez de chutar no balcão da lotérica;</li><li>Quer cobrir mais combinações úteis gastando o mesmo — ou menos.</li></ul></div>
-        <div class="yn-card no"><strong>✕ Não é para você se...</strong><ul><li>Procura uma fórmula milagrosa que "crava" os 15 números — quem promete isso mente;</li><li>Espera certeza de vitória: loteria é aleatória e nunca será diferente;</li><li>Vai usar dinheiro de despesas essenciais ou compromissos para apostar.</li></ul></div>
-      </div>
-
-      <section class="article-callout" aria-labelledby="callout-title-2"><span class="callout-number">02</span><div><h2 id="callout-title-2">Compare com o que você já perde todo mês</h2><p>O estudo custa menos do que a maioria dos apostadores gasta em <strong>um único mês</strong> de apostas soltas. É o preço de 1 ou 2 concursos — a diferença é que, com ele, você para de renovar o hábito de perder dinheiro no feeling a cada sorteio.</p>
-        
-        <div class="offer-bundle">
-          <div class="bundle-header">
-            <h2>O que você recebe hoje:</h2>
-            <p>Acesso imediato e vitalício ao conteúdo completo</p>
-          </div>
-          
-          <div class="mockup-3d">
-            <div class="mockup-inner">
-              <div class="mockup-screen">
-                <span>Digital Study</span>
-                <b>ESTUDO SECRETO DA LOTOFÁCIL</b>
-                <p style="font-size:10px; margin:0">Versão 2026 Otimizada</p>
-              </div>
-              <div class="mockup-reflection"></div>
-            </div>
-          </div>
-          
-          <ul class="value-stack-list">
-            <li class="stack-item">
-              <span class="item-name">Estudo Secreto da Lotofácil (Completo)</span>
-              <span class="item-value">R$ 97,00</span>
-            </li>
-            <li class="stack-item bonus">
-              <span class="item-name">Planilha de Fechamentos Inteligentes</span>
-              <span class="item-value">R$ 47,00</span>
-            </li>
-            <li class="stack-item bonus">
-              <span class="item-name">Guia: O Segredo dos Concursos Finais 0</span>
-              <span class="item-value">R$ 37,00</span>
-            </li>
-            <li class="stack-item bonus">
-              <span class="item-name">Acesso ao Grupo de Estudos VIP</span>
-              <span class="item-value">R$ 197,00/ano</span>
-            </li>
-          </ul>
-          
-          <div class="total-value-anchor">
-            <span class="val-label">VALOR TOTAL DOS MÓDULOS E BÔNUS:</span>
-            <span class="val-amount">R$ 378,00</span>
-          </div>
-        </div>
-
-        <div class="price-block">
-          <div class="price-row"><span class="price-from" id="price-from">De R$ 97,00</span><span class="price-to" id="price-to">Por R$ 27,00</span></div>
-          <p class="price-note"><strong>Preço de lançamento válido somente dentro da janela</strong> — depois do encerramento, o valor volta ao preço cheio. Pagamento seguro e acesso imediato, com <strong>garantia incondicional de 7 dias</strong>.</p>
-          <div class="slot-counter"><p>Preço promocional válido até <span>hoje às 23:59</span></p></div>
-        </div>
-      </div></section>
-      <section class="fb-comments" aria-label="Comentários demonstrativos" id="comentarios">
-        <div class="fb-comments-header"><span>3 comentários</span></div>
-        <p class="fb-comments-demo-note">EXEMPLO ILUSTRATIVO · A estrutura abaixo reproduz um feed de comentários apenas para demonstração. Não são depoimentos reais.</p>
-        <div class="fb-comments-wrapper"><table class="fb-comments-comment"><tbody><tr><td rowspan="3" class="fb-comments-comment-img"><img loading="lazy" src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='48' height='48'><circle cx='24' cy='24' r='23' fill='%23ffd31a' /><text x='24' y='29' text-anchor='middle' font-family='Arial' font-size='15' font-weight='700' fill='%23111'>RM</text></svg>" width="48" height="48" alt="Avatar de exemplo" /></td><td class="fb-comments-comment-text"><font class="fb-comments-comment-name"><name>Ricardo Mendes:</name></font><br />Cara, é exatamente isso que eu vivo: toda semana acerto 13, uma vez 14... e zero no prêmio. Já parei de jogar 2x, voltei 2x. Esse estudo realmente explica por que isso acontece?</td></tr><tr><td class="fb-comments-comment-actions"><like>Curtir</like> · <reply>Responder</reply> · <likes>0</likes> <date>agora</date><span class="fb-comments-reactions" aria-label="0 curtidas e 0 corações"><svg class="reaction-icon fb-reaction-like" viewBox="0 0 24 24" aria-hidden="true"><path d="M9.5 10.5V4.2c0-.8.6-1.4 1.3-1.4.5 0 .9.3 1.2.7l1.2 2.1c.2.4.6.7 1.1.7h3.5c1.1 0 1.9 1 1.6 2.1l-1.5 6.1c-.2.8-.9 1.4-1.7 1.4H9.5M3.5 10.5h3v6.2h-3z"/></svg><svg class="reaction-icon fb-reaction-heart" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.2 4.8 13c-3.3-3.3-1.3-8.6 3.2-8.6 1.7 0 3.2.8 4 2.1.8-1.3 2.3-2.1 4-2.1 4.5 0 6.5 5.3 3.2 8.6z"/></svg><b>0</b></span></td></tr></tbody></table></div>
-        <div class="fb-comments-wrapper"><table class="fb-comments-comment"><tbody><tr><td rowspan="3" class="fb-comments-comment-img"><img loading="lazy" src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='48' height='48'><circle cx='24' cy='24' r='23' fill='%23ffd31a' /><text x='24' y='29' text-anchor='middle' font-family='Arial' font-size='15' font-weight='700' fill='%23111'>SF</text></svg>" width="48" height="48" alt="Avatar de exemplo" /></td><td class="fb-comments-comment-text"><font class="fb-comments-comment-name"><name>Solange Ferreira:</name></font><br />Estou com medo de ser mais um golpe. Tenho 52 anos, jogo há 15 e já perdi a conta do dinheiro. Como sei que isso não é só um PDF vazio?</td></tr><tr><td class="fb-comments-comment-actions"><like>Curtir</like> · <reply>Responder</reply> · <likes>0</likes> <date>agora</date><span class="fb-comments-reactions" aria-label="0 curtidas e 0 corações"><svg class="reaction-icon fb-reaction-like" viewBox="0 0 24 24" aria-hidden="true"><path d="M9.5 10.5V4.2c0-.8.6-1.4 1.3-1.4.5 0 .9.3 1.2.7l1.2 2.1c.2.4.6.7 1.1.7h3.5c1.1 0 1.9 1 1.6 2.1l-1.5 6.1c-.2.8-.9 1.4-1.7 1.4H9.5M3.5 10.5h3v6.2h-3z"/></svg><svg class="reaction-icon fb-reaction-heart" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.2 4.8 13c-3.3-3.3-1.3-8.6 3.2-8.6 1.7 0 3.2.8 4 2.1.8-1.3 2.3-2.1 4-2.1 4.5 0 6.5 5.3 3.2 8.6z"/></svg><b>0</b></span></td></tr></tbody></table></div>
-        <div class="fb-comments-reply-wrapper"><table class="fb-comments-comment"><tbody><tr><td rowspan="3" class="fb-comments-comment-img"><img loading="lazy" src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='48' height='48'><circle cx='24' cy='24' r='23' fill='%23ffd31a' /><text x='24' y='29' text-anchor='middle' font-family='Arial' font-size='15' font-weight='700' fill='%23111'>RE</text></svg>" width="48" height="48" alt="Avatar de exemplo" /></td><td class="fb-comments-comment-text"><font class="fb-comments-comment-name"><name>Resposta da equipe:</name></font><br />Solange, você tem razão em perguntar — desconfiança protege. Por isso a oferta tem garantia de 7 dias: você compra, avalia o material inteiro e, se achar que não vale, recebe o dinheiro de volta. Sem burocracia.</td></tr><tr><td class="fb-comments-comment-actions"><like>Curtir</like> · <reply>Responder</reply> · <likes>0</likes> <date>agora</date><span class="fb-comments-reactions" aria-label="0 curtidas e 0 corações"><svg class="reaction-icon fb-reaction-like" viewBox="0 0 24 24" aria-hidden="true"><path d="M9.5 10.5V4.2c0-.8.6-1.4 1.3-1.4.5 0 .9.3 1.2.7l1.2 2.1c.2.4.6.7 1.1.7h3.5c1.1 0 1.9 1 1.6 2.1l-1.5 6.1c-.2.8-.9 1.4-1.7 1.4H9.5M3.5 10.5h3v6.2h-3z"/></svg><svg class="reaction-icon fb-reaction-heart" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.2 4.8 13c-3.3-3.3-1.3-8.6 3.2-8.6 1.7 0 3.2.8 4 2.1.8-1.3 2.3-2.1 4-2.1 4.5 0 6.5 5.3 3.2 8.6z"/></svg><b>0</b></span></td></tr></tbody></table></div>
-        <div class="fb-comments-wrapper"><table class="fb-comments-comment"><tbody><tr><td rowspan="3" class="fb-comments-comment-img"><img loading="lazy" src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='48' height='48'><circle cx='24' cy='24' r='23' fill='%23ffd31a' /><text x='24' y='29' text-anchor='middle' font-family='Arial' font-size='15' font-weight='700' fill='%23111'>MV</text></svg>" width="48" height="48" alt="Avatar de exemplo" /></td><td class="fb-comments-comment-text"><font class="fb-comments-comment-name"><name>Marcelo Viana:</name></font><br />Comprei semana passada. Antes eu gastava R$ 180 por mês em 6 apostas "no feeling". Com o material, aprendi a fechar dezenas gastando menos por combinação. Achei que era besteira, mas a lógica faz sentido.</td></tr><tr><td class="fb-comments-comment-actions"><like>Curtir</like> · <reply>Responder</reply> · <likes>0</likes> <date>agora</date><span class="fb-comments-reactions" aria-label="0 curtidas e 0 corações"><svg class="reaction-icon fb-reaction-like" viewBox="0 0 24 24" aria-hidden="true"><path d="M9.5 10.5V4.2c0-.8.6-1.4 1.3-1.4.5 0 .9.3 1.2.7l1.2 2.1c.2.4.6.7 1.1.7h3.5c1.1 0 1.9 1 1.6 2.1l-1.5 6.1c-.2.8-.9 1.4-1.7 1.4H9.5M3.5 10.5h3v6.2h-3z"/></svg><svg class="reaction-icon fb-reaction-heart" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.2 4.8 13c-3.3-3.3-1.3-8.6 3.2-8.6 1.7 0 3.2.8 4 2.1.8-1.3 2.3-2.1 4-2.1 4.5 0 6.5 5.3 3.2 8.6z"/></svg><b>0</b></span></td></tr></tbody></table></div>
-        <div class="fb-comments-reply-wrapper"><table class="fb-comments-comment"><tbody><tr><td rowspan="3" class="fb-comments-comment-img"><img loading="lazy" src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='48' height='48'><circle cx='24' cy='24' r='23' fill='%23ffd31a' /><text x='24' y='29' text-anchor='middle' font-family='Arial' font-size='15' font-weight='700' fill='%23111'>RE</text></svg>" width="48" height="48" alt="Avatar de exemplo" /></td><td class="fb-comments-comment-text"><font class="fb-comments-comment-name"><name>Resposta da equipe:</name></font><br />Marcelo, exatamente: o estudo não promete vitória, promete organização. Quem vende "fórmula mágica" está mentindo — quem ensina a apostar com critério está te fazendo economizar.</td></tr><tr><td class="fb-comments-comment-actions"><like>Curtir</like> · <reply>Responder</reply> · <likes>0</likes> <date>agora</date><span class="fb-comments-reactions" aria-label="0 curtidas e 0 corações"><svg class="reaction-icon fb-reaction-like" viewBox="0 0 24 24" aria-hidden="true"><path d="M9.5 10.5V4.2c0-.8.6-1.4 1.3-1.4.5 0 .9.3 1.2.7l1.2 2.1c.2.4.6.7 1.1.7h3.5c1.1 0 1.9 1 1.6 2.1l-1.5 6.1c-.2.8-.9 1.4-1.7 1.4H9.5M3.5 10.5h3v6.2h-3z"/></svg><svg class="reaction-icon fb-reaction-heart" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.2 4.8 13c-3.3-3.3-1.3-8.6 3.2-8.6 1.7 0 3.2.8 4 2.1.8-1.3 2.3-2.1 4-2.1 4.5 0 6.5 5.3 3.2 8.6z"/></svg><b>0</b></span></td></tr></tbody></table></div>
-        <p class="fb-comments-closed">Depoimentos ilustrativos. Resultado individual não é garantido — loterias são aleatórias e envolvem risco financeiro.</p>
-      </section>
-
-      <section class="article-cta final-cta" style="background:transparent; color:var(--ink); border:0; padding:0; margin-top:50px;">
-        <span class="cta-kicker" style="color:var(--red); text-align:center; display:block;">O MOMENTO DA DECISÃO</span>
-        <h2 style="text-align:center; color:var(--ink); margin-bottom:10px;">Agora você tem dois caminhos na sua frente:</h2>
-        
-        <div class="paths-container">
-          <div class="path-card path-a">
-            <h4>Continuar como está</h4>
-            <ul>
-              <li>Jogar aniversários, placas e palpites no balcão da lotérica;</li>
-              <li>Acertar 13, 14 pontos e ver o prêmio ir para outra pessoa;</li>
-              <li>Gastar o mesmo todo mês sem entender por que "falta 1 dezena";</li>
-              <li>Continuar frustrado, semana após semana.</li>
-            </ul>
-          </div>
-          
-          <div class="path-card path-b">
-            <h4>Mudar a forma de jogar</h4>
-            <ul>
-              <li>Apostar com base nos <strong>padrões dos concursos reais</strong>;</li>
-              <li>Usar <strong>fechamentos</strong> para cobrir mais dezenas gastando menos;</li>
-              <li>Saber quando apostar e quando <strong>não apostar</strong>;</li>
-              <li><strong>Testar sem risco</strong> por 7 dias — se não gostar, devolvemos o dinheiro.</li>
-            </ul>
-          </div>
-        </div>
-
-        <div style="background:var(--ink); padding:35px; border-radius:20px; text-align:center; color:#fff;">
-          <h3 style="font-family:var(--display); font-size:24px; margin:0 0 15px;">A escolha é simples.</h3>
-          <p style="font-size:14px; color:#d3d3d3; margin-bottom:25px;">Por R$ 27 — menos que 2 apostas — você recebe tudo isso e para de jogar dinheiro fora. Se não funcionar para você, basta pedir reembolso em 7 dias.</p>
-          <a class="cta-button checkout-link" href="https://example.com/checkout" target="_blank" rel="noopener noreferrer" style="background:var(--yellow); color:var(--ink); box-shadow:0 5px 0 #8e7000; width:100%; max-width:450px;">SIM, QUERO MUDAR A FORMA DE JOGAR <span aria-hidden="true">→</span></a>
-          <p style="font-size:10px; color:#a9a9a9; margin-top:15px;">🛡 GARANTIA TOTAL DE 7 DIAS · ACESSO IMEDIATO</p>
-        </div>
-      </section>
-
-      <aside class="decision-note"><b aria-hidden="true">⚠</b><span><strong>Decisão responsável.</strong> Jogos e apostas envolvem risco financeiro. Este conteúdo é comercial e informativo; ele não representa aconselhamento financeiro e não garante resultados.</span></aside>
-    </article>
-
-    <section class="faq-wrap" id="duvidas" aria-labelledby="faq-title"><span class="commercial-label"><b></b> PERGUNTAS FREQUENTES</span><h2 id="faq-title">As objeções que todo apostador tem antes de comprar</h2><p>Respondemos aqui, com honestidade total, as perguntas que travam a sua decisão. Se a sua dúvida não estiver listada, ela também está respondida dentro do material.</p><div class="faq-list"><article class="faq-item is-open"><button class="faq-trigger" type="button" aria-expanded="true"><span>Isso é golpe? Já tentei de tudo e sempre acabo perdendo.</span><i aria-hidden="true">+</i></button><div class="faq-answer"><p>Sua desconfiança é legítima — o mercado está cheio de promessas falsas. Por isso somos diretos: <strong>este estudo não promete vitória</strong>. Ele entrega conhecimento: padrões históricos reais, técnicas de fechamento e gestão de apostas. E o risco financeiro da compra é nosso: garantia incondicional de 7 dias, devolução de 100% se você achar que não valeu.</p></div></article><article class="faq-item"><button class="faq-trigger" type="button" aria-expanded="false"><span>Lotofácil é aleatório. Nada muda meu resultado, certo?</span><i aria-hidden="true">+</i></button><div class="faq-answer"><p>O sorteio é aleatório, sim — e ninguém pode mudar isso. Mas a <strong>forma de apostar</strong> não é: hoje você provavelmente paga caro por combinações sobrepostas e mal distribuídas. O estudo ensina a cobrir mais terreno útil com o mesmo orçamento, sem prometer o que é impossível. É matemática de cobertura, não promessa de prêmio.</p></div></article><article class="faq-item"><button class="faq-trigger" type="button" aria-expanded="false"><span>Vai ser só mais um PDF genérico que enche linguiça?</span><i aria-hidden="true">+</i></button><div class="faq-answer"><p>Se fosse, você pediria o reembolso — e é exatamente isso que a garantia de 7 dias permite. O material é dividido em módulos práticos: análise de padrões dos concursos reais, fechamentos passo a passo e plano de apostas aplicável em 5 minutos, direto no volante ou no app da Caixa. Leitura direta, sem enrolação.</p></div></article><article class="faq-item"><button class="faq-trigger" type="button" aria-expanded="false"><span>Já gastei muito na loteria. Vale a pena gastar mais um pouco?</span><i aria-hidden="true">+</i></button><div class="faq-answer"><p>Essa é a pergunta certa. Pense assim: o estudo custa uma fração do que você já gastou em anos de apostas no feeling — e o objetivo dele é justamente <strong>reduzir o desperdício mensal</strong>. Você não está "gastando mais"; está investindo em jogar com critério. E o módulo de gestão ensina quando NÃO apostar, protegendo seu orçamento.</p></div></article><article class="faq-item"><button class="faq-trigger" type="button" aria-expanded="false"><span>Como funciona o acesso e em quanto tempo posso aplicar?</span><i aria-hidden="true">+</i></button><div class="faq-answer"><p>O acesso é imediato: após a aprovação da compra, você recebe os dados de entrada e acessa o material completo de qualquer celular, tablet ou computador. A maioria dos leitores aplica o primeiro plano de apostas organizado já no próximo concurso — em cerca de 5 minutos.</p></div></article><article class="faq-item"><button class="faq-trigger" type="button" aria-expanded="false"><span>E se eu não gostar do material?</span><i aria-hidden="true">+</i></button><div class="faq-answer"><p>Você tem <strong>7 dias de garantia incondicional</strong>. Avalie o estudo completo e, se sentir que não valeu, basta solicitar o reembolso — devolvemos 100% do valor, sem perguntas e sem burocracia. O risco de experimentar fica inteiramente do nosso lado.</p></div></article><article class="faq-item"><button class="faq-trigger" type="button" aria-expanded="false"><span>O estudo substitui aconselhamento financeiro?</span><i aria-hidden="true">+</i></button><div class="faq-answer"><p>Não. Este material é um produto de estudo e organização de apostas, não um aconselhamento financeiro. Jogos e apostas envolvem risco financeiro; defina limites e nunca utilize recursos destinados a despesas essenciais ou compromissos.</p></div></article></div></section>
-  </main>
-
-  <footer class="footer"><div class="footer-inner"><div class="footer-brand">ESTUDO SECRETO DA LOTOFÁCIL<small>COMUNICAÇÃO COMERCIAL</small></div><p>Esta página não é uma matéria jornalística independente e não é associada a órgãos oficiais de loteria. Jogos e apostas envolvem risco financeiro; nenhuma informação ou material garante resultados.</p></div></footer>
-  <a class="sticky-cta checkout-link" id="sticky-cta" href="https://example.com/checkout" target="_blank" rel="noopener noreferrer">QUERO PARAR DE PERDER DINHEIRO<span class="sticky-timer" id="sticky-timer"></span> <span aria-hidden="true">→</span></a>
-
-  <div class="exit-modal-overlay" id="exit-modal-overlay" aria-hidden="true">
-    <div class="exit-modal" role="dialog" aria-modal="true" aria-labelledby="exit-modal-title">
-      <button class="exit-modal-close" type="button" id="exit-modal-close" aria-label="Fechar">×</button>
-<strong id="exit-modal-title">Antes de ir, considere isto:</strong>
-      <p>Você acaba de ver como o estudo custa menos do que 2 apostas — e como ele organiza sua estratégia para o próximo concurso. O preço promocional de R$ 27 expira hoje. Com 7 dias de garantia, o único risco de não experimentar é continuar jogando como sempre. O cronômetro continua correndo.</p>
-      <div class="exit-timer" id="exit-modal-timer">--:--:--</div>
-      <a class="cta-button checkout-link" id="exit-modal-cta" href="https://example.com/checkout" target="_blank" rel="noopener noreferrer">QUERO GARANTIR O PREÇO DE LANÇAMENTO <span aria-hidden="true">→</span></a>
-    </div>
-  </div>
-  <div class="sr-only" aria-live="polite" id="sr-announcer"></div>
-
-  <script>
-    /* Preencha com dados reais antes de publicar. */
-    const offerConfig = {
-      checkoutUrl: 'https://example.com/checkout',
-      content: 'Análise dos concursos passados da Lotofácil: frequência de dezenas, pares e ímpares, somas e distribuições que mais se repetem nos sorteios reais.',
-      format: 'Material em módulos práticos, com acesso imediato de qualquer celular, tablet ou computador, aplicável em cerca de 5 minutos por concurso.',
-      conditions: 'Valor especial de lançamento disponível apenas dentro da janela, com garantia incondicional de 7 dias e suporte por e-mail.',
-      priceFrom: 'De R\$ 97,00',
-      priceTo: 'Por R\$ 27,00'
-    };
-    /*
-      CAMPANHA REAL: informe a data e hora de encerramento no formato ISO com fuso.
-      Exemplo (BRT): '2026-08-18T18:00:00-03:00'. A janela deve ter duração real de 4 horas.
-      Enquanto launchEndsAt estiver vazio, o contador permanece claramente marcado como pendente.
-    */
-    const campaignConfig = {
-      launchEndsAt: '',
-      windowHours: 4,
-      timezone: 'America/Sao_Paulo'
-    };
-    document.querySelectorAll('.checkout-link').forEach((link) => link.href = offerConfig.checkoutUrl);
-    document.getElementById('offer-content').textContent = offerConfig.content;
-    document.getElementById('offer-format').textContent = offerConfig.format;
-    document.getElementById('offer-conditions').textContent = offerConfig.conditions;
-    if (offerConfig.priceFrom) { const el = document.getElementById('price-from'); if (el) el.textContent = offerConfig.priceFrom; }
-    if (offerConfig.priceTo) { const el = document.getElementById('price-to'); if (el) el.textContent = offerConfig.priceTo; }
-    const cdHours = document.getElementById('cd-hours');
-    const cdMinutes = document.getElementById('cd-minutes');
-    const cdSeconds = document.getElementById('cd-seconds');
-
-    const launchWindow = document.getElementById('launch-window');
-    const launchCopy = document.getElementById('launch-copy');
-    const stickyTimer = document.getElementById('sticky-timer');
-    const tickerTrack = document.getElementById('ticker-track');
-    const srAnnouncer = document.getElementById('sr-announcer');
-    const exitOverlay = document.getElementById('exit-modal-overlay');
-    const exitTimerEl = document.getElementById('exit-modal-timer');
-    const exitCloseBtn = document.getElementById('exit-modal-close');
-    let campaignInterval;
-    const originalTitle = document.title;
-    const originalTickerText = tickerTrack.textContent;
-    const urgentTickerText = 'ÚLTIMA HORA · A OFERTA SERÁ ENCERRADA DEFINITIVAMENTE — NÃO DEIXE PARA DEPOIS — '.repeat(3);
-    const criticalTickerText = 'ÚLTIMOS 30 MINUTOS · O ACESSO FECHA DEFINITIVAMENTE QUANDO O CRONÔMETRO ZERAR — '.repeat(3);
-    const finalTickerText = 'ÚLTIMOS 10 MINUTOS · ÚLTIMA CHANCE DESTA CAMPANHA — O ACESSO FECHA EM INSTANTES — '.repeat(3);
-    let currentTier = 'normal';
-    let exitModalShown = false;
-    const milestonesShown = new Set();
-    const MILESTONES = [
-      [180 * 60000, 'Faltam 3 horas. Esta é uma janela única e não haverá compra posterior nesta campanha.'],
-      [120 * 60000, 'Faltam 2 horas para o encerramento definitivo da oferta.'],
-      [60 * 60000, 'Falta 1 hora. A janela entra na reta final e não será reaberta nesta campanha.'],
-      [30 * 60000, 'Últimos 30 minutos. O acesso fecha definitivamente quando o cronômetro zerar.'],
-      [15 * 60000, 'Faltam 15 minutos. Se pretende avaliar, este é o momento.'],
-      [10 * 60000, 'Últimos 10 minutos. Última chance de acessar esta oferta.'],
-      [5 * 60000, 'Últimos 5 minutos. A janela fecha em instantes e não será reaberta.'],
-      [60 * 1000, 'Último minuto. O acesso será encerrado definitivamente quando o cronômetro zerar.']
-    ];
-    function disableCheckoutLinks() {
-      document.querySelectorAll('.checkout-link').forEach((link) => {
-        link.classList.remove('is-urgent-cta'); link.classList.add('is-disabled'); link.setAttribute('aria-disabled','true'); link.removeAttribute('target'); link.removeAttribute('href');
-        link.childNodes[0].textContent = 'OFERTA ENCERRADA ';
-      });
-    }
-    function announce(message) { srAnnouncer.textContent = ''; window.setTimeout(() => { srAnnouncer.textContent = message; }, 40); }
-    function showMilestoneToast(message) {
-      const toast = document.createElement('div');
-      toast.className = 'milestone-toast';
-      toast.textContent = message;
-      document.body.appendChild(toast);
-      window.requestAnimationFrame(() => toast.classList.add('is-visible'));
-      window.setTimeout(() => { toast.classList.remove('is-visible'); window.setTimeout(() => toast.remove(), 320); }, 4200);
-      announce(message);
-    }
-    function checkMilestones(remaining) {
-      MILESTONES.forEach(([threshold, message]) => {
-        if (remaining <= threshold && !milestonesShown.has(threshold)) { milestonesShown.add(threshold); showMilestoneToast(message); }
-      });
-    }
-    function setTier(remaining) {
-      const tier = remaining <= 10 * 60000 ? 'final' : remaining <= 30 * 60000 ? 'critical' : remaining <= 60 * 60000 ? 'urgent' : 'normal';
-      if (tier === currentTier) return;
-      currentTier = tier;
-      launchWindow.classList.remove('is-urgent','is-critical','is-final');
-      document.querySelectorAll('.checkout-link').forEach((link) => link.classList.remove('is-urgent-cta'));
-      if (tier === 'urgent') {
-        launchWindow.classList.add('is-urgent');
-        tickerTrack.textContent = urgentTickerText;
-        document.querySelectorAll('.checkout-link').forEach((link) => link.classList.add('is-urgent-cta'));
-      } else if (tier === 'critical') {
-        launchWindow.classList.add('is-critical');
-        tickerTrack.textContent = criticalTickerText;
-        document.querySelectorAll('.checkout-link').forEach((link) => link.classList.add('is-urgent-cta'));
-      } else if (tier === 'final') {
-        launchWindow.classList.add('is-final');
-        tickerTrack.textContent = finalTickerText;
-        document.querySelectorAll('.checkout-link').forEach((link) => link.classList.add('is-urgent-cta'));
-      } else {
-        tickerTrack.textContent = originalTickerText;
-      }
-    }
-    function openExitModal() {
-      if (exitModalShown || currentTier === 'ended' || launchWindow.classList.contains('is-ended') || launchWindow.classList.contains('is-pending')) return;
-      exitModalShown = true;
-      exitOverlay.classList.add('is-open');
-      exitOverlay.setAttribute('aria-hidden','false');
-      window.setTimeout(() => document.getElementById('exit-modal-cta')?.focus(), 40);
-    }
-    function closeExitModal() { exitOverlay.classList.remove('is-open'); exitOverlay.setAttribute('aria-hidden','true'); }
-    exitCloseBtn.addEventListener('click', closeExitModal);
-    exitOverlay.addEventListener('click', (event) => { if (event.target === exitOverlay) closeExitModal(); });
-    document.addEventListener('keydown', (event) => { if (event.key === 'Escape') closeExitModal(); });
-    document.addEventListener('mouseout', (event) => { if (!event.relatedTarget && event.clientY <= 0) openExitModal(); });
-    function updateCampaignClock() {
-      const end = new Date(campaignConfig.launchEndsAt).getTime();
-      const remaining = end - Date.now();
-      if (remaining <= 0) {
-        currentTier = 'ended';
-        launchWindow.className = 'launch-window is-ended';
-        launchCopy.textContent = 'ACESSO ENCERRADO DEFINITIVAMENTE.';
-        launchWindow.setAttribute('aria-label', 'O acesso foi encerrado definitivamente.');
-        if (stickyTimer) stickyTimer.textContent = ' · encerrado';
-        tickerTrack.textContent = originalTickerText;
-        document.title = originalTitle;
-        closeExitModal();
-        if (cdHours) cdHours.innerHTML = '00<small>HORAS</small>';
-        if (cdMinutes) cdMinutes.innerHTML = '00<small>MIN</small>';
-        if (cdSeconds) cdSeconds.innerHTML = '00<small>SEG</small>';
-        disableCheckoutLinks(); clearInterval(campaignInterval); return;
-      }
-      const hours = String(Math.floor(remaining / 3600000)).padStart(2,'0');
-      const minutes = String(Math.floor((remaining % 3600000) / 60000)).padStart(2,'0');
-      const seconds = String(Math.floor((remaining % 60000) / 1000)).padStart(2,'0');
-      if (cdHours) cdHours.innerHTML = `${hours}<small>HORAS</small>`;
-      if (cdMinutes) cdMinutes.innerHTML = `${minutes}<small>MIN</small>`;
-      if (cdSeconds) cdSeconds.innerHTML = `${seconds}<small>SEG</small>`;
-      const countdownDisplay = hours === '00' ? `${minutes}:${seconds}` : `${hours}:${minutes}:${seconds}`;
-      const endDisplay = new Intl.DateTimeFormat('pt-BR',{ timeZone:campaignConfig.timezone, day:'2-digit', month:'2-digit', year:'numeric', hour:'2-digit', minute:'2-digit', hour12:false, timeZoneName:'short' }).format(new Date(end));
-      setTier(remaining);
-      checkMilestones(remaining);
-      launchWindow.classList.remove('is-pending','is-ended');
-      if (!launchWindow.classList.contains('is-active')) launchWindow.classList.add('is-active');
-      launchCopy.textContent = `O acesso termina em ${countdownDisplay}.`;
-      launchWindow.setAttribute('aria-label', `O acesso termina em ${countdownDisplay}.`);
-      if (stickyTimer) stickyTimer.textContent = ` · ${hours}:${minutes}:${seconds}`;
-      exitTimerEl.textContent = `${hours}:${minutes}:${seconds}`;
-      const titlePrefix = currentTier === 'final' ? 'ÚLTIMA CHANCE' : currentTier === 'critical' ? 'FECHAMENTO DEFINITIVO' : currentTier === 'urgent' ? 'NÃO DEIXE PARA DEPOIS' : 'PRAZO FINAL';
-      document.title = `${titlePrefix} · ${hours}:${minutes}:${seconds} restantes | Estudo Secreto`;
-    }
-    const configuredEnd = campaignConfig.launchEndsAt ? new Date(campaignConfig.launchEndsAt).getTime() : NaN;
-    if (campaignConfig.launchEndsAt && Number.isFinite(configuredEnd)) { updateCampaignClock(); campaignInterval = window.setInterval(updateCampaignClock,1000); }
-    document.addEventListener('visibilitychange', () => { if (!document.hidden && campaignConfig.launchEndsAt && Number.isFinite(configuredEnd)) updateCampaignClock(); });
-
-    const menuButton = document.getElementById('menu-button');
-    const searchButton = document.getElementById('search-button');
-    const menuPanel = document.getElementById('menu-panel');
-    function togglePanel() { const opening = !menuPanel.classList.contains('is-open'); menuPanel.classList.toggle('is-open', opening); menuPanel.setAttribute('aria-hidden', String(!opening)); }
-    menuButton.addEventListener('click', togglePanel);
-    searchButton.addEventListener('click', togglePanel);
-    document.addEventListener('keydown', (event) => { if (event.key === 'Escape') { menuPanel.classList.remove('is-open'); menuPanel.setAttribute('aria-hidden','true'); } });
-
-    document.querySelectorAll('.faq-trigger').forEach((trigger) => {
-      trigger.addEventListener('click', () => { const item = trigger.closest('.faq-item'); const wasOpen = item.classList.contains('is-open'); document.querySelectorAll('.faq-item').forEach((faq) => { faq.classList.remove('is-open'); faq.querySelector('.faq-trigger').setAttribute('aria-expanded','false'); }); if (!wasOpen) { item.classList.add('is-open'); trigger.setAttribute('aria-expanded','true'); } });
-    });
-    const sticky = document.getElementById('sticky-cta');
-    const progress = document.getElementById('progress');
-    window.addEventListener('scroll', () => { const maximum = document.documentElement.scrollHeight - window.innerHeight; const ratio = maximum > 0 ? (window.scrollY / maximum) * 100 : 0; progress.style.width = ratio + '%'; sticky.classList.toggle('is-visible', window.scrollY > 540); }, { passive:true });
-
-    /* Refined Conversion Scripting */
-    const barTimer = document.getElementById('bar-timer');
-    const saleNotif = document.getElementById('sale-notif');
-    const notifContent = saleNotif.querySelector('.notif-content');
-    
-    // 1. Sync urgency bar timer with main countdown
-    setInterval(() => {
-      const h = document.getElementById('cd-hours').textContent.replace(/\D/g,'');
-      const m = document.getElementById('cd-minutes').textContent.replace(/\D/g,'');
-      const s = document.getElementById('cd-seconds').textContent.replace(/\D/g,'');
-      if(h && m && s) barTimer.textContent = `${h}:${m}:${s}`;
-    }, 1000);
-
-    // 2. Refined Sale Notifications with realistic avatars and natural intervals
-    const buyers = [
-      { name: "Ricardo M.", city: "São Paulo", initials: "RM", time: "há 4 min" },
-      { name: "Solange F.", city: "Curitiba", initials: "SF", time: "há 8 min" },
-      { name: "Marcelo V.", city: "Belo Horizonte", initials: "MV", time: "há 12 min" },
-      { name: "Ana P.", city: "Porto Alegre", initials: "AP", time: "há 15 min" },
-      { name: "José R.", city: "Salvador", initials: "JR", time: "há 21 min" },
-      { name: "Carlos D.", city: "Recife", initials: "CD", time: "há 30 min" },
-    ];
-    const colors = ['#b90000', '#1a7a33', '#2b4c7e', '#8e7000', '#6b3fa0', '#333'];
-    let notifIndex = 0;
-    
-    function showSale() {
-      const buyer = buyers[notifIndex % buyers.length];
-      const color = colors[notifIndex % colors.length];
-      const initials = buyer.initials;
-      const svgData = `<svg xmlns='http://www.w3.org/2000/svg' width='40' height='40'><circle cx='20' cy='20' r='18' fill='${encodeURIComponent(color)}'/><text x='20' y='25' text-anchor='middle' fill='white' font-family='Arial' font-size='13' font-weight='700'>${initials}</text></svg>`;
-      
-      // Update avatar
-      const img = saleNotif.querySelector('img');
-      img.src = `data:image/svg+xml,${svgData}`;
-      
-      // Update text
-      notifContent.innerHTML = `<b>${buyer.name} de ${buyer.city}</b>acabou de garantir o acesso vitalício.<span class="notif-time">${buyer.time}</span>`;
-      
-      saleNotif.classList.add('is-visible');
-      setTimeout(() => saleNotif.classList.remove('is-visible'), 6000);
-      notifIndex++;
-    }
-    
-    // First notification after 15s, then every 40s (natural rhythm)
-    setTimeout(showSale, 15000);
-    setInterval(showSale, 40000);
-
-    // 3. Subtle pulse for primary CTAs only
-    document.querySelectorAll('.lead-cta-button, .article-cta .cta-button, .exit-modal-cta').forEach(btn => btn.classList.add('pulse'));
-  </script>
 </body>
 </html>
