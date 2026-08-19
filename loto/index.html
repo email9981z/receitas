@@ -173,24 +173,74 @@
 
   /* ─── Mobile ─── */
   @media(max-width:480px){
-    .hero-inner{padding:32px 0 28px}
-    .hero h1{font-size:27px;letter-spacing:-1.5px}
+    /* Hero fixes */
+    .hero{margin:0 0 28px 0}
+    .hero-inner{padding:28px 16px 24px}
+    .hero h1{font-size:26px;letter-spacing:-1px;line-height:1.1}
     .hero p.sub{font-size:15px}
-    .hero .tag{font-size:10px}
-    .hero-stats{gap:24px}
+    .hero .tag{font-size:10px;padding:5px 14px}
+    .hero-stats{gap:16px}
     .hero-stats .stat-num{font-size:20px}
+    .hero-stats .stat-label{font-size:10px}
+    .hero .cta{max-width:100%}
     .social-proof{font-size:12px}
     .social-proof .avatars span{width:24px;height:24px;font-size:9px}
-    .wrap{width:min(100% - 24px,640px)}
+
+    /* General container */
+    .wrap{width:100%;padding:0 16px}
     .cta{font-size:15px;padding:16px 24px;min-height:52px}
-    .price-card .price-header .to{font-size:38px}
-    .product-card{padding:28px 20px}
-    .price-card{padding:26px 20px}
+
+    /* Problem section */
+    .problem{padding:20px;margin:24px 0}
+
+    /* Product card */
+    .product-card{padding:24px 16px}
+    .product-card img{width:150px;height:150px}
+
+    /* Price card */
+    .price-section{padding:28px 0}
+    .price-card{padding:24px 16px}
+    .price-card .price-header .to{font-size:36px}
+    .timer{gap:4px}
+    .timer div{padding:8px 10px;font-size:16px;min-width:42px}
+    .trust-row{gap:8px}
+
+    /* Modules */
+    .module{padding:14px 0;gap:12px}
+    .module-icon{width:36px;height:36px}
+    .module-icon svg{width:18px;height:18px}
+    .module-text h4{font-size:14px}
+    .module-text p{font-size:13px}
+
+    /* Bonus */
+    .bonus{padding:18px 0}
+    .bonus-item{font-size:13px}
+    .bonus-total{font-size:12px}
+
+    /* Testimonials */
+    .testimonials{padding:36px 16px}
+    .testi{padding:16px}
+
+    /* FAQ */
+    .faq{padding:28px 0}
+    .faq-q{padding:14px 16px;font-size:14px}
+    .faq-a p{padding:0 16px 16px;font-size:13.5px}
+
+    /* Final CTA */
+    .final-cta{padding:36px 16px;margin:0}
+    .final-cta h2{font-size:22px}
+    .final-cta p{font-size:14px}
+
+    /* Sticky CTA */
+    .sticky{padding:10px 12px}
     .sticky-inner{gap:8px}
     .sticky-price{font-size:12px}
     .sticky-price b{font-size:15px}
-    .sticky .cta{min-height:46px;font-size:13px}
-    .final-cta .wrap{width:100%}
+    .sticky .cta{min-height:46px;font-size:13px;padding:12px 16px}
+
+    /* Section titles */
+    .section-title{font-size:20px;margin-bottom:20px}
+    .section-subtitle{font-size:13px;margin-top:-10px}
   }
 
   /* Product Image */
