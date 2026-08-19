@@ -321,7 +321,7 @@
       <!-- Video de apresentacao (VSL) -->
       <div class="hero-video">
         <div class="video-wrap" id="video-hero">
-          <video id="vsl-video" class="vsl-player" controls playsinline preload="metadata" poster="">
+          <video id="vsl-video" class="vsl-player" controls autoplay muted playsinline preload="metadata" poster="">
             <source src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663865742747/MMghhyCOKuguSGUx.mp4" type="video/mp4">
             Seu navegador nao suporta video HTML5.
           </video>
@@ -590,5 +590,29 @@
   });
 </script>
 
+
+<script>
+  // Autoplay do video de apresentacao (mudo por padrao, exigido pelos navegadores).
+  // Ao clicar/tocar no video, o som e ativado automaticamente.
+  (function () {
+    var v = document.getElementById('vsl-video');
+    if (!v) return;
+    var tryPlay = function () {
+      v.muted = true;
+      v.play().catch(function () {});
+    };
+    tryPlay();
+    v.addEventListener('click', function () {
+      if (v.muted) { v.muted = false; v.volume = 1; }
+    });
+    var unmuteOnInteraction = function () {
+      if (v.muted) { v.muted = false; v.volume = 1; }
+      document.removeEventListener('click', unmuteOnInteraction);
+      document.removeEventListener('touchstart', unmuteOnInteraction);
+    };
+    document.addEventListener('click', unmuteOnInteraction);
+    document.addEventListener('touchstart', unmuteOnInteraction);
+  })();
+</script>
 </body>
 </html>
