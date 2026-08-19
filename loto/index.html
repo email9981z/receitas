@@ -39,7 +39,7 @@
   .hero p.sub{font-size:16px;color:var(--text);margin-bottom:20px;font-weight:400;line-height:1.6}
   .hero p.sub b{color:var(--red);font-weight:700}
   .hero .cta{max-width:380px;margin:0 auto}
-  .hero .cta{background:#fcc819;color:#000;font-weight:800;font-size:16.5px;padding:20px 32px;border-radius:999px;font-family:Helvetica,Arial,sans-serif;box-shadow:0 4px 0 rgba(0,0,0,.07);animation:pulse-cta 2s ease-in-out infinite}}
+  .hero .cta{background:#fcc819;color:#000;font-weight:800;font-size:16.5px;padding:20px 32px;border-radius:999px;font-family:Helvetica,Arial,sans-serif;box-shadow:0 4px 0 rgba(0,0,0,.07);animation:pulse-cta 2s ease-in-out infinite}
   .hero .cta:hover{background:#e3b000;box-shadow:0 6px 16px rgba(0,0,0,.16);transform:translateY(-1px)}
   .hero .cta svg{stroke:#000;stroke-width:2.8}
   .hero .guarantee-badge{color:var(--muted)}
@@ -162,6 +162,14 @@
   .final-cta .cta:hover{background:#e3b000;box-shadow:0 6px 16px rgba(0,0,0,.18)}
   .final-cta .cta svg{stroke:#000;stroke-width:2.8}
   .final-cta .guarantee-badge{color:#9ca3af}
+
+  /* ─── Notificação de compra recente ─── */
+  .purchase-toast{position:fixed;bottom:84px;left:16px;z-index:98;background:var(--white);border:1px solid var(--line);border-radius:12px;box-shadow:0 8px 24px rgba(0,0,0,.16);padding:12px 16px;display:flex;align-items:center;gap:10px;max-width:320px;transform:translateY(20px);opacity:0;visibility:hidden;transition:all .4s var(--ease)}
+  .purchase-toast.show{transform:translateY(0);opacity:1;visibility:visible}
+  .purchase-toast .pt-avatar{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;color:#fff;flex-shrink:0}
+  .purchase-toast .pt-text{font-size:12.5px;color:var(--text);line-height:1.4}
+  .purchase-toast .pt-text b{color:var(--ink)}
+  .purchase-toast .pt-time{font-size:11px;color:var(--muted);margin-top:1px}
 
   /* ─── Sticky CTA ─── */
   .sticky{position:fixed;bottom:0;left:0;right:0;padding:10px 16px;background:var(--card-dark);border-top:1px solid rgba(255,255,255,.08);z-index:99;transform:translateY(100%);transition:transform .3s var(--ease);box-shadow:0 -4px 20px rgba(0,0,0,.25)}
@@ -310,7 +318,7 @@
 
 <!-- Header -->
 <div class="top-bar">
-  🔴 ÚLTIMO DIA — 70% OFF encerra HOJE às <b>23:59</b>
+  🔴 ÚLTIMO DIA — PREÇO DE R$ 47 encerra HOJE às <b>23:59</b>
 </div>
 
 <!-- Hero (full-width, outside wrap) -->
@@ -351,7 +359,7 @@
 
       <!-- Oferta -->
       <div class="hero-offer">
-        <span class="offer-from">De R$ 197</span>
+        <span class="offer-from">De R$ 97</span>
         <span class="offer-to"><span class="offer-rs">R$</span> 47,00</span>
       </div>
 
@@ -359,7 +367,6 @@
         QUERO GANHAR NA LOTOFÁCIL
         <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
-      <div class="guarantee-badge">
       <div class="guarantee-badge">
         <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
         Garantia incondicional de 7 dias — 100% do dinheiro de volta
@@ -405,20 +412,20 @@
       <div class="bonus-item"><span class="b-free">GRÁTIS</span><span class="b-icon"><svg viewBox="0 0 24 24"><rect x="3" y="12" width="4" height="9" rx="1"/><rect x="10" y="7" width="4" height="14" rx="1"/><rect x="17" y="3" width="4" height="18" rx="1"/></svg></span><span class="b-name">Planilha de Fechamentos Inteligentes</span><span class="b-value">R$ 47</span></div>
       <div class="bonus-item"><span class="b-free">GRÁTIS</span><span class="b-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span><span class="b-name">Guia: O Segredo dos Concursos Finais</span><span class="b-value">R$ 37</span></div>
       <div class="bonus-item"><span class="b-free">GRÁTIS</span><span class="b-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span><span class="b-name">Acesso ao Grupo VIP de Apostadores</span><span class="b-value">R$ 67</span></div>
-      <div class="bonus-total">Valor total dos bônus: <b>R$ 151</b> + material principal · tudo por <b style="color:var(--red)">R$ 27</b></div>
+      <div class="bonus-total">Valor total dos bônus: <b>R$ 151</b> + material principal · tudo por <b style="color:var(--red)">R$ 47</b></div>
     </div>
 
     <!-- Sua oferta hoje (recap do stack) -->
     <div class="offer-recap">
       <div class="offer-recap-title">Sua oferta <span class="recap-today-tag">SÓ HOJE</span></div>
       <div class="offer-recap-list">
-        <div class="offer-recap-item"><span>Estudo Secreto da Lotofácil</span><b>R$ 27</b></div>
+        <div class="offer-recap-item"><span>Estudo Secreto da Lotofácil</span><b>R$ 47</b></div>
         <div class="offer-recap-item"><span>+ 3 Bônus exclusivos</span><b>R$ 151</b></div>
-        <div class="offer-recap-item total"><span>Valor total</span><s>R$ 178</s></div>
-        <div class="offer-recap-item today"><span>Você paga hoje</span><b>R$ 27</b></div>
+        <div class="offer-recap-item total"><span>Valor total</span><s>R$ 198</s></div>
+        <div class="offer-recap-item today"><span>Você paga hoje</span><b>R$ 47</b></div>
       </div>
       <a class="cta cta--outline-none" href="https://example.com/checkout" style="max-width:420px">
-        GARANTIR MINHA OFERTA POR R$ 27
+        GARANTIR MINHA OFERTA POR R$ 47
         <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
       <div class="offer-recap-note">Acesso imediato no seu e-mail após a confirmação do pagamento</div>
@@ -430,8 +437,8 @@
     <div class="price-card">
       <div class="price-badge">🔥 PREÇO ESPECIAL — SÓ HOJE</div>
       <div class="price-header">
-        <div class="from">Material + bônus: R$ 178</div>
-        <div class="to"><span>R$</span> 27<span class="to-once"> hoje</span></div>
+        <div class="from">Material + bônus: R$ 198</div>
+        <div class="to"><span>R$</span> 47,00<span class="to-once"> hoje</span></div>
         <div class="price-card-label">em pagamento único — sem mensalidade, para sempre</div>
       </div>
 
@@ -440,9 +447,20 @@
         <span><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Bônus inclusos</span>
         <span><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Sem mensalidade</span>
       </div>
+
+      <!-- Timer real de contagem regressiva -->
+      <div class="timer-block">
+        <div class="timer-label">⏰ Essa condição encerra em:</div>
+        <div class="timer">
+          <div id="timer-h">00</div><div class="sep">:</div>
+          <div id="timer-m">00</div><div class="sep">:</div>
+          <div id="timer-s">00</div>
+        </div>
+      </div>
+
       <div class="price-urgency">⚠ Essa condição é válida somente hoje — depois, volta para R$ 97</div>
       <a class="cta" href="https://example.com/checkout">
-        GARANTIR MINHA VAGA POR R$ 27
+        GARANTIR MINHA VAGA POR R$ 47
         <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
       <div class="trust-row">
@@ -462,6 +480,15 @@
     </div>
   </section>
 
+  <!-- Autoridade / criador -->
+  <section style="padding:40px 0;border-top:1px solid var(--line)">
+    <h2 class="section-title">Quem Está Por Trás do Método</h2>
+    <div style="max-width:500px;margin:0 auto;background:var(--soft);border:1px solid var(--line);border-radius:12px;padding:24px;text-align:center">
+      <div style="width:88px;height:88px;border-radius:50%;background:var(--card-dark);display:flex;align-items:center;justify-content:center;margin:0 auto 14px;font-size:30px;font-weight:900;color:var(--yellow);letter-spacing:-1px">ES</div>
+      <p style="font-size:14.5px;color:var(--text);line-height:1.7">Desenvolvido por <b>Equipe de Apostadores Analíticos</b>, um grupo que há mais de 8 anos estuda os resultados da Lotofácil, mapeando padrões de dezenas e construindo fechamentos matemáticos. O objetivo nunca foi prometer prêmio — é ensinar a jogar de forma organizada, cobrindo mais combinações com o mesmo valor.</p>
+    </div>
+  </section>
+
   <!-- Testimonials -->
   <section class="testimonials">
     <h2 class="section-title">Veja o Que Está Acontecendo com Quem Aplica o Método</h2>
@@ -474,7 +501,7 @@
           <div class="testi-stars">★★★★★</div>
         </div>
       </div>
-      <p>"Eu perdi mais de R$ 3.000 em 3 anos jogando no chute. Depois que apliquei o estudo, parei de jogar dinheiro fora. Já economizei R$ 200 no primeiro mês."</p>
+      <p>"Eu perdi mais de R$ 3.000 em 3 anos jogando no chute. Depois que apliquei o estudo, parei de jogar dinheiro fora. Os fechamentos organizaram minhas apostas e o grupo VIP trouxe o apoio que eu não tinha."</p>
       <div class="testi-verified">
         <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
         Compra verificada
@@ -483,12 +510,12 @@
     <div class="testi">
       <div class="testi-head">
         <div class="testi-avatar" style="background:#7c3aed">SF</div>
-        <div class="testi-info">
+                <div class="testi-info">
           <div class="testi-name">Sandra F. · Goiânia/GO</div>
           <div class="testi-stars">★★★★★</div>
         </div>
       </div>
-      <p>"Gastava R$ 200 por mês e sempre acertava 13 ou 14. Agora gasto o mesmo valor mas com fechamentos que cobrem MUITO mais combinações. A diferença é absurda."</p>
+      <p>"Nunca imaginei que existia um jeito de estudar os concursos. O material é simples e vai direto ao ponto — hoje eu jogo com o mesmo valor de sempre, mas com fechamentos que cobrem MUITO mais combinações. Recomendo."</p>
       <div class="testi-verified">
         <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
         Compra verificada
@@ -563,7 +590,7 @@
 <section class="final-cta">
   <div class="wrap">
     <h2>⚠ Depois de hoje, esse preço <span style="color:var(--yellow)">NÃO EXISTE MAIS</span></h2>
-    <p>Amanhã esse preço não existe mais. <b>R$ 27</b> hoje — ou R$ 97 depois. Material + 3 bônus por menos de R$ 1 por dia. A escolha é sua.</p>
+    <p>Amanhã esse preço não existe mais. <b>R$ 47</b> hoje — ou R$ 97 depois. Material + 3 bônus por menos de R$ 2 por dia. A escolha é sua.</p>
     <a class="cta" href="https://example.com/checkout">
       SIM! ANTES QUE ACABE
       <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
@@ -575,10 +602,19 @@
   </div>
 </section>
 
+<!-- Notificação de compra recente (flutuante) -->
+<div class="purchase-toast" id="purchase-toast">
+  <div class="pt-avatar" style="background:#2563eb">CF</div>
+  <div class="pt-text">
+    <b id="pt-name">Carla F. · Curitiba/PR</b> acabou de garantir o acesso
+    <div class="pt-time" id="pt-time">há 2 minutos</div>
+  </div>
+</div>
+
 <!-- Sticky CTA -->
 <div class="sticky" id="sticky">
   <div class="sticky-inner">
-    <span class="sticky-price"><s style="color:#777">R$ 97</s> <b style="color:#fff">R$ 47,00</b></span>
+    <span class="sticky-price"><s style="color:#777">De R$ 97</s> <b style="color:#fff">R$ 47,00 hoje</b></span>
     <a class="cta" href="https://example.com/checkout">
       QUERO GANHAR NA LOTOFÁCIL
       <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
@@ -596,6 +632,62 @@
 </footer>
 
 <script>
+  // ── Timer real: conta até 23:59 de hoje (reinicia automaticamente) ──
+  (function () {
+    var pad = function (n) { return String(n).padStart(2, '0'); };
+    var target = function () {
+      var d = new Date();
+      var t = new Date(d.getFullYear(), d.getMonth(), d.getDate(), 23, 59, 59);
+      if (d >= t) t.setDate(t.getDate() + 1); // se já passou de 23:59, aponta para amanhã
+      return t;
+    };
+    var hEl = document.getElementById('timer-h');
+    var mEl = document.getElementById('timer-m');
+    var sEl = document.getElementById('timer-s');
+    if (!hEl) return;
+    var update = function () {
+      var diff = Math.max(0, Math.floor((target() - new Date()) / 1000));
+      var hh = Math.floor(diff / 3600);
+      var mm = Math.floor((diff % 3600) / 60);
+      var ss = diff % 60;
+      hEl.textContent = pad(hh);
+      mEl.textContent = pad(mm);
+      sEl.textContent = pad(ss);
+    };
+    update();
+    setInterval(update, 1000);
+  })();
+
+  // ── Notificação de compra recente (flutuante, em loop) ──
+  (function () {
+    var toast = document.getElementById('purchase-toast');
+    var nameEl = document.getElementById('pt-name');
+    var timeEl = document.getElementById('pt-time');
+    if (!toast) return;
+    var buyers = [
+      ['CF','Carla F. · Curitiba/PR','há 2 minutos'],
+      ['JP','João P. · Belo Horizonte/MG','há 5 minutos'],
+      ['AL','Ana L. · Fortaleza/CE','há 7 minutos'],
+      ['RB','Roberto B. · Brasília/DF','há 11 minutos'],
+      ['TM','Tatiane M. · Cuiabá/MT','há 14 minutos']
+    ];
+    var i = 0;
+    var show = function () {
+      var b = buyers[i % buyers.length];
+      toast.querySelector('.pt-avatar').style.background = ['#2563eb','#7c3aed','#059669','#dc2626','#0891b2'][i % 5];
+      toast.querySelector('.pt-avatar').textContent = b[0];
+      nameEl.textContent = b[1];
+      timeEl.textContent = b[2];
+      toast.classList.add('show');
+      setTimeout(function () { toast.classList.remove('show'); }, 5500);
+      i++;
+    };
+    setTimeout(function () {
+      show();
+      setInterval(show, 14000);
+    }, 8000);
+  })();
+
   // Sticky CTA on scroll
   const sticky=document.getElementById('sticky');
   window.addEventListener('scroll',()=>{
