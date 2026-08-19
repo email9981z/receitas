@@ -249,16 +249,7 @@
     .section-subtitle{font-size:13px;margin-top:-10px}
   }
 
-  /* Product Image */
-
-  /* ─── Hero offer (bloco limpo abaixo do video) ─── */
-  .hero-offer{display:flex;flex-direction:column;align-items:center;gap:6px;margin:0 0 18px}
-  .offer-price{display:flex;align-items:baseline;gap:12px}
-  .offer-from{font-size:17px;color:var(--muted);text-decoration:line-through;font-weight:600}
-  .offer-to{font-size:44px;font-weight:900;color:var(--ink);letter-spacing:-1.5px;line-height:1}
-  .offer-rs{font-size:20px;font-weight:700;color:var(--red)}
-  .offer-deal{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:700;color:var(--red);background:var(--red-light);border:1px solid rgba(185,28,28,.18);border-radius:20px;padding:6px 16px}
-
+    /* Product Image */
   /* ─── Price card refinado ─── */
   .price-card .price-card-label{font-size:12px;color:var(--muted);margin-top:8px}
   .price-card .to-once{font-size:16px;font-weight:600;color:var(--red)}
@@ -275,6 +266,29 @@
   .offer-to{font-size:42px;font-weight:900;color:var(--ink);letter-spacing:-1.5px;line-height:1}
   .offer-rs{font-size:19px;font-weight:700;color:var(--red)}
   .offer-deal{font-size:12px;font-weight:700;color:var(--red)}
+
+
+  /* ─── Video hero: video quadrado (1:1) preenche o container sem barras pretas ─── */
+  .hero-video{max-width:420px;margin:0 auto 22px}
+  .video-wrap{position:relative;width:100%;aspect-ratio:1/1;border-radius:14px;overflow:hidden;box-shadow:0 10px 32px rgba(26,26,46,.18);background:var(--ink)}
+  .vsl-player{width:100%;height:100%;object-fit:cover;display:block}
+  .vsl-player::-webkit-media-controls{border-radius:0 0 14px 14px}
+
+
+  /* ─── Offer recap (stack de oferta) ─── */
+  .offer-recap{background:var(--soft);border:1.5px dashed var(--red);border-radius:14px;padding:24px 22px;text-align:center;margin-top:26px}
+  .offer-recap-title{font-size:11px;text-transform:uppercase;letter-spacing:1.5px;color:var(--red);font-weight:800;margin-bottom:14px}
+  .offer-recap-list{margin-bottom:18px}
+  .offer-recap-item{display:flex;justify-content:space-between;align-items:center;font-size:14px;padding:6px 4px;color:var(--text)}
+  .offer-recap-item b{color:var(--ink)}
+  .offer-recap-item.total{border-top:1px solid var(--line);margin-top:6px;padding-top:10px;color:var(--muted)}
+  .offer-recap-item.today{font-size:16px;font-weight:700;color:var(--ink)}
+  .offer-recap-item.today b{color:var(--red);font-size:22px}
+  .offer-recap-item.today s{color:var(--light);font-weight:400;font-size:13px;margin-left:8px}
+  .offer-recap-note{font-size:12px;color:var(--muted);margin-top:14px}
+
+  /* ─── Headline arrow ─── */
+  .hero-headline .hl-arrow{color:var(--red);font-weight:400;margin-left:4px}
 
 </style>
 </head>
@@ -310,7 +324,7 @@
       <!-- Video de apresentacao (VSL) -->
       <div class="hero-video">
         <div class="video-wrap" id="video-hero">
-          <video id="vsl-video" class="vsl-player" controls autoplay muted playsinline preload="metadata" poster="">
+          <video id="vsl-video" class="vsl-player" controls autoplay muted playsinline preload="metadata">
             <source src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663865742747/MMghhyCOKuguSGUx.mp4" type="video/mp4">
             Seu navegador nao suporta video HTML5.
           </video>
@@ -318,7 +332,7 @@
       </div>
 
       <!-- Headline abaixo do video -->
-      <div class="hero-headline">Veja como acertar <em>15 dezenas</em></div>
+      <div class="hero-headline">Veja como acertar <em>15 dezenas</em> <span class="hl-arrow">↓</span></div>
 
       <!-- Oferta -->
       <div class="hero-offer">
@@ -342,7 +356,7 @@
 
   <!-- Problem -->
   <section class="problem">
-    <p>Você já parou pra pensar quanto <b>DINHEIRO</b> já jogou fora? Todo mês R$ 150, R$ 300… e só volta 13, 14 pontos.</p><p style="margin-top:14px">O problema nunca foi sua sorte. É que <b>ninguém te ensinou a jogar certo</b>.</p>
+    <p>Você já parou pra pensar quanto <b>DINHEIRO</b> já jogou fora? Todo mês R$ 150, R$ 300… e só volta 13, 14 pontos. No fim do ano, são <b>milhares de reais</b> indo embora — sem critério.</p><p style="margin-top:14px">O problema nunca foi sua sorte. É que <b>ninguém te ensinou a jogar certo</b>. É exatamente isso que este material corrige.</p>
   </section>
 
   <!-- What you get -->
@@ -378,13 +392,29 @@
       <div class="bonus-item"><span class="b-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span><span class="b-name">Acesso ao Grupo VIP de Apostadores</span><span class="b-value">R$ 67</span></div>
       <div class="bonus-total">Valor total dos bônus: <b>R$ 151</b> + material principal · tudo por <b style="color:var(--red)">R$ 27</b></div>
     </div>
+
+    <!-- Sua oferta hoje (recap do stack) -->
+    <div class="offer-recap">
+      <div class="offer-recap-title">Sua oferta de hoje</div>
+      <div class="offer-recap-list">
+        <div class="offer-recap-item"><span>Estudo Secreto da Lotofácil</span><b>R$ 27</b></div>
+        <div class="offer-recap-item"><span>+ 3 Bônus exclusivos</span><b>R$ 151</b></div>
+        <div class="offer-recap-item total"><span>Valor total</span><s>R$ 178</s></div>
+        <div class="offer-recap-item today"><span>Você paga hoje</span><b>R$ 27</b></div>
+      </div>
+      <a class="cta cta--outline-none" href="https://example.com/checkout" style="max-width:420px">
+        GARANTIR MINHA OFERTA POR R$ 27
+        <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+      <div class="offer-recap-note">Acesso imediato no seu e-mail após a confirmação do pagamento</div>
+    </div>
   </section>
 
   <!-- Price -->
   <section class="price-section">
     <div class="price-card">
       <div class="price-header">
-        <div class="from">Valor total: R$ 178</div>
+        <div class="from">Material + bônus: R$ 178</div>
         <div class="to"><span>R$</span> 27<span class="to-once"> hoje</span></div>
         <div class="price-card-label">em pagamento único — sem mensalidade, para sempre</div>
       </div>
@@ -461,6 +491,20 @@
         Compra verificada
       </div>
     </div>
+    <div class="testi">
+      <div class="testi-head">
+        <div class="testi-avatar" style="background:var(--red)">JA</div>
+        <div class="testi-info">
+          <div class="testi-name">Juliana A. · Recife/PE</div>
+          <div class="testi-stars">★★★★★</div>
+        </div>
+      </div>
+      <p>"No segundo concurso aplicando os fechamentos, fechei 14 pontos. A sensação de ver o jogo organizado, com dados, é outra. Chega de apostas no chute."</p>
+      <div class="testi-verified">
+        <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        Compra verificada
+      </div>
+    </div>
   </section>
 
   <!-- FAQ -->
@@ -487,6 +531,13 @@
       </button>
       <div class="faq-a"><p>Devolvemos 100% do seu dinheiro em até 7 dias, sem perguntas. Risco zero.</p></div>
     </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+        Como recebo o material?
+        <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+      </button>
+      <div class="faq-a"><p>Imediatamente após a confirmação do pagamento, você recebe o acesso completo no seu e-mail — material, planilha, guia e grupo VIP. Funciona no celular e no computador.</p></div>
+    </div>
   </section>
 
 </div>
@@ -495,7 +546,7 @@
 <section class="final-cta">
   <div class="wrap">
     <h2>⚠ O desconto acaba HOJE</h2>
-    <p>Amanhã esse preço não existe mais. <b>R$ 27</b> hoje — ou R$ 97 depois. A escolha é sua.</p>
+    <p>Amanhã esse preço não existe mais. <b>R$ 27</b> hoje — ou R$ 97 depois. Material + 3 bônus por menos de R$ 1 por dia. A escolha é sua.</p>
     <a class="cta" href="https://example.com/checkout">
       SIM! ANTES QUE ACABE
       <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
@@ -528,23 +579,6 @@
 </footer>
 
 <script>
-  // Countdown to 23:59 today
-  function updateTimer(){
-    const now=new Date();
-    const end=new Date();
-    end.setHours(23,59,59,0);
-    if(now>end) end.setDate(end.getDate()+1);
-    const diff=end-now;
-    const h=Math.floor(diff/3600000);
-    const m=Math.floor((diff%3600000)/60000);
-    const s=Math.floor((diff%60000)/1000);
-    document.getElementById('t-h').textContent=String(h).padStart(2,'0');
-    document.getElementById('t-m').textContent=String(m).padStart(2,'0');
-    document.getElementById('t-s').textContent=String(s).padStart(2,'0');
-  }
-  updateTimer();
-  setInterval(updateTimer,1000);
-
   // Sticky CTA on scroll
   const sticky=document.getElementById('sticky');
   window.addEventListener('scroll',()=>{
