@@ -30,7 +30,7 @@
 
   /* ─── Hero ─── */
   .hero{padding:0;text-align:center;background:var(--ink);position:relative;overflow:visible;margin:0 -16px;margin-bottom:32px}
-  .hero::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:radial-gradient(ellipse at 50% 0%, rgba(185,28,28,.25) 0%, transparent 60%);pointer-events:none}
+  .hero::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:linear-gradient(180deg, rgba(185,28,28,.12) 0%, transparent 40%);pointer-events:none}
   .hero-inner{position:relative;z-index:1;padding:36px 0 32px;max-width:640px;margin:0 auto}
   .hero .tag{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--yellow);border:1.5px solid rgba(251,191,36,.4);border-radius:20px;padding:6px 16px;margin-bottom:20px;background:rgba(251,191,36,.08)}
   .hero .tag svg{width:14px;height:14px;stroke:var(--yellow);stroke-width:2;fill:none}
@@ -68,7 +68,7 @@
   .guarantee-badge svg{width:18px;height:18px;stroke:var(--green);stroke-width:2;fill:none;flex-shrink:0}
 
   /* ─── Problem ─── */
-  .problem{padding:28px 32px;background:var(--soft);border-radius:12px;margin:32px 0;border-left:4px solid var(--red)}
+  .problem{padding:28px 32px;background:var(--soft);border-radius:12px;margin:32px 0}
   .problem p{font-size:15.5px;color:var(--text);line-height:1.75}
   .problem p b{color:var(--red)}
 
@@ -78,8 +78,7 @@
 
   /* ─── What you get ─── */
   .get-section{padding:40px 0}
-  .product-card{background:var(--ink);border-radius:14px;padding:36px 28px;text-align:center;color:#fff;margin-bottom:28px;position:relative;overflow:hidden}
-  .product-card::before{content:'';position:absolute;top:-50%;right:-30%;width:200px;height:200px;background:radial-gradient(circle,rgba(185,28,28,.15) 0%,transparent 70%);border-radius:50%}
+  .product-card{background:var(--ink);border-radius:14px;padding:36px 28px;text-align:center;color:#fff;margin-bottom:28px}
   .product-card .tag{font-size:10px;text-transform:uppercase;letter-spacing:2px;color:var(--yellow);font-weight:700;margin-bottom:10px;opacity:.9}
   .product-card h3{font-size:22px;font-weight:800;margin-bottom:6px;letter-spacing:-.5px}
   .product-card p{font-size:13px;color:#888;margin-bottom:18px}
@@ -96,10 +95,11 @@
   .module-text p{font-size:13.5px;color:var(--muted);line-height:1.55}
 
   /* ─── Bonus ─── */
-  .bonus{padding:24px 0;border-top:2px dashed var(--red);margin-top:16px}
+  .bonus{padding:24px 0;border-top:1px solid var(--line);margin-top:20px}
   .bonus-title{font-size:11px;text-transform:uppercase;letter-spacing:1.5px;color:var(--red);font-weight:800;margin-bottom:14px;display:flex;align-items:center;gap:6px}
   .bonus-item{display:flex;justify-content:space-between;align-items:center;font-size:14px;padding:8px 0;color:var(--text)}
-  .bonus-item .b-icon{color:var(--yellow-dark);font-size:14px;margin-right:8px}
+  .bonus-item .b-icon{display:flex;align-items:center;flex-shrink:0}
+  .bonus-item .b-icon svg{width:16px;height:16px;stroke:var(--yellow-dark);stroke-width:2;fill:none}
   .bonus-item .b-name{font-weight:600}
   .bonus-item .b-value{color:var(--light);font-size:13px;text-decoration:line-through;flex-shrink:0}
   .bonus-total{margin-top:14px;padding-top:14px;border-top:1px solid var(--line);font-size:13px;color:var(--text);text-align:center}
@@ -107,7 +107,7 @@
 
   /* ─── Price section ─── */
   .price-section{padding:40px 0}
-  .price-card{background:var(--white);border:2px solid var(--red);border-radius:16px;padding:32px 28px;margin-bottom:24px;box-shadow:0 4px 24px rgba(185,28,28,.08)}
+  .price-card{background:var(--white);border:1px solid var(--line);border-radius:16px;padding:32px 28px;margin-bottom:24px;box-shadow:0 4px 24px rgba(0,0,0,.06)}
   .price-card .price-header{text-align:center;margin-bottom:20px}
   .price-card .price-header .from{font-size:15px;color:var(--light);text-decoration:line-through;margin-bottom:4px}
   .price-card .price-header .to{font-size:44px;font-weight:900;color:var(--ink);line-height:1}
@@ -130,7 +130,7 @@
 
   /* ─── Testimonials ─── */
   .testimonials{padding:44px 0;background:var(--soft);border-radius:0;margin:0 -16px;padding-left:16px;padding-right:16px}
-  .testi{background:var(--white);border-radius:12px;padding:20px;margin-bottom:14px;border:1px solid var(--line);box-shadow:0 1px 3px rgba(0,0,0,.04)}
+  .testi{background:var(--white);border-radius:12px;padding:20px;margin-bottom:14px}
   .testi-head{display:flex;align-items:center;gap:12px;margin-bottom:10px}
   .testi-avatar{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:800;color:#fff;flex-shrink:0;letter-spacing:-.5px}
   .testi-info .testi-name{font-size:14px;font-weight:700;color:var(--ink)}
@@ -141,7 +141,8 @@
 
   /* ─── FAQ ─── */
   .faq{padding:40px 0}
-  .faq-item{border:1px solid var(--line);border-radius:10px;margin-bottom:10px;overflow:hidden;background:var(--white)}
+  .faq-item{border:none;border-bottom:1px solid var(--line);margin-bottom:0;overflow:hidden;background:var(--white)}
+  .faq-item:last-child{border-bottom:none}
   .faq-q{display:flex;justify-content:space-between;align-items:center;padding:16px 20px;font-size:15px;font-weight:700;cursor:pointer;background:var(--white);border:none;width:100%;text-align:left;color:var(--ink);font-family:var(--font);transition:background .15s}
   .faq-q:hover{background:var(--soft)}
   .faq-q svg{width:20px;height:20px;stroke:var(--muted);stroke-width:2;fill:none;flex-shrink:0;transition:transform .2s}
@@ -160,7 +161,7 @@
   .final-cta .guarantee-badge{color:#9ca3af}
 
   /* ─── Sticky CTA ─── */
-  .sticky{position:fixed;bottom:0;left:0;right:0;padding:10px 16px;background:var(--white);border-top:1px solid var(--line);z-index:99;transform:translateY(100%);transition:transform .3s var(--ease);box-shadow:0 -4px 20px rgba(0,0,0,.1)}
+  .sticky{position:fixed;bottom:0;left:0;right:0;padding:10px 16px;background:var(--white);border-top:1px solid var(--line);z-index:99;transform:translateY(100%);transition:transform .3s var(--ease)}
   .sticky.visible{transform:translateY(0)}
   .sticky .cta{padding:14px 24px;font-size:14px;min-height:48px}
   .sticky-inner{max-width:640px;margin:0 auto;display:flex;align-items:center;gap:12px}
@@ -346,9 +347,9 @@
 
     <div class="bonus">
       <div class="bonus-title">+ Bônus inclusos (sem custo extra)</div>
-      <div class="bonus-item"><span class="b-icon">🎁</span><span class="b-name">Planilha de Fechamentos Inteligentes</span><span class="b-value">R$ 47</span></div>
-      <div class="bonus-item"><span class="b-icon">🎁</span><span class="b-name">Guia: O Segredo dos Concursos Finais</span><span class="b-value">R$ 37</span></div>
-      <div class="bonus-item"><span class="b-icon">🎁</span><span class="b-name">Acesso ao Grupo VIP de Estudos</span><span class="b-value">R$ 67</span></div>
+      <div class="bonus-item"><span class="b-icon"><svg viewBox="0 0 24 24"><rect x="3" y="12" width="4" height="9" rx="1"/><rect x="10" y="7" width="4" height="14" rx="1"/><rect x="17" y="3" width="4" height="18" rx="1"/></svg></span><span class="b-name">Planilha de Fechamentos Inteligentes</span><span class="b-value">R$ 47</span></div>
+      <div class="bonus-item"><span class="b-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span><span class="b-name">Guia: O Segredo dos Concursos Finais</span><span class="b-value">R$ 37</span></div>
+      <div class="bonus-item"><span class="b-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span><span class="b-name">Acesso ao Grupo VIP de Estudos</span><span class="b-value">R$ 67</span></div>
       <div class="bonus-total">Valor total dos bônus: <b>R$ 151 — você leva tudo por apenas R$ 27</b></div>
     </div>
   </section>
