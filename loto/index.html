@@ -39,14 +39,14 @@
   .hero p.sub{font-size:16px;color:var(--text);margin-bottom:20px;font-weight:400;line-height:1.6}
   .hero p.sub b{color:var(--red);font-weight:700}
   .hero .cta{max-width:380px;margin:0 auto}
-  .hero .cta{background:linear-gradient(180deg,#dc2626 0%,#b91c1c 60%,#991b1b 100%);color:#fff;font-weight:900;font-size:17px;padding:20px 28px;letter-spacing:.8px;box-shadow:0 6px 24px rgba(185,28,28,.5),0 0 0 3px rgba(185,28,28,.15);animation:pulse-cta 1.4s ease-in-out infinite;border:1px solid rgba(255,255,255,.12)}
+  .hero .cta{background:var(--red);color:#fff;font-weight:800;font-size:16px;padding:19px 28px;box-shadow:0 4px 18px rgba(185,28,28,.42);animation:pulse-cta 2s ease-in-out infinite}
   .hero .cta:hover{background:var(--red-deep);box-shadow:0 6px 24px rgba(185,28,28,.5);transform:translateY(-2px)}
   .hero .cta svg{stroke:#fff}
   .hero .guarantee-badge{color:var(--muted)}
 
   @keyframes pulse-bg{0%,100%{background:#c02626}50%{background:#a01e1e}}
   @keyframes pulse-bg-dark{0%,100%{background:#1e1e30}50%{background:#252540}}
-  @keyframes pulse-cta{0%,100%{transform:scale(1);box-shadow:0 6px 24px rgba(185,28,28,.5),0 0 0 3px rgba(185,28,28,.15)}50%{transform:scale(1.015);box-shadow:0 10px 36px rgba(185,28,28,.6),0 0 0 7px rgba(185,28,28,.12)}}
+  @keyframes pulse-cta{0%,100%{box-shadow:0 4px 16px rgba(185,28,28,.3)}50%{box-shadow:0 4px 24px rgba(185,28,28,.45),0 0 0 6px rgba(185,28,28,.06)}}
   /* ─── Social proof bar ─── */
   .social-proof{display:flex;justify-content:center;align-items:center;gap:8px;margin-bottom:18px;font-size:13px;color:var(--muted)}
   .social-proof .avatars{display:flex}
@@ -182,8 +182,8 @@
     .hero h1{font-size:23px;letter-spacing:-.3px;line-height:1.2}
     .hero p.sub{font-size:14px;line-height:1.55}
     .hero .tag{font-size:10px;padding:5px 14px}
-    .hero-headline{font-size:15px;margin-bottom:8px;padding:10px 14px}
-    .hero .cta{font-size:15px;padding:17px 18px}
+    .hero-headline{font-size:16px;margin-bottom:10px}
+    .hero .cta{font-size:15px}
     .offer-to{font-size:36px}
     .hero-stats{gap:16px}
     .hero-stats .stat-num{font-size:20px}
@@ -258,8 +258,8 @@
 
 
   /* ─── Hero headline (minimalista) ─── */
-  .hero-headline{display:inline-block;font-size:18px;font-weight:900;color:#fff;background:var(--ink);padding:12px 22px;border-radius:10px;letter-spacing:-.3px;line-height:1.4;box-shadow:0 6px 20px rgba(26,26,46,.25);margin:0 0 16px;text-align:center}
-  .hero-headline .hl-grad{color:#fff;background:linear-gradient(90deg,#fbbf24,#f59e0b);-webkit-background-clip:text;background-clip:text;color:transparent;font-weight:900}
+  .hero-headline{font-size:18px;font-weight:800;color:var(--ink);margin:0 0 14px;letter-spacing:-.3px;line-height:1.4}
+  .hero-headline em{font-style:italic;color:var(--red);font-weight:900}
 
   /* ─── Hero offer (minimalista) ─── */
   .hero-offer{display:flex;align-items:baseline;justify-content:center;gap:10px;margin:0 0 18px}
@@ -335,7 +335,7 @@
       </div>
 
       <!-- Headline abaixo do video -->
-      <div class="hero-headline">O SEGREDO para acertar <span class="hl-grad">15 DEZENAS</span> está no vídeo acima</div>
+      <div class="hero-headline">O segredo para acertar <em>15 dezenas</em> está no vídeo acima</div>
 
       <!-- Oferta -->
       <div class="hero-offer">
