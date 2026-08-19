@@ -278,13 +278,14 @@
 
   /* Product Image */
 
-  /* ─── Video placeholder ─── */
-  .hero-video{margin:0 auto 20px;max-width:100%;width:100%}
-  .video-placeholder{position:relative;width:100%;aspect-ratio:16/9;max-width:560px;margin:0 auto;background:var(--card-dark);border:2px dashed rgba(255,255,255,.35);border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;color:#aab;text-align:center;padding:20px}
-  .video-placeholder .vp-icon{opacity:.85}
-  .vp-text{font-size:15px;font-weight:700;color:#fff}
-  .vp-hint{font-size:11px;text-transform:uppercase;letter-spacing:1.5px;color:#778}
-  .video-placeholder--card{max-width:100%;aspect-ratio:16/9;background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.2);font-size:12px;color:#889;margin-top:0}
+
+
+  /* ─── Video player ─── */
+  .video-wrap{width:100%;max-width:560px;margin:0 auto 20px;border-radius:14px;overflow:hidden;background:var(--card-dark);box-shadow:0 12px 36px rgba(0,0,0,.25);position:relative}
+  .video-wrap::after{content:'';position:absolute;inset:0;border-radius:14px;box-shadow:inset 0 1px 0 rgba(255,255,255,.12);pointer-events:none}
+  .vsl-player{width:100%;display:block;background:#000;aspect-ratio:16/9}
+  .video-wrap--card{max-width:100%;box-shadow:0 8px 24px rgba(0,0,0,.3);border-radius:10px}
+  .video-wrap--card .vsl-player{border-radius:10px}
 
 </style>
 </head>
@@ -317,12 +318,13 @@
       <h1>Lotofácil: O Estudo Secreto Que Te Ajuda a<br><em>ACERTAR 15 DEZENAS</em></h1>
       <p class="sub">Você acerta 13, 14… e o prêmio não paga o que gastou. <b>Este método</b> te mostra como jogar certo.</p>
 
-      <!-- Espaco para video (hero) -->
+      <!-- Video de apresentacao (VSL) -->
       <div class="hero-video">
-        <div class="video-placeholder" id="video-hero">
-          <svg class="vp-icon" viewBox="0 0 24 24" width="48" height="48" stroke="currentColor" stroke-width="1.5" fill="none"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-          <span class="vp-text">Coloque seu v&iacute;deo aqui</span>
-          <span class="vp-hint">VSL / V&iacute;deo de apresenta&ccedil;&atilde;o</span>
+        <div class="video-wrap" id="video-hero">
+          <video id="vsl-video" class="vsl-player" controls playsinline preload="metadata" poster="">
+            <source src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663865742747/MMghhyCOKuguSGUx.mp4" type="video/mp4">
+            Seu navegador nao suporta video HTML5.
+          </video>
         </div>
       </div>
 
@@ -372,10 +374,12 @@
       <div class="tag">Material Digital Secreto</div>
       <h3>Estudo Secreto da Lotofácil</h3>
       <p>O método para acertar 15 dezenas</p>
-      <!-- Espaco para video (card do produto) -->
-      <div class="video-placeholder video-placeholder--card" id="video-card">
-        <svg viewBox="0 0 24 24" width="40" height="40" stroke="currentColor" stroke-width="1.5" fill="none"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-        <span>V&iacute;deo de apresenta&ccedil;&atilde;o</span>
+      <!-- Video de apresentacao (card do produto) -->
+      <div class="video-wrap video-wrap--card" id="video-card">
+        <video class="vsl-player" controls playsinline preload="metadata">
+          <source src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663865742747/MMghhyCOKuguSGUx.mp4" type="video/mp4">
+          Seu navegador nao suporta video HTML5.
+        </video>
       </div>
 
       <div class="price-row">
