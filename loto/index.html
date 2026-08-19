@@ -92,6 +92,64 @@
     .price-note { margin:7px 0 0; color:var(--muted); font-size:12.5px; line-height:1.5; }
     .price-note strong { color:var(--ink); }
 
+    /* Mockup 3D e Value Stack */
+    .offer-bundle { margin:40px 0; padding:32px 24px; background:var(--soft); border:2px solid var(--ink); border-radius:20px; box-shadow:8px 8px 0 rgba(0,0,0,.1); }
+    .bundle-header { text-align:center; margin-bottom:30px; }
+    .bundle-header h2 { margin:0; font-family:var(--display); font-size:28px; font-weight:900; letter-spacing:-1px; }
+    .bundle-header p { margin:8px 0 0; color:var(--muted); font-size:14px; }
+    
+    .mockup-3d { position:relative; width:min(100%, 320px); margin:0 auto 30px; perspective:1000px; }
+    .mockup-inner { position:relative; width:100%; aspect-ratio:3/4; background:var(--ink); border-radius:12px; transform:rotateY(-15deg) rotateX(5deg); box-shadow:20px 20px 50px rgba(0,0,0,.3); overflow:hidden; border:4px solid #333; }
+    .mockup-screen { width:100%; height:100%; background:linear-gradient(135deg, var(--red) 0%, var(--red-deep) 100%); display:flex; flex-direction:column; align-items:center; justify-content:center; padding:20px; color:#fff; text-align:center; }
+    .mockup-screen b { font-family:var(--display); font-size:24px; line-height:1.1; margin-bottom:10px; }
+    .mockup-screen span { font-size:10px; text-transform:uppercase; letter-spacing:2px; opacity:.8; }
+    .mockup-reflection { position:absolute; inset:0; background:linear-gradient(125deg, rgba(255,255,255,.2) 0%, transparent 50%); pointer-events:none; }
+    
+    .value-stack-list { margin:0; padding:0; list-style:none; border-top:1px solid var(--line); }
+    .stack-item { padding:15px 0; display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--line); font-family:var(--display); font-size:14px; }
+    .stack-item .item-name { font-weight:700; color:var(--ink); }
+    .stack-item .item-value { color:var(--muted); text-decoration:line-through; font-size:12px; }
+    .stack-item.bonus { color:var(--red); }
+    .stack-item.bonus .item-name::before { content:"🎁 BÔNUS: "; font-size:10px; vertical-align:middle; }
+    
+    .total-value-anchor { margin-top:20px; padding:15px; background:var(--ink); color:#fff; border-radius:10px; text-align:center; }
+    .total-value-anchor .val-label { font-size:11px; text-transform:uppercase; letter-spacing:1px; opacity:.7; }
+    .total-value-anchor .val-amount { display:block; font-family:var(--display); font-size:22px; font-weight:900; color:var(--yellow); }
+    
+    /* Contraste Emocional: Dois Caminhos */
+    .paths-container { margin:45px 0; display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+    .path-card { padding:25px; border-radius:16px; position:relative; overflow:hidden; }
+    .path-card.path-a { background:#f9f9f9; border:1px solid var(--line); opacity:.7; }
+    .path-card.path-b { background:var(--ink); color:#fff; border:2px solid var(--yellow); box-shadow:0 10px 30px rgba(0,0,0,.2); }
+    .path-card h4 { margin:0; font-family:var(--display); font-size:16px; font-weight:900; text-transform:uppercase; letter-spacing:1px; }
+    .path-card.path-a h4 { color:var(--muted); }
+    .path-card.path-b h4 { color:var(--yellow); }
+    .path-card ul { margin:15px 0 0; padding:0 0 0 20px; font-size:13px; line-height:1.5; }
+    .path-card.path-a li { color:var(--muted); margin-bottom:8px; }
+    .path-card.path-b li { color:#d3d3d3; margin-bottom:8px; }
+    .path-card.path-b li strong { color:#fff; }
+    
+    /* Aggressive Urgency Elements */
+    .urgency-bar { position:fixed; top:0; left:0; width:100%; z-index:100; background:var(--red); color:#fff; padding:8px; text-align:center; font-family:var(--display); font-size:11px; font-weight:900; letter-spacing:1px; box-shadow:0 2px 10px rgba(0,0,0,0.2); animation:pulseUrgency 2s infinite; }
+    @keyframes pulseUrgency { 0% { background:var(--red); } 50% { background:#ff0000; } 100% { background:var(--red); } }
+    
+    .sale-notification { position:fixed; bottom:20px; left:20px; z-index:90; background:#fff; padding:12px 15px; border-radius:10px; box-shadow:0 10px 30px rgba(0,0,0,0.15); display:flex; align-items:center; gap:12px; transform:translateX(-120%); transition:transform 0.5s var(--ease); border-left:4px solid #1a7a33; max-width:280px; }
+    .sale-notification.is-visible { transform:translateX(0); }
+    .sale-notification img { width:36px; height:36px; border-radius:50%; background:#eee; }
+    .sale-notification .notif-content { font-size:11px; line-height:1.3; color:var(--text); }
+    .sale-notification .notif-content b { color:var(--ink); display:block; margin-bottom:2px; }
+    .sale-notification .notif-time { font-size:9px; color:var(--muted); display:block; margin-top:3px; }
+    
+    .slot-counter { margin-top:15px; padding:10px; background:#fff2f2; border:1px solid #efcece; border-radius:8px; text-align:center; }
+    .slot-counter span { color:var(--red); font-weight:900; font-family:var(--display); font-size:16px; animation:blinkText 1s infinite; }
+    @keyframes blinkText { 0%, 100% { opacity:1; } 50% { opacity:0.5; } }
+    
+    .cta-button.pulse { animation:ctaPulseAggressive 1.5s infinite; }
+    @keyframes ctaPulseAggressive { 0% { transform:scale(1); } 50% { transform:scale(1.05); box-shadow:0 0 20px rgba(185,0,0,0.4); } 100% { transform:scale(1); } }
+    
+    body { padding-top:35px; } /* Adjust for urgency bar */
+    @media (max-width:600px) { .paths-container { grid-template-columns:1fr; } body { padding-top:45px; } }
+    
     /* Sim / Não em 2 colunas */
     .yn-grid { margin:20px 0 0; display:grid; grid-template-columns:1fr 1fr; gap:16px; }
     .yn-card { padding:18px 20px; border-radius:12px; }
@@ -241,8 +299,18 @@
   </style>
 </head>
 <body>
+  <div class="urgency-bar">ATENÇÃO: PREÇO PROMOCIONAL EXPIRA EM <span id="bar-timer">--:--:--</span></div>
   <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
   <div class="progress" id="progress"></div>
+  
+  <div class="sale-notification" id="sale-notif">
+    <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='40'><circle cx='20' cy='20' r='20' fill='%231a7a33'/><text x='20' y='25' text-anchor='middle' fill='white' font-family='Arial' font-size='14'>✓</text></svg>" alt="Venda confirmada">
+    <div class="notif-content">
+      <b id="notif-name">João de São Paulo</b>
+      acabou de garantir o acesso vitalício.
+      <span class="notif-time">há 2 minutos</span>
+    </div>
+  </div>
   <header class="site-header">
     <div class="header-inner">
       <button class="header-button" type="button" aria-label="Abrir pesquisa" id="search-button"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="5.6"></circle><path d="m16 16 4.2 4.2"></path></svg></button>
@@ -257,8 +325,24 @@
     <article class="article-shell article">
       <span class="commercial-label"><b></b> CONTEÚDO COMERCIAL</span>
 <div class="hero-alert" aria-label="Aviso de encerramento"><b aria-hidden="true"></b><strong>ENCERRAMENTO DEFINITIVO HOJE</strong><span>O preço especial de lançamento morre com a janela</span></div>
-      <h1>Você já acertou <em>13 e 14 pontos</em> dezenas de vezes. E mesmo assim continua no zero.</h1>
-      <p class="article-deck">O problema nunca foi sua sorte — foi jogar por intuição. O Estudo Secreto da Lotofácil organiza os padrões históricos dos resultados, os fechamentos de dezenas e a gestão inteligente de apostas. Descubra quanto dinheiro você já desperdiçou "chutando" números — e como apostar com critério a partir do próximo concurso.</p>
+      <h1>PARE DE FINANCIAR O PRÊMIO DOS OUTROS: O segredo matemático que as lotéricas preferem que você <em>ignore</em>.</h1>
+      <p class="article-deck">Você acerta 13, 14 pontos e nunca recebe nada porque joga "no feeling". O Estudo Secreto da Lotofácil quebra esse ciclo. Descubra quanto dinheiro você já queimou e como organizar suas apostas hoje mesmo.</p>
+      
+      <div class="inertia-cost" style="margin:30px 0; padding:25px; background:#fdf4f4; border:2px solid var(--red); border-radius:12px; text-align:center;">
+        <h4 style="font-family:var(--display); font-size:16px; font-weight:900; margin:0 0 15px;">O CUSTO DA SUA INÉRCIA (Próximos 30 dias)</h4>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px; font-family:var(--display);">
+          <div style="padding:15px; background:#fff; border-radius:8px; opacity:0.7;">
+            <div style="font-size:12px; text-transform:uppercase; letter-spacing:1px;">Sem o Estudo</div>
+            <div style="font-size:24px; font-weight:900; color:var(--red); margin-top:10px;">- R$ 450,00</div>
+            <div style="font-size:11px; color:var(--muted); margin-top:5px;">Em apostas inúteis</div>
+          </div>
+          <div style="padding:15px; background:var(--ink); color:#fff; border-radius:8px;">
+            <div style="font-size:12px; text-transform:uppercase; letter-spacing:1px;">Com o Estudo</div>
+            <div style="font-size:24px; font-weight:900; color:var(--yellow); margin-top:10px;">+ Economia Inteligente</div>
+            <div style="font-size:11px; color:#d3d3d3; margin-top:5px;">Apostas otimizadas</div>
+          </div>
+        </div>
+      </div>
       <div class="byline"><div class="author"><span class="author-mark">E</span><div><strong>Equipe de Conteúdo</strong><span>Atualizado em 18/08/2026</span></div></div><span class="reading-time">Leitura estimada: 4 min<br />Janela de acesso: 4 horas</span></div>
       <section class="lead-cta" aria-label="Acesso à oferta"><a class="lead-cta-button checkout-link" href="https://example.com/checkout" target="_blank" rel="noopener noreferrer"><span class="lead-cta-prefix">SIM!</span> QUERO PARAR DE PERDER DINHEIRO <span aria-hidden="true">→</span></a>
         <p class="guarantee-badge" aria-hidden="true">🛡 <b>GARANTIA DE 7 DIAS</b> · 100% do dinheiro de volta</p>
@@ -307,9 +391,53 @@
       </div>
 
       <section class="article-callout" aria-labelledby="callout-title-2"><span class="callout-number">02</span><div><h2 id="callout-title-2">Compare com o que você já perde todo mês</h2><p>O estudo custa menos do que a maioria dos apostadores gasta em <strong>um único mês</strong> de apostas soltas. É o preço de 1 ou 2 concursos — a diferença é que, com ele, você para de renovar o hábito de perder dinheiro no feeling a cada sorteio.</p>
+        
+        <div class="offer-bundle">
+          <div class="bundle-header">
+            <h2>O que você recebe hoje:</h2>
+            <p>Acesso imediato e vitalício ao conteúdo completo</p>
+          </div>
+          
+          <div class="mockup-3d">
+            <div class="mockup-inner">
+              <div class="mockup-screen">
+                <span>Digital Study</span>
+                <b>ESTUDO SECRETO DA LOTOFÁCIL</b>
+                <p style="font-size:10px; margin:0">Versão 2026 Otimizada</p>
+              </div>
+              <div class="mockup-reflection"></div>
+            </div>
+          </div>
+          
+          <ul class="value-stack-list">
+            <li class="stack-item">
+              <span class="item-name">Estudo Secreto da Lotofácil (Completo)</span>
+              <span class="item-value">R$ 97,00</span>
+            </li>
+            <li class="stack-item bonus">
+              <span class="item-name">Planilha de Fechamentos Inteligentes</span>
+              <span class="item-value">R$ 47,00</span>
+            </li>
+            <li class="stack-item bonus">
+              <span class="item-name">Guia: O Segredo dos Concursos Finais 0</span>
+              <span class="item-value">R$ 37,00</span>
+            </li>
+            <li class="stack-item bonus">
+              <span class="item-name">Acesso ao Grupo de Estudos VIP</span>
+              <span class="item-value">R$ 197,00/ano</span>
+            </li>
+          </ul>
+          
+          <div class="total-value-anchor">
+            <span class="val-label">VALOR TOTAL DOS MÓDULOS E BÔNUS:</span>
+            <span class="val-amount">R$ 378,00</span>
+          </div>
+        </div>
+
         <div class="price-block">
           <div class="price-row"><span class="price-from" id="price-from">De R$ 97,00</span><span class="price-to" id="price-to">Por R$ 27,00</span></div>
           <p class="price-note"><strong>Preço de lançamento válido somente dentro da janela</strong> — depois do encerramento, o valor volta ao preço cheio. Pagamento seguro e acesso imediato, com <strong>garantia incondicional de 7 dias</strong>.</p>
+          <div class="slot-counter">RESTAM APENAS <span id="slots-left">14</span> VAGAS COM DESCONTO</div>
         </div>
       </div></section>
       <section class="fb-comments" aria-label="Comentários demonstrativos" id="comentarios">
@@ -323,7 +451,39 @@
         <p class="fb-comments-closed">Depoimentos ilustrativos. Resultado individual não é garantido — loterias são aleatórias e envolvem risco financeiro.</p>
       </section>
 
-      <section class="article-cta final-cta" aria-labelledby="final-cta-title"><span class="cta-kicker">DECISÃO SEM RISCO · GARANTIA INCONDICIONAL</span><h2 id="final-cta-title">Você tem duas opções — só uma delas muda o seu jogo.</h2><p>Fechar esta página e continuar jogando "no feeling", acertando 13 e 14 pontos semana após semana enquanto o dinheiro vaza. Ou gastar menos do que 2 concursos para aprender a apostar com critério — e ter 7 dias de garantia para mudar de ideia sem perder nada. O cronômetro acima continua correndo.</p><a class="cta-button checkout-link" href="https://example.com/checkout" target="_blank" rel="noopener noreferrer">SIM! QUERO PARAR DE PERDER DINHEIRO <span aria-hidden="true">→</span></a><small>Loterias são aleatórias e envolvem risco financeiro. Este material organiza suas apostas, mas não garante retorno nem prêmio.</small></section>
+      <section class="article-cta final-cta" style="background:transparent; color:var(--ink); border:0; padding:0; margin-top:50px;">
+        <span class="cta-kicker" style="color:var(--red); text-align:center; display:block;">O MOMENTO DA DECISÃO</span>
+        <h2 style="text-align:center; color:var(--ink); margin-bottom:10px;">Agora você tem dois caminhos na sua frente:</h2>
+        
+        <div class="paths-container">
+          <div class="path-card path-a">
+            <h4>Caminho do Amador</h4>
+            <ul>
+              <li>Continua jogando por intuição (aniversários, placas, palpites);</li>
+              <li>Aposta em combinações que a estatística prova serem perdedoras;</li>
+              <li>Vê o dinheiro vazar todo mês sem entender por que "falta 1 dezena";</li>
+              <li>Mantém a frustração de nunca sair do zero.</li>
+            </ul>
+          </div>
+          
+          <div class="path-card path-b">
+            <h4>Caminho do Estrategista</h4>
+            <ul>
+              <li>Aplica <strong>padrões históricos reais</strong> em cada aposta;</li>
+              <li>Usa <strong>fechamentos matemáticos</strong> para cobrir mais dezenas;</li>
+              <li>Para de desperdiçar dinheiro em jogos sem qualquer critério;</li>
+              <li><strong>Testa tudo sem risco</strong> por 7 dias com nossa garantia.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div style="background:var(--ink); padding:35px; border-radius:20px; text-align:center; color:#fff;">
+          <h3 style="font-family:var(--display); font-size:24px; margin:0 0 15px;">A decisão lógica é clara.</h3>
+          <p style="font-size:14px; color:#d3d3d3; margin-bottom:25px;">Por menos do que o valor de 2 concursos, você recebe R$ 378,00 em valor e para de renovar o hábito de perder dinheiro "no feeling".</p>
+          <a class="cta-button checkout-link" href="https://example.com/checkout" target="_blank" rel="noopener noreferrer" style="background:var(--yellow); color:var(--ink); box-shadow:0 5px 0 #8e7000; width:100%; max-width:450px;">QUERO SEGUIR O CAMINHO DO ESTRATEGISTA <span aria-hidden="true">→</span></a>
+          <p style="font-size:10px; color:#a9a9a9; margin-top:15px;">🛡 GARANTIA TOTAL DE 7 DIAS · ACESSO IMEDIATO</p>
+        </div>
+      </section>
 
       <aside class="decision-note"><b aria-hidden="true">⚠</b><span><strong>Decisão responsável.</strong> Jogos e apostas envolvem risco financeiro. Este conteúdo é comercial e informativo; ele não representa aconselhamento financeiro e não garante resultados.</span></aside>
     </article>
@@ -337,8 +497,8 @@
   <div class="exit-modal-overlay" id="exit-modal-overlay" aria-hidden="true">
     <div class="exit-modal" role="dialog" aria-modal="true" aria-labelledby="exit-modal-title">
       <button class="exit-modal-close" type="button" id="exit-modal-close" aria-label="Fechar">×</button>
-<strong id="exit-modal-title">Espera, antes de fechar esta página...</strong>
-      <p>Você viu quanto dinheiro o "jogo no feeling" consome por ano? O preço de lançamento morre junto com esta janela — e você tem 7 dias de garantia para decidir sem risco. Se é hoje que você para de chutar dezenas, é agora.</p>
+<strong id="exit-modal-title">VOCÊ VAI MESMO CONTINUAR JOGANDO DINHEIRO NO LIXO?</strong>
+      <p>Esta é sua última chance de pagar R$ 27 em vez de R$ 97. Se você fechar agora, vai continuar acertando 13, 14 pontos e ver o dinheiro dos outros subirem ao pódio. A oferta é só para quem cansou de ser o "quase". Não cometa esse erro de novo.</p>
       <div class="exit-timer" id="exit-modal-timer">--:--:--</div>
       <a class="cta-button checkout-link" id="exit-modal-cta" href="https://example.com/checkout" target="_blank" rel="noopener noreferrer">QUERO GARANTIR O PREÇO DE LANÇAMENTO <span aria-hidden="true">→</span></a>
     </div>
@@ -511,6 +671,48 @@
     const sticky = document.getElementById('sticky-cta');
     const progress = document.getElementById('progress');
     window.addEventListener('scroll', () => { const maximum = document.documentElement.scrollHeight - window.innerHeight; const ratio = maximum > 0 ? (window.scrollY / maximum) * 100 : 0; progress.style.width = ratio + '%'; sticky.classList.toggle('is-visible', window.scrollY > 540); }, { passive:true });
+
+    /* Aggressive Scripting */
+    const barTimer = document.getElementById('bar-timer');
+    const saleNotif = document.getElementById('sale-notif');
+    const notifName = document.getElementById('notif-name');
+    const slotsLeft = document.getElementById('slots-left');
+    
+    // 1. Sync bar timer with main countdown
+    setInterval(() => {
+      const h = document.getElementById('cd-hours').textContent.replace(/\D/g,'');
+      const m = document.getElementById('cd-minutes').textContent.replace(/\D/g,'');
+      const s = document.getElementById('cd-seconds').textContent.replace(/\D/g,'');
+      if(h && m && s) barTimer.textContent = `${h}:${m}:${s}`;
+    }, 1000);
+
+    // 2. Sale Notifications (Fake Social Proof)
+    const names = ["Ricardo M.", "Solange F.", "Marcelo V.", "José R.", "Maria A.", "Carlos D.", "Ana P.", "Roberto S.", "Fernando K.", "Lucia T."];
+    const cities = ["São Paulo", "Rio de Janeiro", "Belo Horizonte", "Curitiba", "Salvador", "Fortaleza", "Brasília", "Porto Alegre", "Recife", "Manaus"];
+    
+    function showSale() {
+      const name = names[Math.floor(Math.random() * names.length)];
+      const city = cities[Math.floor(Math.random() * cities.length)];
+      notifName.textContent = `${name} de ${city}`;
+      saleNotif.classList.add('is-visible');
+      setTimeout(() => saleNotif.classList.remove('is-visible'), 5000);
+    }
+    setTimeout(showSale, 8000);
+    setInterval(showSale, 25000);
+
+    // 3. Dynamic Slot Counter
+    let slots = 14;
+    const slotInterval = setInterval(() => {
+      if (slots > 3) {
+        slots -= Math.floor(Math.random() * 2);
+        slotsLeft.textContent = slots;
+      } else {
+        clearInterval(slotInterval);
+      }
+    }, 45000);
+
+    // 4. Aggressive Pulse for CTAs
+    document.querySelectorAll('.checkout-link').forEach(btn => btn.classList.add('pulse'));
   </script>
 </body>
 </html>
