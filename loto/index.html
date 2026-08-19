@@ -621,11 +621,16 @@
       document.removeEventListener('click', unmuteOnInteraction);
       document.removeEventListener('touchstart', unmuteOnInteraction);
     };
-    document.addEventListener('click', unmuteOnInteraction);
+        document.addEventListener('click', unmuteOnInteraction);
     document.addEventListener('touchstart', unmuteOnInteraction);
     v.addEventListener('click', activateSound);
-
-    // O video continua reproduzindo mesmo quando o usuario rola a pagina
+    // Garantir que o video NUNCA pause ao rolar a pagina
+    v.addEventListener('pause', function () {
+      if (!v.ended) { v.play().catch(function () {}); }
+    });
+    window.addEventListener('scroll', function () {
+      if (v.paused && !v.ended) { v.play().catch(function () {}); }
+    }, { passive: true });
   })();
 </script>
 </body>
