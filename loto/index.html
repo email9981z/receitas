@@ -334,7 +334,7 @@
       <!-- Video de apresentacao (VSL) -->
       <div class="hero-video">
         <div class="video-wrap" id="video-hero">
-          <video id="vsl-video" class="vsl-player" controls autoplay muted playsinline preload="auto" loop>
+          <video id="vsl-video" class="vsl-player" controls playsinline preload="auto" loop>
             <source src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663865742747/MMghhyCOKuguSGUx.mp4" type="video/mp4">
             Seu navegador nao suporta video HTML5.
           </video>
@@ -600,48 +600,21 @@
 </script>
 
 <script>
-  // Autoplay do video de apresentacao (mudo por padrao, exigido pelos navegadores).
-  // Reproducao continua: loop infinito, nunca pausa ao rolar a pagina.
+  // Video de apresentacao: sem autoplay.
+  // Quando o usuario clica em play, o som ja esta ligado (default).
   (function () {
     var v = document.getElementById('vsl-video');
     if (!v) return;
     v.loop = true;
-    v.muted = true;
-    v.autoplay = true;
-    // Tentativa inicial de reproducao
-    v.play().catch(function () {
-      // Alguns navegadores bloqueiam autoplay mesmo mudo; tentar apos interacao
-      var tryPlay = function () {
-        v.play().catch(function () {});
-        document.removeEventListener('click', tryPlay);
-        document.removeEventListener('touchstart', tryPlay);
-      };
-      document.addEventListener('click', tryPlay);
-      document.addEventListener('touchstart', tryPlay);
-    });
-    // Ativa o som no primeiro clique/touch
-    var activateSound = function () {
+    v.muted = false;
+    // Garantir que o video sempre reproduza com audio ao ser iniciado pelo usuario
+    v.addEventListener('play', function () {
       if (v.muted) { v.muted = false; v.volume = 1; }
-    };
-    var unmuteOnInteraction = function () {
-      activateSound();
-      document.removeEventListener('click', unmuteOnInteraction);
-      document.removeEventListener('touchstart', unmuteOnInteraction);
-    };
-    document.addEventListener('click', unmuteOnInteraction);
-    document.addEventListener('touchstart', unmuteOnInteraction);
-    v.addEventListener('click', activateSound);
-    // Se o video pausar por qualquer motivo (scroll, economia de energia etc.), retoma
-    var ensurePlaying = function () {
-      if (!v.ended) { v.play().catch(function () {}); }
-    };
-    v.addEventListener('pause', ensurePlaying);
-    window.addEventListener('scroll', ensurePlaying, { passive: true });
-    window.addEventListener('resize', ensurePlaying);
-    // Garantia periodica: reafirma a reproducao a cada 3 segundos
-    setInterval(function () {
-      if (v.paused && !v.ended) { ensurePlaying(); }
-    }, 3000);
+    });
+    v.addEventListener('loadedmetadata', function () {
+      v.muted = false;
+      v.volume = 1;
+    });
   })();
 </script>
 </body>
