@@ -164,12 +164,17 @@
   .final-cta .guarantee-badge{color:#9ca3af}
 
   /* ─── Notificação de compra recente ─── */
-  .purchase-toast{position:fixed;bottom:84px;left:16px;z-index:98;background:var(--white);border:1px solid var(--line);border-radius:12px;box-shadow:0 8px 24px rgba(0,0,0,.16);padding:12px 16px;display:flex;align-items:center;gap:10px;max-width:320px;transform:translateY(20px);opacity:0;visibility:hidden;transition:all .4s var(--ease)}
+  .purchase-toast{position:fixed;bottom:84px;left:16px;z-index:98;background:var(--white);border:1px solid var(--line);border-radius:12px;box-shadow:0 8px 24px rgba(0,0,0,.16);padding:12px 16px;display:flex;align-items:center;gap:10px;max-width:320px;transform:translateY(20px);opacity:0;visibility:hidden;transition:all .4s var(--ease);touch-action:pan-y}
   .purchase-toast.show{transform:translateY(0);opacity:1;visibility:visible}
+  .purchase-toast.dragging{transition:none}
+  .purchase-toast.dismissed{opacity:0;visibility:hidden;transform:translateY(20px);pointer-events:none}
   .purchase-toast .pt-avatar{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;color:#fff;flex-shrink:0}
-  .purchase-toast .pt-text{font-size:12.5px;color:var(--text);line-height:1.4}
+  .purchase-toast .pt-text{font-size:12.5px;color:var(--text);line-height:1.4;flex:1}
   .purchase-toast .pt-text b{color:var(--ink)}
   .purchase-toast .pt-time{font-size:11px;color:var(--muted);margin-top:1px}
+  .purchase-toast .pt-close{width:22px;height:22px;border-radius:50%;border:none;background:var(--soft);color:var(--muted);display:flex;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0;transition:background .15s, color .15s}
+  .purchase-toast .pt-close:hover{background:var(--line);color:var(--ink)}
+  .purchase-toast .pt-close svg{width:13px;height:13px;stroke:currentColor;stroke-width:2.5;fill:none}
 
   /* ─── Sticky CTA ─── */
   .sticky{position:fixed;bottom:0;left:0;right:0;padding:10px 16px;background:var(--card-dark);border-top:1px solid rgba(255,255,255,.08);z-index:99;transform:translateY(100%);transition:transform .3s var(--ease);box-shadow:0 -4px 20px rgba(0,0,0,.25)}
@@ -609,6 +614,9 @@
     <b id="pt-name">Carla F. · Curitiba/PR</b> acabou de garantir o acesso
     <div class="pt-time" id="pt-time">há 2 minutos</div>
   </div>
+  <button class="pt-close" id="pt-close" type="button" aria-label="Fechar">
+    <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+  </button>
 </div>
 
 <!-- Sticky CTA -->
@@ -658,12 +666,14 @@
     setInterval(update, 1000);
   })();
 
-  // ── Notificação de compra recente (flutuante, em loop) ──
+  // ── Notificação de compra recente (flutuante, em loop, com fechar por X e swipe) ──
   (function () {
     var toast = document.getElementById('purchase-toast');
     var nameEl = document.getElementById('pt-name');
     var timeEl = document.getElementById('pt-time');
+    var closeBtn = document.getElementById('pt-close');
     if (!toast) return;
+
     var buyers = [
       ['CF','Carla F. · Curitiba/PR','há 2 minutos'],
       ['JP','João P. · Belo Horizonte/MG','há 5 minutos'],
@@ -672,14 +682,71 @@
       ['TM','Tatiane M. · Cuiabá/MT','há 14 minutos']
     ];
     var i = 0;
+    var dismissed = false;
+    var hideTimer = null;
+
+    var dismiss = function () {
+      dismissed = true;
+      toast.classList.remove('show');
+      toast.classList.add('dismissed');
+      if (hideTimer) clearTimeout(hideTimer);
+    };
+
+    // Fechar pelo botão X (para o usuário até o fim da sessão)
+    if (closeBtn) closeBtn.addEventListener('click', dismiss);
+
+    // Fechar arrastando para o lado (mouse e touch)
+    var startX = 0, startY = 0, dragging = false, moved = false;
+    var THRESHOLD = 70; // px arrastados horizontalmente para confirmar o dismiss
+    var onStart = function (e) {
+      startX = e.clientX !== undefined ? e.clientX : e.touches[0].clientX;
+      startY = e.clientY !== undefined ? e.clientY : e.touches[0].clientY;
+      dragging = true;
+      moved = false;
+    };
+    var onMove = function (e) {
+      if (!dragging) return;
+      var cx = e.clientX !== undefined ? e.clientX : e.touches[0].clientX;
+      var dx = cx - startX;
+      var dy = (e.clientY !== undefined ? e.clientY : e.touches[0].clientY) - startY;
+      if (Math.abs(dx) > 8 || Math.abs(dy) > 8) moved = true;
+      if (Math.abs(dx) < Math.abs(dy)) return; // arrasto vertical = scroll, ignora
+      e.preventDefault ? e.preventDefault() : null;
+      toast.classList.add('dragging');
+      toast.style.transform = 'translate(' + dx + 'px, 0)';
+      toast.style.opacity = Math.max(0.2, 1 - Math.abs(dx) / 300);
+    };
+    var onEnd = function (e) {
+      if (!dragging) return;
+      dragging = false;
+      var cx = e.clientX !== undefined ? e.clientX : (e.changedTouches ? e.changedTouches[0].clientX : startX);
+      var dx = cx - startX;
+      toast.classList.remove('dragging');
+      toast.style.transform = '';
+      toast.style.opacity = '';
+      if (dismissed) return;
+      if (Math.abs(dx) >= THRESHOLD) {
+        dismiss();
+      }
+    };
+    toast.addEventListener('mousedown', onStart);
+    document.addEventListener('mousemove', onMove);
+    document.addEventListener('mouseup', onEnd);
+    toast.addEventListener('touchstart', onStart, {passive:true});
+    toast.addEventListener('touchmove', onMove, {passive:false});
+    toast.addEventListener('touchend', onEnd);
+
     var show = function () {
+      if (dismissed) return; // usuário fechou: não reaparece
       var b = buyers[i % buyers.length];
       toast.querySelector('.pt-avatar').style.background = ['#2563eb','#7c3aed','#059669','#dc2626','#0891b2'][i % 5];
       toast.querySelector('.pt-avatar').textContent = b[0];
       nameEl.textContent = b[1];
       timeEl.textContent = b[2];
+      toast.classList.remove('dismissed');
       toast.classList.add('show');
-      setTimeout(function () { toast.classList.remove('show'); }, 5500);
+      if (hideTimer) clearTimeout(hideTimer);
+      hideTimer = setTimeout(function () { toast.classList.remove('show'); }, 5500);
       i++;
     };
     setTimeout(function () {
