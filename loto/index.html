@@ -59,7 +59,7 @@
 
   /* ─── CTA Button ─── */
   .cta{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:18px 28px;background:var(--red);color:#fff;font-size:16px;font-weight:700;letter-spacing:.4px;text-transform:uppercase;border:none;border-radius:8px;cursor:pointer;text-decoration:none;box-shadow:0 2px 8px rgba(185,28,28,.3);transition:all .2s var(--ease)}
-  .cta:hover{background:var(--red-deep);box-shadow:0 4px 16px rgba(185,28,28,.35);transform:translateY(-1px)}
+  .cta:hover{background:var(--red-deep);box-shadow:0 4px 20px rgba(185,28,28,.4);transform:translateY(-2px)}
   .cta:active{transform:translateY(0);box-shadow:0 1px 4px rgba(185,28,28,.3)}
   .cta svg{width:18px;height:18px;stroke:#fff;stroke-width:2.5;fill:none}
 
@@ -68,12 +68,13 @@
   .guarantee-badge svg{width:18px;height:18px;stroke:var(--green);stroke-width:2;fill:none;flex-shrink:0}
 
   /* ─── Problem ─── */
-  .problem{padding:24px 28px;background:var(--soft);border-radius:12px;margin:28px 0;border-left:4px solid var(--red)}
-  .problem p{font-size:15px;color:var(--text);line-height:1.7}
+  .problem{padding:28px 32px;background:var(--soft);border-radius:12px;margin:32px 0;border-left:4px solid var(--red)}
+  .problem p{font-size:15.5px;color:var(--text);line-height:1.75}
   .problem p b{color:var(--red)}
 
   /* ─── Section titles ─── */
-  .section-title{text-align:center;font-size:22px;font-weight:800;letter-spacing:-.5px;margin-bottom:24px;color:var(--ink)}
+  .section-title{text-align:center;font-size:22px;font-weight:800;letter-spacing:-.5px;margin-bottom:28px;color:var(--ink)}
+  .section-subtitle{text-align:center;font-size:14px;color:var(--muted);margin-top:-16px;margin-bottom:28px}
 
   /* ─── What you get ─── */
   .get-section{padding:40px 0}
@@ -84,7 +85,7 @@
   .product-card p{font-size:13px;color:#888;margin-bottom:18px}
   .product-card .price-row{display:flex;align-items:baseline;justify-content:center;gap:12px}
   .product-card .price-from{font-size:16px;color:#666;text-decoration:line-through}
-  .product-card .price-to{font-size:38px;font-weight:900;color:var(--yellow)}
+  .product-card .price-to{font-size:40px;font-weight:900;color:var(--yellow)}
   .product-card .price-label{font-size:11px;color:#555;margin-top:6px}
 
   .module{display:flex;gap:14px;padding:16px 0;border-bottom:1px solid var(--line);align-items:flex-start}
@@ -95,12 +96,14 @@
   .module-text p{font-size:13.5px;color:var(--muted);line-height:1.55}
 
   /* ─── Bonus ─── */
-  .bonus{padding:20px 0;border-top:2px dashed var(--red);margin-top:12px}
-  .bonus-title{font-size:11px;text-transform:uppercase;letter-spacing:1.5px;color:var(--red);font-weight:800;margin-bottom:12px;display:flex;align-items:center;gap:6px}
-  .bonus-item{display:flex;justify-content:space-between;align-items:center;font-size:14px;padding:7px 0;color:var(--text)}
+  .bonus{padding:24px 0;border-top:2px dashed var(--red);margin-top:16px}
+  .bonus-title{font-size:11px;text-transform:uppercase;letter-spacing:1.5px;color:var(--red);font-weight:800;margin-bottom:14px;display:flex;align-items:center;gap:6px}
+  .bonus-item{display:flex;justify-content:space-between;align-items:center;font-size:14px;padding:8px 0;color:var(--text)}
   .bonus-item .b-icon{color:var(--yellow-dark);font-size:14px;margin-right:8px}
   .bonus-item .b-name{font-weight:600}
   .bonus-item .b-value{color:var(--light);font-size:13px;text-decoration:line-through;flex-shrink:0}
+  .bonus-total{margin-top:14px;padding-top:14px;border-top:1px solid var(--line);font-size:13px;color:var(--text);text-align:center}
+  .bonus-total b{color:var(--green);font-weight:700}
 
   /* ─── Price section ─── */
   .price-section{padding:40px 0}
@@ -126,7 +129,7 @@
   .trust-item svg{width:16px;height:16px;stroke:var(--green);stroke-width:2;fill:none;flex-shrink:0}
 
   /* ─── Testimonials ─── */
-  .testimonials{padding:40px 0;background:var(--soft);border-radius:16px;margin:0 -16px;padding-left:16px;padding-right:16px}
+  .testimonials{padding:44px 0;background:var(--soft);border-radius:0;margin:0 -16px;padding-left:16px;padding-right:16px}
   .testi{background:var(--white);border-radius:12px;padding:20px;margin-bottom:14px;border:1px solid var(--line);box-shadow:0 1px 3px rgba(0,0,0,.04)}
   .testi-head{display:flex;align-items:center;gap:12px;margin-bottom:10px}
   .testi-avatar{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:800;color:#fff;flex-shrink:0;letter-spacing:-.5px}
@@ -148,18 +151,21 @@
   .faq-a p{padding:0 20px 18px;font-size:14px;color:var(--text);line-height:1.6}
 
   /* ─── Final CTA ─── */
-  .final-cta{padding:44px 0;text-align:center;background:var(--ink);color:#fff;border-radius:16px;margin:0 -16px;padding-left:16px;padding-right:16px}
-  .final-cta h2{font-size:24px;font-weight:800;margin-bottom:10px;letter-spacing:-.5px}
-  .final-cta p{font-size:14px;color:#9ca3af;margin-bottom:28px;max-width:320px;margin-left:auto;margin-right:auto;line-height:1.6}
+  .final-cta{padding:48px 0;text-align:center;background:var(--ink);color:#fff;border-radius:16px;margin:0 -16px;padding-left:16px;padding-right:16px}
+  .final-cta h2{font-size:24px;font-weight:800;margin-bottom:12px;letter-spacing:-.5px}
+  .final-cta p{font-size:14.5px;color:#9ca3af;margin-bottom:28px;max-width:340px;margin-left:auto;margin-right:auto;line-height:1.65}
   .final-cta .cta{background:var(--yellow);color:var(--ink);font-weight:800;box-shadow:0 2px 8px rgba(251,191,36,.3)}
   .final-cta .cta:hover{background:#f59e0b;box-shadow:0 4px 16px rgba(251,191,36,.35)}
   .final-cta .cta svg{stroke:var(--ink)}
   .final-cta .guarantee-badge{color:#9ca3af}
 
   /* ─── Sticky CTA ─── */
-  .sticky{position:fixed;bottom:0;left:0;right:0;padding:12px 16px;background:var(--white);border-top:1px solid var(--line);z-index:99;transform:translateY(100%);transition:transform .3s var(--ease);box-shadow:0 -4px 16px rgba(0,0,0,.08)}
+  .sticky{position:fixed;bottom:0;left:0;right:0;padding:10px 16px;background:var(--white);border-top:1px solid var(--line);z-index:99;transform:translateY(100%);transition:transform .3s var(--ease);box-shadow:0 -4px 20px rgba(0,0,0,.1)}
   .sticky.visible{transform:translateY(0)}
-  .sticky .cta{padding:14px 24px;font-size:14px}
+  .sticky .cta{padding:14px 24px;font-size:14px;min-height:48px}
+  .sticky-inner{max-width:640px;margin:0 auto;display:flex;align-items:center;gap:12px}
+  .sticky-price{font-size:13px;color:var(--muted);flex-shrink:0}
+  .sticky-price b{color:var(--ink);font-size:16px}
 
   /* ─── Footer ─── */
   .footer{padding:28px 16px;text-align:center;font-size:11px;color:var(--light);line-height:1.7;padding-bottom:90px}
@@ -176,10 +182,15 @@
     .social-proof{font-size:12px}
     .social-proof .avatars span{width:24px;height:24px;font-size:9px}
     .wrap{width:min(100% - 24px,640px)}
-    .cta{font-size:15px;padding:16px 24px}
+    .cta{font-size:15px;padding:16px 24px;min-height:52px}
     .price-card .price-header .to{font-size:38px}
     .product-card{padding:28px 20px}
     .price-card{padding:26px 20px}
+    .sticky-inner{gap:8px}
+    .sticky-price{font-size:12px}
+    .sticky-price b{font-size:15px}
+    .sticky .cta{min-height:46px;font-size:13px}
+    .final-cta .wrap{width:100%}
   }
 
   /* Product Image */
@@ -253,6 +264,7 @@
   <!-- What you get -->
   <section class="get-section">
     <h2 class="section-title">O que você recebe hoje</h2>
+    <p class="section-subtitle">Tudo em um único material digital — acesso imediato após a compra</p>
 
     <div class="product-card">
       <div class="tag">Material Digital Completo</div>
@@ -287,6 +299,7 @@
       <div class="bonus-item"><span class="b-icon">🎁</span><span class="b-name">Planilha de Fechamentos Inteligentes</span><span class="b-value">R$ 47</span></div>
       <div class="bonus-item"><span class="b-icon">🎁</span><span class="b-name">Guia: O Segredo dos Concursos Finais</span><span class="b-value">R$ 37</span></div>
       <div class="bonus-item"><span class="b-icon">🎁</span><span class="b-name">Acesso ao Grupo VIP de Estudos</span><span class="b-value">R$ 67</span></div>
+      <div class="bonus-total">Valor total dos bônus: <b>R$ 151 — você leva tudo por apenas R$ 27</b></div>
     </div>
   </section>
 
@@ -412,7 +425,7 @@
 <section class="final-cta">
   <div class="wrap">
     <h2>Continuar perdendo ou testar sem risco?</h2>
-    <p>Por R$ 27 você tem acesso imediato + 7 dias para devolver. A escolha é simples.</p>
+    <p>Por apenas R$ 27 — menos do que uma aposta com 15 dezenas — você recebe tudo hoje. E se não servir, devolvemos 100% em 7 dias.</p>
     <a class="cta" href="https://example.com/checkout">
       Quero testar agora
       <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
@@ -426,10 +439,13 @@
 
 <!-- Sticky CTA -->
 <div class="sticky" id="sticky">
-  <a class="cta" href="https://example.com/checkout">
-    Garantir por R$ 27
-    <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-  </a>
+  <div class="sticky-inner">
+    <span class="sticky-price">Por <b>R$ 27</b></span>
+    <a class="cta" href="https://example.com/checkout">
+      Garantir agora
+      <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+  </div>
 </div>
 
 <!-- Footer -->
