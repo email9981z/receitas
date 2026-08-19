@@ -22,7 +22,7 @@
   img{max-width:100%;display:block}
 
   /* ─── Header ─── */
-  .top-bar{background:var(--red);color:#fff;text-align:center;padding:10px 16px;font-size:12px;font-weight:600;letter-spacing:.8px;text-transform:uppercase}
+  .top-bar{background:var(--red);color:#fff;text-align:center;padding:10px 16px;font-size:12px;font-weight:800;letter-spacing:.8px;text-transform:uppercase;animation:pulse-bg 3s ease-in-out infinite}
   .top-bar b{color:var(--yellow)}
 
   /* ─── Container ─── */
@@ -71,7 +71,7 @@
   .guarantee-badge svg{width:18px;height:18px;stroke:var(--green);stroke-width:2;fill:none;flex-shrink:0}
 
   /* ─── Problem ─── */
-  .problem{padding:28px 32px;background:var(--white);border-radius:12px;margin:32px 0;border-left:4px solid var(--red)}
+  .problem{padding:28px 32px;background:var(--red-light);border-radius:12px;margin:32px 0;border-left:5px solid var(--red);box-shadow:0 3px 14px rgba(185,28,28,.1)}
   .problem p{font-size:16px;color:var(--text);line-height:1.75}
   .problem p b{color:var(--red)}
 
@@ -88,6 +88,7 @@
 
   .module{display:flex;gap:14px;padding:16px 0;border-bottom:1px solid var(--line);align-items:flex-start}
   .module:last-child{border-bottom:none}
+  .module-num{font-size:11px;font-weight:900;color:var(--red);background:var(--red-light);border:1px solid rgba(185,28,28,.2);border-radius:5px;padding:4px 8px;text-transform:uppercase;letter-spacing:.6px;flex-shrink:0;min-width:62px;text-align:center;margin-bottom:6px}
   .module-icon{width:40px;height:40px;background:var(--ink);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
   .module-icon svg{width:20px;height:20px;stroke:#fff;stroke-width:1.8;fill:none;stroke-linecap:round;stroke-linejoin:round}
   .module-text h4{font-size:15px;font-weight:700;margin-bottom:3px;color:var(--ink)}
@@ -97,6 +98,7 @@
   .bonus{padding:24px 0;border-top:1px solid var(--line);margin-top:20px}
   .bonus-title{font-size:11px;text-transform:uppercase;letter-spacing:1.5px;color:var(--red);font-weight:800;margin-bottom:14px;display:flex;align-items:center;gap:6px}
   .bonus-item{display:flex;justify-content:space-between;align-items:center;font-size:14px;padding:8px 0;color:var(--text)}
+  .bonus-item .b-free{font-size:10px;font-weight:900;letter-spacing:.8px;color:#fff;background:var(--red);border-radius:4px;padding:3px 8px;flex-shrink:0;text-transform:uppercase;margin-right:8px;box-shadow:0 1px 4px rgba(185,28,28,.3)}
   .bonus-item .b-icon{display:flex;align-items:center;flex-shrink:0}
   .bonus-item .b-icon svg{width:16px;height:16px;stroke:var(--yellow-dark);stroke-width:2;fill:none}
   .bonus-item .b-name{font-weight:600}
@@ -106,9 +108,10 @@
 
   /* ─── Price section ─── */
   .price-section{padding:40px 0;background:var(--soft)}
+  .price-badge{background:var(--red);color:#fff;font-size:12px;font-weight:900;letter-spacing:1.5px;text-transform:uppercase;text-align:center;border-radius:6px;padding:9px 14px;margin-bottom:18px;box-shadow:0 3px 12px rgba(185,28,28,.35)}
   .price-card{background:var(--white);border:3px solid var(--red);border-radius:16px;padding:32px 28px;margin-bottom:24px;box-shadow:0 4px 24px rgba(185,28,28,.18)}
   .price-card .price-header{text-align:center;margin-bottom:12px}
-  .price-card .price-header .from{font-size:15px;color:var(--light);text-decoration:line-through;margin-bottom:2px}
+  .price-card .price-header .from{font-size:15px;color:var(--red);text-decoration:line-through;margin-bottom:2px;font-weight:700}
   .price-card .price-header .to{font-size:40px;font-weight:900;color:var(--ink);line-height:1;letter-spacing:-1px}
   .price-card .price-header .to span{font-size:22px;font-weight:700;color:var(--red)}
   .price-card .price-label{font-size:11.5px;color:var(--muted);text-align:center;margin-bottom:14px}
@@ -161,11 +164,11 @@
   .final-cta .guarantee-badge{color:#9ca3af}
 
   /* ─── Sticky CTA ─── */
-  .sticky{position:fixed;bottom:0;left:0;right:0;padding:10px 16px;background:var(--white);border-top:1px solid var(--line);z-index:99;transform:translateY(100%);transition:transform .3s var(--ease)}
+  .sticky{position:fixed;bottom:0;left:0;right:0;padding:10px 16px;background:var(--card-dark);border-top:1px solid rgba(255,255,255,.08);z-index:99;transform:translateY(100%);transition:transform .3s var(--ease);box-shadow:0 -4px 20px rgba(0,0,0,.25)}
   .sticky.visible{transform:translateY(0)}
   .sticky .cta{padding:14px 24px;font-size:14px;min-height:48px}
   .sticky-inner{max-width:640px;margin:0 auto;display:flex;align-items:center;gap:12px}
-  .sticky-price{font-size:13px;color:var(--muted);flex-shrink:0}
+  .sticky-price{font-size:13px;color:#aab;flex-shrink:0}
   .sticky-price b{color:var(--ink);font-size:16px}
 
   /* ─── Footer ─── */
@@ -191,6 +194,8 @@
     .hero .cta{max-width:100%}
     .social-proof{font-size:12px}
     .social-proof .avatars span{width:24px;height:24px;font-size:9px}
+    .bonus-item .b-free{padding:2px 6px;font-size:9px;margin-right:6px}
+    .price-badge{font-size:11px;padding:8px 10px}
 
     /* General container */
     .wrap{width:100%;padding:0 16px}
@@ -204,7 +209,8 @@
 
     /* Price card */
     .price-section{padding:28px 0}
-    .price-card{padding:24px 16px}
+    .price-badge{background:var(--red);color:#fff;font-size:12px;font-weight:900;letter-spacing:1.5px;text-transform:uppercase;text-align:center;border-radius:6px;padding:9px 14px;margin-bottom:18px;box-shadow:0 3px 12px rgba(185,28,28,.35)}
+  .price-card{padding:24px 16px}
     .price-card .price-header .to{font-size:34px}
     .price-card .price-header .to span{font-size:18px}
     .price-card .price-label{font-size:11px}
@@ -277,6 +283,7 @@
 
 
   /* ─── Offer recap (stack de oferta) ─── */
+  .recap-today-tag{color:#fff;background:var(--red);font-size:10px;font-weight:900;letter-spacing:1px;border-radius:4px;padding:3px 8px;text-transform:uppercase;vertical-align:middle;margin-left:6px}
   .offer-recap{background:var(--soft);border:1.5px dashed var(--red);border-radius:14px;padding:24px 22px;text-align:center;margin-top:26px}
   .offer-recap-title{font-size:11px;text-transform:uppercase;letter-spacing:1.5px;color:var(--red);font-weight:800;margin-bottom:14px}
   .offer-recap-list{margin-bottom:18px}
@@ -376,29 +383,29 @@
     <div>
       <div class="module">
         <div class="module-icon"><svg viewBox="0 0 24 24"><rect x="3" y="12" width="4" height="9" rx="1"/><rect x="10" y="7" width="4" height="14" rx="1"/><rect x="17" y="3" width="4" height="18" rx="1"/></svg></div>
-        <div class="module-text"><h4>Padrões Ocultos</h4><p>Quais dezenas mais saem — aposte com dados, não no chute.</p></div>
+        <div class="module-text"><div class="module-num">Passo 1</div><h4>Padrões Ocultos</h4><p>Quais dezenas mais saem — aposte com dados, não no chute.</p></div>
       </div>
       <div class="module">
         <div class="module-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5" fill="#fff"/></svg></div>
-        <div class="module-text"><h4>Fechamentos Inteligentes</h4><p>Cubra mais combinações gastando o mesmo valor.</p></div>
+        <div class="module-text"><div class="module-num">Passo 2</div><h4>Fechamentos Inteligentes</h4><p>Cubra mais combinações gastando o mesmo valor.</p></div>
       </div>
       <div class="module">
         <div class="module-icon"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
-        <div class="module-text"><h4>Plano de Apostas</h4><p>Saiba quando apostar — e quando NÃO apostar.</p></div>
+        <div class="module-text"><div class="module-num">Passo 3</div><h4>Plano de Apostas</h4><p>Saiba quando apostar — e quando NÃO apostar.</p></div>
       </div>
     </div>
 
     <div class="bonus">
-      <div class="bonus-title">+ Bônus Exclusivos (sem custo extra)</div>
-      <div class="bonus-item"><span class="b-icon"><svg viewBox="0 0 24 24"><rect x="3" y="12" width="4" height="9" rx="1"/><rect x="10" y="7" width="4" height="14" rx="1"/><rect x="17" y="3" width="4" height="18" rx="1"/></svg></span><span class="b-name">Planilha de Fechamentos Inteligentes</span><span class="b-value">R$ 47</span></div>
-      <div class="bonus-item"><span class="b-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span><span class="b-name">Guia: O Segredo dos Concursos Finais</span><span class="b-value">R$ 37</span></div>
-      <div class="bonus-item"><span class="b-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span><span class="b-name">Acesso ao Grupo VIP de Apostadores</span><span class="b-value">R$ 67</span></div>
+      <div class="bonus-title">+ Bônus Exclusivos — você leva <span style="color:var(--green)">GRÁTIS HOJE</span></div>
+      <div class="bonus-item"><span class="b-free">GRÁTIS</span><span class="b-icon"><svg viewBox="0 0 24 24"><rect x="3" y="12" width="4" height="9" rx="1"/><rect x="10" y="7" width="4" height="14" rx="1"/><rect x="17" y="3" width="4" height="18" rx="1"/></svg></span><span class="b-name">Planilha de Fechamentos Inteligentes</span><span class="b-value">R$ 47</span></div>
+      <div class="bonus-item"><span class="b-free">GRÁTIS</span><span class="b-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span><span class="b-name">Guia: O Segredo dos Concursos Finais</span><span class="b-value">R$ 37</span></div>
+      <div class="bonus-item"><span class="b-free">GRÁTIS</span><span class="b-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span><span class="b-name">Acesso ao Grupo VIP de Apostadores</span><span class="b-value">R$ 67</span></div>
       <div class="bonus-total">Valor total dos bônus: <b>R$ 151</b> + material principal · tudo por <b style="color:var(--red)">R$ 27</b></div>
     </div>
 
     <!-- Sua oferta hoje (recap do stack) -->
     <div class="offer-recap">
-      <div class="offer-recap-title">Sua oferta de hoje</div>
+      <div class="offer-recap-title">Sua oferta <span class="recap-today-tag">SÓ HOJE</span></div>
       <div class="offer-recap-list">
         <div class="offer-recap-item"><span>Estudo Secreto da Lotofácil</span><b>R$ 27</b></div>
         <div class="offer-recap-item"><span>+ 3 Bônus exclusivos</span><b>R$ 151</b></div>
@@ -416,6 +423,7 @@
   <!-- Price -->
   <section class="price-section">
     <div class="price-card">
+      <div class="price-badge">🔥 PREÇO ESPECIAL — SÓ HOJE</div>
       <div class="price-header">
         <div class="from">Material + bônus: R$ 178</div>
         <div class="to"><span>R$</span> 27<span class="to-once"> hoje</span></div>
@@ -452,6 +460,7 @@
   <!-- Testimonials -->
   <section class="testimonials">
     <h2 class="section-title">Veja o Que Está Acontecendo com Quem Aplica o Método</h2>
+    <p class="section-subtitle">Resultados reais de quem parou de apostar no chute · ★★★★★</p>
     <div class="testi">
       <div class="testi-head">
         <div class="testi-avatar" style="background:#2563eb">RM</div>
@@ -512,7 +521,7 @@
 
   <!-- FAQ -->
   <section class="faq">
-    <h2 class="section-title">Dúvidas Frequentes</h2>
+    <h2 class="section-title">Últimas Dúvidas Antes de Garantir</h2>
     <div class="faq-item">
       <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
         É seguro comprar?
@@ -548,7 +557,7 @@
 <!-- Final CTA -->
 <section class="final-cta">
   <div class="wrap">
-    <h2>⚠ O desconto acaba HOJE</h2>
+    <h2>⚠ Depois de hoje, esse preço <span style="color:var(--yellow)">NÃO EXISTE MAIS</span></h2>
     <p>Amanhã esse preço não existe mais. <b>R$ 27</b> hoje — ou R$ 97 depois. Material + 3 bônus por menos de R$ 1 por dia. A escolha é sua.</p>
     <a class="cta" href="https://example.com/checkout">
       SIM! ANTES QUE ACABE
@@ -564,7 +573,7 @@
 <!-- Sticky CTA -->
 <div class="sticky" id="sticky">
   <div class="sticky-inner">
-    <span class="sticky-price">Por <b>R$ 27</b></span>
+    <span class="sticky-price"><s style="color:#777">R$ 97</s> <b style="color:#fff">R$ 27</b></span>
     <a class="cta" href="https://example.com/checkout">
       GARANTIR POR R$ 27
       <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
