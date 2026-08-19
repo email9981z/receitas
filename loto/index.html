@@ -39,14 +39,14 @@
   .hero p.sub{font-size:16px;color:var(--text);margin-bottom:20px;font-weight:400;line-height:1.6}
   .hero p.sub b{color:var(--red);font-weight:700}
   .hero .cta{max-width:380px;margin:0 auto}
-  .hero .cta{background:var(--red);color:#fff;font-weight:800;font-size:16px;padding:19px 28px;box-shadow:0 4px 18px rgba(185,28,28,.42);animation:pulse-cta 2s ease-in-out infinite}
-  .hero .cta:hover{background:var(--red-deep);box-shadow:0 6px 24px rgba(185,28,28,.5);transform:translateY(-2px)}
-  .hero .cta svg{stroke:#fff}
+  .hero .cta{background:#fcc819;color:#000;font-weight:800;font-size:16.5px;padding:20px 32px;border-radius:999px;font-family:Helvetica,Arial,sans-serif;box-shadow:0 4px 0 rgba(0,0,0,.07);animation:pulse-cta 2s ease-in-out infinite}}
+  .hero .cta:hover{background:#e3b000;box-shadow:0 6px 16px rgba(0,0,0,.16);transform:translateY(-1px)}
+  .hero .cta svg{stroke:#000;stroke-width:2.8}
   .hero .guarantee-badge{color:var(--muted)}
 
   @keyframes pulse-bg{0%,100%{background:#c02626}50%{background:#a01e1e}}
   @keyframes pulse-bg-dark{0%,100%{background:#1e1e30}50%{background:#252540}}
-  @keyframes pulse-cta{0%,100%{box-shadow:0 4px 16px rgba(185,28,28,.3)}50%{box-shadow:0 4px 24px rgba(185,28,28,.45),0 0 0 6px rgba(185,28,28,.06)}}
+  @keyframes pulse-cta{0%,100%{box-shadow:0 4px 0 rgba(0,0,0,.07)}50%{box-shadow:0 4px 14px rgba(0,0,0,.22),0 0 0 10px rgba(252,200,25,.32)}}
   /* ─── Social proof bar ─── */
   .social-proof{display:flex;justify-content:center;align-items:center;gap:8px;margin-bottom:18px;font-size:13px;color:var(--muted)}
   .social-proof .avatars{display:flex}
@@ -61,10 +61,10 @@
   .hero-stats .stat-label{font-size:11px;color:#8b93a0;text-transform:uppercase;letter-spacing:.5px;margin-top:2px}
 
   /* ─── CTA Button ─── */
-  .cta{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:18px 28px;background:var(--red);color:#fff;font-size:15.5px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;border:none;border-radius:8px;cursor:pointer;text-decoration:none;box-shadow:0 2px 8px rgba(185,28,28,.3);transition:all .2s var(--ease);line-height:1.3}
-  .cta:hover{background:var(--red-deep);box-shadow:0 4px 20px rgba(185,28,28,.4);transform:translateY(-2px)}
-  .cta:active{transform:translateY(0);box-shadow:0 1px 4px rgba(185,28,28,.3)}
-  .cta svg{width:18px;height:18px;stroke:#fff;stroke-width:2.5;fill:none}
+  .cta{display:flex;white-space:nowrap;align-items:center;justify-content:center;gap:10px;width:100%;padding:20px 32px;background:#fcc819;color:#000;font-size:16px;font-weight:800;letter-spacing:.3px;border:none;border-radius:999px;cursor:pointer;text-decoration:none;box-shadow:0 4px 0 rgba(0,0,0,.07);transition:all .2s var(--ease);line-height:1.3;font-family:Helvetica,Arial,sans-serif}
+  .cta:hover{background:#e3b000;box-shadow:0 6px 14px rgba(0,0,0,.14);transform:translateY(-1px)}
+  .cta:active{transform:translateY(2px);box-shadow:0 1px 0 rgba(0,0,0,.07)}
+  .cta svg{width:18px;height:18px;stroke:#000;stroke-width:2.8;fill:none}
 
   /* ─── Guarantee badge ─── */
   .guarantee-badge{display:flex;align-items:center;justify-content:center;gap:8px;margin-top:16px;font-size:13px;color:var(--muted)}
@@ -158,15 +158,15 @@
   .final-cta{padding:48px 0;text-align:center;background:var(--card-dark);color:#fff;border-radius:16px;margin:0 -16px;padding-left:16px;padding-right:16px;animation:pulse-bg-dark 4s ease-in-out infinite}
   .final-cta h2{font-size:24px;font-weight:800;margin-bottom:12px;letter-spacing:-.5px}
   .final-cta p{font-size:14.5px;color:#9ca3af;margin-bottom:28px;max-width:340px;margin-left:auto;margin-right:auto;line-height:1.65}
-  .final-cta .cta{background:var(--red);color:#fff;font-weight:800;box-shadow:0 2px 8px rgba(185,28,28,.4);animation:pulse-cta 2s ease-in-out infinite}
-  .final-cta .cta:hover{background:var(--red-deep);box-shadow:0 4px 16px rgba(185,28,28,.5)}
-  .final-cta .cta svg{stroke:#fff}
+  .final-cta .cta{background:#fcc819;color:#000;font-weight:800;border-radius:999px;font-family:Helvetica,Arial,sans-serif;box-shadow:0 4px 0 rgba(0,0,0,.07);animation:pulse-cta 2s ease-in-out infinite}
+  .final-cta .cta:hover{background:#e3b000;box-shadow:0 6px 16px rgba(0,0,0,.18)}
+  .final-cta .cta svg{stroke:#000;stroke-width:2.8}
   .final-cta .guarantee-badge{color:#9ca3af}
 
   /* ─── Sticky CTA ─── */
   .sticky{position:fixed;bottom:0;left:0;right:0;padding:10px 16px;background:var(--card-dark);border-top:1px solid rgba(255,255,255,.08);z-index:99;transform:translateY(100%);transition:transform .3s var(--ease);box-shadow:0 -4px 20px rgba(0,0,0,.25)}
   .sticky.visible{transform:translateY(0)}
-  .sticky .cta{padding:14px 24px;font-size:14px;min-height:48px}
+  .sticky .cta{padding:13px 24px;font-size:13.5px;min-height:44px;border-radius:999px;font-family:Helvetica,Arial,sans-serif}
   .sticky-inner{max-width:640px;margin:0 auto;display:flex;align-items:center;gap:12px}
   .sticky-price{font-size:13px;color:#aab;flex-shrink:0}
   .sticky-price b{color:var(--ink);font-size:16px}
@@ -186,7 +186,7 @@
     .hero p.sub{font-size:14px;line-height:1.55}
     .hero .tag{font-size:10px;padding:5px 14px}
     .hero-headline{font-size:16px;margin-bottom:10px}
-    .hero .cta{font-size:15px}
+    .hero .cta{font-size:15.5px;padding:18px 24px}
     .offer-to{font-size:36px}
     .hero-stats{gap:16px}
     .hero-stats .stat-num{font-size:20px}
@@ -199,7 +199,7 @@
 
     /* General container */
     .wrap{width:100%;padding:0 16px}
-    .cta{font-size:13.5px;padding:16px 20px;min-height:52px;line-height:1.3}
+    .cta{font-size:14.5px;padding:17px 22px;min-height:56px;line-height:1.3;border-radius:999px}
 
     /* Problem section */
     .problem{padding:20px;margin:24px 0}
@@ -249,7 +249,7 @@
     .sticky-inner{gap:8px}
     .sticky-price{font-size:12px}
     .sticky-price b{font-size:15px}
-    .sticky .cta{min-height:46px;font-size:13px;padding:12px 16px}
+    .sticky .cta{min-height:44px;font-size:12.5px;padding:11px 18px;border-radius:999px;font-family:Helvetica,Arial,sans-serif}
 
     /* Section titles */
     .section-title{font-size:20px;margin-bottom:20px}
@@ -351,7 +351,7 @@
       </div>
 
       <a class="cta" href="https://example.com/checkout">
-        GARANTIR MEU ACESSO POR R$ 27
+        QUERO MEU ACESSO POR R$ 27
         <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
       <div class="guarantee-badge">
