@@ -4,128 +4,155 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Estudo Secreto da Lotofácil — Método para Organizar Apostas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
   :root{
-    --red:#b90000; --red-deep:#8b0000; --ink:#111; --yellow:#f5c518;
-    --text:#333; --muted:#666; --line:#e5e5e5; --soft:#f8f8f8; --white:#fff;
-    --display:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+    --red:#b91c1c; --red-deep:#7f1d1d; --red-light:#fef2f2;
+    --ink:#1a1a2e; --yellow:#fbbf24; --yellow-dark:#d97706;
+    --text:#374151; --muted:#6b7280; --light:#9ca3af;
+    --line:#e5e7eb; --soft:#f9fafb; --white:#ffffff;
+    --green:#16a34a;
+    --font:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
     --ease:cubic-bezier(.4,0,.2,1);
   }
   *{margin:0;padding:0;box-sizing:border-box}
   html{scroll-behavior:smooth}
-  body{font-family:var(--display);color:var(--ink);background:var(--white);line-height:1.5;-webkit-font-smoothing:antialiased}
+  body{font-family:var(--font);color:var(--ink);background:var(--white);line-height:1.6;-webkit-font-smoothing:antialiased}
   img{max-width:100%;display:block}
 
-  /* Header */
-  .top-bar{background:var(--red);color:#fff;text-align:center;padding:10px 16px;font-size:13px;font-weight:700;letter-spacing:.3px}
+  /* ─── Header ─── */
+  .top-bar{background:var(--ink);color:#fff;text-align:center;padding:10px 16px;font-size:12px;font-weight:600;letter-spacing:.8px;text-transform:uppercase}
   .top-bar b{color:var(--yellow)}
 
-  /* Container */
-  .container{width:min(100% - 32px,560px);margin:0 auto}
+  /* ─── Container ─── */
+  .wrap{width:min(100% - 32px,640px);margin:0 auto}
 
-  /* Hero */
-  .hero{padding:36px 0 28px;text-align:center}
-  .hero h1{font-size:clamp(26px,6vw,34px);font-weight:900;line-height:1.1;letter-spacing:-1px;color:var(--ink);margin-bottom:12px}
-  .hero p.sub{font-size:17px;color:var(--muted);margin-bottom:24px}
-  .hero p.sub b{color:var(--red)}
+  /* ─── Hero ─── */
+  .hero{padding:44px 0 32px;text-align:center}
+  .hero .tag{display:inline-block;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--red);border:1.5px solid var(--red);border-radius:4px;padding:4px 12px;margin-bottom:18px}
+  .hero h1{font-size:clamp(28px,7vw,38px);font-weight:900;line-height:1.08;letter-spacing:-1.5px;color:var(--ink);margin-bottom:14px}
+  .hero p.sub{font-size:18px;color:var(--muted);margin-bottom:28px;font-weight:400}
+  .hero p.sub b{color:var(--red);font-weight:700}
 
-  /* CTA Button */
-  .cta{display:block;width:100%;padding:18px 24px;background:var(--red);color:#fff;font-size:17px;font-weight:800;letter-spacing:.5px;border:none;border-radius:10px;cursor:pointer;text-decoration:none;text-align:center;box-shadow:0 4px 0 var(--red-deep);transition:transform .15s var(--ease),box-shadow .15s var(--ease)}
-  .cta:hover{transform:translateY(-2px);box-shadow:0 6px 0 var(--red-deep)}
-  .cta:active{transform:translateY(1px);box-shadow:0 2px 0 var(--red-deep)}
-  .cta span{font-size:20px;margin-left:6px}
+  /* ─── CTA Button ─── */
+  .cta{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:18px 28px;background:var(--red);color:#fff;font-size:16px;font-weight:700;letter-spacing:.4px;text-transform:uppercase;border:none;border-radius:8px;cursor:pointer;text-decoration:none;box-shadow:0 2px 8px rgba(185,28,28,.3);transition:all .2s var(--ease)}
+  .cta:hover{background:var(--red-deep);box-shadow:0 4px 16px rgba(185,28,28,.35);transform:translateY(-1px)}
+  .cta:active{transform:translateY(0);box-shadow:0 1px 4px rgba(185,28,28,.3)}
+  .cta svg{width:18px;height:18px;stroke:#fff;stroke-width:2.5;fill:none}
 
-  /* Guarantee badge */
-  .badge{display:inline-flex;align-items:center;gap:6px;margin-top:14px;font-size:12px;color:var(--muted);background:var(--soft);padding:8px 16px;border-radius:20px}
-  .badge svg{width:16px;height:16px;flex-shrink:0}
+  /* ─── Guarantee badge ─── */
+  .guarantee-badge{display:flex;align-items:center;justify-content:center;gap:8px;margin-top:16px;font-size:13px;color:var(--muted)}
+  .guarantee-badge svg{width:18px;height:18px;stroke:var(--green);stroke-width:2;fill:none;flex-shrink:0}
 
-  /* Problem section */
-  .problem{padding:28px 0;background:var(--soft);border-radius:12px;margin:24px 0}
-  .problem p{font-size:15px;color:var(--text);line-height:1.65;text-align:center}
+  /* ─── Problem ─── */
+  .problem{padding:24px 28px;background:var(--soft);border-radius:12px;margin:28px 0;border-left:4px solid var(--red)}
+  .problem p{font-size:15px;color:var(--text);line-height:1.7}
   .problem p b{color:var(--red)}
 
-  /* What you get */
-  .get-section{padding:32px 0}
-  .get-section h2{font-size:22px;font-weight:900;text-align:center;margin-bottom:24px;letter-spacing:-.5px}
-  .product-card{background:var(--ink);border-radius:14px;padding:32px 24px;text-align:center;color:#fff;margin-bottom:24px}
-  .product-card .tag{font-size:10px;text-transform:uppercase;letter-spacing:1.5px;color:var(--yellow);font-weight:700;margin-bottom:8px}
-  .product-card h3{font-size:20px;font-weight:800;margin-bottom:4px}
-  .product-card p{font-size:13px;color:#aaa;margin-bottom:16px}
-  .product-card .price{font-size:32px;font-weight:900;color:var(--yellow)}
-  .product-card .price small{font-size:14px;color:#888;text-decoration:line-through;margin-right:8px}
+  /* ─── Section titles ─── */
+  .section-title{text-align:center;font-size:22px;font-weight:800;letter-spacing:-.5px;margin-bottom:24px;color:var(--ink)}
 
-  .module{display:flex;gap:12px;padding:14px 0;border-bottom:1px solid var(--line);align-items:flex-start}
+  /* ─── What you get ─── */
+  .get-section{padding:40px 0}
+  .product-card{background:var(--ink);border-radius:14px;padding:36px 28px;text-align:center;color:#fff;margin-bottom:28px;position:relative;overflow:hidden}
+  .product-card::before{content:'';position:absolute;top:-50%;right:-30%;width:200px;height:200px;background:radial-gradient(circle,rgba(185,28,28,.15) 0%,transparent 70%);border-radius:50%}
+  .product-card .tag{font-size:10px;text-transform:uppercase;letter-spacing:2px;color:var(--yellow);font-weight:700;margin-bottom:10px;opacity:.9}
+  .product-card h3{font-size:22px;font-weight:800;margin-bottom:6px;letter-spacing:-.5px}
+  .product-card p{font-size:13px;color:#888;margin-bottom:18px}
+  .product-card .price-row{display:flex;align-items:baseline;justify-content:center;gap:12px}
+  .product-card .price-from{font-size:16px;color:#666;text-decoration:line-through}
+  .product-card .price-to{font-size:38px;font-weight:900;color:var(--yellow)}
+  .product-card .price-label{font-size:11px;color:#555;margin-top:6px}
+
+  .module{display:flex;gap:14px;padding:16px 0;border-bottom:1px solid var(--line);align-items:flex-start}
   .module:last-child{border-bottom:none}
-  .module-icon{width:36px;height:36px;background:var(--ink);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-  .module-icon svg{width:18px;height:18px;stroke:#fff;stroke-width:2;fill:none}
-  .module-text h4{font-size:15px;font-weight:800;margin-bottom:2px}
-  .module-text p{font-size:13px;color:var(--muted);line-height:1.45}
+  .module-icon{width:40px;height:40px;background:var(--ink);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+  .module-icon svg{width:20px;height:20px;stroke:#fff;stroke-width:1.8;fill:none;stroke-linecap:round;stroke-linejoin:round}
+  .module-text h4{font-size:15px;font-weight:700;margin-bottom:3px;color:var(--ink)}
+  .module-text p{font-size:13.5px;color:var(--muted);line-height:1.55}
 
-  /* Bonus */
-  .bonus{padding:18px 0;border-top:2px solid var(--red);margin-top:8px}
-  .bonus-title{font-size:12px;text-transform:uppercase;letter-spacing:1px;color:var(--red);font-weight:800;margin-bottom:10px}
-  .bonus-item{display:flex;justify-content:space-between;font-size:14px;padding:6px 0;color:var(--text)}
-  .bonus-item span:last-child{color:var(--muted);font-size:12px;text-decoration:line-through}
+  /* ─── Bonus ─── */
+  .bonus{padding:20px 0;border-top:2px dashed var(--red);margin-top:12px}
+  .bonus-title{font-size:11px;text-transform:uppercase;letter-spacing:1.5px;color:var(--red);font-weight:800;margin-bottom:12px;display:flex;align-items:center;gap:6px}
+  .bonus-item{display:flex;justify-content:space-between;align-items:center;font-size:14px;padding:7px 0;color:var(--text)}
+  .bonus-item .b-icon{color:var(--yellow-dark);font-size:14px;margin-right:8px}
+  .bonus-item .b-name{font-weight:600}
+  .bonus-item .b-value{color:var(--light);font-size:13px;text-decoration:line-through;flex-shrink:0}
 
-  /* Price section */
-  .price-section{padding:32px 0;text-align:center}
-  .price-card{background:var(--soft);border:2px solid var(--red);border-radius:14px;padding:28px 24px;margin-bottom:20px}
-  .price-card .from{font-size:14px;color:var(--muted);text-decoration:line-through;margin-bottom:4px}
-  .price-card .to{font-size:36px;font-weight:900;color:var(--ink);margin-bottom:8px}
-  .price-card .to span{color:var(--red)}
-  .price-card .note{font-size:12px;color:var(--muted);margin-bottom:20px}
-  .price-card .timer{display:flex;justify-content:center;gap:8px;margin-bottom:18px}
-  .price-card .timer div{background:var(--ink);color:#fff;padding:8px 12px;border-radius:6px;font-size:16px;font-weight:800;font-variant-numeric:tabular-nums;min-width:44px}
-  .price-card .timer-label{font-size:11px;color:var(--muted);margin-bottom:8px;text-transform:uppercase;letter-spacing:.5px}
+  /* ─── Price section ─── */
+  .price-section{padding:40px 0}
+  .price-card{background:var(--white);border:2px solid var(--red);border-radius:16px;padding:32px 28px;margin-bottom:24px;box-shadow:0 4px 24px rgba(185,28,28,.08)}
+  .price-card .price-header{text-align:center;margin-bottom:20px}
+  .price-card .price-header .from{font-size:15px;color:var(--light);text-decoration:line-through;margin-bottom:4px}
+  .price-card .price-header .to{font-size:44px;font-weight:900;color:var(--ink);line-height:1}
+  .price-card .price-header .to span{font-size:24px;font-weight:700;color:var(--red)}
+  .price-card .price-features{display:flex;justify-content:center;gap:16px;margin:14px 0 20px;font-size:12px;color:var(--muted);flex-wrap:wrap}
+  .price-card .price-features span{display:flex;align-items:center;gap:4px}
+  .price-card .price-features svg{width:14px;height:14px;stroke:var(--green);stroke-width:2.5;fill:none}
 
-  /* Timer label */
-  .timer-label-global{font-size:12px;color:var(--red);font-weight:700;text-align:center;margin-bottom:12px}
+  /* ─── Timer ─── */
+  .timer-block{text-align:center;margin-bottom:20px}
+  .timer-label{font-size:11px;text-transform:uppercase;letter-spacing:1px;color:var(--muted);margin-bottom:8px;font-weight:600}
+  .timer{display:flex;justify-content:center;gap:6px}
+  .timer div{background:var(--ink);color:#fff;padding:10px 14px;border-radius:8px;font-size:18px;font-weight:800;font-variant-numeric:tabular-nums;min-width:48px}
+  .timer .sep{background:none;color:var(--ink);padding:10px 2px;font-size:20px;font-weight:300}
 
-  /* Testimonials */
-  .testimonials{padding:32px 0;background:var(--soft)}
-  .testimonials h2{font-size:22px;font-weight:900;text-align:center;margin-bottom:20px}
-  .testi{background:var(--white);border-radius:12px;padding:18px;margin-bottom:12px;border:1px solid var(--line)}
-  .testi-head{display:flex;align-items:center;gap:10px;margin-bottom:8px}
-  .testi-avatar{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:800;color:#fff;flex-shrink:0}
-  .testi-name{font-size:14px;font-weight:700}
-  .testi-stars{color:var(--yellow);font-size:12px;letter-spacing:1px}
-  .testi p{font-size:14px;color:var(--text);line-height:1.5}
+  /* ─── Trust row ─── */
+  .trust-row{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;margin-top:16px}
+  .trust-item{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--muted)}
+  .trust-item svg{width:16px;height:16px;stroke:var(--green);stroke-width:2;fill:none;flex-shrink:0}
 
-  /* FAQ */
-  .faq{padding:32px 0}
-  .faq h2{font-size:22px;font-weight:900;text-align:center;margin-bottom:20px}
-  .faq-item{border:1px solid var(--line);border-radius:10px;margin-bottom:10px;overflow:hidden}
-  .faq-q{display:flex;justify-content:space-between;align-items:center;padding:16px 18px;font-size:15px;font-weight:700;cursor:pointer;background:var(--white);border:none;width:100%;text-align:left}
-  .faq-q::after{content:'+';font-size:20px;font-weight:300;color:var(--red);flex-shrink:0;margin-left:12px}
-  .faq-item.open .faq-q::after{content:'−'}
+  /* ─── Testimonials ─── */
+  .testimonials{padding:40px 0;background:var(--soft);border-radius:16px;margin:0 -16px;padding-left:16px;padding-right:16px}
+  .testi{background:var(--white);border-radius:12px;padding:20px;margin-bottom:14px;border:1px solid var(--line);box-shadow:0 1px 3px rgba(0,0,0,.04)}
+  .testi-head{display:flex;align-items:center;gap:12px;margin-bottom:10px}
+  .testi-avatar{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:800;color:#fff;flex-shrink:0;letter-spacing:-.5px}
+  .testi-info .testi-name{font-size:14px;font-weight:700;color:var(--ink)}
+  .testi-info .testi-stars{color:var(--yellow-dark);font-size:13px;letter-spacing:1px;margin-top:1px}
+  .testi p{font-size:14px;color:var(--text);line-height:1.6;font-style:italic}
+  .testi .testi-verified{font-size:11px;color:var(--green);font-style:normal;display:flex;align-items:center;gap:4px;margin-top:8px;font-weight:600}
+  .testi .testi-verified svg{width:14px;height:14px;stroke:var(--green);stroke-width:2;fill:none}
+
+  /* ─── FAQ ─── */
+  .faq{padding:40px 0}
+  .faq-item{border:1px solid var(--line);border-radius:10px;margin-bottom:10px;overflow:hidden;background:var(--white)}
+  .faq-q{display:flex;justify-content:space-between;align-items:center;padding:16px 20px;font-size:15px;font-weight:700;cursor:pointer;background:var(--white);border:none;width:100%;text-align:left;color:var(--ink);font-family:var(--font);transition:background .15s}
+  .faq-q:hover{background:var(--soft)}
+  .faq-q svg{width:20px;height:20px;stroke:var(--muted);stroke-width:2;fill:none;flex-shrink:0;transition:transform .2s}
+  .faq-item.open .faq-q svg{transform:rotate(45deg)}
   .faq-a{max-height:0;overflow:hidden;transition:max-height .3s var(--ease)}
   .faq-item.open .faq-a{max-height:200px}
-  .faq-a p{padding:0 18px 16px;font-size:14px;color:var(--text);line-height:1.55}
+  .faq-a p{padding:0 20px 18px;font-size:14px;color:var(--text);line-height:1.6}
 
-  /* Final CTA */
-  .final-cta{padding:36px 0;text-align:center;background:var(--ink);color:#fff}
-  .final-cta h2{font-size:22px;font-weight:900;margin-bottom:10px}
-  .final-cta p{font-size:14px;color:#999;margin-bottom:24px;max-width:340px;margin-left:auto;margin-right:auto}
-  .final-cta .cta{background:var(--yellow);color:var(--ink);box-shadow:0 4px 0 rgba(0,0,0,.4)}
-  .final-cta .cta:hover{box-shadow:0 6px 0 rgba(0,0,0,.4)}
-  .final-cta .cta:active{box-shadow:0 2px 0 rgba(0,0,0,.4)}
+  /* ─── Final CTA ─── */
+  .final-cta{padding:44px 0;text-align:center;background:var(--ink);color:#fff;border-radius:16px;margin:0 -16px;padding-left:16px;padding-right:16px}
+  .final-cta h2{font-size:24px;font-weight:800;margin-bottom:10px;letter-spacing:-.5px}
+  .final-cta p{font-size:14px;color:#9ca3af;margin-bottom:28px;max-width:320px;margin-left:auto;margin-right:auto;line-height:1.6}
+  .final-cta .cta{background:var(--yellow);color:var(--ink);font-weight:800;box-shadow:0 2px 8px rgba(251,191,36,.3)}
+  .final-cta .cta:hover{background:#f59e0b;box-shadow:0 4px 16px rgba(251,191,36,.35)}
+  .final-cta .cta svg{stroke:var(--ink)}
+  .final-cta .guarantee-badge{color:#9ca3af}
 
-  /* Sticky CTA */
-  .sticky{position:fixed;bottom:0;left:0;right:0;padding:10px 16px;background:var(--white);border-top:1px solid var(--line);z-index:99;transform:translateY(100%);transition:transform .3s var(--ease)}
+  /* ─── Sticky CTA ─── */
+  .sticky{position:fixed;bottom:0;left:0;right:0;padding:12px 16px;background:var(--white);border-top:1px solid var(--line);z-index:99;transform:translateY(100%);transition:transform .3s var(--ease);box-shadow:0 -4px 16px rgba(0,0,0,.08)}
   .sticky.visible{transform:translateY(0)}
-  .sticky .cta{padding:14px 20px;font-size:15px}
+  .sticky .cta{padding:14px 24px;font-size:14px}
 
-  /* Footer */
-  .footer{padding:20px 16px;text-align:center;font-size:11px;color:var(--muted);line-height:1.5;padding-bottom:80px}
-  .footer a{color:var(--muted)}
+  /* ─── Footer ─── */
+  .footer{padding:28px 16px;text-align:center;font-size:11px;color:var(--light);line-height:1.7;padding-bottom:90px}
+  .footer .disclaimer{max-width:500px;margin:0 auto 12px;padding:14px;background:var(--soft);border-radius:8px;font-size:10px;color:var(--muted);line-height:1.5}
 
-  /* Mobile */
+  /* ─── Mobile ─── */
   @media(max-width:480px){
-    .hero{padding:28px 0 20px}
-    .hero h1{font-size:24px}
-    .container{width:min(100% - 24px,560px)}
-    .cta{font-size:16px;padding:16px 20px}
-    .price-card .to{font-size:32px}
+    .hero{padding:32px 0 24px}
+    .hero h1{font-size:26px;letter-spacing:-1px}
+    .hero p.sub{font-size:16px}
+    .wrap{width:min(100% - 24px,640px)}
+    .cta{font-size:15px;padding:16px 24px}
+    .price-card .price-header .to{font-size:38px}
+    .product-card{padding:28px 20px}
+    .price-card{padding:26px 20px}
   }
 </style>
 </head>
@@ -133,18 +160,22 @@
 
 <!-- Header -->
 <div class="top-bar">
-  ⏰ OFERTA ENCERRA HOJE ÀS <b>23:59</b>
+  Oferta por tempo limitado · Encerra hoje às <b>23:59</b>
 </div>
 
-<div class="container">
+<div class="wrap">
 
   <!-- Hero -->
   <section class="hero">
+    <div class="tag">Método de organização de apostas</div>
     <h1>Você acerta 13 e 14 pontos toda semana.<br>E nunca ganha nada.</h1>
     <p class="sub">O problema não é sua sorte. É <b>a forma de jogar</b>.</p>
-    <a class="cta" href="https://example.com/checkout">QUERO MUDAR ISSO <span>→</span></a>
-    <div class="badge">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+    <a class="cta" href="https://example.com/checkout">
+      Quero mudar isso
+      <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+    <div class="guarantee-badge">
+      <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
       Garantia incondicional de 7 dias — 100% do dinheiro de volta
     </div>
   </section>
@@ -156,101 +187,155 @@
 
   <!-- What you get -->
   <section class="get-section">
-    <h2>O que você recebe hoje</h2>
+    <h2 class="section-title">O que você recebe hoje</h2>
 
     <div class="product-card">
       <div class="tag">Material Digital Completo</div>
       <h3>Estudo Secreto da Lotofácil</h3>
-      <p>Organize suas apostas com base em dados reais</p>
-      <div class="price"><small>R$ 97</small>R$ 27</div>
+      <p>Organize suas apostas com base em dados reais de concursos</p>
+      <div class="price-row">
+        <span class="price-from">R$ 97</span>
+        <span class="price-to">R$ 27</span>
+      </div>
+      <div class="price-label">Pagamento único · Acesso vitalício</div>
     </div>
 
     <div>
       <div class="module">
-        <div class="module-icon"><svg viewBox="0 0 24 24"><rect x="3" y="12" width="4" height="9"/><rect x="10" y="7" width="4" height="14"/><rect x="17" y="3" width="4" height="18"/></svg></div>
-        <div class="module-text"><h4>Padrões dos concursos passados</h4><p>Saiba quais dezenas, pares e ímpares saem mais — para apostar com dados, não no chute.</p></div>
+        <div class="module-icon"><svg viewBox="0 0 24 24"><rect x="3" y="12" width="4" height="9" rx="1"/><rect x="10" y="7" width="4" height="14" rx="1"/><rect x="17" y="3" width="4" height="18" rx="1"/></svg></div>
+        <div class="module-text"><h4>Padrões dos concursos passados</h4><p>Saiba quais dezenas, pares e ímpares saem mais nos sorteios reais — para apostar com dados, não no chute.</p></div>
       </div>
       <div class="module">
-        <div class="module-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5"/></svg></div>
-        <div class="module-text"><h4>Fechamentos inteligentes</h4><p>Cubra mais dezenas gastando o mesmo — ou menos — do que gasta hoje em apostas soltas.</p></div>
+        <div class="module-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5" fill="#fff"/></svg></div>
+        <div class="module-text"><h4>Fechamentos inteligentes</h4><p>Cubra mais dezenas gastando o mesmo — ou menos — do que gasta hoje em apostas soltas sem critério.</p></div>
       </div>
       <div class="module">
         <div class="module-icon"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
-        <div class="module-text"><h4>Plano de apostas sem esbanjar</h4><p>Defina quanto gastar por concurso e saiba quando é melhor não apostar.</p></div>
+        <div class="module-text"><h4>Plano de apostas sem esbanjar</h4><p>Defina quanto gastar por concurso e saiba quando é melhor não apostar. Proteja seu bolso.</p></div>
       </div>
     </div>
 
     <div class="bonus">
       <div class="bonus-title">+ Bônus inclusos (sem custo extra)</div>
-      <div class="bonus-item"><span>Planilha de Fechamentos Inteligentes</span><span>R$ 47</span></div>
-      <div class="bonus-item"><span>Guia: O Segredo dos Concursos Finais</span><span>R$ 37</span></div>
-      <div class="bonus-item"><span>Acesso ao Grupo VIP de Estudos</span><span>R$ 67</span></div>
+      <div class="bonus-item"><span class="b-icon">🎁</span><span class="b-name">Planilha de Fechamentos Inteligentes</span><span class="b-value">R$ 47</span></div>
+      <div class="bonus-item"><span class="b-icon">🎁</span><span class="b-name">Guia: O Segredo dos Concursos Finais</span><span class="b-value">R$ 37</span></div>
+      <div class="bonus-item"><span class="b-icon">🎁</span><span class="b-name">Acesso ao Grupo VIP de Estudos</span><span class="b-value">R$ 67</span></div>
     </div>
   </section>
 
   <!-- Price -->
   <section class="price-section">
-    <div class="timer-label-global">⏰ Preço promocional encerra em:</div>
     <div class="price-card">
-      <div class="from">De R$ 97,00</div>
-      <div class="to"><span>R$</span> 27,00</div>
-      <div class="note">Pagamento único · Acesso imediato · Sem mensalidade</div>
-      <div class="timer-label">Tempo restante:</div>
-      <div class="timer">
-        <div id="t-h">00</div>
-        <div style="background:none;color:var(--ink);padding:8px 0;font-size:18px">:</div>
-        <div id="t-m">00</div>
-        <div style="background:none;color:var(--ink);padding:8px 0;font-size:18px">:</div>
-        <div id="t-s">00</div>
+      <div class="price-header">
+        <div class="from">De R$ 97,00</div>
+        <div class="to"><span>R$</span> 27<span>,00</span></div>
       </div>
-      <a class="cta" href="https://example.com/checkout">GARANTIR ACESSO AGORA <span>→</span></a>
-      <div class="badge" style="margin-top:14px">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
-        7 dias de garantia — não gostou, devolvemos tudo
+      <div class="price-features">
+        <span><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Pagamento único</span>
+        <span><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Acesso imediato</span>
+        <span><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Sem mensalidade</span>
+      </div>
+      <div class="timer-block">
+        <div class="timer-label">Preço promocional encerra em</div>
+        <div class="timer">
+          <div id="t-h">00</div>
+          <span class="sep">:</span>
+          <div id="t-m">00</div>
+          <span class="sep">:</span>
+          <div id="t-s">00</div>
+        </div>
+      </div>
+      <a class="cta" href="https://example.com/checkout">
+        Garantir acesso agora
+        <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+      <div class="trust-row">
+        <span class="trust-item">
+          <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+          7 dias de garantia
+        </span>
+        <span class="trust-item">
+          <svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          Pagamento seguro
+        </span>
+        <span class="trust-item">
+          <svg viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+          Pix, cartão ou boleto
+        </span>
       </div>
     </div>
   </section>
 
   <!-- Testimonials -->
   <section class="testimonials">
-    <h2>Quem já aplica o método</h2>
+    <h2 class="section-title">Quem já aplica o método</h2>
     <div class="testi">
       <div class="testi-head">
         <div class="testi-avatar" style="background:#2563eb">RM</div>
-        <div><div class="testi-name">Ricardo M. · Porto Alegre/RS</div><div class="testi-stars">★★★★★</div></div>
+        <div class="testi-info">
+          <div class="testi-name">Ricardo M. · Porto Alegre/RS</div>
+          <div class="testi-stars">★★★★★</div>
+        </div>
       </div>
       <p>"Faz 3 anos que jogo e sempre acertava 13, 14. Depois que organizei as apostas com o estudo, parei de jogar dezenas repetidas. Já economizei mais de R$ 200."</p>
+      <div class="testi-verified">
+        <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        Compra verificada
+      </div>
     </div>
     <div class="testi">
       <div class="testi-head">
         <div class="testi-avatar" style="background:#7c3aed">SF</div>
-        <div><div class="testi-name">Sandra F. · Goiânia/GO</div><div class="testi-stars">★★★★★</div></div>
+        <div class="testi-info">
+          <div class="testi-name">Sandra F. · Goiânia/GO</div>
+          <div class="testi-stars">★★★★★</div>
+        </div>
       </div>
       <p>"Eu gastava R$ 200 por mês em apostas soltas. Agora gasto o mesmo valor, mas com fechamentos que cobrem muito mais combinações. Faz sentido."</p>
+      <div class="testi-verified">
+        <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        Compra verificada
+      </div>
     </div>
     <div class="testi">
       <div class="testi-head">
         <div class="testi-avatar" style="background:#059669">MV</div>
-        <div><div class="testi-name">Marcos V. · Salvador/BA</div><div class="testi-stars">★★★★☆</div></div>
+        <div class="testi-info">
+          <div class="testi-name">Marcos V. · Salvador/BA</div>
+          <div class="testi-stars">★★★★☆</div>
+        </div>
       </div>
       <p>"Simples e direto. Não é promessa de prêmio — é um material que organiza como apostar. Vale cada centavo pelo que economizei em apostas sem critério."</p>
+      <div class="testi-verified">
+        <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        Compra verificada
+      </div>
     </div>
   </section>
 
   <!-- FAQ -->
   <section class="faq">
-    <h2>Dúvidas frequentes</h2>
+    <h2 class="section-title">Dúvidas frequentes</h2>
     <div class="faq-item">
-      <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">Isso é golpe?</button>
+      <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+        Isso é golpe?
+        <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+      </button>
       <div class="faq-a"><p>Não. É um material de estudo digital que organiza suas apostas com base em dados reais de concursos. Não prometemos prêmio — entregamos método. E você tem 7 dias para testar sem risco.</p></div>
     </div>
     <div class="faq-item">
-      <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">Loteria não é aleatória?</button>
+      <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+        Loteria não é aleatória?
+        <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+      </button>
       <div class="faq-a"><p>Sim, é aleatória. O estudo não prevê números. Ele ensina a organizar apostas para cobrir mais combinações úteis com o mesmo valor — evitando gastar em padrões que estatisticamente quase nunca saem.</p></div>
     </div>
     <div class="faq-item">
-      <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">E se eu não gostar?</button>
-      <div class="faq-a"><p>Devolução total em 7 dias, sem perguntas. Se o material não te servir, mande um e-mail e recebemos 100% do seu dinheiro de volta.</p></div>
+      <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+        E se eu não gostar?
+        <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+      </button>
+      <div class="faq-a"><p>Devolução total em 7 dias, sem perguntas. Se o material não te servir, mande um e-mail e devolvemos 100% do seu dinheiro.</p></div>
     </div>
   </section>
 
@@ -258,22 +343,34 @@
 
 <!-- Final CTA -->
 <section class="final-cta">
-  <div class="container">
+  <div class="wrap">
     <h2>Continuar perdendo ou testar sem risco?</h2>
     <p>Por R$ 27 você tem acesso imediato + 7 dias para devolver. A escolha é simples.</p>
-    <a class="cta" href="https://example.com/checkout">QUERO TESTAR AGORA <span>→</span></a>
+    <a class="cta" href="https://example.com/checkout">
+      Quero testar agora
+      <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+    <div class="guarantee-badge">
+      <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+      7 dias de garantia — não gostou, devolvemos tudo
+    </div>
   </div>
 </section>
 
 <!-- Sticky CTA -->
 <div class="sticky" id="sticky">
-  <a class="cta" href="https://example.com/checkout">GARANTIR POR R$ 27 <span>→</span></a>
+  <a class="cta" href="https://example.com/checkout">
+    Garantir por R$ 27
+    <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+  </a>
 </div>
 
 <!-- Footer -->
 <footer class="footer">
+  <div class="disclaimer">
+    Loterias envolvem risco financeiro. Este material organiza apostas com base em padrões estatísticos, mas não garante retorno, lucro ou prêmio. Os resultados variam de pessoa para pessoa. Conteúdo comercial.
+  </div>
   <p>© 2026 Estudo Secreto da Lotofácil. Todos os direitos reservados.<br>
-  Loterias envolvem risco financeiro. Este material organiza apostas, mas não garante retorno nem prêmio.<br>
   <a href="#">Termos de Uso</a> · <a href="#">Política de Privacidade</a></p>
 </footer>
 
