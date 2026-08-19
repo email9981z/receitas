@@ -303,13 +303,7 @@
 
 
 
-  /* Overlay de play sobre o video (funciona em mobile e desktop) */
-  .play-overlay{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;background:rgba(26,26,46,.55);backdrop-filter:blur(2px);-webkit-backdrop-filter:blur(2px);z-index:5;cursor:pointer;transition:opacity .25s}
-  .play-overlay.hidden{opacity:0;pointer-events:none}
-  .play-btn{display:inline-flex;align-items:center;gap:10px;background:#fcc819;color:#000;font-weight:800;font-size:13px;letter-spacing:.5px;padding:18px 28px;border-radius:999px;font-family:Helvetica,Arial,sans-serif;box-shadow:0 4px 0 rgba(0,0,0,.07),0 8px 24px rgba(0,0,0,.3);animation:pulse-cta 2s ease-in-out infinite;max-width:85%}
-  .play-btn svg{width:20px;height:20px;flex-shrink:0}
-  .play-btn span{line-height:1.3;text-align:left}
-  .play-note{color:#fff;font-size:11px;font-weight:600;margin-top:10px;opacity:.85}
+  
 </style>
 </head>
 <body>
@@ -341,22 +335,14 @@
       <h1>Lotofácil: O Estudo Secreto Que Te Ajuda a<br><em>ACERTAR 15 DEZENAS</em></h1>
       <p class="sub">Você acerta 13, 14… e o prêmio não paga o que gastou. <b>Este método</b> te mostra como jogar certo.</p>
 
-            <!-- Video de apresentacao (VSL) -->
+                  <!-- Video de apresentacao (VSL) -->
       <div class="hero-video">
         <div class="video-wrap" id="video-hero">
-          <video id="vsl-video" class="vsl-player" controls playsinline preload="auto" loop
+          <video id="vsl-video" class="vsl-player" controls autoplay muted playsinline preload="auto" loop
             poster="https://files.manuscdn.com/user_upload_by_module/session_file/310519663865742747/qgNVHHftoOmuzWjO.jpg">
             <source src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663865742747/MMghhyCOKuguSGUx.mp4" type="video/mp4">
             Seu navegador nao suporta video HTML5.
           </video>
-          <!-- Overlay com botao de play -->
-          <div class="play-overlay" id="play-overlay">
-            <div class="play-btn" id="play-btn">
-              <svg viewBox="0 0 24 24" fill="none"><path d="M7 4.5v15l12-7.5L7 4.5z" fill="#000"/></svg>
-              <span>ASSISTA COMO ACERTAR 15 DEZENAS</span>
-            </div>
-            <p class="play-note">Toque para assistir com som</p>
-          </div>
         </div>
       </div>
 
@@ -622,46 +608,45 @@
   // Video de apresentacao (VSL)
   (function () {
     var v = document.getElementById('vsl-video');
-    var overlay = document.getElementById('play-overlay');
-    var playBtn = document.getElementById('play-btn');
     if (!v) return;
-    var isMobile = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0) || /Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent);
-
-    if (isMobile) {
-      // MOBILE: nao toca sozinho (navegadores mobile pausam autoplay durante o scroll).
-      // O usuario toca no botao de play -> video toca COM SOM, e nao pausa durante o scroll.
-      v.muted = false;
-      v.volume = 1;
-      v.loop = true;
-      function startVideo() {
-        v.play().then(function () {
-          overlay.classList.add('hidden');
-        }).catch(function () {});
-        overlay.removeEventListener('click', startVideo);
-        overlay.removeEventListener('touchstart', startVideo);
-        v.removeEventListener('click', startVideo);
-      }
-      overlay.addEventListener('click', startVideo);
-      overlay.addEventListener('touchstart', startVideo);
-      v.addEventListener('click', startVideo);
-      // Se por qualquer motivo o video pausar, volta a tocar (exceto pausa intencional)
-      var intentional = false;
-      v.addEventListener('pause', function () {
-        if (!intentional) { v.play().catch(function () {}); }
-      });
-      v.addEventListener('click', function () { intentional = !v.paused; });
-    } else {
-      // DESKTOP: autoplay mudo + som no primeiro clique
-      v.muted = true;
-      v.loop = true;
-      v.play().catch(function () {});
-      overlay.classList.add('hidden');
-      var activateSound = function () {
-        if (v.muted) { v.muted = false; v.volume = 1; }
+    v.loop = true;
+    v.muted = true;
+    // Autoplay em todos os dispositivos (desktop e mobile)
+    v.play().catch(function () {
+      // Se o navegador bloquear, tenta apos a primeira interacao
+      var tryPlay = function () {
+        v.play().catch(function () {});
+        document.removeEventListener('click', tryPlay);
+        document.removeEventListener('touchstart', tryPlay);
       };
-      document.addEventListener('click', activateSound, { once: true });
-      document.addEventListener('touchstart', activateSound, { once: true });
-    }
+      document.addEventListener('click', tryPlay);
+      document.addEventListener('touchstart', tryPlay);
+    });
+    // Ativa o som no primeiro clique/touch
+    var activateSound = function () {
+      if (v.muted) { v.muted = false; v.volume = 1; }
+    };
+    var unmuteOnInteraction = function () {
+      activateSound();
+      document.removeEventListener('click', unmuteOnInteraction);
+      document.removeEventListener('touchstart', unmuteOnInteraction);
+    };
+    document.addEventListener('click', unmuteOnInteraction);
+    document.addEventListener('touchstart', unmuteOnInteraction);
+    v.addEventListener('click', function () { activateSound(); });
+    // Garantir que o video nunca pause (scroll, tab inativa, etc.)
+    var ensurePlaying = function () {
+      if (!v.ended) { v.play().catch(function () {}); }
+    };
+    v.addEventListener('pause', ensurePlaying);
+    window.addEventListener('scroll', ensurePlaying, { passive: true });
+    document.addEventListener('visibilitychange', function () {
+      if (!document.hidden && !v.ended) { ensurePlaying(); }
+    });
+    // Checagem periodica
+    setInterval(function () {
+      if (v.paused && !v.ended) { ensurePlaying(); }
+    }, 2000);
   })();
 </script>
 
