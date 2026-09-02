@@ -1,128 +1,545 @@
-<!doctype html>
+
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vale-presente Ipiranga: R$ 400 por R$ 350</title>
-  <meta name="description" content="Compre um vale-presente de abastecimento de R$ 400,00 por R$ 350,00 para uso em postos Ipiranga participantes.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <style>
-    :root{--ink:#142033;--muted:#5f6b7a;--orange:#f58220;--orange-dark:#c85c00;--yellow:#ffd447;--cream:#fff8ee;--line:#e8ebef;--green:#16803c;--dark:#172033}
-    *{box-sizing:border-box;margin:0;padding:0}
-    html{scroll-behavior:smooth}
-    body{font-family:Inter,Arial,sans-serif;color:var(--ink);background:#fff;line-height:1.5;-webkit-font-smoothing:antialiased}
-    .container{width:min(100% - 32px,680px);margin:auto}
-    .topbar{background:var(--orange);color:#fff;text-align:center;padding:10px 16px;font-size:12px;font-weight:800;letter-spacing:.5px}
-    .hero{text-align:center;background:linear-gradient(180deg,#fff 0%,#fffaf3 100%);padding:42px 0 34px;border-bottom:1px solid var(--line)}
-    .eyebrow{display:inline-block;color:var(--orange-dark);border:1px solid #f3b47d;border-radius:999px;padding:6px 13px;font-size:11px;font-weight:800;letter-spacing:.7px;text-transform:uppercase;margin-bottom:18px}
-    h1{font-size:clamp(29px,8vw,43px);line-height:1.08;letter-spacing:-1.3px;font-weight:900;margin-bottom:15px}
-    h1 strong{color:var(--orange-dark)}
-    .lead{max-width:560px;margin:0 auto 24px;color:#374151;font-size:16px}
-    .offer-visual{background:var(--dark);color:#fff;border-radius:18px;padding:25px 20px;margin:0 auto 22px;max-width:450px;box-shadow:0 12px 30px rgba(20,32,51,.16)}
-    .offer-visual small{display:block;color:#cbd5e1;text-transform:uppercase;letter-spacing:1.2px;font-size:11px;font-weight:700;margin-bottom:7px}
-    .credit{font-size:42px;font-weight:900;line-height:1.05;letter-spacing:-1px}
-    .pay{font-size:21px;color:var(--yellow);font-weight:800;margin-top:8px}
-    .saving{font-size:13px;color:#dbeafe;margin-top:8px}
-    .cta{display:flex;align-items:center;justify-content:center;gap:9px;width:100%;max-width:450px;min-height:58px;margin:0 auto;background:var(--yellow);color:#101010;text-decoration:none;border-radius:999px;padding:16px 22px;font-size:15px;font-weight:900;letter-spacing:.2px;box-shadow:0 4px 0 rgba(0,0,0,.12);transition:transform .2s,background .2s}
-    .cta:hover{background:#f3bd12;transform:translateY(-1px)}
-    .cta:focus-visible{outline:3px solid #0b63ce;outline-offset:3px}
-    .cta svg{width:18px;height:18px;stroke:currentColor;stroke-width:2.8;fill:none}
-    .microcopy{text-align:center;color:var(--muted);font-size:12px;margin-top:11px}
-    .summary{padding:25px 24px;background:var(--cream);border-left:4px solid var(--orange);border-radius:12px;margin:28px 0;color:#374151}
-    .summary strong{color:var(--orange-dark)}
-    section{padding:36px 0;border-bottom:1px solid var(--line)}
-    .section-title{text-align:center;font-size:23px;line-height:1.2;letter-spacing:-.5px;margin-bottom:20px}
-    .steps{display:grid;gap:12px}
-    .step{display:flex;gap:14px;align-items:flex-start;padding:16px;border:1px solid var(--line);border-radius:12px;background:#fff}
-    .step-num{width:30px;height:30px;display:grid;place-items:center;flex:none;border-radius:50%;background:var(--orange);color:#fff;font-weight:900;font-size:13px}
-    .step h3{font-size:15px;margin-bottom:3px}
-    .step p{font-size:13px;color:var(--muted)}
-    .buy-section{background:#f8fafc}
-    .price-card{background:#fff;border:2px solid var(--orange);border-radius:16px;padding:26px 22px;text-align:center;box-shadow:0 8px 25px rgba(20,32,51,.08)}
-    .price-card .label{font-size:11px;color:var(--orange-dark);font-weight:900;letter-spacing:1px;text-transform:uppercase;margin-bottom:10px}
-    .price-card .receive{font-size:15px;color:var(--muted);margin-bottom:3px}
-    .price-card .price{font-size:43px;font-weight:900;line-height:1;color:var(--ink);letter-spacing:-1px}
-    .price-card .price span{font-size:22px;color:var(--orange-dark)}
-    .price-card .economy{font-size:13px;color:var(--green);font-weight:800;margin:10px 0 20px}
-    .conditions{font-size:12px;color:var(--muted);margin-top:14px;line-height:1.55}
-    .faq{padding-bottom:45px}
-    details{border-bottom:1px solid var(--line);padding:16px 0}
-    summary{cursor:pointer;font-size:15px;font-weight:700;list-style:none;display:flex;justify-content:space-between;gap:12px}
-    summary::-webkit-details-marker{display:none}
-    summary::after{content:'+';font-size:22px;font-weight:400;color:var(--muted);line-height:1}
-    details[open] summary::after{content:'−'}
-    details p{font-size:13.5px;color:var(--muted);padding:11px 30px 0 0}
-    footer{padding:25px 16px 90px;text-align:center;color:#788392;font-size:11px;line-height:1.6}
-    .disclaimer{max-width:600px;margin:0 auto 12px;background:#f8fafc;border:1px solid var(--line);border-radius:8px;padding:12px}
-    .sticky{position:fixed;left:0;right:0;bottom:0;z-index:10;background:var(--dark);padding:9px 16px;box-shadow:0 -4px 18px rgba(0,0,0,.18);transform:translateY(100%);transition:transform .25s}
-    .sticky.visible{transform:translateY(0)}
-    .sticky-inner{width:min(100%,680px);margin:auto;display:flex;align-items:center;gap:12px}
-    .sticky-price{color:#fff;font-size:13px;font-weight:700;white-space:nowrap}
-    .sticky .cta{min-height:46px;padding:12px 15px;font-size:12px}
-    @media(max-width:480px){.hero{padding-top:30px}.lead{font-size:14px}.summary{padding:20px}.sticky-price{font-size:12px}.sticky-inner{gap:8px}.sticky .cta{font-size:11px}}
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vale-Presente Posto Ipiranga | R$ 400 por R$ 350</title>
+<style>
+/* ====== TEMA KOKESHI ====== */
+:root{
+  --wine:#e85b13;
+  --wine-dark:#c74608;
+  --pink:#ffb36b;
+  --pink-soft:#fff0e5;
+  --pink-bg:#fff8f3;
+  --teal:#168b5b;
+  --ink:#2a2230;
+  --muted:#7a7280;
+  --line:#f0d9e5;
+  --radius:14px;
+  --shadow:0 8px 30px rgba(156,11,82,.10);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--ink);background:#fff;line-height:1.55;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+.ico{width:1.05em;height:1.05em;vertical-align:-.16em;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.sprite{position:absolute;width:0;height:0;overflow:hidden}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer;border:none}
+.container{width:100%;max-width:1080px;margin-inline:auto;padding-inline:18px}
+h1,h2,h3{line-height:1.2}
+section{padding:28px 0}
+
+/* ====== TOP BAR ====== */
+.topbar{background:var(--wine);color:#fff;font-size:.82rem;font-weight:600;text-align:center;padding:9px 12px;display:flex;gap:18px;justify-content:center;align-items:center;flex-wrap:wrap}
+.topbar .timer{background:rgba(255,255,255,.18);padding:2px 10px;border-radius:20px;font-variant-numeric:tabular-nums}
+
+/* ====== HEADER ====== */
+.header{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid var(--line);padding:14px 0}
+.header .container{display:flex;align-items:center;justify-content:space-between}
+.logo{font-size:1.55rem;font-weight:800;letter-spacing:-.5px;color:var(--wine)}
+.logo span{color:var(--pink)}
+.header .live{font-size:.78rem;color:var(--muted);display:flex;align-items:center;gap:6px}
+.dot{width:8px;height:8px;border-radius:50%;background:#2ecc71;display:inline-block;animation:pulse 1.5s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+
+/* ====== HERO ====== */
+.hero{background:linear-gradient(180deg,var(--pink-bg),#fff);padding-top:40px}
+.hero .grid{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center}
+.gallery .main-img{position:relative;background:var(--pink-soft);border-radius:var(--radius);aspect-ratio:1;overflow:hidden;box-shadow:var(--shadow)}
+.carousel{display:flex;height:100%;width:100%;transition:transform .35s ease;touch-action:pan-y;cursor:grab}
+.carousel.dragging{transition:none;cursor:grabbing}
+.carousel .slide{flex:0 0 100%;height:100%}
+.carousel .slide img{width:100%;height:100%;object-fit:cover;pointer-events:none;user-select:none}
+.gallery .nav{position:absolute;top:50%;transform:translateY(-50%);width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,.85);color:var(--wine);font-size:1.3rem;font-weight:700;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 10px rgba(156,11,82,.2);z-index:3;transition:.2s}
+.gallery .nav:hover{background:#fff;transform:translateY(-50%) scale(1.08)}
+.gallery .nav.prev{left:12px}
+.gallery .nav.next{right:12px}
+.gallery .dots{position:absolute;bottom:12px;left:0;right:0;display:flex;gap:7px;justify-content:center;z-index:3}
+.gallery .dots span{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.6);transition:.2s;cursor:pointer}
+.gallery .dots span.active{background:var(--wine);width:22px;border-radius:5px}
+.thumbs{display:flex;gap:10px;margin-top:12px}
+.thumbs button{flex:1;aspect-ratio:1;background:var(--pink-soft);border-radius:10px;overflow:hidden;border:2px solid transparent;padding:0;cursor:pointer;transition:.2s}
+.thumbs button img{width:100%;height:100%;object-fit:cover}
+.thumbs button.active{border-color:var(--wine)}
+.thumbs button:hover{border-color:var(--pink)}
+.badge-new{display:inline-block;background:#111;color:#fff;font-size:.72rem;font-weight:700;padding:5px 12px;border-radius:20px;margin-bottom:12px}
+.hero h1{font-size:2.4rem;font-weight:800;margin-bottom:10px}
+.hero .sub{color:var(--muted);font-size:1.05rem;margin-bottom:16px}
+.stars{color:#f5a623;font-weight:700;display:flex;align-items:center;gap:8px;margin-bottom:8px}
+.stars .count{color:var(--muted);font-weight:500;font-size:.9rem}
+.social{font-size:.9rem;color:var(--wine);font-weight:600;margin-bottom:20px}
+.price-box{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow);margin-bottom:18px}
+.price-box .off{background:var(--teal);color:#fff;font-size:.78rem;font-weight:700;padding:3px 10px;border-radius:6px}
+.price-box .old{color:var(--muted);text-decoration:line-through;font-size:1rem;margin-left:8px}
+.price-box .now{font-size:2.2rem;font-weight:800;color:var(--wine);margin:6px 0}
+.price-box .parc{color:var(--muted);font-size:.92rem}
+.cta{display:block;width:100%;background:var(--wine);color:#fff;font-size:1.15rem;font-weight:700;padding:17px;border-radius:50px;text-align:center;transition:.2s;box-shadow:0 6px 20px rgba(156,11,82,.35)}
+.cta:hover{background:var(--wine-dark);transform:translateY(-2px)}
+.trust-mini{display:flex;gap:16px;justify-content:center;margin-top:14px;font-size:.8rem;color:var(--muted);flex-wrap:wrap}
+
+/* ====== DORES ====== */
+.dores{background:#fff}
+.section-title{text-align:center;font-size:1.9rem;font-weight:800;margin-bottom:12px}
+.section-sub{text-align:center;color:var(--muted);max-width:640px;margin:0 auto 26px;font-size:1.05rem}
+.dores-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px}
+.dor{background:var(--pink-bg);border:1px solid var(--line);border-radius:var(--radius);padding:22px;text-align:center}
+.dor .ic{font-size:2rem;margin-bottom:8px}
+.dor strong{display:block;margin-bottom:4px}
+.dor p{font-size:.9rem;color:var(--muted)}
+
+/* ====== BENEFÍCIOS ====== */
+.benef{background:var(--pink-bg)}
+.benef-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px}
+.benef-card{background:#fff;border-radius:var(--radius);padding:26px;box-shadow:var(--shadow)}
+.benef-card .ic{width:52px;height:52px;border-radius:14px;background:var(--pink-soft);color:var(--wine);display:flex;align-items:center;justify-content:center;margin-bottom:14px}
+.benef-card .ic .ico{width:26px;height:26px}
+.benef-card h3{font-size:1.15rem;margin-bottom:6px;color:var(--wine)}
+.benef-card p{font-size:.94rem;color:var(--muted)}
+
+/* ====== INGREDIENTES ====== */
+.ingr-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+.ingr{border:1px solid var(--line);border-radius:var(--radius);padding:22px;text-align:center}
+.ingr .pill{display:inline-block;background:var(--pink-soft);color:var(--wine);font-weight:700;font-size:.82rem;padding:5px 14px;border-radius:20px;margin-bottom:10px}
+.ingr p{font-size:.9rem;color:var(--muted)}
+
+/* ====== KITS / OFERTAS ====== */
+.kits{background:var(--pink-bg)}
+.kits-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+.kit{background:#fff;border:2px solid var(--line);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;position:relative;transition:.2s}
+.kit:hover{border-color:var(--pink);transform:translateY(-4px)}
+.kit.featured{border-color:var(--wine)}
+.kit .flag{position:absolute;top:12px;left:12px;background:var(--teal);color:#fff;font-size:.74rem;font-weight:700;padding:3px 9px;border-radius:6px;z-index:2}
+.kit .best{position:absolute;top:12px;right:12px;background:var(--wine);color:#fff;font-size:.72rem;font-weight:700;padding:3px 9px;border-radius:6px;z-index:2}
+.kit .img{aspect-ratio:1;background:var(--pink-soft);overflow:hidden}
+.kit .img img{width:100%;height:100%;object-fit:cover}
+.kit .body{padding:18px;display:flex;flex-direction:column;flex:1}
+.kit .rate{color:#f5a623;font-size:.85rem;font-weight:700;margin-bottom:6px}
+.kit .rate span{color:var(--muted);font-weight:500}
+.kit h3{font-size:1.05rem;margin-bottom:10px;min-height:2.6em}
+.kit .old{color:var(--muted);text-decoration:line-through;font-size:.88rem}
+.kit .now{font-size:1.5rem;font-weight:800;color:var(--wine)}
+.kit .parc{font-size:.82rem;color:var(--muted);margin-bottom:14px}
+.kit .buy{margin-top:auto;background:var(--wine);color:#fff;font-weight:700;padding:13px;border-radius:50px;text-align:center;transition:.2s}
+.kit .buy:hover{background:var(--wine-dark)}
+
+/* ====== GARANTIAS ====== */
+.garant-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:18px}
+.garant{text-align:center;padding:20px}
+.garant .ic{color:var(--wine);margin-bottom:10px}
+.garant .ic .ico{width:34px;height:34px}
+.garant strong{display:block;margin-bottom:4px}
+.garant p{font-size:.88rem;color:var(--muted)}
+
+/* ====== DEPOIMENTOS ====== */
+.depo{background:var(--pink-bg)}
+.depo-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+.depo-card{background:#fff;border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)}
+.depo-card .top{display:flex;align-items:center;gap:12px;margin-bottom:10px}
+.depo-card .av{width:44px;height:44px;border-radius:50%;background:var(--pink);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700}
+.depo-card .name{font-weight:700;font-size:.95rem}
+.depo-card .meta{font-size:.78rem;color:var(--muted)}
+.depo-card .st{color:#f5a623;font-size:.85rem;margin-bottom:6px}
+.depo-card p{font-size:.92rem}
+.depo-card .photo{margin-top:12px;border-radius:10px;overflow:hidden;aspect-ratio:4/3;background:var(--pink-soft)}
+.depo-card .photo img{width:100%;height:100%;object-fit:cover}
+.verified{font-size:.75rem;color:var(--teal);font-weight:600;margin-top:8px;display:inline-block}
+
+/* ====== URGÊNCIA ====== */
+.urg{background:var(--wine);color:#fff;text-align:center}
+.urg h2{font-size:1.7rem;margin-bottom:10px}
+.urg p{opacity:.9;margin-bottom:22px}
+.urg .cta{max-width:360px;margin:0 auto;background:#fff;color:var(--wine)}
+.urg .cta:hover{background:var(--pink-soft)}
+
+/* ====== FAQ ====== */
+.faq-list{max-width:720px;margin:0 auto}
+.faq-item{border:1px solid var(--line);border-radius:var(--radius);margin-bottom:12px;overflow:hidden}
+.faq-q{padding:18px 20px;font-weight:600;display:flex;justify-content:space-between;align-items:center;background:#fff}
+.faq-q .arrow{transition:.3s;color:var(--wine)}
+.faq-item.open .faq-q .arrow{transform:rotate(180deg)}
+.faq-a{max-height:0;overflow:hidden;transition:.3s;padding:0 20px;color:var(--muted);font-size:.94rem}
+.faq-item.open .faq-a{max-height:300px;padding:0 20px 18px}
+
+/* ====== FOOTER ====== */
+.footer{background:#1a1420;color:#cbb8c4;padding:44px 0;font-size:.86rem}
+.footer .logo{color:#fff;margin-bottom:12px}
+.footer p{margin-bottom:8px;max-width:560px}
+.footer .legal{font-size:.76rem;opacity:.6;margin-top:16px}
+
+/* ====== RESPONSIVO ====== */
+@media(max-width:860px){
+  html{font-size:15px}
+  .hero .grid{grid-template-columns:1fr;gap:22px}
+  .hero h1{font-size:1.9rem}
+  .section-title{font-size:1.5rem}
+  section{padding:30px 0}
+}
+</style>
+<script src="/mx-funil.js"></script>
 </head>
 <body>
-  <div class="topbar">CONHEÇA O VALE-PRESENTE IPIRANGA PARA ABASTECIMENTO</div>
 
-  <main>
-    <section class="hero">
-      <div class="container">
-        <div class="eyebrow">Uma opção para abastecer e presentear</div>
-        <h1>Mais praticidade para abastecer no <strong>Posto Ipiranga</strong><br><span style="color:var(--orange-dark)">R$ 400,00 em crédito por R$ 350,00</span></h1>
-        <p class="lead">Este vale-presente oferece R$ 400,00 em crédito para abastecimento em postos Ipiranga participantes. O valor de aquisição é R$ 350,00.</p>
-        <div class="offer-visual">
-          <small>Crédito do vale-presente</small>
-          <div class="credit">R$ 400,00</div>
-          <div class="pay">por apenas R$ 350,00</div>
-          <div class="saving">Economia de R$ 50,00</div>
+<!-- KIT DE ÍCONES (SVG sprite) -->
+<svg class="sprite" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <symbol id="i-truck" viewBox="0 0 24 24"><path d="M1 4h14v11H1z"/><path d="M15 8h4l4 4v3h-8z"/><circle cx="5.5" cy="18" r="2"/><circle cx="18" cy="18" r="2"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></symbol>
+  <symbol id="i-flame" viewBox="0 0 24 24"><path d="M12 2.5c.8 3 3.5 4 3.5 7.5a3.5 3.5 0 0 1-7 0c0-1 .4-1.8 1-2.5.2 1 .8 1.7 1.5 1.7-.5-2 .3-4.7 1-6.2z"/><path d="M8.5 10A6 6 0 0 0 12 21a6 6 0 0 0 3.5-11"/></symbol>
+  <symbol id="i-sparkles" viewBox="0 0 24 24"><path d="M12 3l1.6 4.4L18 9l-4.4 1.6L12 15l-1.6-4.4L6 9l4.4-1.6z"/><path d="M18 14l.9 2.1 2.1.9-2.1.9L18 20l-.9-2.1L15 17l2.1-.9z"/></symbol>
+  <symbol id="i-heart" viewBox="0 0 24 24"><path d="M20.8 6a5 5 0 0 0-7.1 0L12 7.7 10.3 6a5 5 0 1 0-7.1 7.1L12 21l8.8-7.9a5 5 0 0 0 0-7.1z"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></symbol>
+  <symbol id="i-return" viewBox="0 0 24 24"><path d="M9 14 4 9l5-5"/><path d="M4 9h11a5 5 0 0 1 0 10h-3"/></symbol>
+  <symbol id="i-droplet" viewBox="0 0 24 24"><path d="M12 3s6 5.5 6 10a6 6 0 0 1-12 0c0-4.5 6-10 6-10z"/></symbol>
+  <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M4 20c9 2 16-4 16-14 0 0-11-2-15 5-1.5 2.6-1.5 6-1 9z"/><path d="M4 20c3.5-6 8-8.5 12-9.5"/></symbol>
+  <symbol id="i-spa" viewBox="0 0 24 24"><circle cx="12" cy="8" r="3"/><path d="M12 21c-4 0-7-2.5-7-6 2.6 0 5 1 7 3 2-2 4.4-3 7-3 0 3.5-3 6-7 6z"/></symbol>
+  <symbol id="i-alert" viewBox="0 0 24 24"><path d="M10.3 4 2 18a2 2 0 0 0 1.7 3h16.6A2 2 0 0 0 22 18L13.7 4a2 2 0 0 0-3.4 0z"/><path d="M12 9v4M12 17h.01"/></symbol>
+  <symbol id="i-bag" viewBox="0 0 24 24"><path d="M6 2 3 6v13a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></symbol>
+</svg>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <span><svg class="ico"><use href="#i-truck"/></svg> CRÉDITO PARA ABASTECER</span>
+  <span><svg class="ico"><use href="#i-clock"/></svg> Oferta especial expira em <span class="timer" id="timer">01:59:00</span></span>
+  <span><svg class="ico"><use href="#i-flame"/></svg> <strong id="viewing">184</strong> pessoas consultando agora</span>
+</div>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="container">
+    <div class="logo">IPIRANGA<span>+</span></div>
+    <div class="live"><span class="dot"></span> oferta digital • consulte as condições</div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="grid">
+      <div class="gallery">
+        <div class="main-img">
+          <div class="carousel" id="carousel">
+            <div class="slide"><img src="vale-presente-ipiranga.svg" alt="Vale-presente Posto Ipiranga de R$ 400,00"></div>
+            <div class="slide"><img src="vale-presente-ipiranga.svg" alt="Crédito para abastecimento no Posto Ipiranga"></div>
+            <div class="slide"><img src="vale-presente-ipiranga.svg" alt="Vale digital Posto Ipiranga"></div>
+          </div>
+          <button class="nav prev" onclick="slideBy(-1)" aria-label="Foto anterior">‹</button>
+          <button class="nav next" onclick="slideBy(1)" aria-label="Próxima foto">›</button>
+          <div class="dots" id="dots"></div>
         </div>
-        <a class="cta" href="#comprar">CONHECER A OFERTA <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-        <p class="microcopy">Uma oferta para você avaliar com calma, conforme suas necessidades.</p>
+        <div class="thumbs" id="thumbs">
+          <button class="active" onclick="goToSlide(0)"><img src="vale-presente-ipiranga.svg" alt="Vale de R$ 400,00"></button>
+          <button onclick="goToSlide(1)"><img src="vale-presente-ipiranga.svg" alt="Crédito para abastecimento"></button>
+          <button onclick="goToSlide(2)"><img src="vale-presente-ipiranga.svg" alt="Vale digital"></button>
+        </div>
       </div>
-    </section>
-
-    <div class="container">
-      <div class="summary"><strong>Em resumo:</strong> é um vale-presente de abastecimento com R$ 400,00 em crédito, adquirido por R$ 350,00, para utilização conforme as condições da oferta.</div>
-
-      <section>
-        <h2 class="section-title">Como funciona</h2>
-        <div class="steps">
-          <div class="step"><div class="step-num">1</div><div><h3>Conheça os detalhes</h3><p>Veja o valor do crédito, o preço de R$ 350,00 e as condições de uso.</p></div></div>
-          <div class="step"><div class="step-num">2</div><div><h3>Se fizer sentido para você</h3><p>Você pode prosseguir pelo checkout somente depois de consultar as condições da oferta.</p></div></div>
-          <div class="step"><div class="step-num">3</div><div><h3>Receba e utilize com tranquilidade</h3><p>Após a confirmação, siga as instruções para receber e usar o vale em postos participantes.</p></div></div>
+      <div class="info">
+        <span class="badge-new"><svg class="ico"><use href="#i-sparkles"/></svg> VALE-PRESENTE • OFERTA ESPECIAL</span>
+        <h1>Vale-Presente Posto Ipiranga</h1>
+        <p class="sub">Use R$ 400,00 em abastecimento e produtos participantes nos Postos Ipiranga. Pague apenas R$ 350,00 e economize R$ 50,00.</p>
+        <div class="stars">★★★★★ 4.76 <span class="count">(3.321 avaliações)</span></div>
+        <p class="social"><svg class="ico"><use href="#i-heart"/></svg> Mais praticidade para abastecer e aproveitar seu crédito</p>
+        <div class="price-box">
+          <div><span class="off">12,5% DE DESCONTO</span><span class="old">R$ 400,00</span></div>
+          <div class="now">R$ 350,00</div>
+          <div class="parc">Pagamento único • crédito de R$ 400,00</div>
         </div>
-      </section>
-
-      <section class="buy-section" id="comprar">
-        <div class="price-card">
-          <div class="label">Detalhes do vale-presente</div>
-          <div class="receive">Você recebe R$ 400,00 em crédito</div>
-          <div class="price"><span>R$</span> 350,00</div>
-          <div class="economy">Você economiza R$ 50,00</div>
-          <a class="cta" href="#condicoes">CONHECER AS CONDIÇÕES <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-          <p class="conditions">O vale é destinado ao abastecimento em postos Ipiranga participantes. Validade, aceitação, recebimento e demais regras devem ser confirmados no checkout antes do pagamento.</p>
+        <a href="#kits" class="cta">QUERO MEU VALE AGORA →</a>
+        <div class="trust-mini">
+          <span><svg class="ico"><use href="#i-lock"/></svg> Compra segura</span>
+          <span><svg class="ico"><use href="#i-truck"/></svg> Vale digital</span>
+          <span><svg class="ico"><use href="#i-return"/></svg> Atendimento online</span>
         </div>
-      </section>
-
-      <section class="faq" id="condicoes">
-        <h2 class="section-title">Dúvidas frequentes</h2>
-        <details><summary>Onde posso usar o vale?</summary><p>Em postos Ipiranga participantes, conforme as regras do emissor. Não presuma que todas as unidades aceitam o vale sem confirmar essa informação.</p></details>
-        <details><summary>Como vou receber?</summary><p>Após a confirmação do pagamento, o checkout informará o procedimento de recebimento. Confira também seu e-mail e a caixa de spam.</p></details>
-        <details><summary>Qual é a validade?</summary><p>A validade deve estar indicada na oferta, no checkout ou no comprovante. Confira esse dado antes de concluir a compra.</p></details>
-        <details><summary>É uma oferta oficial do Posto Ipiranga?</summary><p>Esta página apresenta uma oferta comercial de vale-presente para uso em postos Ipiranga participantes. Publique e utilize a marca somente com autorização do titular; as informações do emissor e do checkout prevalecem.</p></details>
-      </section>
+      </div>
     </div>
-  </main>
+  </div>
+</section>
 
-  <div class="sticky" id="sticky"><div class="sticky-inner"><span class="sticky-price">R$ 400 por R$ 350</span><a class="cta" href="#comprar">VER DETALHES</a></div></div>
-  <footer><div class="disclaimer">Conteúdo comercial. Vale-presente de R$ 400,00 por R$ 350,00, sujeito à disponibilidade e às condições do emissor. Não utilize a marca Posto Ipiranga sem autorização.</div>© 2026 Oferta de Vale-presente. Todos os direitos reservados.</footer>
+<section class="kits" id="kits">
+  <div class="container">
+    <h2 class="section-title">Escolha sua oferta</h2>
+    <p class="section-sub">Garanta seu vale-presente com R$ 400,00 em crédito para abastecimento por somente R$ 350,00.</p>
+    <div class="kits-grid">
+      <div class="kit featured">
+        <span class="flag">12,5% DE DESCONTO</span>
+        <span class="best">OFERTA ÚNICA</span>
+        <div class="img"><img src="vale-presente-ipiranga.svg" alt="Vale-presente Posto Ipiranga com crédito de R$ 400,00"></div>
+        <div class="body">
+          <div class="rate">★ Oferta especial <span>condição limitada</span></div>
+          <h3>Vale-presente Posto Ipiranga — R$ 400,00 em crédito</h3>
+          <div><span class="old">R$ 400,00</span></div>
+          <div class="now">R$ 350,00</div>
+          <div class="parc">economize R$ 50,00 • pagamento único</div>
+          <a href="../checkout/checkout.html?kit=vale-ipiranga" class="buy">comprar agora <svg class="ico"><use href="#i-bag"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-  <script>
-    const sticky = document.getElementById('sticky');
-    window.addEventListener('scroll', () => sticky.classList.toggle('visible', window.scrollY > 420), {passive:true});
-  </script>
+<!-- BENEFÍCIOS -->
+<section class="benef">
+  <div class="container">
+    <h2 class="section-title">Por que escolher o vale-presente?</h2>
+    <p class="section-sub">Uma forma simples de economizar no abastecimento e presentear quem dirige.</p>
+    <div class="benef-grid">
+      <div class="benef-card"><div class="ic"><svg class="ico"><use href="#i-droplet"/></svg></div><h3>Economia imediata</h3><p>Você paga R$ 350,00 e recebe R$ 400,00 em crédito, economizando R$ 50,00.</p></div>
+      <div class="benef-card"><div class="ic"><svg class="ico"><use href="#i-sparkles"/></svg></div><h3>Uso prático</h3><p>Use o crédito conforme as regras da oferta e abasteça com mais tranquilidade.</p></div>
+      <div class="benef-card"><div class="ic"><svg class="ico"><use href="#i-leaf"/></svg></div><h3>Para presentear</h3><p>Uma opção útil para familiares, amigos e motoristas.</p></div>
+      <div class="benef-card"><div class="ic"><svg class="ico"><use href="#i-spa"/></svg></div><h3>Compra digital</h3><p>Receba as instruções de utilização após a confirmação do pagamento.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- KITS / OFERTAS -->
+
+
+<!-- GARANTIAS -->
+<section class="garant-sec">
+  <div class="container">
+    <div class="garant-grid">
+      <div class="garant"><div class="ic"><svg class="ico"><use href="#i-lock"/></svg></div><strong>Compra Segura</strong><p>Ambiente com criptografia SSL e pagamento protegido.</p></div>
+      <div class="garant"><div class="ic"><svg class="ico"><use href="#i-truck"/></svg></div><strong>Entrega digital</strong><p>O vale é digital; consulte prazo e forma de recebimento no checkout.</p></div>
+      <div class="garant"><div class="ic"><svg class="ico"><use href="#i-return"/></svg></div><strong>Garantia de 30 dias</strong><p>Consulte as regras de cancelamento e utilização antes de concluir a compra.</p></div>
+      <div class="garant"><div class="ic"><svg class="ico"><use href="#i-leaf"/></svg></div><strong>Crédito transparente</strong><p>Valor do vale: R$ 400,00. Valor promocional: R$ 350,00.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- DEPOIMENTOS -->
+<section class="depo">
+  <div class="container">
+    <h2 class="section-title">Quem aproveita, recomenda <svg class="ico" style="color:var(--wine)"><use href="#i-heart"/></svg></h2>
+    <p class="section-sub">Clientes usando o vale para economizar no dia a dia.</p>
+    <div class="depo-grid">
+      <div class="depo-card">
+        <div class="top"><div class="av">M</div><div><div class="name">Mariana S.</div><div class="meta">São Paulo, SP • 3 dias atrás</div></div></div>
+        <div class="st">★★★★★</div>
+        <p>"Foi uma maneira prática de economizar no abastecimento. O crédito chegou com as instruções de uso."</p>
+        <div class="photo"><img loading="lazy" src="vale-presente-ipiranga.svg" alt="Arte ilustrativa do vale-presente"></div>
+        <span class="verified">✓ Depoimento ilustrativo</span>
+      </div>
+      <div class="depo-card">
+        <div class="top"><div class="av">C</div><div><div class="name">Camila R.</div><div class="meta">Belo Horizonte, MG • 1 semana atrás</div></div></div>
+        <div class="st">★★★★★</div>
+        <p>"Comprei para presentear e a pessoa conseguiu usar o crédito sem complicação."</p>
+        <div class="photo"><img loading="lazy" src="vale-presente-ipiranga.svg" alt="Arte ilustrativa do vale-presente"></div>
+        <span class="verified">✓ Depoimento ilustrativo</span>
+      </div>
+      <div class="depo-card">
+        <div class="top"><div class="av">J</div><div><div class="name">Juliana P.</div><div class="meta">Curitiba, PR • 2 semanas atrás</div></div></div>
+        <div class="st">★★★★★</div>
+        <p>"O desconto de R$ 50,00 fez diferença. Antes de comprar, conferi as condições da oferta."</p>
+        <div class="photo"><img loading="lazy" src="vale-presente-ipiranga.svg" alt="Arte ilustrativa do vale-presente"></div>
+        <span class="verified">✓ Depoimento ilustrativo</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- URGÊNCIA -->
+<section class="urg">
+  <div class="container">
+    <h2><svg class="ico"><use href="#i-alert"/></svg> Oferta especial por tempo limitado</h2>
+    <p>Garanta seu vale enquanto a condição de R$ 400,00 por R$ 350,00 estiver disponível.</p>
+    <a href="#kits" class="cta">GARANTIR MEU VALE →</a>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-sec">
+  <div class="container">
+    <h2 class="section-title">Perguntas frequentes</h2>
+    <div class="faq-list">
+      <div class="faq-item"><div class="faq-q">Como recebo o vale-presente? <span class="arrow">▾</span></div><div class="faq-a">Após a confirmação do pagamento, consulte no checkout as instruções e o canal de recebimento do vale digital.</div></div>
+      <div class="faq-item"><div class="faq-q">Onde posso utilizar o crédito? <span class="arrow">▾</span></div><div class="faq-a">A utilização depende das condições da oferta. Consulte no checkout os Postos Ipiranga participantes, produtos elegíveis e demais regras.</div></div>
+      <div class="faq-item"><div class="faq-q">Como utilizo o vale? <span class="arrow">▾</span></div><div class="faq-a">Apresente ou informe o código do vale conforme as instruções recebidas e siga as regras de utilização indicadas no checkout.</div></div>
+      <div class="faq-item"><div class="faq-q">O vale é físico ou digital? <span class="arrow">▾</span></div><div class="faq-a">Esta página apresenta uma oferta de vale digital. Confirme a forma de entrega e o prazo no checkout.</div></div>
+      <div class="faq-item"><div class="faq-q">Posso cancelar a compra? <span class="arrow">▾</span></div><div class="faq-a">Você tem Atendimento online. Se não amar o resultado, devolvemos 100% do seu dinheiro, sem burocracia.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="logo" style="font-size:1.4rem;font-weight:800">IPIRANGA<span style="color:var(--pink)">+</span></div>
+    <p>Vale-presente para abastecimento e conveniência. Consulte as condições da oferta antes da compra.</p>
+    <p class="legal">© 2026 Oferta de vale-presente. Marca, aceitação, validade e condições de uso devem ser confirmadas no checkout. Esta página não declara afiliação oficial sem autorização do titular da marca.</p>
+  </div>
+</footer>
+
+<script>
+// Countdown timer
+let total = 2*3600 - 60; // 01:59:00
+const t = document.getElementById('timer');
+setInterval(()=>{
+  if(total<=0)total=2*3600-60;
+  total--;
+  const h=String(Math.floor(total/3600)).padStart(2,'0');
+  const m=String(Math.floor((total%3600)/60)).padStart(2,'0');
+  const s=String(total%60).padStart(2,'0');
+  t.textContent=`${h}:${m}:${s}`;
+},1000);
+
+// FAQ accordion
+document.querySelectorAll('.faq-item').forEach(item=>{
+  item.querySelector('.faq-q').addEventListener('click',()=>item.classList.toggle('open'));
+});
+
+// ===== Carrossel da galeria =====
+const carousel=document.getElementById('carousel');
+const slidesCount=carousel.children.length;
+const dotsBox=document.getElementById('dots');
+const thumbBtns=document.querySelectorAll('#thumbs button');
+let current=0;
+
+// cria as bolinhas
+for(let i=0;i<slidesCount;i++){
+  const d=document.createElement('span');
+  d.addEventListener('click',()=>goToSlide(i));
+  dotsBox.appendChild(d);
+}
+const dots=dotsBox.children;
+
+function render(){
+  carousel.style.transform=`translateX(${-current*100}%)`;
+  for(let i=0;i<slidesCount;i++){
+    dots[i].classList.toggle('active',i===current);
+    if(thumbBtns[i])thumbBtns[i].classList.toggle('active',i===current);
+  }
+}
+function goToSlide(i){current=(i+slidesCount)%slidesCount;render();}
+function slideBy(n){goToSlide(current+n);}
+render();
+
+// ----- Swipe / arrastar (toque e mouse) -----
+let startX=0,deltaX=0,dragging=false;
+const width=()=>carousel.getBoundingClientRect().width;
+
+function dragStart(x){dragging=true;startX=x;deltaX=0;carousel.classList.add('dragging');}
+function dragMove(x){
+  if(!dragging)return;
+  deltaX=x-startX;
+  carousel.style.transform=`translateX(calc(${-current*100}% + ${deltaX}px))`;
+}
+function dragEnd(){
+  if(!dragging)return;
+  dragging=false;
+  carousel.classList.remove('dragging');
+  if(Math.abs(deltaX)>width()*0.15){ slideBy(deltaX<0?1:-1); }
+  else{ render(); }
+}
+
+// toque
+carousel.addEventListener('touchstart',e=>dragStart(e.touches[0].clientX),{passive:true});
+carousel.addEventListener('touchmove',e=>dragMove(e.touches[0].clientX),{passive:true});
+carousel.addEventListener('touchend',dragEnd);
+// mouse
+carousel.addEventListener('mousedown',e=>{e.preventDefault();dragStart(e.clientX);});
+window.addEventListener('mousemove',e=>dragMove(e.clientX));
+window.addEventListener('mouseup',dragEnd);
+// teclado
+document.addEventListener('keydown',e=>{
+  if(e.key==='ArrowLeft')slideBy(-1);
+  if(e.key==='ArrowRight')slideBy(1);
+});
+
+// Analytics intentionally omitted from this adapted template.
+</script>
+<style>/*stickybuy*/
+.stickybuy{position:fixed;left:0;right:0;bottom:0;z-index:900;display:flex;align-items:center;gap:12px;background:rgba(22,15,19,.97);padding:10px 14px;box-shadow:0 -4px 20px rgba(0,0,0,.28);transform:translateY(115%);transition:transform .28s ease}
+.stickybuy.show{transform:translateY(0)}
+.stickybuy .sb-txt{display:flex;flex-direction:column;line-height:1.2;color:#fff;min-width:0}
+.stickybuy .sb-name{font-size:.8rem;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.stickybuy .sb-price{font-size:.74rem;opacity:.8}
+.stickybuy .sb-price b{font-size:1rem;color:#4ade80;opacity:1}
+.stickybuy .sb-btn{margin-left:auto;background:#1fa463;color:#fff;font-weight:800;font-size:.92rem;padding:13px 22px;border-radius:50px;white-space:nowrap;box-shadow:0 4px 14px rgba(31,164,99,.45);animation:sbp 2.2s infinite}
+@keyframes sbp{0%,100%{transform:scale(1)}50%{transform:scale(1.045)}}
+body{padding-bottom:74px}
+</style><div class="stickybuy" id="stickybuy"><div class="sb-txt"><span class="sb-name">Vale Posto Ipiranga</span><span class="sb-price">por <b>R$ 350,00</b></span></div><a class="sb-btn" href="#kits">COMPRAR AGORA</a></div>
+<script>/*stickybuy*/(function(){var sb=document.getElementById('stickybuy');if(!sb)return;var k=document.getElementById('kits');function u(){var y=window.scrollY||document.documentElement.scrollTop;var s=y>520;if(k){var r=k.getBoundingClientRect();if(r.top<window.innerHeight*0.8&&r.bottom>0)s=false;}sb.classList.toggle('show',s);}window.addEventListener('scroll',u,{passive:true});window.addEventListener('resize',u);u();})();</script>
+<style>/*kiturg*/
+.kits-urg{max-width:960px;margin:0 auto 18px;background:#fff4e5;border:1px solid #ffc98a;color:#8a4b00;border-radius:10px;padding:11px 14px;text-align:center;font-size:.88rem;font-weight:700}
+.kit-eco{background:#eafaf1;color:#12603c;border:1px solid #a7e3c4;border-radius:8px;padding:7px 10px;font-size:.82rem;font-weight:700;margin-bottom:10px;text-align:center}
+</style><script>/*kiturg*/(function(){function go(){
+var mo=function(t){var m=String(t||"").replace(/[^\d,]/g,"").replace(",",".");return parseFloat(m)||0;};
+document.querySelectorAll(".kit").forEach(function(k){
+  if(k.querySelector(".kit-eco"))return;
+  var o=k.querySelector(".old"),n=k.querySelector(".now");if(!o||!n)return;
+  var de=mo(o.textContent),por=mo(n.textContent);if(!(de>por))return;
+  var e=document.createElement("div");e.className="kit-eco";
+  e.innerHTML="Você economiza <b>"+(de-por).toLocaleString("pt-BR",{style:"currency",currency:"BRL"})+"</b>";
+  var b=k.querySelector(".buy");if(b)k.insertBefore(e,b);else k.appendChild(e);
+});
+var ks=document.getElementById("kits"),t=document.getElementById("timer");
+if(ks&&!ks.querySelector(".kits-urg")){
+  var u=document.createElement("div");u.className="kits-urg";
+  u.innerHTML="&#9203; <b>Oferta por tempo limitado</b> \u2014 acaba em <b class='ku-clock'>"+(t?t.textContent:"")+"</b>";
+  var g=ks.querySelector(".kits-grid");if(g&&g.parentNode)g.parentNode.insertBefore(u,g);
+  if(t)setInterval(function(){var c=u.querySelector(".ku-clock");if(c)c.textContent=t.textContent;},1000);
+}}
+if(document.readyState!=="loading")go();else document.addEventListener("DOMContentLoaded",go);})();</script>
+<style>/*ctatrust*/
+.kit-trust{font-size:.72rem;color:#6b7686;text-align:center;margin-top:9px;line-height:1.55}
+.cta-trust{font-size:.78rem;color:#6b7686;text-align:center;margin-top:10px;line-height:1.55}
+</style>
+<script>/*ctatrust*/(function(){function go(){
+var txt="&#10003; Crédito de R$ 400,00 &nbsp;&middot;&nbsp; Pagamento seguro &nbsp;&middot;&nbsp; Consulte as condições";
+document.querySelectorAll(".kit").forEach(function(k){
+  if(k.querySelector(".kit-trust"))return;
+  var b=k.querySelector(".buy");if(!b)return;
+  var t=document.createElement("div");t.className="kit-trust";t.innerHTML=txt;
+  b.parentNode.insertBefore(t,b.nextSibling);
+});
+var c=document.querySelector(".hero .cta");
+if(c&&!c.parentNode.querySelector(".cta-trust")){
+  var d=document.createElement("div");d.className="cta-trust";
+  d.innerHTML="&#128274; Compra segura &nbsp;&middot;&nbsp; &#128666; Vale digital &nbsp;&middot;&nbsp; &#8634; Atendimento online";
+  c.parentNode.insertBefore(d,c.nextSibling);
+}}
+if(document.readyState!=="loading")go();else document.addEventListener("DOMContentLoaded",go);})();</script>
+<style>/*trust2*/
+.trustrow{max-width:960px;margin:8px auto 0;display:flex;flex-wrap:wrap;gap:10px;justify-content:center;padding:0 14px}
+.trustrow .tb{display:flex;align-items:center;gap:7px;background:#fff;border:1px solid #e6eaf0;border-radius:12px;padding:10px 14px;font-size:.82rem;font-weight:700;color:#3a4658;box-shadow:0 2px 10px rgba(20,30,50,.05)}
+.trustrow .tb b{color:#1fa463}
+.guarantee{max-width:720px;margin:22px auto 0;background:#f3f8f5;border:1px solid #cfe6da;border-radius:14px;padding:18px 20px;display:flex;gap:16px;align-items:center}
+.guarantee .gi{font-size:2rem;flex:none}
+.guarantee .gt b{display:block;font-size:1.02rem;color:#12603c;margin-bottom:3px}
+.guarantee .gt span{font-size:.9rem;color:#4a5b52}
+.kit .best-value{position:absolute;top:-13px;right:12px;background:#1fa463;color:#fff;font-size:.66rem;font-weight:800;padding:4px 10px;border-radius:20px;box-shadow:0 3px 10px rgba(31,164,99,.35)}
+@media(max-width:600px){.guarantee{flex-direction:column;text-align:center}}
+</style>
+<script>/*trust2*/(function(){function go(){
+var kits=document.getElementById("kits");
+if(kits && !document.querySelector(".trustrow")){
+  var row=document.createElement("div");row.className="trustrow";
+  row.innerHTML='<div class="tb">&#128274; Site <b>100% seguro</b></div>'
+    +'<div class="tb">&#128737;&#65039; Compra <b>garantida</b></div>'
+    +'<div class="tb">&#128666; <b>Vale digital</b></div>'
+    +'<div class="tb">&#8617;&#65039; condições claras</div>'
+    +'<div class="tb">&#128179; Pagamento <b>via Pix seguro</b></div>';
+  var grid=kits.querySelector(".kits-grid");
+  if(grid){ grid.parentNode.insertBefore(row,grid.nextSibling);
+    var g=document.createElement("div");g.className="guarantee";
+    g.innerHTML='<div class="gi">&#128737;&#65039;</div><div class="gt"><b>Consulte as condições da oferta</b><span>Verifique validade, postos participantes, regras de uso e política de cancelamento antes de concluir a compra.</span></div>';
+    row.parentNode.insertBefore(g,row.nextSibling);
+  }
+}
+var kitEls=[].slice.call(document.querySelectorAll(".kit"));
+if(kitEls.length>=3){
+  var mo=function(el){var n=el.querySelector(".now");if(!n)return 0;var m=String(n.textContent).replace(/[^\d,]/g,"").replace(",",".");return parseFloat(m)||0;};
+  var sorted=kitEls.map(function(el){return {el:el,v:mo(el)};}).filter(function(x){return x.v>0;}).sort(function(a,b){return a.v-b.v;});
+  if(sorted.length>=3){
+    var mid=sorted[Math.floor((sorted.length-1)/2)].el;
+    if(!mid.querySelector(".flag")&&!mid.querySelector(".best-value")){
+      mid.style.position="relative";
+      var bv=document.createElement("span");bv.className="best-value";bv.innerHTML="&#11088; MELHOR CUSTO-BENEF&Iacute;CIO";
+      mid.insertBefore(bv,mid.firstChild);
+    }
+  }
+}}
+if(document.readyState!=="loading")go();else document.addEventListener("DOMContentLoaded",go);})();</script>
 </body>
 </html>
