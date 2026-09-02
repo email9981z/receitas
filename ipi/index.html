@@ -34,7 +34,7 @@ section{padding:28px 0}
 
 /* ====== TOP BAR ====== */
 .topbar{background:#a51d1d;color:#fff;font-size:.86rem;font-weight:800;text-align:center;padding:10px 12px;display:flex;justify-content:center;align-items:center;gap:5px}.topbar.expired{background:#4a4a4a}.topbar .deadline-text{text-transform:uppercase;letter-spacing:.15px}
-.topbar .timer{display:inline-block;background:#fff;color:#a51d1d;padding:3px 10px;border-radius:6px;font-size:1rem;font-variant-numeric:tabular-nums;margin-left:4px;min-width:72px}.topbar.expired .timer{color:#4a4a4a}.offer-expired{opacity:.55;pointer-events:none}.scarcity-note{display:flex;align-items:center;justify-content:center;gap:7px;color:#8a4b00;background:#fff7ed;border:1px solid #fed7aa;border-radius:10px;padding:9px 12px;margin:0 auto 18px;max-width:760px;font-size:.82rem;font-weight:700}.scarcity-note .pulse-dot{width:8px;height:8px;border-radius:50%;background:#f97316;flex:none}
+.topbar .timer{display:inline-block;background:#fff;color:#a51d1d;padding:3px 10px;border-radius:6px;font-size:1rem;font-variant-numeric:tabular-nums;margin-left:4px;min-width:72px}.topbar.expired .timer{color:#4a4a4a}.offer-expired{opacity:.55;pointer-events:none}.scarcity-note{display:flex;align-items:center;justify-content:center;gap:10px;color:#7c2d12;background:#fff7ed;border:1px solid #fb923c;border-left:5px solid #ea580c;border-radius:10px;padding:11px 15px;margin:0 auto 20px;max-width:820px;font-size:.88rem;font-weight:700;line-height:1.35;box-shadow:0 3px 10px rgba(194,65,12,.10)}.scarcity-note strong{font-size:.98rem;letter-spacing:.1px}.scarcity-note small{display:block;font-size:.76rem;font-weight:600;color:#9a3412}.scarcity-note .timer{display:inline-block;background:#c2410c;color:#fff;border-radius:6px;padding:3px 8px;font-size:1.1rem;font-variant-numeric:tabular-nums;margin-left:3px;min-width:68px;text-align:center}.scarcity-note .pulse-dot{width:9px;height:9px;border-radius:50%;background:#ea580c;flex:none;box-shadow:0 0 0 4px rgba(234,88,12,.13)}.scarcity-note.expired{background:#f3f4f6;border-color:#9ca3af;border-left-color:#6b7280;box-shadow:none}.scarcity-note.expired .timer{background:#6b7280}
 
 /* ====== HEADER ====== */
 .header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.97);border-bottom:1px solid var(--line);padding:13px 0;backdrop-filter:blur(8px)}
@@ -46,7 +46,7 @@ section{padding:28px 0}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
 
 /* ====== HERO ====== */
-.hero{background:linear-gradient(180deg,var(--pink-bg),#fff);padding:24px 0 36px}.hero-lead{text-align:center;max-width:860px;margin:0 auto 20px}.hero-lead h1{font-size:2.7rem;font-weight:850;letter-spacing:-.9px;margin-bottom:8px}.hero-lead h1 em{font-style:normal;color:var(--wine)}.hero-lead p{color:var(--muted);font-size:1.03rem}.hero-lead .benefit-line{display:inline-block;margin-top:10px;color:var(--teal);font-size:.95rem;font-weight:800;background:#ecfdf5;border:1px solid #a7e3c4;border-radius:999px;padding:6px 13px}.hero .info{max-width:500px}.hero-facts{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:16px 0 18px}.hero-fact{background:#fff;border:1px solid var(--line);border-radius:10px;padding:10px 8px;text-align:center;font-size:.78rem;line-height:1.3;color:var(--muted)}.hero-fact strong{display:block;color:var(--ink);font-size:.82rem;margin-bottom:2px}.hero-note{font-size:.78rem;color:var(--muted);text-align:center;margin-top:10px;line-height:1.4}.hero-note a{text-decoration:underline}.hero .main-img{max-width:480px;margin:auto}
+.hero{background:linear-gradient(180deg,#fff7ed 0%,#fff 72%);padding:28px 0 42px}.hero-lead{text-align:center;max-width:860px;margin:0 auto 18px}.hero-lead h1{font-size:2.7rem;font-weight:850;letter-spacing:-.9px;margin-bottom:8px}.hero-lead h1 em{font-style:normal;color:var(--wine)}.hero-lead p{color:var(--muted);font-size:1.03rem}.hero-lead .benefit-line{display:inline-block;margin-top:10px;color:var(--teal);font-size:.95rem;font-weight:800;background:#ecfdf5;border:1px solid #a7e3c4;border-radius:999px;padding:6px 13px}.hero .info{max-width:500px}.hero-facts{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:16px 0 18px}.hero-fact{background:#fff;border:1px solid var(--line);border-radius:10px;padding:10px 8px;text-align:center;font-size:.78rem;line-height:1.3;color:var(--muted)}.hero-fact strong{display:block;color:var(--ink);font-size:.82rem;margin-bottom:2px}.hero-note{font-size:.78rem;color:var(--muted);text-align:center;margin-top:10px;line-height:1.4}.hero-note a{text-decoration:underline}.hero .main-img{max-width:430px;margin:auto}.hero .gallery{display:flex;align-items:center;justify-content:center}
 .hero .grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.92fr);gap:52px;align-items:center}
 .gallery .main-img{position:relative;background:var(--pink-soft);border-radius:var(--radius);aspect-ratio:1;overflow:hidden;box-shadow:var(--shadow)}
 .carousel{display:flex;height:100%;width:100%;transition:transform .35s ease;touch-action:pan-y;cursor:grab}
@@ -175,7 +175,7 @@ section{padding:28px 0}
   html{font-size:15px}
   .hero .grid{grid-template-columns:1fr;gap:22px}
   .topbar{font-size:.76rem;line-height:1.3;flex-wrap:wrap}.topbar .deadline-text{width:100%}
-  .hero-lead h1{font-size:2rem}.hero-lead .benefit-line{font-size:.78rem;line-height:1.3;border-radius:10px}
+  .hero-lead h1{font-size:2rem}.hero-lead .benefit-line{font-size:.78rem;line-height:1.3;border-radius:10px}.scarcity-note{align-items:flex-start;text-align:left}.scarcity-note .pulse-dot{margin-top:5px}
   .hero-lead p{font-size:.92rem}.hero .info h1{font-size:1.7rem}
   .section-title{font-size:1.5rem}
   section{padding:30px 0}
@@ -204,9 +204,6 @@ section{padding:28px 0}
   <symbol id="i-bag" viewBox="0 0 24 24"><path d="M6 2 3 6v13a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></symbol>
 </svg>
 
-<!-- TOP BAR -->
-<div class="topbar"><span class="deadline-text">ATENÇÃO: esta condição termina em</span> <span class="timer" id="timer" aria-live="polite">30:00</span> <span>— depois disso, o preço promocional pode não estar disponível.</span></div>
-
 <!-- HEADER -->
 <header class="header">
   <div class="container">
@@ -218,7 +215,7 @@ section{padding:28px 0}
 <!-- HERO -->
 <section class="hero">
   <div class="container">
-    <div class="hero-lead"><h1>Economize <em>R$ 50,00</em> no seu próximo abastecimento</h1><p>Abasteça R$ 400,00 pagando apenas R$ 350,00 com este vale-presente digital.</p><span class="benefit-line">Você paga R$ 350,00 e recebe R$ 400,00 em crédito</span></div><div class="scarcity-note"><span class="pulse-dot"></span><span><strong>Prazo real: 30 minutos.</strong> Esta condição promocional é liberada nesta visita e pode encerrar quando o contador chegar a zero.</span></div>
+    <div class="hero-lead"><h1>Economize <em>R$ 50,00</em> no seu próximo abastecimento</h1><p>Abasteça R$ 400,00 pagando apenas R$ 350,00 com este vale-presente digital.</p><span class="benefit-line">Você paga R$ 350,00 e recebe R$ 400,00 em crédito</span></div><div class="scarcity-note"><span class="pulse-dot"></span><span><strong>ATENÇÃO: faltam apenas <span class="timer" id="timer" aria-live="polite">30:00</span></strong><small>Quando o contador zerar, a condição de R$ 400,00 por R$ 350,00 será encerrada.</small></span></div>
     <div class="grid">
       <div class="gallery">
         <div class="main-img">
@@ -230,11 +227,10 @@ section{padding:28px 0}
         
       </div>
       <div class="info">
-        <span class="badge-new"><svg class="ico"><use href="#i-sparkles"/></svg> VALE-PRESENTE • OFERTA ESPECIAL</span>
-        <p class="sub">Você recebe R$ 400,00 em crédito, paga R$ 350,00 e economiza R$ 50,00.</p>
-        <div class="hero-facts"><div class="hero-fact"><strong>R$ 400,00</strong>em crédito</div><div class="hero-fact"><strong>R$ 50,00</strong>de economia</div><div class="hero-fact"><strong>Digital</strong>após aprovação</div></div>
+        <span class="badge-new"><svg class="ico"><use href="#i-sparkles"/></svg> OFERTA DE ABASTECIMENTO</span>
+        <p class="sub">Você paga R$ 350,00 agora e recebe R$ 400,00 em crédito para usar conforme as condições da oferta.</p>
+        <div class="hero-facts"><div class="hero-fact"><strong>R$ 400,00</strong>crédito</div><div class="hero-fact"><strong>R$ 50,00</strong>economia</div><div class="hero-fact"><strong>30 min</strong>pra decidir</div></div>
         <div class="price-box" aria-label="Resumo da oferta">
-          <span class="off">OFERTA: R$ 400,00 POR R$ 350,00</span>
           <div class="credit-label">Você recebe para abastecer</div>
           <div class="credit">R$ 400,00 em crédito</div>
           <div class="pay-label">Você paga agora</div>
@@ -243,7 +239,7 @@ section{padding:28px 0}
           <div class="parc">Após a confirmação, consulte as instruções de uso, validade e postos participantes.</div>
         </div>
         <a href="../checkout/checkout.html?kit=vale-ipiranga" class="cta">GARANTIR R$ 50,00 DE ECONOMIA →</a>
-        <div class="trust-mini"><span><svg class="ico"><use href="#i-lock"/></svg> Checkout seguro</span><span><svg class="ico"><use href="#i-return"/></svg> Sem compromisso antes de revisar</span></div><p class="hero-note">Consulte no checkout a validade, os postos participantes e as regras de uso antes de finalizar.</p>
+        <div class="trust-mini"><span><svg class="ico"><use href="#i-lock"/></svg> Checkout seguro</span><span><svg class="ico"><use href="#i-return"/></svg> Revise tudo antes de pagar</span></div><p class="hero-note">Acesse o checkout, confira as regras e só finalize se a oferta fizer sentido para você.</p>
       </div>
     </div>
   </div>
@@ -311,7 +307,7 @@ section{padding:28px 0}
 const OFFER_KEY = 'valeIpirangaOfferDeadline30m';
 const OFFER_DURATION = 30 * 60 * 1000;
 const timer = document.getElementById('timer');
-const topbar = timer?.closest('.topbar');
+const urgencyBox = timer?.closest('.scarcity-note');
 const savedDeadline = Number(localStorage.getItem(OFFER_KEY));
 const campaignDeadline = savedDeadline || (Date.now() + OFFER_DURATION);
 if(!savedDeadline) localStorage.setItem(OFFER_KEY, String(campaignDeadline));
@@ -320,7 +316,7 @@ function updateTimer(){
   const remaining = campaignDeadline - Date.now();
   if(remaining <= 0){
     timer.textContent = 'ENCERRADA';
-    topbar?.classList.add('expired');
+    urgencyBox?.classList.add('expired');
     document.querySelectorAll('a[href*="checkout"]').forEach(function(link){
       link.setAttribute('aria-disabled','true');
       link.classList.add('offer-expired');
