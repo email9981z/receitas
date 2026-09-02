@@ -71,11 +71,14 @@ section{padding:28px 0}
 .stars{color:#f5a623;font-weight:700;display:flex;align-items:center;gap:8px;margin-bottom:8px}
 .stars .count{color:var(--muted);font-weight:500;font-size:.9rem}
 .social{font-size:.9rem;color:var(--wine);font-weight:600;margin-bottom:20px}
-.price-box{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow);margin-bottom:18px}
-.price-box .off{background:var(--teal);color:#fff;font-size:.78rem;font-weight:700;padding:3px 10px;border-radius:6px}
-.price-box .old{color:var(--muted);text-decoration:line-through;font-size:1rem;margin-left:8px}
-.price-box .now{font-size:2.2rem;font-weight:800;color:var(--wine);margin:6px 0}
-.price-box .parc{color:var(--muted);font-size:.92rem}
+.price-box{background:#fff;border:2px solid var(--wine);border-radius:var(--radius);padding:18px 20px;box-shadow:var(--shadow);margin-bottom:18px}
+.price-box .off{display:inline-block;background:var(--teal);color:#fff;font-size:.78rem;font-weight:700;padding:4px 10px;border-radius:6px;margin-bottom:12px}
+.price-box .credit-label{font-size:.84rem;color:var(--muted);font-weight:600;margin-bottom:2px}
+.price-box .credit{font-size:1.65rem;font-weight:800;color:var(--teal);line-height:1.15;margin-bottom:14px}
+.price-box .pay-label{font-size:.9rem;color:var(--ink);font-weight:700}
+.price-box .now{font-size:2.35rem;font-weight:900;color:var(--wine);line-height:1.05;margin:3px 0 5px}
+.price-box .saving{display:inline-block;color:var(--teal);font-size:.86rem;font-weight:800;margin-bottom:6px}
+.price-box .parc{color:var(--muted);font-size:.82rem;border-top:1px solid var(--line);padding-top:10px;margin-top:6px}
 .cta{display:block;width:100%;background:var(--wine);color:#fff;font-size:1.15rem;font-weight:700;padding:17px;border-radius:50px;text-align:center;transition:.2s;box-shadow:0 6px 20px rgba(156,11,82,.35)}
 .cta:hover{background:var(--wine-dark);transform:translateY(-2px)}
 .trust-mini{display:flex;gap:16px;justify-content:center;margin-top:14px;font-size:.8rem;color:var(--muted);flex-wrap:wrap}
@@ -230,10 +233,14 @@ section{padding:28px 0}
         <span class="badge-new"><svg class="ico"><use href="#i-sparkles"/></svg> VALE-PRESENTE • OFERTA ESPECIAL</span>
         <p class="sub">Você recebe R$ 400,00 em crédito, paga R$ 350,00 e economiza R$ 50,00.</p>
         <div class="hero-facts"><div class="hero-fact"><strong>R$ 400,00</strong>em crédito</div><div class="hero-fact"><strong>R$ 50,00</strong>de economia</div><div class="hero-fact"><strong>Digital</strong>após aprovação</div></div>
-        <div class="price-box">
-          <div><span class="off">12,5% DE DESCONTO</span><span class="old">R$ 400,00</span></div>
+        <div class="price-box" aria-label="Resumo da oferta">
+          <span class="off">VOCÊ ECONOMIZA R$ 50,00</span>
+          <div class="credit-label">Você recebe para abastecer</div>
+          <div class="credit">R$ 400,00 em crédito</div>
+          <div class="pay-label">Você paga agora</div>
           <div class="now">R$ 350,00</div>
-          <div class="parc">Pagamento único • crédito de R$ 400,00</div>
+          <div class="saving">Pagamento único • economia de R$ 50,00</div>
+          <div class="parc">Após a confirmação, consulte as instruções de uso, validade e postos participantes.</div>
         </div>
         <a href="#kits" class="cta">QUERO MEU VALE AGORA →</a>
         <div class="trust-mini"><span><svg class="ico"><use href="#i-lock"/></svg> Pagamento seguro</span><span><svg class="ico"><use href="#i-return"/></svg> Regras visíveis antes da compra</span></div><p class="hero-note">O vale é digital. Consulte no checkout a validade, os postos participantes e como utilizar.</p>
