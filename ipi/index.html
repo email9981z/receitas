@@ -213,8 +213,8 @@ body{background:#fff}
 .gallery .slide{position:relative;background:linear-gradient(145deg,#fff7ed 0%,#ffe4c7 48%,#f7b267 100%);display:flex;align-items:center;justify-content:center;overflow:hidden}
 .gallery .slide:before{content:'VALE+';position:absolute;top:24%;left:12%;color:#d94f0b;font-size:clamp(2rem,5vw,3.4rem);font-weight:950;letter-spacing:-.08em;transform:rotate(-8deg);opacity:.92}
 .gallery .slide:after{content:'R$ 400,00 DE CRÉDITO';white-space:nowrap;position:absolute;right:7%;bottom:20%;padding:16px 18px;border-radius:14px;background:#17212b;color:#fff;font-size:clamp(.95rem,2.2vw,1.35rem);line-height:1;font-weight:900;letter-spacing:-.03em;box-shadow:0 10px 24px rgba(23,33,43,.22)}
-.gallery .slide img{display:none!important}
-.gallery .slide img{visibility:hidden}.thumbs{display:none}
+/* Imagem temporária mantida visível; substitua o valor de src pela arte final quando disponível. */
+.gallery .slide img{display:block!important;visibility:visible!important}.gallery .slide:before,.gallery .slide:after{display:none}.thumbs{display:none}
 .price-box{margin:0 0 12px;border-radius:16px;padding:24px 25px;box-shadow:0 14px 34px rgba(23,33,43,.12)}
 .price-box .price-kicker{font-size:.74rem;margin-bottom:12px}.price-box .credit{font-size:1.7rem}.price-box .now{font-size:2.7rem}.price-box .parc{font-size:.78rem}
 .decision-cues{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin:0 0 12px}.decision-cues span{padding:9px 5px;border:1px solid #e7ecea;border-radius:9px;background:#f8fbfa;color:#5f6b76;text-align:center;font-size:.68rem;line-height:1.2}.decision-cues b{display:block;color:#087f5b;font-size:.78rem}.hero .info .cta{border-radius:12px;font-size:1.05rem;letter-spacing:.02em;box-shadow:0 8px 20px rgba(217,79,11,.24)}
