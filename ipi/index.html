@@ -46,7 +46,7 @@ section{padding:28px 0}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
 
 /* ====== HERO ====== */
-.hero{background:linear-gradient(180deg,#fff7ed 0%,#fff 72%);padding:28px 0 42px}.hero-lead{text-align:center;max-width:860px;margin:0 auto 18px}.hero-lead h1{font-size:2.7rem;font-weight:850;letter-spacing:-.9px;margin-bottom:8px}.hero-lead h1 em{font-style:normal;color:var(--wine)}.hero-lead p{color:var(--muted);font-size:1.03rem}.hero-lead .benefit-line{display:inline-block;margin-top:10px;color:var(--teal);font-size:.95rem;font-weight:800;background:#ecfdf5;border:1px solid #a7e3c4;border-radius:999px;padding:6px 13px}.hero .info{max-width:500px}.hero-facts{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:16px 0 18px}.hero-fact{background:#fff;border:1px solid var(--line);border-radius:10px;padding:10px 8px;text-align:center;font-size:.78rem;line-height:1.3;color:var(--muted)}.hero-fact strong{display:block;color:var(--ink);font-size:.82rem;margin-bottom:2px}.hero-note{font-size:.78rem;color:var(--muted);text-align:center;margin-top:10px;line-height:1.4}.hero-note a{text-decoration:underline}.hero .main-img{max-width:430px;margin:auto}.hero .gallery{display:flex;align-items:center;justify-content:center}
+.hero{background:linear-gradient(180deg,#fff7ed 0%,#fff 72%);padding:28px 0 42px}.hero-lead{text-align:center;max-width:860px;margin:0 auto 18px}.hero-lead h1{font-size:2.7rem;font-weight:850;letter-spacing:-.9px;margin-bottom:8px}.hero-lead h1 em{font-style:normal;color:var(--wine)}.hero-lead p{color:var(--muted);font-size:1.03rem}.hero-lead .benefit-line{display:inline-block;margin-top:10px;color:var(--teal);font-size:.95rem;font-weight:800;background:#ecfdf5;border:1px solid #a7e3c4;border-radius:999px;padding:6px 13px}.hero .info{max-width:500px}.hero-facts{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:16px 0 18px}.hero-fact{background:#fff;border:1px solid var(--line);border-radius:10px;padding:10px 8px;text-align:center;font-size:.78rem;line-height:1.3;color:var(--muted)}.hero-fact strong{display:block;color:var(--ink);font-size:.82rem;margin-bottom:2px}.hero-note{font-size:.78rem;color:var(--muted);text-align:center;margin-top:10px;line-height:1.4}.hero-note a{text-decoration:underline}.hero .main-img{width:100%;max-width:430px;margin:auto}.hero .gallery{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px}.hero .gallery .scarcity-note{width:100%;max-width:430px;margin:0}
 .hero .grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.92fr);gap:52px;align-items:center}
 .gallery .main-img{position:relative;background:var(--pink-soft);border-radius:var(--radius);aspect-ratio:1;overflow:hidden;box-shadow:var(--shadow)}
 .carousel{display:flex;height:100%;width:100%;transition:transform .35s ease;touch-action:pan-y;cursor:grab}
@@ -175,7 +175,7 @@ section{padding:28px 0}
   html{font-size:15px}
   .hero .grid{grid-template-columns:1fr;gap:22px}
   .topbar{font-size:.76rem;line-height:1.3;flex-wrap:wrap}.topbar .deadline-text{width:100%}
-  .hero-lead h1{font-size:2rem}.hero-lead .benefit-line{font-size:.78rem;line-height:1.3;border-radius:10px}.scarcity-note{align-items:flex-start;text-align:left}.scarcity-note .pulse-dot{margin-top:5px}
+  .hero-lead h1{font-size:2rem}.hero-lead .benefit-line{font-size:.78rem;line-height:1.3;border-radius:10px}.scarcity-note{align-items:flex-start;text-align:left}.scarcity-note .pulse-dot{margin-top:5px}.hero .gallery .scarcity-note{font-size:.8rem}.hero .gallery .scarcity-note small{font-size:.7rem}
   .hero-lead p{font-size:.92rem}.hero .info h1{font-size:1.7rem}
   .section-title{font-size:1.5rem}
   section{padding:30px 0}
@@ -215,7 +215,7 @@ section{padding:28px 0}
 <!-- HERO -->
 <section class="hero">
   <div class="container">
-    <div class="hero-lead"><h1>Economize <em>R$ 50,00</em> no seu próximo abastecimento</h1><p>Abasteça R$ 400,00 pagando apenas R$ 350,00 com este vale-presente digital.</p><span class="benefit-line">R$ 350,00 pagos → R$ 400,00 em crédito</span></div>
+    <div class="hero-lead"><h1>Economize <em>R$ 50,00</em> no seu próximo abastecimento</h1><p>Abasteça R$ 400,00 pagando apenas R$ 350,00 com este vale-presente digital.</p></div>
     <div class="grid">
       <div class="gallery">
         <div class="scarcity-note"><span class="pulse-dot"></span><span><strong>OFERTA RESERVADA POR <span class="timer" id="timer" aria-live="polite">30:00</span></strong><small>Ao zerar, esta condição promocional será encerrada.</small></span></div>
@@ -228,8 +228,6 @@ section{padding:28px 0}
         
       </div>
       <div class="info">
-        <span class="badge-new"><svg class="ico"><use href="#i-sparkles"/></svg> VALE DIGITAL DE ABASTECIMENTO</span>
-        <p class="sub">Crédito de R$ 400,00 por apenas R$ 350,00, sujeito às condições apresentadas no checkout.</p>
         <div class="price-box" aria-label="Resumo da oferta">
           <div class="price-kicker">RESUMO DA OFERTA</div>
           <div class="credit-label">Você recebe para abastecer</div>
@@ -240,7 +238,7 @@ section{padding:28px 0}
           <div class="parc">Após a confirmação, consulte as instruções de uso, validade e postos participantes.</div>
         </div>
         <a href="../checkout/checkout.html?kit=vale-ipiranga" class="cta">QUERO ECONOMIZAR R$ 50,00 →</a>
-        <div class="trust-mini"><span><svg class="ico"><use href="#i-lock"/></svg> Checkout seguro</span><span><svg class="ico"><use href="#i-return"/></svg> Regras antes do pagamento</span></div><p class="hero-note">Veja validade, postos participantes e regras no checkout antes de confirmar.</p>
+        <p class="hero-note">Confira validade, postos participantes e regras no checkout antes de confirmar.</p>
       </div>
     </div>
   </div>
