@@ -198,6 +198,7 @@ body{background:#fff}
 .faq{padding-top:48px;padding-bottom:96px}.faq-q{font-size:.98rem}.faq-a{line-height:1.6}
 .cart-overlay{background:rgba(15,23,42,.58)}.cart{border-radius:16px;box-shadow:0 20px 60px rgba(15,23,42,.2)}.cart-checkout{background:var(--wine)!important}.cart-deadline{background:#f5f8f7!important;color:var(--ink)!important}.cart-disclaimer{color:var(--muted)!important}
 .stickybuy{background:rgba(23,33,43,.98)}.stickybuy .sb-btn{background:var(--wine);box-shadow:0 4px 14px rgba(217,79,11,.25)}
+@media(max-width:520px){.decision-cues span{font-size:.62rem}.decision-cues b{font-size:.72rem}.stickybuy .sb-btn{padding:12px 14px;font-size:.8rem}}
 @media(max-width:860px){.hero{padding-top:28px}.hero .grid{gap:26px}.hero-lead{margin-bottom:18px}.hero-lead h1{font-size:2.25rem}.hero-lead p{font-size:1rem}.price-box{padding:18px}.faq{padding-bottom:110px}}
 /* ====== REFINAMENTO VISUAL V3 ====== */
 .container{max-width:1160px}
@@ -216,7 +217,7 @@ body{background:#fff}
 .gallery .slide img{visibility:hidden}.thumbs{display:none}
 .price-box{margin:0 0 12px;border-radius:16px;padding:24px 25px;box-shadow:0 14px 34px rgba(23,33,43,.12)}
 .price-box .price-kicker{font-size:.74rem;margin-bottom:12px}.price-box .credit{font-size:1.7rem}.price-box .now{font-size:2.7rem}.price-box .parc{font-size:.78rem}
-.hero .info .cta{border-radius:12px;font-size:1.05rem;letter-spacing:.02em;box-shadow:0 8px 20px rgba(217,79,11,.24)}
+.decision-cues{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin:0 0 12px}.decision-cues span{padding:9px 5px;border:1px solid #e7ecea;border-radius:9px;background:#f8fbfa;color:#5f6b76;text-align:center;font-size:.68rem;line-height:1.2}.decision-cues b{display:block;color:#087f5b;font-size:.78rem}.hero .info .cta{border-radius:12px;font-size:1.05rem;letter-spacing:.02em;box-shadow:0 8px 20px rgba(217,79,11,.24)}
 .trust-mini{justify-content:flex-start;margin-top:12px;font-size:.76rem}.trust-mini span{padding:5px 8px}
 .essential-info{padding:16px 0 30px}.quick-proof{max-width:930px;margin:0 auto;border-radius:13px}.quick-proof span{padding:13px 12px;font-size:.75rem}
 .dores,.benef,.kits,.depo{padding-top:58px;padding-bottom:58px}
@@ -280,7 +281,8 @@ body{background:#fff}
           <div class="saving">Pagamento único • você economiza R$ 50,00</div>
           <div class="parc">Antes de pagar, você confere validade, locais participantes, produtos elegíveis e todas as regras.</div>
         </div>
-        <a href="#" data-cart-open class="cta">CONFERIR CONDIÇÕES DA OFERTA →</a>
+        <div class="decision-cues"><span><b>R$ 50</b> de economia</span><span>Pagamento único</span><span>Vale digital</span></div>
+        <a href="#" data-cart-open class="cta">CONFERIR OFERTA NO CHECKOUT →</a>
         <p class="hero-note">Você só paga no checkout, depois de revisar todas as condições.</p>
       </div>
     </div>
@@ -329,7 +331,7 @@ body{background:#fff}
     <div class="cart-values"><div class="cart-row"><span>Crédito para abastecer</span><strong class="credit-value">R$ 400,00</strong></div><div class="cart-row"><span>Você paga no checkout</span><strong class="pay-value">R$ 350,00</strong></div><div class="cart-row"><span>Você economiza</span><strong class="pay-value">R$ 50,00</strong></div><div class="cart-saving">Pagamento único</div></div>
     <ul class="cart-details"><li>Regras, validade e locais de uso aparecem antes do pagamento.</li><li>O vale é digital e as instruções são enviadas após a aprovação.</li></ul>
   </div>
-  <div class="cart-footer"><span class="cart-deadline"><strong>CONDIÇÃO DA OFERTA</strong><span>Você revisa o preço e as condições no checkout</span></span><a class="cart-checkout" href="../checkout/checkout.html?kit=vale-ipiranga">REVISAR OFERTA NO CHECKOUT →</a><p class="cart-disclaimer">Você só paga depois de revisar a oferta no checkout.</p></div>
+  <div class="cart-footer"><span class="cart-deadline"><strong>CONDIÇÃO DA OFERTA</strong><span>Você revisa o preço e as condições no checkout</span></span><a class="cart-checkout" href="../checkout/checkout.html?kit=vale-ipiranga">CONTINUAR COM A OFERTA →</a><p class="cart-disclaimer">Você só paga depois de revisar a oferta no checkout.</p></div>
 </aside>
 
 <!-- FOOTER -->
@@ -445,7 +447,7 @@ render();
 .stickybuy .sb-btn{margin-left:auto;background:#168b5b;color:#fff;font-weight:800;font-size:.92rem;padding:13px 22px;border-radius:10px;white-space:nowrap;box-shadow:0 4px 14px rgba(22,139,91,.28)}
 @keyframes sbp{0%,100%{transform:scale(1)}50%{transform:scale(1.045)}}
 body{padding-bottom:74px}
-</style><div class="stickybuy" id="stickybuy"><div class="sb-txt"><span class="sb-name">Vale digital</span><span class="sb-price">R$ 350 → R$ 400 em crédito</span></div><a class="sb-btn" href="../checkout/checkout.html?kit=vale-ipiranga">VER CONDIÇÕES</a></div>
+</style><div class="stickybuy" id="stickybuy"><div class="sb-txt"><span class="sb-name">Vale digital</span><span class="sb-price">R$ 350 → R$ 400 em crédito</span></div><a class="sb-btn" href="../checkout/checkout.html?kit=vale-ipiranga">CONFERIR OFERTA</a></div>
 <script>/*stickybuy*/(function(){var sb=document.getElementById('stickybuy');if(!sb)return;var k=document.getElementById('kits');function u(){var y=window.scrollY||document.documentElement.scrollTop;var s=y>520;if(k){var r=k.getBoundingClientRect();if(r.top<window.innerHeight*0.8&&r.bottom>0)s=false;}sb.classList.toggle('show',s);}window.addEventListener('scroll',u,{passive:true});window.addEventListener('resize',u);u();})();</script>
 </body>
 </html>
