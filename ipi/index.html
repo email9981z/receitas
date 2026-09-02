@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Abasteça R$ 400,00, pague apenas R$ 350,00 | Vale-presente</title>
 <style>
-/* ====== TEMA KOKESHI ====== */
+/* ====== TEMA VALE-COMBUSTÍVEL ====== */
 :root{
   --wine:#e85b13;
   --wine-dark:#c74608;
@@ -33,8 +33,8 @@ h1,h2,h3{line-height:1.2}
 section{padding:28px 0}
 
 /* ====== TOP BAR ====== */
-.topbar{background:var(--wine);color:#fff;font-size:.82rem;font-weight:700;text-align:center;padding:9px 12px;display:flex;justify-content:center;align-items:center}
-.topbar .timer{background:rgba(255,255,255,.18);padding:2px 10px;border-radius:20px;font-variant-numeric:tabular-nums}
+.topbar{background:#a51d1d;color:#fff;font-size:.86rem;font-weight:800;text-align:center;padding:10px 12px;display:flex;justify-content:center;align-items:center;gap:5px}.topbar.expired{background:#4a4a4a}.topbar .deadline-text{text-transform:uppercase;letter-spacing:.15px}
+.topbar .timer{display:inline-block;background:#fff;color:#a51d1d;padding:3px 10px;border-radius:6px;font-size:1rem;font-variant-numeric:tabular-nums;margin-left:4px;min-width:72px}.topbar.expired .timer{color:#4a4a4a}.offer-expired{opacity:.55;pointer-events:none}.scarcity-note{display:flex;align-items:center;justify-content:center;gap:7px;color:#8a4b00;background:#fff7ed;border:1px solid #fed7aa;border-radius:10px;padding:9px 12px;margin:0 auto 18px;max-width:760px;font-size:.82rem;font-weight:700}.scarcity-note .pulse-dot{width:8px;height:8px;border-radius:50%;background:#f97316;flex:none}
 
 /* ====== HEADER ====== */
 .header{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid var(--line);padding:14px 0}
@@ -136,7 +136,7 @@ section{padding:28px 0}
 .garant strong{display:block;margin-bottom:4px}
 .garant p{font-size:.88rem;color:var(--muted)}
 
-/* ====== DEPOIMENTOS ====== */
+/* ====== COMO FUNCIONA ====== */
 .depo{background:var(--pink-bg)}
 .depo-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
 .depo-card{background:#fff;border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)}
@@ -205,7 +205,7 @@ section{padding:28px 0}
 </svg>
 
 <!-- TOP BAR -->
-<div class="topbar">Oferta especial: receba R$ 400,00 em crédito pagando R$ 350,00. Consulte as condições antes de comprar.</div>
+<div class="topbar"><span class="deadline-text">ATENÇÃO: esta condição termina em</span> <span class="timer" id="timer" aria-live="polite">30:00</span> <span>— depois disso, o preço promocional pode não estar disponível.</span></div>
 
 <!-- HEADER -->
 <header class="header">
@@ -218,7 +218,7 @@ section{padding:28px 0}
 <!-- HERO -->
 <section class="hero">
   <div class="container">
-    <div class="hero-lead"><h1>Abasteça <em>R$ 400,00</em>, pague apenas R$ 350,00</h1><p>Vale-presente digital para abastecimento e produtos participantes nos Postos Ipiranga.</p></div>
+    <div class="hero-lead"><h1>Abasteça <em>R$ 400,00</em>, pague apenas R$ 350,00</h1><p>Vale-presente digital para abastecimento e produtos participantes nos Postos Ipiranga.</p></div><div class="scarcity-note"><span class="pulse-dot"></span><span><strong>Prazo real: 30 minutos.</strong> Esta condição promocional é liberada nesta visita e pode encerrar quando o contador chegar a zero.</span></div>
     <div class="grid">
       <div class="gallery">
         <div class="main-img">
@@ -242,7 +242,7 @@ section{padding:28px 0}
           <div class="saving">Pagamento único • economia de R$ 50,00</div>
           <div class="parc">Após a confirmação, consulte as instruções de uso, validade e postos participantes.</div>
         </div>
-        <a href="#kits" class="cta">QUERO MEU VALE AGORA →</a>
+        <a href="../checkout/checkout.html?kit=vale-ipiranga" class="cta">QUERO MEU VALE AGORA →</a>
         <div class="trust-mini"><span><svg class="ico"><use href="#i-lock"/></svg> Pagamento seguro</span><span><svg class="ico"><use href="#i-return"/></svg> Regras visíveis antes da compra</span></div><p class="hero-note">O vale é digital. Consulte no checkout a validade, os postos participantes e como utilizar.</p>
       </div>
     </div>
@@ -294,39 +294,21 @@ section{padding:28px 0}
     <div class="garant-grid">
       <div class="garant"><div class="ic"><svg class="ico"><use href="#i-lock"/></svg></div><strong>Compra Segura</strong><p>Ambiente com criptografia SSL e pagamento protegido.</p></div>
       <div class="garant"><div class="ic"><svg class="ico"><use href="#i-truck"/></svg></div><strong>Entrega digital</strong><p>O vale é digital; consulte prazo e forma de recebimento no checkout.</p></div>
-      <div class="garant"><div class="ic"><svg class="ico"><use href="#i-return"/></svg></div><strong>Garantia de 30 dias</strong><p>Consulte as regras de cancelamento e utilização antes de concluir a compra.</p></div>
+      <div class="garant"><div class="ic"><svg class="ico"><use href="#i-return"/></svg></div><strong>Regras antes da compra</strong><p>Consulte validade, aceitação e política de cancelamento no checkout.</p></div>
       <div class="garant"><div class="ic"><svg class="ico"><use href="#i-leaf"/></svg></div><strong>Crédito transparente</strong><p>Valor do vale: R$ 400,00. Valor promocional: R$ 350,00.</p></div>
     </div>
   </div>
 </section>
 
-<!-- DEPOIMENTOS -->
-<section class="depo">
+<!-- COMO FUNCIONA -->
+<section class="depo howto">
   <div class="container">
-    <h2 class="section-title">Quem aproveita, recomenda <svg class="ico" style="color:var(--wine)"><use href="#i-heart"/></svg></h2>
-    <p class="section-sub">Clientes usando o vale para economizar no dia a dia.</p>
+    <h2 class="section-title">Como funciona</h2>
+    <p class="section-sub">Uma compra simples, com as principais condições apresentadas antes do pagamento.</p>
     <div class="depo-grid">
-      <div class="depo-card">
-        <div class="top"><div class="av">M</div><div><div class="name">Mariana S.</div><div class="meta">São Paulo, SP • 3 dias atrás</div></div></div>
-        <div class="st">★★★★★</div>
-        <p>"Foi uma maneira prática de economizar no abastecimento. O crédito chegou com as instruções de uso."</p>
-        <div class="photo"><img loading="lazy" src="vale-presente-ipiranga.svg" alt="Arte ilustrativa do vale-presente"></div>
-        <span class="verified">✓ Depoimento ilustrativo</span>
-      </div>
-      <div class="depo-card">
-        <div class="top"><div class="av">C</div><div><div class="name">Camila R.</div><div class="meta">Belo Horizonte, MG • 1 semana atrás</div></div></div>
-        <div class="st">★★★★★</div>
-        <p>"Comprei para presentear e a pessoa conseguiu usar o crédito sem complicação."</p>
-        <div class="photo"><img loading="lazy" src="vale-presente-ipiranga.svg" alt="Arte ilustrativa do vale-presente"></div>
-        <span class="verified">✓ Depoimento ilustrativo</span>
-      </div>
-      <div class="depo-card">
-        <div class="top"><div class="av">J</div><div><div class="name">Juliana P.</div><div class="meta">Curitiba, PR • 2 semanas atrás</div></div></div>
-        <div class="st">★★★★★</div>
-        <p>"O desconto de R$ 50,00 fez diferença. Antes de comprar, conferi as condições da oferta."</p>
-        <div class="photo"><img loading="lazy" src="vale-presente-ipiranga.svg" alt="Arte ilustrativa do vale-presente"></div>
-        <span class="verified">✓ Depoimento ilustrativo</span>
-      </div>
+      <div class="depo-card"><div class="av">1</div><h3>Escolha o vale</h3><p>Você recebe R$ 400,00 em crédito e paga R$ 350,00.</p></div>
+      <div class="depo-card"><div class="av">2</div><h3>Revise as condições</h3><p>Confira validade, aceitação, postos participantes e regras no checkout.</p></div>
+      <div class="depo-card"><div class="av">3</div><h3>Receba as instruções</h3><p>Após a aprovação, siga o canal de recebimento e as orientações de uso.</p></div>
     </div>
   </div>
 </section>
@@ -334,9 +316,9 @@ section{padding:28px 0}
 <!-- URGÊNCIA -->
 <section class="urg">
   <div class="container">
-    <h2><svg class="ico"><use href="#i-alert"/></svg> Oferta especial por tempo limitado</h2>
-    <p>Garanta seu vale enquanto a condição de R$ 400,00 por R$ 350,00 estiver disponível.</p>
-    <a href="#kits" class="cta">GARANTIR MEU VALE →</a>
+    <h2>Pronto para economizar R$ 50,00?</h2>
+    <p>Confira as condições da oferta e finalize sua compra com clareza e segurança.</p>
+    <a href="../checkout/checkout.html?kit=vale-ipiranga" class="cta">GARANTIR MEU VALE →</a>
   </div>
 </section>
 
@@ -349,7 +331,7 @@ section{padding:28px 0}
       <div class="faq-item"><div class="faq-q">Onde posso utilizar o crédito? <span class="arrow">▾</span></div><div class="faq-a">A utilização depende das condições da oferta. Consulte no checkout os Postos Ipiranga participantes, produtos elegíveis e demais regras.</div></div>
       <div class="faq-item"><div class="faq-q">Como utilizo o vale? <span class="arrow">▾</span></div><div class="faq-a">Apresente ou informe o código do vale conforme as instruções recebidas e siga as regras de utilização indicadas no checkout.</div></div>
       <div class="faq-item"><div class="faq-q">O vale é físico ou digital? <span class="arrow">▾</span></div><div class="faq-a">Esta página apresenta uma oferta de vale digital. Confirme a forma de entrega e o prazo no checkout.</div></div>
-      <div class="faq-item"><div class="faq-q">Posso cancelar a compra? <span class="arrow">▾</span></div><div class="faq-a">Você tem Atendimento online. Se não amar o resultado, devolvemos 100% do seu dinheiro, sem burocracia.</div></div>
+      <div class="faq-item"><div class="faq-q">Posso cancelar a compra? <span class="arrow">▾</span></div><div class="faq-a">As condições de cancelamento devem ser consultadas no checkout antes da conclusão do pagamento.</div></div>
     </div>
   </div>
 </section>
@@ -364,7 +346,34 @@ section{padding:28px 0}
 </footer>
 
 <script>
-// A oferta não usa contagem regressiva artificial: a validade deve ser informada no checkout.
+// Prazo real de 30 minutos por visita, persistente mesmo após atualizar a página.
+const OFFER_KEY = 'valeIpirangaOfferDeadline30m';
+const OFFER_DURATION = 30 * 60 * 1000;
+const timer = document.getElementById('timer');
+const topbar = timer?.closest('.topbar');
+const savedDeadline = Number(localStorage.getItem(OFFER_KEY));
+const campaignDeadline = savedDeadline || (Date.now() + OFFER_DURATION);
+if(!savedDeadline) localStorage.setItem(OFFER_KEY, String(campaignDeadline));
+function updateTimer(){
+  if(!timer) return;
+  const remaining = campaignDeadline - Date.now();
+  if(remaining <= 0){
+    timer.textContent = 'ENCERRADA';
+    topbar?.classList.add('expired');
+    document.querySelectorAll('a[href*="checkout"]').forEach(function(link){
+      link.setAttribute('aria-disabled','true');
+      link.classList.add('offer-expired');
+      link.addEventListener('click',function(event){event.preventDefault();});
+    });
+    return;
+  }
+  const totalSeconds = Math.floor(remaining / 1000);
+  const m = String(Math.floor(totalSeconds / 60)).padStart(2,'0');
+  const s = String(totalSeconds % 60).padStart(2,'0');
+  timer.textContent = `${m}:${s}`;
+}
+updateTimer();
+setInterval(updateTimer,1000);
 
 // FAQ accordion
 document.querySelectorAll('.faq-item').forEach(item=>{
@@ -441,7 +450,7 @@ document.addEventListener('keydown',e=>{
 .stickybuy .sb-btn{margin-left:auto;background:#1fa463;color:#fff;font-weight:800;font-size:.92rem;padding:13px 22px;border-radius:50px;white-space:nowrap;box-shadow:0 4px 14px rgba(31,164,99,.45);animation:sbp 2.2s infinite}
 @keyframes sbp{0%,100%{transform:scale(1)}50%{transform:scale(1.045)}}
 body{padding-bottom:74px}
-</style><div class="stickybuy" id="stickybuy"><div class="sb-txt"><span class="sb-name">Vale Posto Ipiranga</span><span class="sb-price">por <b>R$ 350,00</b></span></div><a class="sb-btn" href="#kits">COMPRAR AGORA</a></div>
+</style><div class="stickybuy" id="stickybuy"><div class="sb-txt"><span class="sb-name">Vale Posto Ipiranga</span><span class="sb-price">por <b>R$ 350,00</b></span></div><a class="sb-btn" href="../checkout/checkout.html?kit=vale-ipiranga">COMPRAR AGORA</a></div>
 <script>/*stickybuy*/(function(){var sb=document.getElementById('stickybuy');if(!sb)return;var k=document.getElementById('kits');function u(){var y=window.scrollY||document.documentElement.scrollTop;var s=y>520;if(k){var r=k.getBoundingClientRect();if(r.top<window.innerHeight*0.8&&r.bottom>0)s=false;}sb.classList.toggle('show',s);}window.addEventListener('scroll',u,{passive:true});window.addEventListener('resize',u);u();})();</script>
 <style>/*kiturg*/
 .kits-urg{max-width:960px;margin:0 auto 18px;background:#fff4e5;border:1px solid #ffc98a;color:#8a4b00;border-radius:10px;padding:11px 14px;text-align:center;font-size:.88rem;font-weight:700}
@@ -498,11 +507,11 @@ if(document.readyState!=="loading")go();else document.addEventListener("DOMConte
 var kits=document.getElementById("kits");
 if(kits && !document.querySelector(".trustrow")){
   var row=document.createElement("div");row.className="trustrow";
-  row.innerHTML='<div class="tb">&#128274; Site <b>100% seguro</b></div>'
-    +'<div class="tb">&#128737;&#65039; Compra <b>garantida</b></div>'
+  row.innerHTML='<div class="tb">&#128274; Checkout com pagamento protegido</div>'
+    +'<div class="tb">&#128737;&#65039; Condições visíveis antes da compra</div>'
     +'<div class="tb">&#128666; <b>Vale digital</b></div>'
-    +'<div class="tb">&#8617;&#65039; condições claras</div>'
-    +'<div class="tb">&#128179; Pagamento <b>via Pix seguro</b></div>';
+    +'<div class="tb">&#8617;&#65039; Validade e uso informados</div>'
+    +'<div class="tb">&#128179; Opções de pagamento no checkout</div>';
   var grid=kits.querySelector(".kits-grid");
   if(grid){ grid.parentNode.insertBefore(row,grid.nextSibling);
     var g=document.createElement("div");g.className="guarantee";
