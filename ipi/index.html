@@ -199,6 +199,34 @@ body{background:#fff}
 .cart-overlay{background:rgba(15,23,42,.58)}.cart{border-radius:16px;box-shadow:0 20px 60px rgba(15,23,42,.2)}.cart-checkout{background:var(--wine)!important}.cart-deadline{background:#f5f8f7!important;color:var(--ink)!important}.cart-disclaimer{color:var(--muted)!important}
 .stickybuy{background:rgba(23,33,43,.98)}.stickybuy .sb-btn{background:var(--wine);box-shadow:0 4px 14px rgba(217,79,11,.25)}
 @media(max-width:860px){.hero{padding-top:28px}.hero .grid{gap:26px}.hero-lead{margin-bottom:18px}.hero-lead h1{font-size:2.25rem}.hero-lead p{font-size:1rem}.price-box{padding:18px}.faq{padding-bottom:110px}}
+/* ====== REFINAMENTO VISUAL V3 ====== */
+.container{max-width:1160px}
+.header{box-shadow:0 1px 0 rgba(23,33,43,.03)}
+.hero{padding-top:34px;padding-bottom:34px}
+.hero-lead{margin-bottom:24px}
+.hero .grid{grid-template-columns:minmax(0,1.04fr) minmax(390px,.96fr);gap:48px;align-items:start}
+.gallery{padding-top:5px}
+.gallery .main-img{aspect-ratio:1.12;border-radius:18px;box-shadow:0 14px 34px rgba(23,33,43,.12)}
+.gallery .main-img:after{content:'OFERTA DIGITAL';position:absolute;top:14px;left:14px;background:#fff;color:#9a4d00;font-size:.66rem;font-weight:900;letter-spacing:.08em;border-radius:999px;padding:7px 10px;box-shadow:0 3px 10px rgba(23,33,43,.12)}
+/* A arte original exibia valores diferentes da oferta. O destaque abaixo mantém a comunicação visual fiel ao preço real. */
+.gallery .slide{position:relative;background:linear-gradient(145deg,#fff7ed 0%,#ffe4c7 48%,#f7b267 100%);display:flex;align-items:center;justify-content:center;overflow:hidden}
+.gallery .slide:before{content:'VALE+';position:absolute;top:24%;left:12%;color:#d94f0b;font-size:clamp(2rem,5vw,3.4rem);font-weight:950;letter-spacing:-.08em;transform:rotate(-8deg);opacity:.92}
+.gallery .slide:after{content:'R$ 400,00 DE CRÉDITO';white-space:nowrap;position:absolute;right:7%;bottom:20%;padding:16px 18px;border-radius:14px;background:#17212b;color:#fff;font-size:clamp(.95rem,2.2vw,1.35rem);line-height:1;font-weight:900;letter-spacing:-.03em;box-shadow:0 10px 24px rgba(23,33,43,.22)}
+.gallery .slide img{display:none!important}
+.gallery .slide img{visibility:hidden}.thumbs{display:none}
+.price-box{margin:0 0 12px;border-radius:16px;padding:24px 25px;box-shadow:0 14px 34px rgba(23,33,43,.12)}
+.price-box .price-kicker{font-size:.74rem;margin-bottom:12px}.price-box .credit{font-size:1.7rem}.price-box .now{font-size:2.7rem}.price-box .parc{font-size:.78rem}
+.hero .info .cta{border-radius:12px;font-size:1.05rem;letter-spacing:.02em;box-shadow:0 8px 20px rgba(217,79,11,.24)}
+.trust-mini{justify-content:flex-start;margin-top:12px;font-size:.76rem}.trust-mini span{padding:5px 8px}
+.essential-info{padding:16px 0 30px}.quick-proof{max-width:930px;margin:0 auto;border-radius:13px}.quick-proof span{padding:13px 12px;font-size:.75rem}
+.dores,.benef,.kits,.depo{padding-top:58px;padding-bottom:58px}
+.dores{border-top:1px solid #f1f2f3}.dor,.benef-card,.kit,.depo-card{border-radius:16px}
+.section-title{font-size:2rem;margin-bottom:10px}.section-sub{max-width:600px;margin-bottom:30px}
+.kits-grid{align-items:stretch}.kit{box-shadow:0 5px 18px rgba(23,33,43,.05)}
+.faq{padding-top:54px}.faq-list{max-width:760px}
+.stickybuy{padding:10px max(14px,calc((100vw - 1120px)/2));}
+@media(max-width:860px){.hero{padding-top:25px;padding-bottom:25px}.hero .grid{grid-template-columns:1fr;gap:22px}.gallery .main-img{aspect-ratio:1.05}.price-box{padding:20px}.price-box .now{font-size:2.35rem}.trust-mini{justify-content:center}.quick-proof span{padding:10px 6px;font-size:.68rem}.section-title{font-size:1.65rem}}
+
 
 </style>
 <script src="/mx-funil.js"></script>
@@ -247,7 +275,7 @@ body{background:#fff}
           <div class="price-kicker">COMO A OFERTA FUNCIONA</div>
           <div class="credit-label">Você recebe</div>
           <div class="credit">R$ 400,00 em crédito digital</div>
-          <div class="pay-label">Você paga agora</div>
+          <div class="pay-label">Você paga no checkout</div>
           <div class="now">R$ 350,00</div>
           <div class="saving">Pagamento único • você economiza R$ 50,00</div>
           <div class="parc">Antes de pagar, você confere validade, locais participantes, produtos elegíveis e todas as regras.</div>
@@ -264,7 +292,7 @@ body{background:#fff}
 
 <!-- RESUMO RÁPIDO -->
 <section class="essential-info" aria-label="Resumo rápido">
-  <div class="container"><div class="quick-proof"><span><strong>R$ 50,00</strong> de economia</span><span><strong>Vale digital</strong> após aprovação</span><span><strong>Regras</strong> visíveis no checkout</span></div></div>
+  <div class="container"><div class="quick-proof"><span><strong>R$ 50,00</strong> de economia</span><span><strong>Vale digital</strong> após aprovação</span><span><strong>Condições</strong> visíveis antes do pagamento</span></div></div>
 </section>
 
 <!-- COMO FUNCIONA -->
